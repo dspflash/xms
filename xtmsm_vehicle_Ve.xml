@@ -1,0 +1,13 @@
+﻿<WndTap Name="xtmsm_vehicle" Text="xtmsm_vehicle" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr="platenumber,driver[driverid],containersize,volume,weight"/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xtmsm_vehicle.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBxtmsm_vehicle" id="xtmsm_vehicle" Text="xtmsm_vehicle" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_vehicle_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_vehicle_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_vehicle_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertxtmsm_vehicle" Visible="1"/><SetVisible name="modifyxtmsm_vehicle" Visible="0"/></OnActivate>
+</WndTap>

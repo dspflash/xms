@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmst_complain_v" Text="xtmst_complain">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_complain_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><freightid format="x.freightid='%{opvalue}'"/><complaincode format="(x.complaincode like '%%{opvalue}%')"/><complainprice format="(x.complainprice like '%%{opvalue}%')"/><complainmemo format="(x.complainmemo like '%%{opvalue}%')"/><status format="x.status='%{opvalue}'"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><updateby format="(x.updateby like '%%{opvalue}%')"/><updatedate format="(x.updatedate between '%{updatedate[datetime]}' and '%{updatedate[datetime2]}')"/><complainid format="(x.complainid like '%%{opvalue}%')"/><xtmst_complain_id format="(x.xtmst_complain_id like '%%{opvalue}%')"/><carrierid format="(x.carrierid like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_complain.xml"/>
+<Ctrls><GroupBox  Name="GBxtmst_complain" id="xtmst_complain" Text="xtmst_complain" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_complain_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmst_complain" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmst_complain.GBDEDITxtmst_complain" function="reset"/><assign name="$this.xtmst_complain.frmwndctrl" expr="%{$this.xtmst_complain_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmst_complain" Name="resetxtmst_complain" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmst_complain" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_complain" Name="gsearchxtmst_complain" Size="50,20">	<OnClick>	
+<search next="xtmst_complain_vLst" listed="0" prefixwhere="1" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_complain" namelist="search" function="search"/>	
+<search next="records_xtmst_complain" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_complain" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_complain_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_complain_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_complain_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

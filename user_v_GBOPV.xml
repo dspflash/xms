@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVuser_v" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteuser_v" Name="deleteuser_v" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.user_v</DbTable>
+<Where>username='%{user_vLst[username]}' and role_name_cn='%{user_vLst[role_name_cn]}' and carriername='%{user_vLst[carriername]}' and org_guid='%{user_vLst[org_guid]}' and xms_user_id='%{user_vLst[xms_user_id]}' and role_id='%{user_vLst[role_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchuser_v" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshuser_v" Name="searchuser_v" Size="50,20">
+			  <OnClick><submit next="user_vLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPuser_vLst" OnClick="(user_vLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREuser_vLst" OnClick="(user_vLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPuser_vLst" OnClick="(user_vLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

@@ -1,0 +1,30 @@
+﻿<GroupBox Name="GBDEDITxtmsc_status_option"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_tablename"><Ctrls>
+<Label Align="Right" Text="tablename" Name="lb_tablename" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_tablename" Name="tablename" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_typename"><Ctrls>
+<Label Align="Right" Text="typename" Name="lb_typename" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_typename" Name="typename" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_statustype"><Ctrls>
+<Label Align="Right" Text="statustype" Name="lb_statustype" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_statustype" Name="statustype" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_statuscode"><Ctrls>
+<Label Align="Right" Text="statuscode" Name="lb_statuscode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_statuscode" Name="statuscode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_statusname"><Ctrls>
+<Label Align="Right" Text="statusname" Name="lb_statusname" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_statusname" Name="statusname" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_idx" Visible="false"><Ctrls>
+<Label Align="Right" Text="idx" overlap="pre" Name="lb_idx" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_idx" overlap="pre" Name="idx" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{idx}'"><SetVisible name="insertxtmsc_status_option" Visible="0"/><SetVisible name="modifyxtmsc_status_option" Visible="1"/><else/><SetVisible name="insertxtmsc_status_option" Visible="1"/><SetVisible name="modifyxtmsc_status_option" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

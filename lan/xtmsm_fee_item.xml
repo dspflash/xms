@@ -1,0 +1,34 @@
+﻿<Language name="xtmsm_fee_item">
+<Lang name="xtmsm_fee_item" value="费用种类"/>
+<Lang name="TabEditxtmsm_fee_item" value="xtmsm_fee_item Edit"/>
+<Lang name="TabViewxtmsm_fee_item" value="xtmsm_fee_item View"/>
+<Lang name="feecode" value="费用编码"/>
+<Lang name="ttp_feecode" value=""/>
+<Lang name="feename" value="费用名称"/>
+<Lang name="ttp_feename" value=""/>
+<Lang name="status" value=""/>
+<Lang name="ttp_status" value=""/>
+<Lang name="debit" value="借出"/>
+<Lang name="ttp_isborrow" value=""/>
+<Lang name="id" value=""/>
+<Lang name="ttp_id" value=""/>
+<Lang name="create_by" value=""/>
+<Lang name="ttp_create_by" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="ttp_operationxtmsm_fee_item" value=""/>
+<Lang name="ttp_creatextmsm_fee_item" value=""/>
+<Lang name="ttp_modifyxtmsm_fee_item" value=""/>
+<Lang name="ttp_resetxtmsm_fee_item" value=""/>
+<Lang name="ttp_deletextmsm_fee_item" value=""/>
+<Lang name="ttp_refreshxtmsm_fee_item" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

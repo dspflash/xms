@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEuser_v" Size="100,100"><Ctrls>
+<Button sqlpkinsert="" Text="create" ToolTip="ttp_createuser_v" Name="insertuser_v" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.user_v</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>username,role_name_cn,carriername,org_guid,xms_user_id</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="user_vLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyuser_v" Name="modifyuser_v" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>tms.user_v</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>username,role_name_cn,carriername,org_guid,xms_user_id</Data>
+<DataEx/>
+<Where>username='%{user_vLst[username]}' and role_name_cn='%{user_vLst[role_name_cn]}' and carriername='%{user_vLst[carriername]}' and org_guid='%{user_vLst[org_guid]}' and xms_user_id='%{user_vLst[xms_user_id]}' and role_id='%{user_vLst[role_id]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="user_vLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetuser_v" Name="resetuser_v" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITuser_v" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchuser_v" Name="gsearchuser_v" Size="50,20" visible="false">
+	<OnClick>
+	<search next="user_vLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITuser_v" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPEmodule_class" Size="100,100"><Ctrls>
+<Button sqlpkinsert="module_class_id" Text="create" ToolTip="ttp_createmodule_class" Name="insertmodule_class" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.module_class</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>name,description,status</Data>
+<DataEx>module_code,created_by,creation_date,last_update_by,last_update_date;tms,'%{user_id}',now(),'%{user_id}',now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertmodule_class[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="module_classLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.module_class_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymodule_class" Name="modifymodule_class" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.module_class</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>name,description,status</Data>
+<DataEx>last_update_by,last_update_date;'%{user_id}',now()</DataEx>
+<Where>module_class_id='%{module_class_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifymodule_class[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="module_classLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.module_class_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetmodule_class" Name="resetmodule_class" Size="50,20">
+<OnClick>
+<submit next="GBDEDITmodule_class" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchmodule_class" Name="gsearchmodule_class" Size="50,20" visible="false">
+<OnClick>
+<search next="module_classLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITmodule_class" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

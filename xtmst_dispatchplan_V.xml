@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmst_dispatchplan_v" Text="xtmst_dispatchplan">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><vehicleid format="x.vehicleid='%{opvalue}'"/><begintime format="(x.begintime between '%{begintime[datetime]}' and '%{begintime[datetime2]}')"/><endtime format="(x.endtime between '%{endtime[datetime]}' and '%{endtime[datetime2]}')"/><freightid format="x.freightid='%{opvalue}'"/><plancode format="(x.plancode like '%%{opvalue}%')"/><status format="x.status='%{opvalue}'"/><fromxsiteid format="x.fromxsiteid='%{opvalue}'"/><fromcityid format="x.fromcityid='%{opvalue}'"/><fromaddress format="(x.fromaddress like '%%{opvalue}%')"/><toxsiteid format="x.toxsiteid='%{opvalue}'"/><tocityid format="x.tocityid='%{opvalue}'"/><toaddress format="(x.toaddress like '%%{opvalue}%')"/><vehiclerealtimeid format="x.vehiclerealtimeid='%{opvalue}'"/><serialno format="(x.serialno like '%%{opvalue}%')"/><deliverymode format="x.deliverymode='%{opvalue}'"/><consignmentmode format="x.consignmentmode='%{opvalue}'"/><deliverymethod format="x.deliverymethod='%{opvalue}'"/><memo format="(x.memo like '%%{opvalue}%')"/><actualbegintime format="(x.actualbegintime between '%{actualbegintime[datetime]}' and '%{actualbegintime[datetime2]}')"/><actualendtime format="(x.actualendtime between '%{actualendtime[datetime]}' and '%{actualendtime[datetime2]}')"/><planid format="(x.planid like '%%{opvalue}%')"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><updateby format="(x.updateby like '%%{opvalue}%')"/><updatedate format="(x.updatedate between '%{updatedate[datetime]}' and '%{updatedate[datetime2]}')"/><xtmst_dispatchplan_id format="(x.xtmst_dispatchplan_id like '%%{opvalue}%')"/><carrierid format="(x.carrierid like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_dispatchplan.xml"/>
+<Ctrls><GroupBox  Name="GBxtmst_dispatchplan" id="xtmst_dispatchplan" Text="xtmst_dispatchplan" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmst_dispatchplan" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmst_dispatchplan.GBDEDITxtmst_dispatchplan" function="reset"/><assign name="$this.xtmst_dispatchplan.frmwndctrl" expr="%{$this.xtmst_dispatchplan_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmst_dispatchplan" Name="resetxtmst_dispatchplan" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmst_dispatchplan" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_dispatchplan" Name="gsearchxtmst_dispatchplan" Size="50,20">	<OnClick>	
+<search next="xtmst_dispatchplan_vLst" listed="0" prefixwhere="0" prefixand="1" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_dispatchplan" namelist="search" function="search"/>	
+<search next="records_xtmst_dispatchplan" listed="0" prefixwhere="0" prefixand="1"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_dispatchplan" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

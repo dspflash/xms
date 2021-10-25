@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_settlementdetail" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_settlementdetailLst" ToolTip="ttp_xtmst_settlementdetail" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>settlementdetailid</Index>
+<DbTable>tms.xtmst_settlementdetail</DbTable>
+<Data>feeid,confirmamount,freightid,settlementdetailid,createby,createdate,carrierid</Data>
+<Order>settlementdetailid</Order></DbDetails>
+<OnClick><assign name="feeid[id]" expr="%{xtmst_settlementdetailLst[feeid]}" function="SetSel"/><assign name="freightid[customerorderid]" expr="%{xtmst_settlementdetailLst[freightid]}" function="SetSel"/>
+<if cond="%{settlementdetailid}"><SetVisible name="insertxtmst_settlementdetail" Visible="0"/><SetVisible name="modifyxtmst_settlementdetail" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_loadorder" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialxtmst_loadorder" Size="50,20">
+<OnClick><submit next="xtmst_loadorder_vLst" function="initial"/><submit next="records_xtmst_loadorder" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPxtmst_loadorder_vLst" Size="50,20">
+<OnClick><submit next="xtmst_loadorder_vLst" function="GetPage(first)"/><submit next="records_xtmst_loadorder"/></OnClick></Button>
+<Button Text="prepage" Name="PRExtmst_loadorder_vLst" Size="50,20">
+<OnClick><submit next="xtmst_loadorder_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPxtmst_loadorder_vLst" Size="50,20">
+<OnClick><submit next="xtmst_loadorder_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

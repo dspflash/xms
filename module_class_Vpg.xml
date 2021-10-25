@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGmodule_class"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_module_class" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>module_class_id</Index>
+<DbTable>tms.module_class m</DbTable>
+<Data>count(*) records</Data>
+<Order>module_class_id</Order><Queryformat>select %{data} from (select m.module_class_id from %{dbtable} %{where} GROUP BY m.module_class_id  ORDER BY m.module_class_id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_module_class" expr="js(Math.ceil(%{records_module_class}/%{module_class_vLst[countsperpage]}))"/>
+<assign name="pgscb_module_class" expr="js('1~'+Math.ceil(%{records_module_class}/%{module_class_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_module_class" Size="60,20"><OnSelEndOK><submit next="module_class_vLst" function="GetPage(%{pgscb_module_class}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_module_class" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_module_class" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagemodule_class_vLst" Size="50,20"><OnClick><submit next="module_class_vLst" function="GetPage(%{pgcur_module_class}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

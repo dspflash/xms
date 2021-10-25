@@ -1,0 +1,13 @@
+﻿<WndTap Name="xtmst_freight_detail" Text="xtmst_freight_detail" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr=""/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xtmst_freight_detail.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBxtmst_freight_detail" id="xtmst_freight_detail" Text="xtmst_freight_detail" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_detail_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_detail_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_detail_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertxtmst_freight_detail" Visible="1"/><SetVisible name="modifyxtmst_freight_detail" Visible="0"/></OnActivate>
+</WndTap>

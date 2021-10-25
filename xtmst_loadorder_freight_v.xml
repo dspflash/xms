@@ -1,0 +1,17 @@
+<WndTap Text="xtmst_loadorder_freight" Name="xtmst_loadorder_freight" Ver="2" popup="1">
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_LoadOrder.xml"/>
+	<Ctrls>
+	<GroupBox Text="xtmst_loadorder_freight" Name="GBxtmst_loadorder_freight" id="xtmst_loadorder_freight" Size="100,100"><Ctrls>
+<ListCtrl Name="uv_LoadOrderFreightLst" ToolTip="ttp_xtmsm_carrier" Size="700,420" loadedclick="0">
+	<DbDetails >
+<DbTable>uv_LoadOrderFreight</DbTable>
+<Index>LoadOrderID</Index>
+<Data>*</Data>
+<Order>LoadOrderID</Order></DbDetails>
+	<OnClick><if cond="%{uv_LoadOrderFreightLst[FreightID]}"><DbDetails><Where>FreightID='%{uv_LoadOrderFreightLst[FreightID]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.%{frmwndctrl}"/><assign name="$parent.%{frmwndctrl}[selectedindex]" function="SetSel" expr="0"/><submit function="onok"/></if></OnClick>
+	</ListCtrl>
+	</Ctrls></GroupBox>
+	</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

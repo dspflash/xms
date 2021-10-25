@@ -1,0 +1,19 @@
+﻿<GroupBox Name="GBDEDITxtmsm_xsite_detail" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_city_id" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_city_id" Size="60,20" Text="city_id" Align="Right"/>
+<TextBox Name="city_id" Size="150,20" Text="" Weight="150" ToolTip="ttp_city_id">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,ChinaSpell,CityID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+<MagicCtrl Name="pickcity_id" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.citypick.frmwndctrl" expr="City_Id"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox Name="GB_remark" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_remark" Size="60,20" Text="remark" Align="Right"/>
+<TextBox Name="remark" Size="170,20" Text="" Weight="170" ToolTip="ttp_remark"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_active" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="active" Size="230,20" Text="active" ToolTip="ttp_active" checked="true"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

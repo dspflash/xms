@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmst_fineorder"><Ctrls>
+<ListCtrl Heading="freightid,250;finenumber,250;driverid,250;finedate,90;finesordinanceid,120;finemoney,90;address,500;memo,630;dealwithed,60;finestatus,25;createby,50;createdate,150;id,50;carrierid,250;" loadedclick="0" ToolTip="ttp_xtmst_fineorder" Name="xtmst_fineorderLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>id</Index>
+<DbTable>tms.xtmst_fineorder x left join tms.xtmst_freight x0 on x.freightid=x0.freightid left join tms.xtmsm_driver x1 on x.driverid=x1.driverid left join tms.xtmsm_finesordinance x2 on x.finesordinanceid=x2.finesordinanceid left join tms.xtmsc_status_option x3 on x.finestatus=x3.statuscode left join tms.xtmsm_carrier x4 on x.carrierid=x4.carrierid</DbTable>
+<Data>x0.FreightCode freightid,x.finenumber,x1.DriverName driverid,x.finedate,x2.Finesinstruction finesordinanceid,x.finemoney,x.address,x.memo,x.dealwithed,x3.StatusName finestatus,x.createby,x.createdate,x.id,x4.CarrierName carrierid</Data>
+<Order>id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails><DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>id='%{xtmst_fineorder_vLst[id]}'</Where></DbDetails><submit next="$this.xtmst_fineorder.xtmst_fineorderLst" namelist="DbDetails"/><assign name="$this.xtmst_fineorder.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_fineorder</DbTable>
+<Where>id='%{xtmst_fineorder_vLst[id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

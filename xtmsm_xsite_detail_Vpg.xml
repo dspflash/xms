@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmsm_xsite_detail"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmsm_xsite_detail" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>xtmsm_xsite_detail_id</Index>
+<DbTable>tms.xtmsm_xsite_detail x left join tms.xtmsm_master_city x0 on x.city_id=x0.cityid</DbTable>
+<Data>count(*) records</Data>
+<Order>xtmsm_xsite_detail_id</Order><Queryformat>select %{data} from (select x.xtmsm_xsite_detail_id from %{dbtable} %{where} GROUP BY x.xtmsm_xsite_detail_id  ORDER BY x.xtmsm_xsite_detail_id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmsm_xsite_detail" expr="js(Math.ceil(%{records_xtmsm_xsite_detail}/%{xtmsm_xsite_detail_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmsm_xsite_detail" expr="js('1~'+Math.ceil(%{records_xtmsm_xsite_detail}/%{xtmsm_xsite_detail_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmsm_xsite_detail" Size="60,20"><OnSelEndOK><submit next="xtmsm_xsite_detail_vLst" function="GetPage(%{pgscb_xtmsm_xsite_detail}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmsm_xsite_detail" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmsm_xsite_detail" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmsm_xsite_detail_vLst" Size="50,20"><OnClick><submit next="xtmsm_xsite_detail_vLst" function="GetPage(%{pgcur_xtmsm_xsite_detail}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

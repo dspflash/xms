@@ -1,0 +1,61 @@
+﻿<GroupBox Name="GBDEDITxtmsm_billingconfiguration"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_weightunitprice"><Ctrls>
+<Label Align="Right" Text="weightunitprice" Name="lb_weightunitprice" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_weightunitprice" Name="weightunitprice" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_volumeunitprice"><Ctrls>
+<Label Align="Right" Text="volumeunitprice" Name="lb_volumeunitprice" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_volumeunitprice" Name="volumeunitprice" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_startmileage"><Ctrls>
+<Label Align="Right" Text="startmileage" Name="lb_startmileage" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_startmileage" Name="startmileage" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_overunitprice"><Ctrls>
+<Label Align="Right" Text="overunitprice" Name="lb_overunitprice" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_overunitprice" Name="overunitprice" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_backofffee"><Ctrls>
+<Label Align="Right" Text="backofffee" Name="lb_backofffee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_backofffee" Name="backofffee" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_returnfee"><Ctrls>
+<Label Align="Right" Text="returnfee" Name="lb_returnfee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_returnfee" Name="returnfee" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_smallorderfee"><Ctrls>
+<Label Align="Right" Text="smallorderfee" Name="lb_smallorderfee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_smallorderfee" Name="smallorderfee" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_status"><Ctrls>
+<CheckBox Text="status" ToolTip="ttp_status" Name="status" Size="230,20" checked="true"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_creratedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="creratedate" overlap="pre" Name="lb_creratedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_creratedate" overlap="pre" Name="creratedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updateby" Visible="false"><Ctrls>
+<Label Align="Right" Text="updateby" overlap="pre" Name="lb_updateby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_updateby" overlap="pre" Name="updateby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updatedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="updatedate" overlap="pre" Name="lb_updatedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_updatedate" overlap="pre" Name="updatedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_configurationid" Visible="false"><Ctrls>
+<Label Align="Right" Text="configurationid" overlap="pre" Name="lb_configurationid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_configurationid" overlap="pre" Name="configurationid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmsm_billingconfiguration_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmsm_billingconfiguration_id" overlap="pre" Name="lb_xtmsm_billingconfiguration_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmsm_billingconfiguration_id" overlap="pre" Name="xtmsm_billingconfiguration_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{xtmsm_billingconfiguration_id}'"><SetVisible name="insertxtmsm_billingconfiguration" Visible="0"/><SetVisible name="modifyxtmsm_billingconfiguration" Visible="1"/><else/><SetVisible name="insertxtmsm_billingconfiguration" Visible="1"/><SetVisible name="modifyxtmsm_billingconfiguration" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_carrierid" Visible="false"><Ctrls>
+<Label Align="Right" Text="carrierid" overlap="pre" Name="lb_carrierid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrierid" overlap="pre" Name="carrierid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

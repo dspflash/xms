@@ -1,0 +1,9 @@
+﻿<WndTap Name="xtmsm_operateline_detail_v" Text="xtmsm_operateline_detail">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_operateline_detail_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_operateline_detail.xml"/>
+<Ctrls><GroupBox  Name="GBxtmsm_operateline_detail" id="xtmsm_operateline_detail" Text="xtmsm_operateline_detail" Size="100,100"><Ctrls>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_operateline_detail_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

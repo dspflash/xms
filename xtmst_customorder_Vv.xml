@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVxtmst_customorder" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmst_customorder_vLst" ToolTip="ttp_xtmst_customorder_v" Size="700,450" OnLoad="init" Heading="ordercode,250;deliverymode,120;consignmentmode,120;orderstatus,50;status,25;planshipmentdate,150;plantodate,150;timeliness,50;memberid,50;ordersource,120;synccode,250;consignee,640;tocityid,50;consigneeaddress,640;consigneemobilephone,250;shipper,640;fromcityid,50;shipperaddress,640;shippermobilephone,250;consigneephone,250;estvolumn,90;estweight,90;isdangerous,60;custommemo,640;issealbox,60;isexpressorder,50;settlementamount,90;settlementby,50;settlementdate,150;settlementstatus,25;ordertype,25;carrycode,250;submitdate,150;iscomplain,60;linkorderid,250;isadjustorder,60;adjuststatus,25;sendstatus,25;isfinishout,60;finishoutdate,150;materialtype,50;customerorderid,250;createby,50;createdate,150;updateby,50;updatedate,150;carrierid,250;xtmst_customorder_id,100;" loadedclick="0">
+	<DbDetails >
+<Index>xtmst_customorder_id</Index>
+<DbTable>tms.xtmst_customorder x left join tms.xtmsc_type_option x0 on x.deliverymode=x0.typecode left join tms.xtmsc_type_option x1 on x.consignmentmode=x1.typecode left join tms.xtmsc_status_option x2 on x.orderstatus=x2.statuscode left join tms.xtmsc_status_option x3 on x.status=x3.statuscode left join tms.xms_member x4 on x.memberid=x4.memberid left join tms.xtmsc_type_option x5 on x.ordersource=x5.typecode left join tms.xtmsm_master_city x6 on x.tocityid=x6.cityid left join tms.xtmsm_master_city x7 on x.fromcityid=x7.cityid left join tms.xms_user x8 on x.settlementby=x8.xms_user_id left join tms.xtmsc_status_option x9 on x.settlementstatus=x9.statuscode left join tms.xtmsc_type_option x10 on x.ordertype=x10.typecode left join tms.xtmst_customorder x11 on x.linkorderid=x11.customerorderid</DbTable>
+<Data>x.ordercode,x0.TypeName deliverymode,x1.TypeName consignmentmode,x2.StatusName orderstatus,x3.StatusName status,x.planshipmentdate,x.plantodate,x.timeliness,x4.MemberName memberid,x5.TypeName ordersource,x.synccode,x.consignee,x6.CityAllName tocityid,x.consigneeaddress,x.consigneemobilephone,x.shipper,x7.CityAllName fromcityid,x.shipperaddress,x.shippermobilephone,x.consigneephone,x.estvolumn,x.estweight,x.isdangerous,x.custommemo,x.issealbox,x.isexpressorder,x.settlementamount,x8.UserName settlementby,x.settlementdate,x9.StatusName settlementstatus,x10.TypeName ordertype,x.carrycode,x.submitdate,x.iscomplain,x11.OrderCode linkorderid,x.isadjustorder,x.adjuststatus,x.sendstatus,x.isfinishout,x.finishoutdate,x.materialtype,x.customerorderid,x.createby,x.createdate,x.updateby,x.updatedate,x.carrierid,x.xtmst_customorder_id</Data>
+<Order>xtmst_customorder_id</Order></DbDetails>
+<DbDetails><Where>x.carrierid='%{orgguid}'</Where></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>xtmst_customorder_id='%{xtmst_customorder_vLst[xtmst_customorder_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_customorder.xtmst_customorderLst"/><assign name="$this.xtmst_customorder.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Where>xtmst_customorder_id='%{xtmst_customorder_vLst[xtmst_customorder_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_xtmst_customorder" expr="js(%{xtmst_customorder_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xtmst_customorder" expr="js(%{xtmst_customorder_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

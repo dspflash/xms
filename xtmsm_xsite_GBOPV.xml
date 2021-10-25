@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmsm_xsite" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmsm_xsite" Name="deletextmsm_xsite" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmsm_xsite</DbTable>
+<Where>xtmsm_xsite_id='%{xtmsm_xsiteLst[xtmsm_xsite_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmsm_xsite" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmsm_xsite" Name="searchxtmsm_xsite" Size="50,20">
+			  <OnClick><submit next="xtmsm_xsiteLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmsm_xsiteLst" OnClick="(xtmsm_xsiteLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmsm_xsiteLst" OnClick="(xtmsm_xsiteLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmsm_xsiteLst" OnClick="(xtmsm_xsiteLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

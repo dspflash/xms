@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_customorderdetail" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xtmst_customorderdetail_id" Text="create" ToolTip="ttp_creatextmst_customorderdetail" Name="insertxtmst_customorderdetail" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_customorderdetail</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>customerorderid[customerorderid],commodityname,transfeesettlementsmode,amount,volume,weight,length,width,height,commoditycode,productbatch</Data>
+<DataEx>customorderdetailid,commodityid;uuid(),if('%{CommodityID}'='',uuid(),'%{CommodityID}')</DataEx>
+<queryFormat>SET @seq=0;SELECT SUBSTR(ComplainCode,-5)+0 INTO @seq FROM tms.xtmst_complain WHERE DATE(CreateDate)=CURDATE() ORDER BY ComplainCode DESC LIMIT 0,1;SELECT generate_orderNo(Code_Prefix, DT_MODE, @seq,'','') INTO @odn FROM tms.xms_doc_code WHERE docType='complain';insert into %{table} %{data};</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_customorderdetail[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_customorderdetailLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_customorderdetail_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_customorderdetail" Name="modifyxtmst_customorderdetail" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_customorderdetail</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>commodityname,transfeesettlementsmode,amount,volume,weight,length,width,height,commoditycode,productbatch</Data>
+<DataEx/>
+<Where>xtmst_customorderdetail_id='%{xtmst_customorderdetail_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_customorderdetail[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_customorderdetailLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_customorderdetail_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_customorderdetail" Name="resetxtmst_customorderdetail" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_customorderdetail" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_customorderdetail" Name="gsearchxtmst_customorderdetail" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_customorderdetailLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_customorderdetail" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

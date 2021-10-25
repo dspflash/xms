@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmsm_xsite_detail" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialxtmsm_xsite_detail" Size="50,20">
+<OnClick><submit next="xtmsm_xsite_detail_vLst" function="initial"/><submit next="records_xtmsm_xsite_detail" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPxtmsm_xsite_detail_vLst" Size="50,20">
+<OnClick><submit next="xtmsm_xsite_detail_vLst" function="GetPage(first)"/><submit next="records_xtmsm_xsite_detail"/></OnClick></Button>
+<Button Text="prepage" Name="PRExtmsm_xsite_detail_vLst" Size="50,20">
+<OnClick><submit next="xtmsm_xsite_detail_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPxtmsm_xsite_detail_vLst" Size="50,20">
+<OnClick><submit next="xtmsm_xsite_detail_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

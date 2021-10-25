@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVxtmsm_vehicle" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmsm_vehicle_vLst" ToolTip="ttp_xtmsm_vehicle_v" Size="700,450" OnLoad="init" Heading="platenumber,50;nature,120;vehicletype,120;driver,120;lorrydriver,120;vehiclebrand,100;status,60;purchasedate,150;registrationdate,150;scrapdate,150;inspectiondate,150;insurancedate,150;insurancecompany,640;roadtransportpermit,250;drivinglicenceno,100;containersize,250;volume,20;weight,20;length,90;width,90;height,90;vehiclecolor,250;fueltype,120;type,100;enginenumber,100;owner,100;vinno,250;producer,640;image,20;memo,250;usestatus,25;vehicleid,250;createby,50;createdate,150;updateby,50;updatedate,150;xtmsm_vehicle_id,100;carrierid,250;" loadedclick="0">
+	<DbDetails >
+<Index>xtmsm_vehicle_id</Index>
+<DbTable>tms.xtmsm_vehicle x left join tms.xtmsc_type_option x0 on x.nature=x0.typecode left join tms.xtmsc_type_option x1 on x.vehicletype=x1.typecode left join tms.xtmsm_driver x2 on x.driver=x2.driverid left join tms.xtmsm_driver x3 on x.lorrydriver=x3.driverid left join tms.xtmsc_type_option x4 on x.fueltype=x4.typecode left join tms.xtmsc_status_option x5 on x.usestatus=x5.statuscode</DbTable>
+<Data>x.platenumber,x0.TypeName nature,x1.TypeName vehicletype,x2.DriverName driver,x3.DriverName lorrydriver,x.vehiclebrand,x.status,x.purchasedate,x.registrationdate,x.scrapdate,x.inspectiondate,x.insurancedate,x.insurancecompany,x.roadtransportpermit,x.drivinglicenceno,x.containersize,x.volume,x.weight,x.length,x.width,x.height,x.vehiclecolor,x4.TypeName fueltype,x.type,x.enginenumber,x.owner,x.vinno,x.producer,x.image,x.memo,x5.StatusName usestatus,x.vehicleid,x.createby,x.createdate,x.updateby,x.updatedate,x.xtmsm_vehicle_id,x.carrierid</Data>
+<Order>xtmsm_vehicle_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>xtmsm_vehicle_id='%{xtmsm_vehicle_vLst[xtmsm_vehicle_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_vehicle.xtmsm_vehicleLst"/><assign name="$this.xtmsm_vehicle.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_vehicle</DbTable>
+<Where>xtmsm_vehicle_id='%{xtmsm_vehicle_vLst[xtmsm_vehicle_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_xtmsm_vehicle" expr="js(%{xtmsm_vehicle_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xtmsm_vehicle" expr="js(%{xtmsm_vehicle_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

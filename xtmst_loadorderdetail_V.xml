@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmst_loadorderdetail_v" Text="xtmst_loadorderdetail">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorderdetail_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><freightid format="x.freightid='%{opvalue}'"/><planid format="x.planid='%{opvalue}'"/><memo format="(x.memo like '%%{opvalue}%')"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><updateby format="(x.updateby like '%%{opvalue}%')"/><updatedate format="(x.updatedate between '%{updatedate[datetime]}' and '%{updatedate[datetime2]}')"/><loadorderid format="(x.loadorderid like '%%{opvalue}%')"/><loaddetailid format="(x.loaddetailid like '%%{opvalue}%')"/><xtmst_loadorderdetail_id format="(x.xtmst_loadorderdetail_id like '%%{opvalue}%')"/><xtmst_loadorder_id format="(x.xtmst_loadorder_id like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_loadorderdetail.xml"/>
+<Ctrls><GroupBox  Name="GBxtmst_loadorderdetail" id="xtmst_loadorderdetail" Text="xtmst_loadorderdetail" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorderdetail_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmst_loadorderdetail" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmst_loadorderdetail.GBDEDITxtmst_loadorderdetail" function="reset"/><assign name="$this.xtmst_loadorderdetail.frmwndctrl" expr="%{$this.xtmst_loadorderdetail_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmst_loadorderdetail" Name="resetxtmst_loadorderdetail" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmst_loadorderdetail" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_loadorderdetail" Name="gsearchxtmst_loadorderdetail" Size="50,20">	<OnClick>	
+<search next="xtmst_loadorderdetail_vLst" listed="0" prefixwhere="1" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_loadorderdetail" namelist="search" function="search"/>	
+<search next="records_xtmst_loadorderdetail" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_loadorderdetail" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorderdetail_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorderdetail_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorderdetail_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

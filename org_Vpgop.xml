@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVorg" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialorg" Size="50,20">
+<OnClick><submit next="org_vLst" function="initial"/><submit next="records_org" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPorg_vLst" Size="50,20">
+<OnClick><submit next="org_vLst" function="GetPage(first)"/><submit next="records_org"/></OnClick></Button>
+<Button Text="prepage" Name="PREorg_vLst" Size="50,20">
+<OnClick><submit next="org_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPorg_vLst" Size="50,20">
+<OnClick><submit next="org_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

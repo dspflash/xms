@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsm_driver" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsm_driverLst" ToolTip="ttp_xtmsm_driver" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmsm_driver_id</Index>
+<DbTable>tms.xtmsm_driver</DbTable>
+<Data>drivername,nature,phone1,phone2,idnumber,emergencycontactor,emergencyphone,drivercode,sex,createby,createdate,updateby,updatedate,driverid,xtmsm_driver_id,carrierid</Data>
+<Order>xtmsm_driver_id</Order></DbDetails>
+<OnClick><assign name="nature[typecode]" expr="%{xtmsm_driverLst[nature]}" function="SetSel"/><assign name="sex[typecode]" expr="%{xtmsm_driverLst[sex]}" function="SetSel"/>
+<if cond="%{xtmsm_driver_id}"><SetVisible name="insertxtmsm_driver" Visible="0"/><SetVisible name="modifyxtmsm_driver" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

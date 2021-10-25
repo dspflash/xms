@@ -1,0 +1,9 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="addone" mustselected="0"><if cond="!%{operateline_id}"><alert expr="operateline_id is Empty!"/><else/><submit next="$parent.xtmsm_operateline_detail.GBDEDITxtmsm_operateline_detail" function="reset"/><assign name="$parent.xtmsm_operateline_detail.operateline_id" expr="%{operateline_id}"/><assign name="$parent.xtmsm_operateline_detail.frmwndctrl" expr="%{this}"/></if></op>
+<op text="modify"><DbDetails><Where>operateline_detail_id='%{xtmsm_operateline_detail_vLst[operateline_detail_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.xtmsm_operateline_detail.xtmsm_operateline_detailLst"/><DbDetails><Where>CityID=(select city_id from xtmsm_operateline_detail where operateline_detail_id='%{xtmsm_operateline_detail_vLst[operateline_detail_id]}')</Where></DbDetails><submit namelist="DbDetails" next="$parent.xtmsm_operateline_detail.city_id"/><assign name="$parent.xtmsm_operateline_detail.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_operateline_detail</DbTable>
+<Where>operateline_detail_id='%{xtmsm_operateline_detail_vLst[operateline_detail_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

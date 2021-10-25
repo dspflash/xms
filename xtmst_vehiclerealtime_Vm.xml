@@ -1,0 +1,22 @@
+﻿<WndTap Name="xtmst_vehiclerealtime_v" Text="xtmst_vehiclerealtime">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclerealtime_Ve.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Vehicle_pick.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="XSite_pick.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><vehiclerealtimecode format="(x.vehiclerealtimecode like '%%{opvalue}%')"/><deliverymode format="x.deliverymode='%{opvalue}'"/><consignmentmode format="x.consignmentmode='%{opvalue}'"/><operateineid format="x.operateineid='%{opvalue}'"/><fromcityid format="x.fromcityid='%{opvalue}'"/><tocityid format="x.tocityid='%{opvalue}'"/><fromxsiteid format="x.fromxsiteid='%{opvalue}'"/><toxsiteid format="x.toxsiteid='%{opvalue}'"/><fromaddress format="(x.fromaddress like '%%{opvalue}%')"/><toaddress format="(x.toaddress like '%%{opvalue}%')"/><vehicleid format="x.vehicleid='%{opvalue}'"/><driverid format="x.driverid='%{opvalue}'"/><lorrydriver format="x.lorrydriver='%{opvalue}'"/><status format="x.status='%{opvalue}'"/><freightnum format="(x.freightnum like '%%{opvalue}%')"/><totalweight format="(x.totalweight like '%%{opvalue}%')"/><totalvolumn format="(x.totalvolumn like '%%{opvalue}%')"/><remainweight format="(x.remainweight like '%%{opvalue}%')"/><remainvolumn format="(x.remainvolumn like '%%{opvalue}%')"/><carrierid format="(x.carrierid like '%%{opvalue}%')"/><vehiclerealtimeid format="(x.vehiclerealtimeid like '%%{opvalue}%')"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><updateby format="(x.updateby like '%%{opvalue}%')"/><updatedate format="(x.updatedate between '%{updatedate[datetime]}' and '%{updatedate[datetime2]}')"/><depotnum format="(x.depotnum like '%%{opvalue}%')"/><startdatetime format="(x.startdatetime between '%{startdatetime[datetime]}' and '%{startdatetime[datetime2]}')"/><startdatetimeactual format="(x.startdatetimeactual between '%{startdatetimeactual[datetime]}' and '%{startdatetimeactual[datetime2]}')"/><terminatedatetime format="(x.terminatedatetime between '%{terminatedatetime[datetime]}' and '%{terminatedatetime[datetime2]}')"/><terminatedatetimeactual format="(x.terminatedatetimeactual between '%{terminatedatetimeactual[datetime]}' and '%{terminatedatetimeactual[datetime2]}')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_vehiclerealtime.xml"/>
+<Ctrls><GroupBox  Name="GBxtmst_vehiclerealtime" id="xtmst_vehiclerealtime" Text="xtmst_vehiclerealtime" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclerealtime_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmst_vehiclerealtime" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmst_vehiclerealtime.GBDEDITxtmst_vehiclerealtime" function="reset"/><assign name="$this.xtmst_vehiclerealtime.frmwndctrl" expr="%{$this.xtmst_vehiclerealtime_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmst_vehiclerealtime" Name="resetxtmst_vehiclerealtime" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmst_vehiclerealtime" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_vehiclerealtime" Name="gsearchxtmst_vehiclerealtime" Size="50,20">	<OnClick>	
+<search next="xtmst_vehiclerealtime_vLst" listed="0" prefixwhere="0" prefixand="1" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_vehiclerealtime" namelist="search" function="search"/>	
+<search next="records_xtmst_vehiclerealtime" listed="0" prefixwhere="0" prefixand="1"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_vehiclerealtime" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclerealtime_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclerealtime_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclerealtime_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

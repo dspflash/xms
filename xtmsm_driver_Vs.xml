@@ -1,0 +1,53 @@
+﻿<GroupBox Name="GBDEDITxtmsm_driver" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_drivername" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_drivername" Size="60,20" Text="drivername" Align="Right"/>
+<TextBox Name="drivername" Size="170,20" Text="" Weight="170" ToolTip="ttp_drivername"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_nature" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_nature" Size="60,20" Text="nature" Align="Right"  onload="init"/>
+<ComboBox Name="nature" Size="170,100" Text="" Weight="170"  ToolTip="ttp_nature"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>tablename='Driver' and ColumnName='nature'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_phone1" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_phone1" Size="60,20" Text="phone1" Align="Right"/>
+<TextBox Name="phone1" Size="150,20" Text="" Weight="150" ToolTip="ttp_phone1"></TextBox>
+<MagicCtrl Name="dialphone1" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{phone1}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_phone2" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_phone2" Size="60,20" Text="phone2" Align="Right"/>
+<TextBox Name="phone2" Size="150,20" Text="" Weight="150" ToolTip="ttp_phone2"></TextBox>
+<MagicCtrl Name="dialphone2" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{phone2}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_idnumber" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_idnumber" Size="60,20" Text="idnumber" Align="Right"/>
+<TextBox Name="idnumber" Size="170,20" Text="" Weight="170" ToolTip="ttp_idnumber"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_emergencycontactor" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_emergencycontactor" Size="60,20" Text="emergencycontactor" Align="Right"/>
+<TextBox Name="emergencycontactor" Size="170,20" Text="" Weight="170" ToolTip="ttp_emergencycontactor"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_emergencyphone" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_emergencyphone" Size="60,20" Text="emergencyphone" Align="Right"/>
+<TextBox Name="emergencyphone" Size="150,20" Text="" Weight="150" ToolTip="ttp_emergencyphone"></TextBox>
+<MagicCtrl Name="dialemergencyphone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{emergencyphone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_drivercode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_drivercode" Size="60,20" Text="drivercode" Align="Right"/>
+<TextBox Name="drivercode" Size="170,20" Text="" Weight="170" ToolTip="ttp_drivercode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_sex" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_sex" Size="60,20" Text="sex" Align="Right"  onload="init"/>
+<ComboBox Name="sex" Size="170,100" Text="" Weight="170"  ToolTip="ttp_sex"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=140</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

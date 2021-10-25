@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITxtmst_loadorderdetail" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_freightid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_freightid" Size="60,20" Text="freightid" Align="Right"/>
+<TextBox Name="freightid" Size="150,20" Text="" Weight="150" ToolTip="ttp_freightid">
+	<DbDetails fcsm="true">
+<Index>freightid</Index>
+<DbTable>tms.xtmst_freight</DbTable>
+<Data>FreightCode,PlanID,LoadOrderID,xtmst_loadorder_id,FreightID</Data>
+<Where></Where>
+<queryFormat>select %{data} from uv_LoadOrderFreight where %{where}</queryFormat></DbDetails><OnEnChange><submit next="PlanID"/></OnEnChange></TextBox>
+<MagicCtrl Name="pickfreightid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.xtmst_loadorder_freight.frmwndctrl" expr="freightid"/><DbDetails ><Where>xtmst_loadorder_id='%{xtmst_loadorder_id}' and !IsChecked</Where></DbDetails><submit next="$this.xtmst_loadorder_freight.uv_LoadOrderFreightLst" namelist="DbDetails"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox Name="GB_planid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_planid" Size="60,20" Text="planid" Align="Right"/>
+<TextBox Name="planid" Size="170,20" Text="" Weight="170" ToolTip="ttp_planid">
+	<DbDetails>
+<Index>planid</Index>
+<DbTable>tms.xtmst_dispatchplan</DbTable>
+<Data>PlanCode,PlanID</Data>
+<Where>PlanID='%{FreightID[PlanID]}'</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_memo" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_memo" Size="60,20" Text="memo" Align="Right"/>
+<TextBox Name="memo" Size="170,20" Text="" Weight="170" ToolTip="ttp_memo"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

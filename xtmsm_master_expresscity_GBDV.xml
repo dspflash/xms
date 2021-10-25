@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmsm_master_expresscity"><Ctrls>
+<ListCtrl Heading="province,120;city,120;county,120;citycode,20;cityid,50;" loadedclick="0" ToolTip="ttp_xtmsm_master_expresscity" Name="xtmsm_master_expresscityLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_expresscity</DbTable>
+<Data>province,city,county,citycode,cityid</Data>
+<Order>cityid</Order></DbDetails>
+<OnClick><assign name="province[province]" function="SetSel" expr="%{xtmsm_master_expresscityLst[province]}"/><assign name="city[city]" function="SetSel" expr="%{xtmsm_master_expresscityLst[city]}"/><assign name="county[county]" function="SetSel" expr="%{xtmsm_master_expresscityLst[county]}"/></OnClick><DbDetails><queryFormat id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>cityid='%{xtmsm_master_expresscity_vLst[cityid]}'</Where></DbDetails><submit next="$this.xtmsm_master_expresscity.xtmsm_master_expresscityLst" namelist="DbDetails"/><assign name="$this.xtmsm_master_expresscity.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_master_expresscity</DbTable>
+<Where>cityid='%{xtmsm_master_expresscity_vLst[cityid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

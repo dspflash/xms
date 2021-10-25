@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmsm_operateline" Size="100,100"><Ctrls>
+<Button sqlpkinsert="operateline_id" Text="create" ToolTip="ttp_creatextmsm_operateline" Name="insertxtmsm_operateline" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmsm_operateline</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>operateline_name,line_type,distance,cityid_start[cityid],cityid_end[cityid],isprimary,remark,active</Data>
+<DataEx>created_by,creation_date,last_update_by,last_update_date,org_guid,operateineid;'%{user_id}',now(),'%{user_id}',now(),'%{orgguid}',uuid()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmsm_operateline[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_operatelineLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_operateline_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmsm_operateline" Name="modifyxtmsm_operateline" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmsm_operateline</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>operateline_name,line_type,distance,cityid_start[cityid],cityid_end[cityid],isprimary,remark,active</Data>
+<DataEx>last_update_by,last_update_date;'%{user_id}',now()</DataEx>
+<Where>operateline_id='%{operateline_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmsm_operateline[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_operatelineLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_operateline_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmsm_operateline" Name="resetxtmsm_operateline" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmsm_operateline" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_operateline" Name="gsearchxtmsm_operateline" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmsm_operatelineLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmsm_operateline" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

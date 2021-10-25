@@ -1,0 +1,59 @@
+﻿<Language name="xms_user">
+<Lang name="xms_user" value="用户"/>
+<Lang name="xms_reg_user" value="注册"/>
+<Lang name="invitation_code" value="邀请码"/>
+<Lang name="vuser" value="用户"/>
+<Lang name="myinfo" value="我的信息"/>
+<Lang name="AdminCarrier" value="管理我的企业"/>
+<Lang name="role_name" value="角色"/>
+<Lang name="carriername" value="承运商"/>
+<Lang name="modifypass" value="修改密码"/>
+<Lang name="old password" value="旧密码"/>
+<Lang name="new password" value="新密码"/>
+<Lang name="reinupt password" value="新密码(重复)"/>
+<Lang name="position_name" value="岗位"/>
+<Lang name="user_language" value="语言"/>
+<Lang name="TabEditxms_user" value="xms_user Edit"/>
+<Lang name="TabViewxms_user" value="xms_user View"/>
+<Lang name="username" value="用户名"/>
+<Lang name="ttp_username" value=""/>
+<Lang name="password" value="密码"/>
+<Lang name="ttp_password" value=""/>
+<Lang name="phone" value="电话"/>
+<Lang name="ttp_phone" value=""/>
+<Lang name="email" value="邮址"/>
+<Lang name="ttp_email" value=""/>
+<Lang name="active" value=""/>
+<Lang name="ttp_active" value=""/>
+<Lang name="created_by" value=""/>
+<Lang name="ttp_created_by" value=""/>
+<Lang name="creation_date" value=""/>
+<Lang name="ttp_creation_date" value=""/>
+<Lang name="last_update_by" value=""/>
+<Lang name="ttp_last_update_by" value=""/>
+<Lang name="last_update_date" value=""/>
+<Lang name="ttp_last_update_date" value=""/>
+<Lang name="last_visit_date" value=""/>
+<Lang name="ttp_last_visit_date" value=""/>
+<Lang name="xms_user_id" value=""/>
+<Lang name="ttp_xms_user_id" value=""/>
+<Lang name="userguid" value=""/>
+<Lang name="ttp_userguid" value=""/>
+<Lang name="org_guid" value=""/>
+<Lang name="ttp_org_guid" value=""/>
+<Lang name="ttp_operationxms_user" value=""/>
+<Lang name="ttp_createxms_user" value=""/>
+<Lang name="ttp_modifyxms_user" value=""/>
+<Lang name="ttp_resetxms_user" value=""/>
+<Lang name="ttp_deletexms_user" value=""/>
+<Lang name="ttp_refreshxms_user" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

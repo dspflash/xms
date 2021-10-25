@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_dispatchplan" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_dispatchplanLst" ToolTip="ttp_xtmst_dispatchplan" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_dispatchplan_id</Index>
+<DbTable>tms.xtmst_dispatchplan</DbTable>
+<Data>vehicleid,begintime,endtime,freightid,plancode,status,fromxsiteid,fromcityid,fromaddress,toxsiteid,tocityid,toaddress,vehiclerealtimeid,serialno,deliverymode,consignmentmode,deliverymethod,memo,actualbegintime,actualendtime,planid,createby,createdate,updateby,updatedate,xtmst_dispatchplan_id,carrierid</Data>
+<Order>xtmst_dispatchplan_id</Order></DbDetails>
+<OnClick><assign name="vehicleid[vehicleid]" expr="%{xtmst_dispatchplanLst[vehicleid]}" function="SetSel"/><assign name="freightid[freightid]" expr="%{xtmst_dispatchplanLst[freightid]}" function="SetSel"/><assign name="status[statuscode]" expr="%{xtmst_dispatchplanLst[status]}" function="SetSel"/><assign name="fromxsiteid[xsiteid]" expr="%{xtmst_dispatchplanLst[fromxsiteid]}" function="SetSel"/><assign name="fromcityid[cityid]" expr="%{xtmst_dispatchplanLst[fromcityid]}" function="SetSel"/><assign name="toxsiteid[xsiteid]" expr="%{xtmst_dispatchplanLst[toxsiteid]}" function="SetSel"/><assign name="tocityid[cityid]" expr="%{xtmst_dispatchplanLst[tocityid]}" function="SetSel"/><assign name="vehiclerealtimeid[vehiclerealtimeid]" expr="%{xtmst_dispatchplanLst[vehiclerealtimeid]}" function="SetSel"/><assign name="deliverymode[typecode]" expr="%{xtmst_dispatchplanLst[deliverymode]}" function="SetSel"/><assign name="consignmentmode[typecode]" expr="%{xtmst_dispatchplanLst[consignmentmode]}" function="SetSel"/><assign name="deliverymethod[typecode]" expr="%{xtmst_dispatchplanLst[deliverymethod]}" function="SetSel"/>
+<if cond="%{xtmst_dispatchplan_id}"><SetVisible name="insertxtmst_dispatchplan" Visible="0"/><SetVisible name="modifyxtmst_dispatchplan" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

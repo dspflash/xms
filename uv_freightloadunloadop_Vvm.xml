@@ -1,0 +1,49 @@
+﻿<GroupBox Name="GBDVuv_freightloadunloadop" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="uv_freightloadunloadop_vLst" ToolTip="ttp_uv_freightloadunloadop" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>tms.uv_freightloadunloadop u</DbTable>
+<Data>*</Data>
+<queryFormat>select %{data} from %{dbtable} where carrierid='%{orgguid}' %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="View"><DbDetails><Where>freightid='%{uv_freightloadunloadop_vLst[freightid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_freight_print.xtmst_freightLst"/></op>
+<op text="Situation"><submit next="xtmst_vehiclesituation_v.xtmst_vehiclesituation.GBDEDITxtmst_vehiclesituation" function="reset"/><DbDetails><Where>(TypeClass=130 and TypeCode&gt;'%{uv_freightloadunloadop_vLst[OperateTypeCode]}')</Where></DbDetails><submit namelist="DbDetails" next="xtmst_vehiclesituation_v.xtmst_vehiclesituation.OperateType"/><DbDetails><Where>VehicleRealTimeID = '%{uv_freightloadunloadop_vLst[vehiclerealtimeid]}'</Where></DbDetails><!--submit namelist="DbDetails" next="xtmst_vehiclesituation_v.xtmst_vehiclesituation.xtmst_vehiclesituationLst"/--><submit namelist="DbDetails" next="xtmst_vehiclesituation_v.xtmst_vehiclesituation.VehicleRealTimeID"/><DbDetails><Where>dp.VehicleRealTimeID = '%{uv_freightloadunloadop_vLst[vehiclerealtimeid]}' and IF('%{uv_freightloadunloadop_vLst[OperateTypeCode]}'='',(f.status IN (201,208,209,210)),f.status IN (205,206,207,211,212))</Where></DbDetails><submit namelist="DbDetails" next="xtmst_vehiclesituation_v.xtmst_vehiclesituation.FreightID"/></op>
+<op text="LoadOrder"><submit next="xtmst_loadorder_v.xtmst_loadorder.GBDEDITxtmst_loadorder" function="reset"/><DbDetails><Where>VehicleRealTimeID = '%{uv_freightloadunloadop_vLst[vehiclerealtimeid]}' and status!=603 and LoadCityID='%{uv_freightloadunloadop_vLst[FromCityID]}' AND LoadAddress='%{uv_freightloadunloadop_vLst[FromAddress]}'</Where></DbDetails><submit namelist="DbDetails" next="xtmst_loadorder_v.xtmst_loadorder.xtmst_loadorderLst"/><DbDetails><Where>PlanID = '%{uv_freightloadunloadop_vLst[PlanID]}'</Where></DbDetails><submit namelist="DbDetails" next="xtmst_loadorder_v.xtmst_loadorder.VehicleRealTimeID"/></op>
+<op text="UnLoadOrder"><submit next="xtmst_unloadorder_v.xtmst_unloadorder.GBDEDITxtmst_unloadorder" function="reset"/><DbDetails><Where>VehicleRealTimeID = '%{uv_freightloadunloadop_vLst[vehiclerealtimeid]}' and status!=603 and UnLoadCityID='%{uv_freightloadunloadop_vLst[ToCityID]}' AND UnLoadAddress='%{uv_freightloadunloadop_vLst[ToAddress]}'</Where></DbDetails><submit namelist="DbDetails" next="xtmst_unloadorder_v.xtmst_unloadorder.xtmst_unloadorderLst"/><DbDetails><Where>PlanID = '%{uv_freightloadunloadop_vLst[PlanID]}'</Where></DbDetails><submit namelist="DbDetails" next="xtmst_unloadorder_v.xtmst_unloadorder.VehicleRealTimeID"/></op>
+<op text="complete" needconfirm="1">
+<if cond="%{uv_freightloadunloadop_vLst[OpOrderID]}">
+<if cond="%{uv_freightloadunloadop_vLst[OperateTypeCode]}==1301">
+<DbDetails>
+<DbTable>tms.xtmst_loadorder</DbTable>
+<Where>ld.LoadOrderID='%{uv_freightloadunloadop_vLst[OpOrderID]}'</Where>
+<queryFormat>UPDATE tms.xtmst_loadorder ld 
+JOIN tms.xtmst_loadorderdetail ldd ON ld.LoadOrderID=ldd.LoadOrderID
+JOIN tms.xtmst_dispatchplan dp ON ld.VehicleRealTimeID=dp.VehicleRealTimeID AND dp.FreightID=ldd.FreightID
+JOIN tms.xtmst_freight f ON f.FreightID=dp.FreightID
+left JOIN tms.xtmst_pickuporder pk ON f.PickupOrderID=pk.PickupOrderID  
+JOIN tms.xtmst_vehiclesituation vs ON vs.VehicleRealTimeID=ld.VehicleRealTimeID AND vs.CityID=ld.LoadCityID AND vs.Address=ld.LoadAddress
+JOIN tms.xtmst_vehiclerealtime vrt ON ld.VehicleRealTimeID=vrt.VehicleRealTimeID 
+SET ld.Status=603,dp.Status=302,f.STATUS=if(f.ConsignmentMode=1001,if(f.DeliveryMethod=1213 or f.DeliveryMethod=1214,206,if(f.FromXSiteID=dp.FromXSiteID,207,if(dp.ToXSiteID is null ,211,212))),if(f.ConsignmentMode=1002,205,206)) WHERE %{WHERE};
+set @vrtid=null;select VehicleRealTimeID into @vrtid from %{table} ld where %{where};
+</queryFormat></DbDetails>,pk.OrderSTATUS=106
+<submit namelist="DbDetails"/><submit/>
+<elseif cond="%{uv_freightloadunloadop_vLst[OperateTypeCode]}==1302"/>
+<DbDetails>
+<DbTable>tms.xtmst_unloadorder</DbTable>
+<Where>uld.unLoadOrderID='%{uv_freightloadunloadop_vLst[OpOrderID]}'</Where>
+<queryFormat>UPDATE tms.xtmst_unloadorder uld 
+JOIN tms.xtmst_unloadorderdetail uldd ON uld.unLoadOrderID=uldd.unLoadOrderID
+JOIN tms.xtmst_dispatchplan dp ON uld.VehicleRealTimeID=dp.VehicleRealTimeID AND dp.FreightID=uldd.FreightID
+JOIN tms.xtmst_freight f ON f.FreightID=dp.FreightID
+left JOIN tms.xtmst_pickuporder pk ON f.PickupOrderID=pk.PickupOrderID  
+JOIN tms.xtmst_vehiclesituation vs ON vs.VehicleRealTimeID=uld.VehicleRealTimeID AND vs.CityID=uld.unLoadCityID AND vs.Address=uld.unLoadAddress
+SET uld.Status=603,dp.Status=303,f.STATUS=if(f.ConsignmentMode=1001,if(f.DeliveryMethod=1211,if(f.ToXSiteID=dp.ToXSiteID,208,210),if(f.DeliveryMethod=1212,if(f.ConsigneeAddress=dp.ToAddress,214,if(f.ToXSiteID=dp.ToXSiteID,209,210)),214)),if(f.ConsignmentMode=1002,205,214)) WHERE %{WHERE};
+set @vrtid=null;select VehicleRealTimeID into @vrtid from %{table} uld where %{where};
+</queryFormat></DbDetails>,vrt.Status=404,pk.orderSTATUS=IF(f.FreightType=1200,104,107) 
+<submit namelist="DbDetails"/><submit/>
+</if></if></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_uv_freightloadunloadop" expr="js(%{uv_freightloadunloadop_vLst[currentpage]}+1)"/>
+<assign name="pgscb_uv_freightloadunloadop" expr="js(%{uv_freightloadunloadop_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

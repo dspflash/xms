@@ -1,0 +1,269 @@
+﻿<GroupBox Name="GBDEDITxtmst_customorder"><Ctrls>
+<GroupBox feature="tab" Text="Basic" Name="Basic"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_ordercode"><Ctrls>
+<Label Align="Right" Text="ordercode" Name="lb_ordercode" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_ordercode" Name="ordercode" readonly="true" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_deliverymode"><Ctrls>
+<Label Align="Right" Text="deliverymode" onload="init" Name="lb_deliverymode" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_deliverymode" onload="init" Name="deliverymode" Size="170,100">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TableName = 'DispatchPlan' AND ColumnName = 'DeliveryMode'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_consignmentmode"><Ctrls>
+<Label Align="Right" Text="consignmentmode" onload="init" Name="lb_consignmentmode" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_consignmentmode" onload="init" Name="consignmentmode" Size="170,100">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TableName = 'DispatchPlan' AND ColumnName = 'ConsignmentMode'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_orderstatus" Visible="false"><Ctrls>
+<Label Align="Right" Text="orderstatus" overlap="pre" Name="lb_orderstatus" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_orderstatus" overlap="pre" Name="orderstatus" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<Index>statuscode</Index>
+<DbTable>tms.xtmsc_status_option</DbTable>
+<Data>StatusName,StatusCode</Data>
+<Where>status_type=90</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_status" Visible="false"><Ctrls>
+<Label Align="Right" Text="status" overlap="pre" Name="lb_status" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_status" overlap="pre" Name="status" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<Index>statuscode</Index>
+<DbTable>tms.xtmsc_status_option</DbTable>
+<Data>StatusName,StatusCode</Data>
+<Where>StatusType = 10</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_planshipmentdate"><Ctrls>
+<Label Align="Right" Text="planshipmentdate" Name="lb_planshipmentdate" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_planshipmentdate" Name="planshipmentdate" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_plantodate"><Ctrls>
+<Label Align="Right" Text="plantodate" Name="lb_plantodate" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_plantodate" Name="plantodate" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_timeliness"><Ctrls>
+<Label Align="Right" Text="timeliness" Name="lb_timeliness" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_timeliness" Name="timeliness" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_memberid"><Ctrls>
+<Label Align="Right" Text="memberid" Name="lb_memberid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_memberid" Name="memberid" Size="170,20">
+	<DbDetails>
+<Index>memberid</Index>
+<DbTable>tms.xms_member</DbTable>
+<Data>MemberName,MemberID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_ordersource" Visible="false"><Ctrls>
+<Label Align="Right" Text="ordersource" overlap="pre" onload="init" Name="lb_ordersource" readonly="true" Size="60,20" Visible="false"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_ordersource" overlap="pre" onload="init" Name="ordersource" readonly="true" Size="170,100" Visible="false">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=91</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_synccode"><Ctrls>
+<Label Align="Right" Text="synccode" Name="lb_synccode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_synccode" Name="synccode" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="ConsShipInfo" Name="ConsShipInfo"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_consignee"><Ctrls>
+<Label Align="Right" Text="consignee" Name="lb_consignee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_consignee" Name="consignee" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_tocityid"><Ctrls>
+<Label Align="Right" Text="tocityid" Name="lb_tocityid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_tocityid" Name="tocityid" Size="170,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_consigneeaddress"><Ctrls>
+<Label Align="Right" Text="consigneeaddress" Name="lb_consigneeaddress" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_consigneeaddress" Name="consigneeaddress" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_consigneemobilephone"><Ctrls>
+<Label Align="Right" Text="consigneemobilephone" Name="lb_consigneemobilephone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_consigneemobilephone" Name="consigneemobilephone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialconsigneemobilephone" OnClick="nis3ucs:%{consigneemobilephone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_shipper"><Ctrls>
+<Label Align="Right" Text="shipper" Name="lb_shipper" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_shipper" Name="shipper" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_fromcityid"><Ctrls>
+<Label Align="Right" Text="fromcityid" Name="lb_fromcityid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_fromcityid" Name="fromcityid" Size="170,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_shipperaddress"><Ctrls>
+<Label Align="Right" Text="shipperaddress" Name="lb_shipperaddress" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_shipperaddress" Name="shipperaddress" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_shippermobilephone"><Ctrls>
+<Label Align="Right" Text="shippermobilephone" Name="lb_shippermobilephone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_shippermobilephone" Name="shippermobilephone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialshippermobilephone" OnClick="nis3ucs:%{shippermobilephone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_consigneephone"><Ctrls>
+<Label Align="Right" Text="consigneephone" Name="lb_consigneephone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_consigneephone" Name="consigneephone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialconsigneephone" OnClick="nis3ucs:%{consigneephone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="FreightInfo" Name="FreightInfo"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_estvolumn"><Ctrls>
+<Label Align="Right" Text="estvolumn" Name="lb_estvolumn" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_estvolumn" Name="estvolumn" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_estweight"><Ctrls>
+<Label Align="Right" Text="estweight" Name="lb_estweight" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_estweight" Name="estweight" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_isdangerous"><Ctrls>
+<CheckBox Text="isdangerous" ToolTip="ttp_isdangerous" Name="isdangerous" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_custommemo"><Ctrls>
+<Label Align="Right" Text="custommemo" Name="lb_custommemo" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_custommemo" Name="custommemo" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_issealbox"><Ctrls>
+<CheckBox Text="issealbox" ToolTip="ttp_issealbox" Name="issealbox" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_isexpressorder"><Ctrls>
+<Label Align="Right" Text="isexpressorder" Name="lb_isexpressorder" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_isexpressorder" Name="isexpressorder" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_settlementamount" Visible="false"><Ctrls>
+<Label Align="Right" Text="settlementamount" overlap="pre" Name="lb_settlementamount" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_settlementamount" overlap="pre" Name="settlementamount" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_settlementby" Visible="false"><Ctrls>
+<Label Align="Right" Text="settlementby" overlap="pre" Name="lb_settlementby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_settlementby" overlap="pre" Name="settlementby" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<Index>xms_user_id</Index>
+<DbTable>tms.xms_user</DbTable>
+<Data>UserName,xms_user_id</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_settlementdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="settlementdate" overlap="pre" Name="lb_settlementdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_settlementdate" overlap="pre" Name="settlementdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_settlementstatus" Visible="false"><Ctrls>
+<Label Align="Right" Text="settlementstatus" overlap="pre" Name="lb_settlementstatus" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_settlementstatus" overlap="pre" Name="settlementstatus" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<Index>statuscode</Index>
+<DbTable>tms.xtmsc_status_option</DbTable>
+<Data>StatusName,StatusCode</Data>
+<Where>statustype=80</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_ordertype" Visible="false"><Ctrls>
+<Label Align="Right" Text="ordertype" overlap="pre" Name="lb_ordertype" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_ordertype" overlap="pre" Name="ordertype" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=90</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_carrycode" Visible="false"><Ctrls>
+<Label Align="Right" Text="carrycode" overlap="pre" Name="lb_carrycode" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrycode" overlap="pre" Name="carrycode" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_submitdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="submitdate" overlap="pre" Name="lb_submitdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_submitdate" overlap="pre" Name="submitdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_iscomplain" Visible="false"><Ctrls>
+<CheckBox Text="iscomplain" ToolTip="ttp_iscomplain" overlap="pre" Name="iscomplain" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_linkorderid"><Ctrls>
+<Label Align="Right" Text="linkorderid" Name="lb_linkorderid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_linkorderid" Name="linkorderid" Size="170,20">
+	<DbDetails>
+<Index>customerorderid</Index>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Data>OrderCode,CustomerOrderID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_isadjustorder" Visible="false"><Ctrls>
+<CheckBox Text="isadjustorder" ToolTip="ttp_isadjustorder" overlap="pre" Name="isadjustorder" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_adjuststatus" Visible="false"><Ctrls>
+<Label Align="Right" Text="adjuststatus" overlap="pre" Name="lb_adjuststatus" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_adjuststatus" overlap="pre" Name="adjuststatus" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_sendstatus" Visible="false"><Ctrls>
+<Label Align="Right" Text="sendstatus" overlap="pre" Name="lb_sendstatus" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_sendstatus" overlap="pre" Name="sendstatus" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_isfinishout" Visible="false"><Ctrls>
+<CheckBox Text="isfinishout" ToolTip="ttp_isfinishout" overlap="pre" Name="isfinishout" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_finishoutdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="finishoutdate" overlap="pre" Name="lb_finishoutdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_finishoutdate" overlap="pre" Name="finishoutdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_materialtype"><Ctrls>
+<Label Align="Right" Text="materialtype" Name="lb_materialtype" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_materialtype" Name="materialtype" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_customerorderid" Visible="false"><Ctrls>
+<Label Align="Right" Text="customerorderid" overlap="pre" Name="lb_customerorderid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_customerorderid" overlap="pre" Name="customerorderid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updateby" Visible="false"><Ctrls>
+<Label Align="Right" Text="updateby" overlap="pre" Name="lb_updateby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_updateby" overlap="pre" Name="updateby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updatedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="updatedate" overlap="pre" Name="lb_updatedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_updatedate" overlap="pre" Name="updatedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_carrierid" Visible="false"><Ctrls>
+<Label Align="Right" Text="carrierid" overlap="pre" Name="lb_carrierid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrierid" overlap="pre" Name="carrierid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmst_customorder_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmst_customorder_id" overlap="pre" Name="lb_xtmst_customorder_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmst_customorder_id" overlap="pre" Name="xtmst_customorder_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{xtmst_customorder_id}'"><SetVisible name="insertxtmst_customorder" Visible="0"/><SetVisible name="modifyxtmst_customorder" Visible="1"/><else/><SetVisible name="insertxtmst_customorder" Visible="1"/><SetVisible name="modifyxtmst_customorder" Visible="0"/></if><DbDetails><Where>CustomerOrderID=(select CustomerOrderID from xtmst_customorder where xtmst_customorder_id='%{xtmst_customorder_id}')</Where></DbDetails><submit next="xtmst_customorderdetail_vLst" namelist="DbDetails"/></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

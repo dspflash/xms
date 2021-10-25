@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsm_carrierdetail" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsm_carrierdetailLst" ToolTip="ttp_xtmsm_carrierdetail" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id</Index>
+<DbTable>tms.xtmsm_carrierdetail</DbTable>
+<Data>province,city,county,citycode,createby,createdate,updateby,updatedate,id,carrierid</Data>
+<Order>id</Order></DbDetails>
+<OnClick><assign name="province[province]" expr="%{xtmsm_carrierdetailLst[province]}" function="SetSel"/><assign name="city[city]" expr="%{xtmsm_carrierdetailLst[city]}" function="SetSel"/><assign name="county[county]" expr="%{xtmsm_carrierdetailLst[county]}" function="SetSel"/><assign name="carrierid[carrierid]" expr="%{xtmsm_carrierdetailLst[carrierid]}" function="SetSel"/>
+<if cond="%{id}"><SetVisible name="insertxtmsm_carrierdetail" Visible="0"/><SetVisible name="modifyxtmsm_carrierdetail" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

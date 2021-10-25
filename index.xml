@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><XI3uWnd keywords="x+|xPlus;三优物流，3u56,ai56" debug="0" Title="物流仓储系统" logo="http://56.3ucs.com/images/3u56.png" description="人工智能技术打造的新一代物流服务平台，人工智能ai物流">
+	<DbDetails>
+		<SubDriver>MySQL</SubDriver>
+		<Host>localhost</Host>
+		<database>tms</database>
+		
+		<characterset>utf8</characterset>
+		<User>i3u</User>
+		<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/db.xml" xpointer="pass"/>
+		<config>select PASSWORD,layout,org_guid orgguid,xms_user_id user_id,role_id role_id from user_v where username='%{UserName}';</config>'3u56'
+		
+		</DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\general.xml"/>			
+<WndTaps>
+<WndTap Text="三优物流" Name="xms"><Ctrls>
+<GroupBox cols="xs12 sm12 md12 lg12" Multiline="0" Name="GB_txt"><Ctrls>
+<Label Text="三优物流是什么？" line_width="600" Name="lb_code" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="三优物流是以AI人工智能为核心的新一代物流云服务平台。" line_width="600" Name="txt1" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="以“货物”为中心" line_width="600" Name="txt2" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="以“流通”为主线" line_width="600" Name="txt3" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="无缝衔接“货物”的生产、仓储、销售、运输、配送等环节" line_width="600" Name="txt4" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="紧密连接生产者、物流商、用户" line_width="600" Name="txt5" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="让供需更顺畅" line_width="600" Name="txt6" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="让流通更透明" line_width="600" Name="txt7" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="……" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="AI人工智能配载" line_width="600" Name="txt5" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="AI人工智能排线" line_width="600" Name="txt6" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="AI人工智能配送" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="AI人工智能语音交互" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+</Ctrls></GroupBox></Ctrls></WndTap>
+<WndTap Name="xbs_qa" Text="运输管理"><Ctrls>
+<GroupBox Name="GB_txt" Multiline="0" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Label Name="lb_code" Text="短驳提货管理、运输订单管理、运输调度管理、运输管理、到站分流管理、理赔管理、客户服务管理、财务结算管理、报表分析统计
+跟踪零担、整车运输、第三方物流的订单处理、调度配载、运单状态、装车信息、运输状态、回单状态、车辆信息、人员信息、货物信息
+帮助物流企业通过信息化手段根据资源情况（路线、重量、体积等）进行相应的配载，根据三方物流供应商的报价及优势等对运输订单的执行进行合理计划安排、调度派排车，对在途运输的车辆进行跟踪!" Size="500,120"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_album" Multiline="0" cols="xs12 sm12 md12 lg12"><Ctrls>
+	<MagicCtrl feature="carousel" onload="init" ToolTip="ttp_picview" Name="albumview" Size="230,20"><dfmap><map name="images" value="filename"/></dfmap>
+		<DbDetails>
+		<DbDatabase>D:\AppServ\www\i3u\files\images\xms\tms</DbDatabase> 
+		<datatype>dir</datatype> 
+		<queryFormat>select * from .</queryFormat> 
+		</DbDetails>
+	</MagicCtrl>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_register.xml"/>
+	</WndTaps>
+	</XI3uWnd>
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><XI3uWnd keywords="x+|xPlus;三优物流，3u56,ai56" debug="0" Title="物流仓储系统" logo="http://56.3ucs.com/images/3u56.png" description="人工智能技术打造的新一代物流服务平台，人工智能ai物流">
+	<DbDetails>
+		<SubDriver>MySQL</SubDriver>
+		<Host>localhost</Host>
+		<database>tms</database>
+		
+		<characterset>utf8</characterset>
+		<User>i3u</User>
+		<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/db.xml" xpointer="pass"/>
+		<config>select '6ee58086-a1c0-1037-bd47-ee23e616bc6b' orgguid,0 user_id;</config>
+		
+		</DbDetails>
+	<webconfig theme="../biz/theme/beyond/theme.html"/>	
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\general.xml"/>			
+<WndTaps>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vmyinfo.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrier_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_xsite_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_operateline_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_driver_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_vehicle_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_billingconfiguration_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_fee_item_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_pickuporder_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclerealtime_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="uv_freightloadunloadop_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclesituation_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_unloadorder_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_complain_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_fineorder_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_settlementdetail_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_role_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_role_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsc_status_option_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsc_type_option_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_role_permission_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_master_warehouse_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_master_city_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_master_expresscity_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="module_class_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_doc_code_v.xml"/>
+	</WndTaps></XI3uWnd>

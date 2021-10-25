@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsc_type_option" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsc_type_optionLst" ToolTip="ttp_xtmsc_type_option" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>idx</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>tablename,columnname,typeclass,typecode,typename,memo,idx</Data>
+<Order>idx</Order></DbDetails>
+<OnClick>
+<if cond="%{idx}"><SetVisible name="insertxtmsc_type_option" Visible="0"/><SetVisible name="modifyxtmsc_type_option" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

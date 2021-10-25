@@ -1,0 +1,20 @@
+﻿<GroupBox Name="GBDVxms_doc_code" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xms_doc_code_vLst" ToolTip="ttp_xms_doc_code_v" Size="700,450" OnLoad="init" Heading="doctype,150;docname,150;code_prefix,50;dt_mode,120;seq_len,20;code_sample,250;created_by,60;creation_date,150;last_update_by,60;last_update_date,150;idx,50;code_sequence,55;" loadedclick="0">
+	<DbDetails >
+<Index>idx</Index>
+<DbTable>tms.xms_doc_code x</DbTable>
+<Data>x.doctype,x.docname,x.code_prefix,x.dt_mode,x.seq_len,x.code_sample,x.created_by,x.creation_date,x.last_update_by,x.last_update_date,x.idx,x.code_sequence</Data>
+<Order>idx</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>idx='%{xms_doc_code_vLst[idx]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xms_doc_code.xms_doc_codeLst"/><assign name="$this.xms_doc_code.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xms_doc_code</DbTable>
+<Where>idx='%{xms_doc_code_vLst[idx]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_xms_doc_code" expr="js(%{xms_doc_code_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xms_doc_code" expr="js(%{xms_doc_code_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

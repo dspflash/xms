@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDEDITxtmsm_finesordinance" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_finesinstruction" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_finesinstruction" Size="60,20" Text="finesinstruction" Align="Right"/>
+<TextBox Name="finesinstruction" Size="170,20" Text="" Weight="170" ToolTip="ttp_finesinstruction"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_finemoney" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_finemoney" Size="60,20" Text="finemoney" Align="Right"/>
+<TextBox Name="finemoney" Size="170,20" Text="" Weight="170" ToolTip="ttp_finemoney"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_usestatus" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="usestatus" Size="230,20" Text="usestatus" ToolTip="ttp_usestatus"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_memo" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_memo" Size="60,20" Text="memo" Align="Right"/>
+<TextBox Name="memo" Size="170,20" Text="" Weight="170" ToolTip="ttp_memo"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

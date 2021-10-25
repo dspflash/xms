@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVuv_freightloadunloadop"><Ctrls>
+<ListCtrl Heading="freightcode,250;platenumber,50;drivername,250;fromcity,250;fromaddress,640;fromxsite,640;tocity,250;toaddress,640;toxsite,640;operatetype,250;vehiclerealtimecode,250;plancode,250;fromcityid,50;fromxsiteid,250;tocityid,50;toxsiteid,250;freightid,250;vehiclerealtimeid,250;planid,250;freightstatus,100;opordercode,250;opstatus,100;opdate,95;memo,640;operatetypecode,30;pickupordercode,250;opstatuscode,55;oporderid,250;freightstatuscode,25;pickuporderid,250;carrierid,250;" loadedclick="0" ToolTip="ttp_uv_freightloadunloadop" Name="uv_freightloadunloadopLst" Size="700,450">
+	<DbDetails fcsm="1">
+
+<DbTable>tms.uv_freightloadunloadop</DbTable>
+<Data>freightcode,platenumber,drivername,fromcity,fromaddress,fromxsite,tocity,toaddress,toxsite,operatetype,vehiclerealtimecode,plancode,fromcityid,fromxsiteid,tocityid,toxsiteid,freightid,vehiclerealtimeid,planid,freightstatus,opordercode,opstatus,opdate,memo,operatetypecode,pickupordercode,opstatuscode,oporderid,freightstatuscode,pickuporderid,carrierid</Data>
+</DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>%{primary}='%{uv_freightloadunloadop_vLst[%{primary}]}'</Where></DbDetails><submit next="$this.uv_freightloadunloadop.uv_freightloadunloadopLst" namelist="DbDetails"/><assign name="$this.uv_freightloadunloadop.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.uv_freightloadunloadop</DbTable>
+<Where>%{primary}='%{uv_freightloadunloadop_vLst[%{primary}]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

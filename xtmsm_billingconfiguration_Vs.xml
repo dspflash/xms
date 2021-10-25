@@ -1,0 +1,10 @@
+﻿<GroupBox Name="GBDEDITxtmsm_billingconfiguration" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_createby" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_createby" Size="60,20" Text="createby" Align="Right"/>
+<TextBox Name="createby" Size="170,20" Text="" Weight="170" ToolTip="ttp_createby"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_creratedate" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_creratedate" Size="60,20" Text="creratedate" Align="Right"/>
+<DateTime Name="creratedate" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_creratedate"></DateTime>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

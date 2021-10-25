@@ -1,0 +1,24 @@
+﻿<GroupBox Name="GBDEDITxtmst_complain" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_freightid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_freightid" Size="60,20" Text="freightid" Align="Right"/>
+<TextBox Name="freightid" Size="170,20" Text="" Weight="170" ToolTip="ttp_freightid">
+	<DbDetails>
+<Index>freightid</Index>
+<DbTable>tms.xtmst_freight</DbTable>
+<Data>FreightCode,FreightID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_complaincode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_complaincode" Size="60,20" Text="complaincode" Align="Right"/>
+<TextBox Name="complaincode" Size="170,20" Text="" Weight="170" ToolTip="ttp_complaincode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_complainprice" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_complainprice" Size="60,20" Text="complainprice" Align="Right"/>
+<TextBox Name="complainprice" Size="170,20" Text="" Weight="170" ToolTip="ttp_complainprice"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_complainmemo" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_complainmemo" Size="60,20" Text="complainmemo" Align="Right"/>
+<TextBox Name="complainmemo" Size="170,20" Text="" Weight="170" ToolTip="ttp_complainmemo"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

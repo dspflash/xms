@@ -1,0 +1,30 @@
+﻿<GroupBox Name="GBDEDITxtmsc_type_option"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_tablename"><Ctrls>
+<Label Align="Right" Text="tablename" Name="lb_tablename" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_tablename" Name="tablename" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_columnname"><Ctrls>
+<Label Align="Right" Text="columnname" Name="lb_columnname" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_columnname" Name="columnname" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_typeclass"><Ctrls>
+<Label Align="Right" Text="typeclass" Name="lb_typeclass" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_typeclass" Name="typeclass" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_typecode"><Ctrls>
+<Label Align="Right" Text="typecode" Name="lb_typecode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_typecode" Name="typecode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_typename"><Ctrls>
+<Label Align="Right" Text="typename" Name="lb_typename" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_typename" Name="typename" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_memo"><Ctrls>
+<Label Align="Right" Text="memo" Name="lb_memo" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_memo" Name="memo" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_idx" Visible="false"><Ctrls>
+<Label Align="Right" Text="idx" overlap="pre" Name="lb_idx" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_idx" overlap="pre" Name="idx" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{idx}'"><SetVisible name="insertxtmsc_type_option" Visible="0"/><SetVisible name="modifyxtmsc_type_option" Visible="1"/><else/><SetVisible name="insertxtmsc_type_option" Visible="1"/><SetVisible name="modifyxtmsc_type_option" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

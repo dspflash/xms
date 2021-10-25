@@ -1,0 +1,48 @@
+﻿<Language name="xtmst_fineorder">
+<Lang name="xtmst_fineorder" value="罚单"/>
+<Lang name="TabEditxtmst_fineorder" value="xtmst_fineorder Edit"/>
+<Lang name="TabViewxtmst_fineorder" value="xtmst_fineorder View"/>
+<Lang name="customerorderid" value=""/>
+<Lang name="ttp_customerorderid" value=""/>
+<Lang name="finenumber" value="罚单号"/>
+<Lang name="ttp_finenumber" value=""/>
+<Lang name="driverid" value="驾驶员"/>
+<Lang name="ttp_driverid" value=""/>
+<Lang name="carrierid" value="承运商"/>
+<Lang name="ttp_carrierid" value=""/>
+<Lang name="finedate" value="罚款时间"/>
+<Lang name="ttp_finedate" value=""/>
+<Lang name="finesordinanceid" value="罚款条款"/>
+<Lang name="ttp_finesordinanceid" value=""/>
+<Lang name="finemoney" value="罚款金额"/>
+<Lang name="ttp_finemoney" value=""/>
+<Lang name="address" value="地址"/>
+<Lang name="ttp_address" value=""/>
+<Lang name="memo" value="备注"/>
+<Lang name="ttp_memo" value=""/>
+<Lang name="isdel" value="是否处理"/>
+<Lang name="ttp_isdel" value=""/>
+<Lang name="finestatus" value="罚款状态"/>
+<Lang name="ttp_finestatus" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="id" value=""/>
+<Lang name="ttp_id" value=""/>
+<Lang name="ttp_operationxtmst_fineorder" value=""/>
+<Lang name="ttp_creatextmst_fineorder" value=""/>
+<Lang name="ttp_modifyxtmst_fineorder" value=""/>
+<Lang name="ttp_resetxtmst_fineorder" value=""/>
+<Lang name="ttp_deletextmst_fineorder" value=""/>
+<Lang name="ttp_refreshxtmst_fineorder" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

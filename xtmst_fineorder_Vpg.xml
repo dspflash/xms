@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmst_fineorder"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmst_fineorder" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>id</Index>
+<DbTable>tms.xtmst_fineorder x left join tms.xtmst_freight x0 on x.freightid=x0.freightid left join tms.xtmsm_driver x1 on x.driverid=x1.driverid left join tms.xtmsm_finesordinance x2 on x.finesordinanceid=x2.finesordinanceid left join tms.xtmsc_status_option x3 on x.finestatus=x3.statuscode left join tms.xtmsm_carrier x4 on x.carrierid=x4.carrierid</DbTable>
+<Data>count(*) records</Data>
+<Order>id</Order><Queryformat>select %{data} from (select x.id from %{dbtable} where x.carrierid='%{orgguid}' %{where} GROUP BY x.id  ORDER BY x.id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmst_fineorder" expr="js(Math.ceil(%{records_xtmst_fineorder}/%{xtmst_fineorder_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmst_fineorder" expr="js('1~'+Math.ceil(%{records_xtmst_fineorder}/%{xtmst_fineorder_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmst_fineorder" Size="60,20"><OnSelEndOK><submit next="xtmst_fineorder_vLst" function="GetPage(%{pgscb_xtmst_fineorder}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmst_fineorder" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmst_fineorder" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmst_fineorder_vLst" Size="50,20"><OnClick><submit next="xtmst_fineorder_vLst" function="GetPage(%{pgcur_xtmst_fineorder}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

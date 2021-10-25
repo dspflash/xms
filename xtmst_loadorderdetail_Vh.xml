@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_loadorderdetail" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_loadorderdetailLst" ToolTip="ttp_xtmst_loadorderdetail" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_loadorderdetail_id</Index>
+<DbTable>tms.xtmst_loadorderdetail</DbTable>
+<Data>freightid,planid,memo,createby,createdate,updateby,updatedate,loadorderid,loaddetailid,xtmst_loadorderdetail_id,xtmst_loadorder_id</Data>
+<Order>xtmst_loadorderdetail_id</Order></DbDetails>
+<OnClick><assign name="freightid[freightid]" expr="%{xtmst_loadorderdetailLst[freightid]}" function="SetSel"/><assign name="planid[planid]" expr="%{xtmst_loadorderdetailLst[planid]}" function="SetSel"/>
+<if cond="%{xtmst_loadorderdetail_id}"><SetVisible name="insertxtmst_loadorderdetail" Visible="0"/><SetVisible name="modifyxtmst_loadorderdetail" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,24 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="loadFreight"><assign name="$this.xtmst_loadorderdetail.xtmst_loadorder_id" expr="%{xtmst_loadorder_vLst[xtmst_loadorder_id]}"/><assign name="$this.xtmst_loadorderdetail.LoadOrderID" expr="%{xtmst_loadorder_vLst[LoadOrderID]}"/></op>
+<op text="modify"><DbDetails><Where>xtmst_loadorder_id='%{xtmst_loadorder_vLst[xtmst_loadorder_id]}' and status!=603</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_loadorder.xtmst_loadorderLst"/><DbDetails><Where>dp.VehicleRealTimeID=(select VehicleRealTimeID from tms.xtmst_loadorder where xtmst_loadorder_id='%{xtmst_loadorder_vLst[xtmst_loadorder_id]}')</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_loadorder.VehicleRealTimeID"/></op>
+<op text="complete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_loadorder</DbTable>
+<Where>ld.xtmst_loadorder_id='%{xtmst_loadorder_vLst[xtmst_loadorder_id]}'</Where>
+<queryFormat>UPDATE tms.xtmst_loadorder ld 
+JOIN tms.xtmst_loadorderdetail ldd ON ld.LoadOrderID=ldd.LoadOrderID
+JOIN tms.xtmst_dispatchplan dp ON ld.VehicleRealTimeID=dp.VehicleRealTimeID AND dp.FreightID=ldd.FreightID
+JOIN tms.xtmst_freight f ON f.FreightID=dp.FreightID
+left JOIN tms.xtmst_pickuporder pk ON f.PickupOrderID=pk.PickupOrderID  
+JOIN tms.xtmst_vehiclesituation vs ON vs.VehicleRealTimeID=ld.VehicleRealTimeID AND vs.CityID=ld.LoadCityID AND vs.Address=ld.LoadAddress
+JOIN tms.xtmst_vehiclerealtime vrt ON ld.VehicleRealTimeID=vrt.VehicleRealTimeID 
+SET ld.Status=603,dp.Status=302,f.STATUS=if(f.ConsignmentMode=1001,if(f.DeliveryMethod=1213 or f.DeliveryMethod=1214,206,if(f.FromXSiteID=dp.FromXSiteID,207,if(dp.ToXSiteID is null ,211,212))),if(f.ConsignmentMode=1002,205,206)),pk.OrderSTATUS=106 WHERE %{WHERE};
+set @vrtid=null;select VehicleRealTimeID into @vrtid from %{table} ld where %{where};
+</queryFormat></DbDetails>update tms.xtmst_vehiclerealtime vrt JOIN tms.xtmst_freight f ON vrt.VehicleRealTimeID=f.VehicleRealTimeID AND f.status=205 SET vrt.Status=403 WHERE vrt.VehicleRealTimeID=@vrtid and (SELECT COUNT(0) FROM tms.xtmst_freight WHERE VehicleRealTimeID=@vrtid AND STATUS!=205)=0;
+
+<submit namelist="DbDetails"/><submit/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_loadorder ld left join tms.xtmst_loadorderdetail ldd ON ld.LoadOrderID=ldd.LoadOrderID</DbTable>
+<Where>ld.xtmst_loadorder_id='%{xtmst_loadorder_vLst[xtmst_loadorder_id]}' and STATUS!=603</Where>
+<queryFormat>delete ld,ldd from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

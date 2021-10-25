@@ -1,0 +1,45 @@
+﻿<GroupBox Name="GBDEDITxtmsm_operateline" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_operateline_name" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_operateline_name" Size="60,20" Text="operateline_name" Align="Right"/>
+<TextBox Name="operateline_name" Size="150,20" Text="" Weight="150" ToolTip="ttp_operateline_name"></TextBox>
+<MagicCtrl Name="dialoperateline_name" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{operateline_name}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_line_type" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_line_type" Size="60,20" Text="line_type" Align="Right"/>
+<TextBox Name="line_type" Size="170,20" Text="" Weight="170" ToolTip="ttp_line_type"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_distance" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_distance" Size="60,20" Text="distance" Align="Right"/>
+<TextBox Name="distance" Size="170,20" Text="" Weight="170" ToolTip="ttp_distance"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_cityid_start" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_cityid_start" Size="60,20" Text="cityid_start" Align="Right"/>
+<TextBox Name="cityid_start" Size="150,20" Text="" Weight="150" ToolTip="ttp_cityid_start">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,ChinaSpell,CityID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails><OnEnChange><assign name="operateline_name" expr="%{cityid_start[ChinaSpell]}-%{cityid_end[ChinaSpell]}"/></OnEnChange></TextBox>
+<MagicCtrl Name="pickcityid_start" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.citypick.frmwndctrl" expr="CityId_start"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox Name="GB_cityid_end" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_cityid_end" Size="60,20" Text="cityid_end" Align="Right"/>
+<TextBox Name="cityid_end" Size="150,20" Text="" Weight="150" ToolTip="ttp_cityid_end">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,ChinaSpell,CityID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails><OnEnChange><assign name="operateline_name" expr="%{cityid_start[ChinaSpell]}-%{cityid_end[ChinaSpell]}"/></OnEnChange></TextBox>
+<MagicCtrl Name="pickcityid_end" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.citypick.frmwndctrl" expr="CityId_end"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox Name="GB_isprimary" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="isprimary" Size="230,20" Text="isprimary" ToolTip="ttp_isprimary" checked="true"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_remark" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_remark" Size="60,20" Text="remark" Align="Right"/>
+<TextBox Name="remark" Size="170,20" Text="" Weight="170" ToolTip="ttp_remark"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_active" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="active" Size="230,20" Text="active" ToolTip="ttp_active" checked="true"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

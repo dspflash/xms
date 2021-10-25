@@ -1,0 +1,10 @@
+﻿<WndTap Name="xtmst_customorder_print" Text="xtmst_customorder_print" Ver="2">
+<xi:include href="lan\xtmst_customorder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_customorderdetail.xml"/>
+<Ctrls>
+<GroupBox  Name="GBxtmst_customorder" id="xtmst_customorder" Text="xtmst_customorder" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_customorder_GBDEDIT.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_customorder_Vh.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_customorderdetail_Vv.xml"/>
+</Ctrls></GroupBox></Ctrls>
+</WndTap>

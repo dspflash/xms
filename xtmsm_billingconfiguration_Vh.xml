@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsm_billingconfiguration" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsm_billingconfigurationLst" ToolTip="ttp_xtmsm_billingconfiguration" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmsm_billingconfiguration_id</Index>
+<DbTable>tms.xtmsm_billingconfiguration</DbTable>
+<Data>weightunitprice,volumeunitprice,startmileage,overunitprice,backofffee,returnfee,smallorderfee,status,createby,creratedate,updateby,updatedate,configurationid,xtmsm_billingconfiguration_id,carrierid</Data>
+<Order>xtmsm_billingconfiguration_id</Order></DbDetails>
+<OnClick>
+<if cond="%{xtmsm_billingconfiguration_id}"><SetVisible name="insertxtmsm_billingconfiguration" Visible="0"/><SetVisible name="modifyxtmsm_billingconfiguration" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

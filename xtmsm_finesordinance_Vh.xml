@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsm_finesordinance" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsm_finesordinanceLst" ToolTip="ttp_xtmsm_finesordinance" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>finesordinanceid</Index>
+<DbTable>tms.xtmsm_finesordinance</DbTable>
+<Data>finesinstruction,finemoney,usestatus,memo,finesordinanceid</Data>
+<Order>finesordinanceid</Order></DbDetails>
+<OnClick>
+<if cond="%{finesordinanceid}"><SetVisible name="insertxtmsm_finesordinance" Visible="0"/><SetVisible name="modifyxtmsm_finesordinance" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

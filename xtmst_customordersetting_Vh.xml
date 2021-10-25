@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_customordersetting" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_customordersettingLst" ToolTip="ttp_xtmst_customordersetting" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_customordersetting_id</Index>
+<DbTable>tms.xtmst_customordersetting</DbTable>
+<Data>customerorderid,carrycode,ordermileage,vehicletypefee,backoffline,returnline,expressfee,otherfee,isexpressorder,issmallorder,xtmst_customordersetting_id,carrierid</Data>
+<Order>xtmst_customordersetting_id</Order></DbDetails>
+<OnClick><assign name="customerorderid[customerorderid]" expr="%{xtmst_customordersettingLst[customerorderid]}" function="SetSel"/><assign name="otherfee[customerorderid]" expr="%{xtmst_customordersettingLst[otherfee]}" function="SetSel"/>
+<if cond="%{xtmst_customordersetting_id}"><SetVisible name="insertxtmst_customordersetting" Visible="0"/><SetVisible name="modifyxtmst_customordersetting" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

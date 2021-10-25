@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExms_doc_code" Size="100,100"><Ctrls>
+<Button sqlpkinsert="idx" Text="create" ToolTip="ttp_createxms_doc_code" Name="insertxms_doc_code" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xms_doc_code</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>doctype,docname,code_prefix,dt_mode,seq_len,code_sample</Data>
+<DataEx>created_by,creation_date,last_update_by,last_update_date;'%{user_id}',now(),'%{user_id}',now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxms_doc_code[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xms_doc_codeLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xms_doc_code_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxms_doc_code" Name="modifyxms_doc_code" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xms_doc_code</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>doctype,docname,code_prefix,dt_mode,seq_len,code_sample</Data>
+<DataEx>last_update_by,last_update_date;'%{user_id}',now()</DataEx>
+<Where>idx='%{idx}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxms_doc_code[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xms_doc_codeLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xms_doc_code_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxms_doc_code" Name="resetxms_doc_code" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxms_doc_code" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxms_doc_code" Name="gsearchxms_doc_code" Size="50,20" visible="false">
+<OnClick>
+<search next="xms_doc_codeLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxms_doc_code" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

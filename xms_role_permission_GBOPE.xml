@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExms_role_permission" Size="100,100"><Ctrls>
+<Button sqlpkinsert="role_permission_id" Text="create" ToolTip="ttp_createxms_role_permission" Name="insertxms_role_permission" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xms_role_permission</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>role_id[role_id],class[name],role_permission_id</Data>
+<DataEx>permision,created_by,creation_date,last_update_by,last_update_date;2,'%{user_id}',now(),'%{user_id}',now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxms_role_permission[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xms_role_permissionLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xms_role_permission_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxms_role_permission" Name="modifyxms_role_permission" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xms_role_permission</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>class[name],role_permission_id</Data>
+<DataEx>last_update_by,last_update_date;'%{user_id}',now()</DataEx>
+<Where>role_permission_id='%{role_permission_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxms_role_permission[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xms_role_permissionLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xms_role_permission_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxms_role_permission" Name="resetxms_role_permission" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxms_role_permission" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxms_role_permission" Name="gsearchxms_role_permission" Size="50,20" visible="false">
+<OnClick>
+<search next="xms_role_permissionLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxms_role_permission" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

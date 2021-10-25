@@ -1,0 +1,14 @@
+﻿<GroupBox Name="GBDVxms_role" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xms_role_vLst" ToolTip="ttp_xms_role_v" Size="700,450" OnLoad="init" Heading="role_name_cn,100;role_name_eng,250;role_layout,500;org_guid,250;created_by,60;creation_date,150;last_update_by,60;last_update_date,150;role_id,20;role_level,20;" loadedclick="0">
+	<DbDetails >
+<Index>role_id</Index>
+<DbTable>tms.xms_role x</DbTable>
+<Data>x.role_name_cn,x.role_name_eng,x.role_layout,x.org_guid,x.created_by,x.creation_date,x.last_update_by,x.last_update_date,x.role_id,x.role_level</Data>
+<Order>role_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where role_level and (org_guid='%{orgguid}' or org_guid='') %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_role_ops.xml"/>
+<OnChanged>
+<assign name="pgcur_xms_role" expr="js(%{xms_role_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xms_role" expr="js(%{xms_role_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

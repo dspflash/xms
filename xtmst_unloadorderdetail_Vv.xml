@@ -1,0 +1,18 @@
+﻿<GroupBox Name="GBDVxtmst_unloadorderdetail" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmst_unloadorderdetail_vLst" ToolTip="ttp_xtmst_unloadorderdetail_v" Size="700,450" Heading="freightid,250;planid,250;memo,640;createby,50;createdate,150;updateby,50;updatedate,150;unloaddetailid,250;unloadorderid,250;xtmst_unloadorder_id,100;" loadedclick="0">
+	<DbDetails >
+<Index>unloaddetailid</Index>
+<DbTable>tms.xtmst_unloadorderdetail x left join tms.xtmst_freight x0 on x.freightid=x0.freightid left join tms.xtmst_dispatchplan x1 on x.planid=x1.planid</DbTable>
+<Data>x0.FreightCode freightid,x1.PlanCode planid,x.memo,x.createby,x.createdate,x.updateby,x.updatedate,x.unloaddetailid,x.unloadorderid,x.xtmst_unloadorder_id</Data>
+<Order>unloaddetailid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="addone" mustselected="0"><if cond="!%{xtmst_unloadorder_id}"><alert expr="xtmst_unloadorder_id is Empty!"/><else/><submit next="$parent.xtmst_unloadorderdetail.GBDEDITxtmst_unloadorderdetail" function="reset"/><assign name="$parent.xtmst_unloadorderdetail.xtmst_unloadorder_id" expr="%{xtmst_unloadorder_id}"/><assign name="$parent.xtmst_unloadorderdetail.frmwndctrl" expr="%{this}"/></if></op>
+<op text="modify"><DbDetails><Where>unloaddetailid='%{xtmst_unloadorderdetail_vLst[unloaddetailid]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.xtmst_unloadorderdetail.xtmst_unloadorderdetailLst"/><assign name="$parent.xtmst_unloadorderdetail.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_unloadorderdetail</DbTable>
+<Where>unloaddetailid='%{xtmst_unloadorderdetail_vLst[unloaddetailid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

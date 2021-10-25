@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmst_loadorderdetail"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmst_loadorderdetail" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_loadorderdetail_id</Index>
+<DbTable>tms.xtmst_loadorderdetail x left join tms.xtmst_freight x0 on x.freightid=x0.freightid left join tms.xtmst_dispatchplan x1 on x.planid=x1.planid</DbTable>
+<Data>count(*) records</Data>
+<Order>xtmst_loadorderdetail_id</Order><Queryformat>select %{data} from (select x.xtmst_loadorderdetail_id from %{dbtable} %{where} GROUP BY x.xtmst_loadorderdetail_id  ORDER BY x.xtmst_loadorderdetail_id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmst_loadorderdetail" expr="js(Math.ceil(%{records_xtmst_loadorderdetail}/%{xtmst_loadorderdetail_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmst_loadorderdetail" expr="js('1~'+Math.ceil(%{records_xtmst_loadorderdetail}/%{xtmst_loadorderdetail_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmst_loadorderdetail" Size="60,20"><OnSelEndOK><submit next="xtmst_loadorderdetail_vLst" function="GetPage(%{pgscb_xtmst_loadorderdetail}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmst_loadorderdetail" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmst_loadorderdetail" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmst_loadorderdetail_vLst" Size="50,20"><OnClick><submit next="xtmst_loadorderdetail_vLst" function="GetPage(%{pgcur_xtmst_loadorderdetail}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

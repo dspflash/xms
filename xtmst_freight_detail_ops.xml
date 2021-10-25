@@ -1,0 +1,9 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="addone" mustselected="0"><if cond="!%{xtmst_freight_id}"><alert expr="xtmst_freight_id is Empty!"/><else/><submit next="$parent.xtmst_freight_detail.GBDEDITxtmst_freight_detail" function="reset"/><assign name="$parent.xtmst_freight_detail.xtmst_freight_id" expr="%{xtmst_freight_id}"/><assign name="$parent.xtmst_freight_detail.freightid" expr="%{freightid}"/></if></op>
+<op text="modify"><DbDetails><Where>xtmst_freight_detail_id='%{xtmst_freight_detail_vLst[xtmst_freight_detail_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.xtmst_freight_detail.xtmst_freight_detailLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_freight_detail fd join xtmst_freight f on fd.FreightID=f.FreightID</DbTable>
+<Where>xtmst_freight_detail_id='%{xtmst_freight_detail_vLst[xtmst_freight_detail_id]}' and STATUS=208</Where>
+<queryFormat>delete fd from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

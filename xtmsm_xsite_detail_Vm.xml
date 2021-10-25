@@ -1,0 +1,8 @@
+﻿<WndTap Name="xtmsm_xsite_detail_v" Text="xtmsm_xsite_detail">
+<WndTaps>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_xsite_detail.xml"/>
+<Ctrls><GroupBox  Name="GBxtmsm_xsite_detail" id="xtmsm_xsite_detail" Text="xtmsm_xsite_detail" Size="100,100"><Ctrls>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_xsite_detail_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

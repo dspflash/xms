@@ -1,0 +1,50 @@
+﻿<Language name="xtmst_unloadorder">
+<Lang name="xtmst_unloadorder" value="卸车单"/>
+<Lang name="TabEditxtmst_unloadorder" value="xtmst_unloadorder Edit"/>
+<Lang name="TabViewxtmst_unloadorder" value="xtmst_unloadorder View"/>
+<Lang name="unloadcode" value="卸车单号"/>
+<Lang name="ttp_unloadcode" value=""/>
+<Lang name="vehiclerealtimeid" value="车程"/>
+<Lang name="ttp_vehiclerealtimeid" value=""/>
+<Lang name="memo" value="备注"/>
+<Lang name="ttp_memo" value=""/>
+<Lang name="xsiteid" value="网点"/>
+<Lang name="ttp_xsiteid" value=""/>
+<Lang name="unloadcityid" value="城市"/>
+<Lang name="ttp_unloadcityid" value=""/>
+<Lang name="unloadaddress" value="地址"/>
+<Lang name="ttp_unloadaddress" value=""/>
+<Lang name="checkby" value="确认人"/>
+<Lang name="ttp_checkby" value=""/>
+<Lang name="checkdate" value="确认时间"/>
+<Lang name="ttp_checkdate" value=""/>
+<Lang name="status" value=""/>
+<Lang name="ttp_status" value=""/>
+<Lang name="carrierid" value=""/>
+<Lang name="ttp_carrierid" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="updateby" value=""/>
+<Lang name="ttp_updateby" value=""/>
+<Lang name="updatedate" value=""/>
+<Lang name="ttp_updatedate" value=""/>
+<Lang name="unloadid" value=""/>
+<Lang name="ttp_unloadid" value=""/>
+<Lang name="ttp_operationxtmst_unloadorder" value=""/>
+<Lang name="ttp_creatextmst_unloadorder" value=""/>
+<Lang name="ttp_modifyxtmst_unloadorder" value=""/>
+<Lang name="ttp_resetxtmst_unloadorder" value=""/>
+<Lang name="ttp_deletextmst_unloadorder" value=""/>
+<Lang name="ttp_refreshxtmst_unloadorder" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

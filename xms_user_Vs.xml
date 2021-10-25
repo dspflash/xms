@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITxms_user" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_username" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_username" Size="60,20" Text="username" Align="Right"/>
+<TextBox Name="username" Size="170,20" Text="" Weight="170" ToolTip="ttp_username"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_password" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_password" Size="60,20" Text="password" Align="Right" PASSWORD="true"/>
+<TextBox Name="password" Size="170,20" Text="" Weight="170" ToolTip="ttp_password" PASSWORD="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_phone" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_phone" Size="60,20" Text="phone" Align="Right"/>
+<TextBox Name="phone" Size="150,20" Text="" Weight="150" ToolTip="ttp_phone"></TextBox>
+<MagicCtrl Name="dialphone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{phone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_email" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_email" Size="60,20" Text="email" Align="Right"/>
+<TextBox Name="email" Size="170,20" Text="" Weight="170" ToolTip="ttp_email"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_invitation_code" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_invitation_code" Size="60,20" Text="invitation_code" Align="Right"/>
+<TextBox Name="invitation_code" Size="170,20" Text="" Weight="170" ToolTip="ttp_invitation_code"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_active" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="active" Size="230,20" Text="active" ToolTip="ttp_active" checked="true"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

@@ -1,0 +1,53 @@
+﻿<GroupBox Name="GBDEDITxtmsm_master_city"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_levercode"><Ctrls>
+<Label Align="Right" Text="levercode" Name="lb_levercode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_levercode" Name="levercode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_city"><Ctrls>
+<Label Align="Right" Text="city" Name="lb_city" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_city" Name="city" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_parentcityid"><Ctrls>
+<Label Align="Right" Text="parentcityid" Name="lb_parentcityid" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_parentcityid" Name="parentcityid" Size="150,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>City,LeverCode,CityAllName,CityID</Data>
+<Where/>
+<queryFormat/></DbDetails><OnEnChange><if cond="%{ParentCityID[CityID]}"><assign name="LeverCode" expr="%{ParentCityId[LeverCode]}"/><assign name="CityAllName" expr="%{ParentCityId[CityAllName]}"/><else/><assign name="LeverCode" expr=""/><assign name="CityAllName" expr=""/></if></OnEnChange></TextBox>
+<MagicCtrl Name="pickparentcityid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$parent.cityPick.frmwndctrl" expr="xtmsm_master_city.ParentCityID"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_cityallname"><Ctrls>
+<Label Align="Right" Text="cityallname" Name="lb_cityallname" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_cityallname" Name="cityallname" readonly="true" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_phone"><Ctrls>
+<Label Align="Right" Text="phone" Name="lb_phone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_phone" Name="phone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialphone" OnClick="nis3ucs:%{phone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_postno"><Ctrls>
+<Label Align="Right" Text="postno" Name="lb_postno" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_postno" Name="postno" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_chinaspell"><Ctrls>
+<Label Align="Right" Text="chinaspell" Name="lb_chinaspell" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_chinaspell" Name="chinaspell" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_chinaspellall"><Ctrls>
+<Label Align="Right" Text="chinaspellall" Name="lb_chinaspellall" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_chinaspellall" Name="chinaspellall" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_pinyin"><Ctrls>
+<Label Align="Right" Text="pinyin" Name="lb_pinyin" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_pinyin" Name="pinyin" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_citycode"><Ctrls>
+<Label Align="Right" Text="citycode" Name="lb_citycode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_citycode" Name="citycode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_cityid" Visible="false"><Ctrls>
+<Label Align="Right" Text="cityid" overlap="pre" Name="lb_cityid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_cityid" overlap="pre" Name="cityid" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{cityid}'"><SetVisible name="insertxtmsm_master_city" Visible="0"/><SetVisible name="modifyxtmsm_master_city" Visible="1"/><else/><SetVisible name="insertxtmsm_master_city" Visible="1"/><SetVisible name="modifyxtmsm_master_city" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

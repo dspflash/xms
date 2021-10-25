@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmst_freight"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmst_freight" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_freight_id</Index>
+<DbTable>tms.xtmst_freight x left join tms.xtmst_pickuporder x0 on x.pickuporderid=x0.pickuporderid left join tms.xtmsc_status_option x1 on x.status=x1.statuscode left join tms.xtmsc_type_option x2 on x.deliverymode=x2.typecode left join tms.xtmsc_type_option x3 on x.consignmentmode=x3.typecode left join tms.xtmsc_type_option x4 on x.deliverymethod=x4.typecode left join tms.xtmsm_master_city x5 on x.fromcityid=x5.cityid left join tms.xtmsm_xsite x6 on x.fromxsiteid=x6.xsiteid left join tms.xtmsm_master_city x7 on x.tocityid=x7.cityid left join tms.xtmsm_xsite x8 on x.toxsiteid=x8.xsiteid left join tms.xtmsc_type_option x9 on x.settlementmethod=x9.typecode</DbTable>
+<Data>count(*) records</Data>
+<Order>xtmst_freight_id</Order><Queryformat>select %{data} from (select x.xtmst_freight_id from %{dbtable} where x.carrierid='%{orgguid}' %{where} GROUP BY x.xtmst_freight_id  ORDER BY x.xtmst_freight_id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmst_freight" expr="js(Math.ceil(%{records_xtmst_freight}/%{xtmst_freight_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmst_freight" expr="js('1~'+Math.ceil(%{records_xtmst_freight}/%{xtmst_freight_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmst_freight" Size="60,20"><OnSelEndOK><submit next="xtmst_freight_vLst" function="GetPage(%{pgscb_xtmst_freight}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmst_freight" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmst_freight" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmst_freight_vLst" Size="50,20"><OnClick><submit next="xtmst_freight_vLst" function="GetPage(%{pgcur_xtmst_freight}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

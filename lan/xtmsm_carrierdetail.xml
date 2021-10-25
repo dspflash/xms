@@ -1,0 +1,42 @@
+﻿<Language name="xtmsm_carrierdetail">
+<Lang name="xtmsm_carrierdetail" value="承运区域"/>
+<Lang name="TabEditxtmsm_carrierdetail" value="xtmsm_carrierdetail Edit"/>
+<Lang name="TabViewxtmsm_carrierdetail" value="xtmsm_carrierdetail View"/>
+<Lang name="carrierid" value=""/>
+<Lang name="ttp_carrierid" value=""/>
+<Lang name="province" value="省"/>
+<Lang name="ttp_province" value=""/>
+<Lang name="city" value="市"/>
+<Lang name="ttp_city" value=""/>
+<Lang name="county" value="区县"/>
+<Lang name="ttp_county" value=""/>
+<Lang name="citycode" value=""/>
+<Lang name="ttp_citycode" value=""/>
+<Lang name="isarrival" value=""/>
+<Lang name="ttp_isarrival" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="updateby" value=""/>
+<Lang name="ttp_updateby" value=""/>
+<Lang name="updatedate" value=""/>
+<Lang name="ttp_updatedate" value=""/>
+<Lang name="id" value=""/>
+<Lang name="ttp_id" value=""/>
+<Lang name="ttp_operationxtmsm_carrierdetail" value=""/>
+<Lang name="ttp_creatextmsm_carrierdetail" value=""/>
+<Lang name="ttp_modifyxtmsm_carrierdetail" value=""/>
+<Lang name="ttp_resetxtmsm_carrierdetail" value=""/>
+<Lang name="ttp_deletextmsm_carrierdetail" value=""/>
+<Lang name="ttp_refreshxtmsm_carrierdetail" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

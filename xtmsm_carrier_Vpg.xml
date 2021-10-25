@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmsm_carrier"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmsm_carrier" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>xtmsm_carrier_id</Index>
+<DbTable>tms.xtmsm_carrier x left join tms.xtmsc_type_option x0 on x.carriertype=x0.typecode left join tms.xtmsm_master_city x1 on x.cityid=x1.cityid</DbTable>
+<Data>count(*) records</Data>
+<Order>xtmsm_carrier_id</Order><Queryformat>select %{data} from (select x.xtmsm_carrier_id from %{dbtable} %{where} GROUP BY x.xtmsm_carrier_id  ORDER BY x.xtmsm_carrier_id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmsm_carrier" expr="js(Math.ceil(%{records_xtmsm_carrier}/%{xtmsm_carrier_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmsm_carrier" expr="js('1~'+Math.ceil(%{records_xtmsm_carrier}/%{xtmsm_carrier_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmsm_carrier" Size="60,20"><OnSelEndOK><submit next="xtmsm_carrier_vLst" function="GetPage(%{pgscb_xtmsm_carrier}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmsm_carrier" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmsm_carrier" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmsm_carrier_vLst" Size="50,20"><OnClick><submit next="xtmsm_carrier_vLst" function="GetPage(%{pgcur_xtmsm_carrier}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

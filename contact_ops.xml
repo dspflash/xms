@@ -1,0 +1,4 @@
+﻿<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="addone" mustselected="0"><submit next="$this.contact.GBDEDITcontact" function="reset"/><assign name="$this.contact.reftbltp" expr="%{reftbltp}" function="setsel"/><assign name="$this.contact.refid" expr="%{refid}"/></op>
+<op text="modify"><assign name="$parent.contact_V.contact.reftbltp" expr="%{reftbltp}" function="setsel"/><assign name="$parent.contact_V.contact.refid" expr="%{refid}"/><assign name="$parent.contact_V.contact.contactid" expr="%{contactlst[contactid]}"/><submit next="$parent.contact_V.contact.contactlst"/></op>
+</operator>

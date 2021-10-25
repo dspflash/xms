@@ -1,0 +1,50 @@
+﻿<GroupBox Name="GBDEDITxms_doc_code"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_doctype"><Ctrls>
+<Label Align="Right" Text="doctype" Name="lb_doctype" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_doctype" Name="doctype" Size="170,20"><OnEnChange><if cond="!%{docName}"><assign name="docName" expr="%{docType}"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_docname"><Ctrls>
+<Label Align="Right" Text="docname" Name="lb_docname" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_docname" Name="docname" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_code_prefix"><Ctrls>
+<Label Align="Right" Text="code_prefix" Name="lb_code_prefix" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_code_prefix" Name="code_prefix" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_dt_mode"><Ctrls>
+<Label Align="Right" Text="dt_mode" Name="lb_dt_mode" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_dt_mode" Items="6|8|14" Name="dt_mode" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_seq_len"><Ctrls>
+<Label Align="Right" Text="seq_len" Name="lb_seq_len" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_seq_len" Name="seq_len" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_code_sample"><Ctrls>
+<Label Align="Right" Text="code_sample" Name="lb_code_sample" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_code_sample" Name="code_sample" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_created_by" Visible="false"><Ctrls>
+<Label Align="Right" Text="created_by" overlap="pre" Name="lb_created_by" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_created_by" overlap="pre" Name="created_by" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_creation_date" Visible="false"><Ctrls>
+<Label Align="Right" Text="creation_date" overlap="pre" Name="lb_creation_date" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_creation_date" overlap="pre" Name="creation_date" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_last_update_by" Visible="false"><Ctrls>
+<Label Align="Right" Text="last_update_by" overlap="pre" Name="lb_last_update_by" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_last_update_by" overlap="pre" Name="last_update_by" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_last_update_date" Visible="false"><Ctrls>
+<Label Align="Right" Text="last_update_date" overlap="pre" Name="lb_last_update_date" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_last_update_date" overlap="pre" Name="last_update_date" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_idx" Visible="false"><Ctrls>
+<Label Align="Right" Text="idx" overlap="pre" Name="lb_idx" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_idx" overlap="pre" Name="idx" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{idx}'"><SetVisible name="insertxms_doc_code" Visible="0"/><SetVisible name="modifyxms_doc_code" Visible="1"/><else/><SetVisible name="insertxms_doc_code" Visible="1"/><SetVisible name="modifyxms_doc_code" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_code_sequence" Visible="false"><Ctrls>
+<Label Align="Right" Text="code_sequence" overlap="pre" Name="lb_code_sequence" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_code_sequence" overlap="pre" Name="code_sequence" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

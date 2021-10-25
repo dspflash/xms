@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmst_customorderdetail"><Ctrls>
+<ListCtrl Heading="commodityname,640;transfeesettlementsmode,120;amount,50;volume,90;weight,90;length,50;width,50;height,50;stocktype,50;commoditycode,250;productbatch,250;customorderdetailid,250;commodityid,250;xtmst_customorderdetail_id,100;" loadedclick="0" ToolTip="ttp_xtmst_customorderdetail" Name="xtmst_customorderdetailLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>xtmst_customorderdetail_id</Index>
+<DbTable>tms.xtmst_customorderdetail</DbTable>
+<Data>commodityname,transfeesettlementsmode,amount,volume,weight,length,width,height,stocktype,commoditycode,productbatch,customorderdetailid,commodityid,xtmst_customorderdetail_id</Data>
+<Order>xtmst_customorderdetail_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op mustselected="0" text="addone"><if cond="!%{CustomerOrderID}"><alert expr="CustomerOrderID is Empty!"/><else/><submit next="$parent.xtmst_customorderdetail.GBDEDITxtmst_customorderdetail" function="reset"/><assign name="$parent.xtmst_customorderdetail.CustomerOrderID" expr="%{CustomerOrderID}"/><assign name="$parent.xtmst_customorderdetail.frmwndctrl" expr="%{this}"/></if></op>
+<op text="modify"><DbDetails><Where>xtmst_customorderdetail_id='%{xtmst_customorderdetail_vLst[xtmst_customorderdetail_id]}'</Where></DbDetails><submit next="$parent.xtmst_customorderdetail.xtmst_customorderdetailLst" namelist="DbDetails"/><assign name="$parent.xtmst_customorderdetail.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_customorderdetail</DbTable>
+<Where>xtmst_customorderdetail_id='%{xtmst_customorderdetail_vLst[xtmst_customorderdetail_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

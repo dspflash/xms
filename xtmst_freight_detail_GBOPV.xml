@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_freight_detail" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmst_freight_detail" Name="deletextmst_freight_detail" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmst_freight_detail</DbTable>
+<Where>xtmst_freight_detail_id='%{xtmst_freight_detailLst[xtmst_freight_detail_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmst_freight_detail" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmst_freight_detail" Name="searchxtmst_freight_detail" Size="50,20">
+			  <OnClick><submit next="xtmst_freight_detailLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmst_freight_detailLst" OnClick="(xtmst_freight_detailLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmst_freight_detailLst" OnClick="(xtmst_freight_detailLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmst_freight_detailLst" OnClick="(xtmst_freight_detailLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

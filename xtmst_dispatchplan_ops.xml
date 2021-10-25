@@ -1,0 +1,13 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<!--op text="modify"><DbDetails><Where>xtmst_dispatchplan_id='%{xtmst_dispatchplan_vLst[xtmst_dispatchplan_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_dispatchplan.xtmst_dispatchplanLst"/><DbDetails><Where>freightid=(select freightid from xtmst_dispatchplan where xtmst_dispatchplan_id='%{xtmst_dispatchplan_vLst[xtmst_dispatchplan_id]}')</Where></DbDetails><submit namelist="DbDetails" next="xtmst_dispatchplan_v.xtmst_dispatchplan.freightid"/><DbDetails><Where>carrierid=(select carrierid from xtmst_dispatchplan where xtmst_dispatchplan_id='%{xtmst_dispatchplan_vLst[xtmst_dispatchplan_id]}')</Where></DbDetails><submit namelist="DbDetails" next="xtmst_dispatchplan_v.xtmst_dispatchplan.carrierid"/></op-->
+<op text="cancel" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_dispatchplan dp left join (xtmst_loadorder ld join xtmst_loadorderdetail ldd on ld.LoadOrderID=ldd.LoadOrderID) on dp.VehicleRealTimeID=ld.VehicleRealTimeID and dp.PlanID=ldd.PlanID</DbTable>
+<Where>xtmst_dispatchplan_id='%{xtmst_dispatchplan_vLst[xtmst_dispatchplan_id]}' and (ld.status is null)</Where> or ld.status in (601,602)
+<queryFormat>update %{table} set dp.status=304 where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_dispatchplan</DbTable>
+<Where>xtmst_dispatchplan_id='%{xtmst_dispatchplan_vLst[xtmst_dispatchplan_id]}' and status in (301,304)</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

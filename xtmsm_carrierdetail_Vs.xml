@@ -1,0 +1,32 @@
+﻿<GroupBox Name="GBDEDITxtmsm_carrierdetail" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_province" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_province" Size="60,20" Text="province" Align="Right"  onload="init"/>
+<ComboBox Name="province" Size="170,100" Text="" Weight="170"  ToolTip="ttp_province"  onload="init">
+	<DbDetails>
+<Index>province</Index>
+<DbTable>tms.xtmsm_master_expresscity</DbTable>
+<Data>Province</Data>
+<Where></Where>
+<queryFormat>SELECT DISTINCT Province, GROUP_CONCAT(CityID) cities FROM tms.xtmsm_master_expresscity GROUP BY Province</queryFormat></DbDetails><OnSelEndOk><submit next="City"/></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_city" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_city" Size="60,20" Text="city" Align="Right"/>
+<ComboBox Name="city" Size="170,100" Text="" Weight="170"  ToolTip="ttp_city">
+	<DbDetails>
+<Index>city</Index>
+<DbTable>tms.xtmsm_master_expresscity</DbTable>
+<Data>City</Data>
+<Where></Where>
+<queryFormat>SELECT DISTINCT City, GROUP_CONCAT(CityID) Counties FROM tms.xtmsm_master_expresscity WHERE FIND_IN_SET(CityID,'%{Province[cities]}') GROUP BY City</queryFormat></DbDetails><OnSelEndOk><submit next="County"/></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_county" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_county" Size="60,20" Text="county" Align="Right"/>
+<ComboBox Name="county" Size="170,100" Text="" Weight="170"  ToolTip="ttp_county">
+	<DbDetails>
+<Index>county</Index>
+<DbTable>tms.xtmsm_master_expresscity</DbTable>
+<Data>County</Data>
+<Where></Where>
+<queryFormat>SELECT DISTINCT County,CityCode FROM tms.xtmsm_master_expresscity WHERE FIND_IN_SET(CityID,'%{City[Counties]}') GROUP BY County</queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

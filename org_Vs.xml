@@ -1,0 +1,33 @@
+﻿<GroupBox Name="GBDEDITorg" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_org" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_org" Size="60,20" Text="org" Align="Right"/>
+<TextBox Name="org" Size="170,20" Text="" Weight="170" ToolTip="ttp_org"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_description" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_description" Size="60,20" Text="description" Align="Right"/>
+<TextBox Name="description" Size="170,20" Text="" Weight="170" ToolTip="ttp_description"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_type" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_type" Size="60,20" Text="type" Align="Right"  onload="init"/>
+<ComboBox Name="type" Size="170,100" Text="" Weight="170"  ToolTip="ttp_type"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=200</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_parent_org_id" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_parent_org_id" Size="60,20" Text="parent_org_id" Align="Right"/>
+<ComboBox Name="parent_org_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_parent_org_id">
+	<DbDetails>
+<Index>org_id</Index>
+<DbTable>xbs.org</DbTable>
+<Data>org,org_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_status" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="status" Size="230,20" Text="status" ToolTip="ttp_status"  checked="true"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

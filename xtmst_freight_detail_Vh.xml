@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_freight_detail" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_freight_detailLst" ToolTip="ttp_xtmst_freight_detail" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_freight_detail_id</Index>
+<DbTable>tms.xtmst_freight_detail</DbTable>
+<Data>commodityname,commoditycode,amount,length,width,height,weight,volume,packagetype,transfeesettlementsmode,unitfreightfee,totalfreightfee,commodityprice,remark,xtmst_freight_detail_id,commodityid,freightdetailid,freightid,xtmst_freight_id,createby,createdate,updateby,updatedate</Data>
+<Order>xtmst_freight_detail_id</Order></DbDetails>
+<OnClick><assign name="packagetype[typecode]" expr="%{xtmst_freight_detailLst[packagetype]}" function="SetSel"/><assign name="transfeesettlementsmode[typecode]" expr="%{xtmst_freight_detailLst[transfeesettlementsmode]}" function="SetSel"/>
+<if cond="%{xtmst_freight_detail_id}"><SetVisible name="insertxtmst_freight_detail" Visible="0"/><SetVisible name="modifyxtmst_freight_detail" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

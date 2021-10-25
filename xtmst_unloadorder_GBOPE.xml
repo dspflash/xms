@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_unloadorder" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xtmst_unloadorder_id" Text="create" ToolTip="ttp_creatextmst_unloadorder" Name="insertxtmst_unloadorder" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_unloadorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehiclerealtimeid[vehiclerealtimeid],xsiteid[xsiteid],unloadcityid[cityid],unloadaddress,memo</Data>
+<DataEx>unloadcode,status,createby,createdate,updateby,updatedate,unloadorderid,carrierid;@odn,601,'%{user_id}',now(),'%{user_id}',now(),uuid(),'%{orgguid}'</DataEx>
+<queryFormat>SET @seq=0;SELECT SUBSTR(UnLoadCode,-5)+0 INTO @seq FROM tms.xtmst_unloadorder WHERE DATE(CreateDate)=CURDATE() ORDER BY UnLoadCode DESC LIMIT 0,1;SELECT generate_orderNo(Code_Prefix, DT_MODE, @seq,'','') INTO @odn FROM tms.xms_doc_code WHERE docType='unloadorder';insert into %{table} %{data};</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_unloadorder[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_unloadorderLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_unloadorder_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_unloadorder" Name="modifyxtmst_unloadorder" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_unloadorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehiclerealtimeid[vehiclerealtimeid],xsiteid[xsiteid],unloadcityid[cityid],unloadaddress,memo</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>xtmst_unloadorder_id='%{xtmst_unloadorder_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_unloadorder[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_unloadorderLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_unloadorder_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_unloadorder" Name="resetxtmst_unloadorder" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_unloadorder" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_unloadorder" Name="gsearchxtmst_unloadorder" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_unloadorderLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_unloadorder" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

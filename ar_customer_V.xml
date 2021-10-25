@@ -1,0 +1,20 @@
+﻿<WndTap Name="ar_customer_v" Text="ar_customer">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ar_customer_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><customer_number format="(a.customer_number like '%%{opvalue}%')"/><customer_name format="(a.customer_name like '%%{opvalue}%')"/><alt_name format="(a.alt_name like '%%{opvalue}%')"/><customer_credit_class format="a.customer_credit_class='%{opvalue}'"/><tax_reg_no format="(a.tax_reg_no like '%%{opvalue}%')"/><status format="a.status is %{opvalue}"/><created_by format="(a.created_by like '%%{opvalue}%')"/><creation_date format="(a.creation_date between '%{creation_date[datetime]}' and '%{creation_date[datetime2]}')"/><last_update_by format="(a.last_update_by like '%%{opvalue}%')"/><last_update_date format="(a.last_update_date between '%{last_update_date[datetime]}' and '%{last_update_date[datetime2]}')"/><ar_customer_id format="(a.ar_customer_id like '%%{opvalue}%')"/><org_id format="(a.org_id like '%%{opvalue}%')"/><org_guid format="(a.org_guid like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\ar_customer.xml"/>
+<Ctrls><GroupBox  Name="GBar_customer" id="ar_customer" Text="ar_customer" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ar_customer_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVar_customer" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.ar_customer.GBDEDITar_customer" function="reset"/><assign name="$this.ar_customer.frmwndctrl" expr="%{$this.ar_customer_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetar_customer" Name="resetar_customer" Size="50,20">	<OnClick>	<submit next="GBDEDITar_customer" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchar_customer" Name="gsearchar_customer" Size="50,20">	<OnClick>	
+<search next="ar_customer_vLst" listed="0" prefixwhere="0" prefixand="1" inputed="1">%{searchtmpl}</search><submit next="GBDEDITar_customer" namelist="search" function="search"/>	
+<search next="records_ar_customer" listed="0" prefixwhere="0" prefixand="1"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITar_customer" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ar_customer_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ar_customer_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ar_customer_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

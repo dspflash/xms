@@ -1,0 +1,42 @@
+﻿<GroupBox Name="GBDEDITxtmst_settlementdetail"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_feeid"><Ctrls>
+<Label Align="Right" Text="feeid" onload="init" Name="lb_feeid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_feeid" onload="init" Name="feeid" Size="170,100">
+	<DbDetails>
+<Index>id</Index>
+<DbTable>tms.xtmsm_fee_item</DbTable>
+<Data>FeeName,ID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_confirmamount"><Ctrls>
+<Label Align="Right" Text="confirmamount" Name="lb_confirmamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_confirmamount" Name="confirmamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_freightid"><Ctrls>
+<Label Align="Right" Text="freightid" Name="lb_freightid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_freightid" Name="freightid" Size="170,20">
+	<DbDetails>
+<Index>customerorderid</Index>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Data>OrderCode,CustomerOrderID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_settlementdetailid" Visible="false"><Ctrls>
+<Label Align="Right" Text="settlementdetailid" overlap="pre" Name="lb_settlementdetailid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_settlementdetailid" overlap="pre" Name="settlementdetailid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_carrierid" Visible="false"><Ctrls>
+<Label Align="Right" Text="carrierid" overlap="pre" Name="lb_carrierid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrierid" overlap="pre" Name="carrierid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

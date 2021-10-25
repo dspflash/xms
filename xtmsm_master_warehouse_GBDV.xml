@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmsm_master_warehouse"><Ctrls>
+<ListCtrl Heading="warehousename,500;simplewarehousename,250;warehousecode,100;memberid,50;manager,50;phone,250;fax,250;mobilephone,250;address,500;postno,50;memo,500;status,120;posclear,120;confingid,50;cityid,50;operationcenter,20;companyid,50;isinsidenet,60;ciqflag,60;warehousetype,120;sqldbconnectionid,50;webservice,50;autoid,50;createby,50;createdate,150;updateby,50;updatedate,150;warehousearea,55;" loadedclick="0" ToolTip="ttp_xtmsm_master_warehouse" Name="xtmsm_master_warehouseLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>autoid</Index>
+<DbTable>tms.xtmsm_master_warehouse x left join tms.xms_member x0 on x.memberid=x0.memberid left join tms.xms_user x1 on x.manager=x1.xms_user_id left join tms.xtmsm_master_city x2 on x.cityid=x2.cityid</DbTable>
+<Data>x.warehousename,x.simplewarehousename,x.warehousecode,x0.MemberName memberid,x1.username manager,x.phone,x.fax,x.mobilephone,x.address,x.postno,x.memo,x.status,x.posclear,x.confingid,x2.CityAllName cityid,x.operationcenter,x.companyid,x.isinsidenet,x.ciqflag,x.warehousetype,x.sqldbconnectionid,x.webservice,x.autoid,x.createby,x.createdate,x.updateby,x.updatedate,x.warehousearea</Data>
+<Order>autoid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>autoid='%{xtmsm_master_warehouse_vLst[autoid]}'</Where></DbDetails><submit next="$this.xtmsm_master_warehouse.xtmsm_master_warehouseLst" namelist="DbDetails"/><assign name="$this.xtmsm_master_warehouse.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_master_warehouse</DbTable>
+<Where>autoid='%{xtmsm_master_warehouse_vLst[autoid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

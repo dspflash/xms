@@ -1,0 +1,13 @@
+﻿<WndTap Name="xtmst_fineorder" Text="xtmst_fineorder" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr=""/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xtmst_fineorder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBxtmst_fineorder" id="xtmst_fineorder" Text="xtmst_fineorder" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_fineorder_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_fineorder_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_fineorder_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertxtmst_fineorder" Visible="1"/><SetVisible name="modifyxtmst_fineorder" Visible="0"/></OnActivate>
+</WndTap>

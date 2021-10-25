@@ -1,0 +1,10 @@
+﻿<WndTap Name="xtmst_freight_print" Text="xtmst_freight_print" Ver="2">
+<xi:include href="lan\xtmst_freight.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_freight_detail.xml"/>
+<Ctrls>
+<GroupBox  Name="GBxtmst_freight" id="xtmst_freight" Text="xtmst_freight" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_GBDEDIT.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_Vh.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_detail_Vv.xml"/>
+</Ctrls></GroupBox></Ctrls>
+</WndTap>

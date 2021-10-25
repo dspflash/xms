@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVmodule_class"><Ctrls>
+<ListCtrl Heading="name,640;module_code,125;description,640;status,60;created_by,60;creation_date,150;last_update_by,60;last_update_date,150;module_class_id,60;" loadedclick="0" ToolTip="ttp_module_class" Name="module_classLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>module_class_id</Index>
+<DbTable>tms.module_class</DbTable>
+<Data>name,module_code,description,status,created_by,creation_date,last_update_by,last_update_date,module_class_id</Data>
+<Order>module_class_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>module_class_id='%{module_class_vLst[module_class_id]}'</Where></DbDetails><submit next="$this.module_class.module_classLst" namelist="DbDetails"/><assign name="$this.module_class.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.module_class</DbTable>
+<Where>module_class_id='%{module_class_vLst[module_class_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmsm_carrierdetail" Size="100,100"><Ctrls>
+<Button sqlpkinsert="id" Text="create" ToolTip="ttp_creatextmsm_carrierdetail" Name="insertxtmsm_carrierdetail" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmsm_carrierdetail</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>province[province],city[city],county[county]</Data>
+<DataEx>citycode,createby,createdate,updateby,updatedate,carrierid;'%{County[CityCode]}','%{user_id}',now(),'%{user_id}',now(),'%{orgguid}'</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmsm_carrierdetail[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_carrierdetailLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_carrierdetail_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmsm_carrierdetail" Name="modifyxtmsm_carrierdetail" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmsm_carrierdetail</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>province[province],city[city],county[county],citycode</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>id='%{id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmsm_carrierdetail[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_carrierdetailLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_carrierdetail_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmsm_carrierdetail" Name="resetxtmsm_carrierdetail" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmsm_carrierdetail" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_carrierdetail" Name="gsearchxtmsm_carrierdetail" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmsm_carrierdetailLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmsm_carrierdetail" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

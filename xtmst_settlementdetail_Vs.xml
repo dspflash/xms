@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITxtmst_settlementdetail" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_feeid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_feeid" Size="60,20" Text="feeid" Align="Right"  onload="init"/>
+<ComboBox Name="feeid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_feeid"  onload="init">
+	<DbDetails>
+<Index>id</Index>
+<DbTable>tms.xtmsm_fee_item</DbTable>
+<Data>FeeName,ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_confirmamount" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_confirmamount" Size="60,20" Text="confirmamount" Align="Right"/>
+<TextBox Name="confirmamount" Size="170,20" Text="" Weight="170" ToolTip="ttp_confirmamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_freightid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_freightid" Size="60,20" Text="freightid" Align="Right"/>
+<TextBox Name="freightid" Size="170,20" Text="" Weight="170" ToolTip="ttp_freightid">
+	<DbDetails>
+<Index>customerorderid</Index>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Data>OrderCode,CustomerOrderID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

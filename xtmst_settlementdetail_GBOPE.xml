@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_settlementdetail" Size="100,100"><Ctrls>
+<Button sqlpkinsert="settlementdetailid" Text="create" ToolTip="ttp_creatextmst_settlementdetail" Name="insertxtmst_settlementdetail" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_settlementdetail</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>feeid[id],confirmamount,freightid[customerorderid]</Data>
+<DataEx>settlementdetailid,createby,createdate,carrierid;uuid(),'%{user_id}',now(),'%{orgguid}'</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_settlementdetail[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_settlementdetailLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_settlementdetail_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_settlementdetail" Name="modifyxtmst_settlementdetail" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_settlementdetail</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>feeid[id],confirmamount,freightid[customerorderid]</Data>
+<DataEx/>
+<Where>settlementdetailid='%{settlementdetailid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_settlementdetail[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_settlementdetailLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_settlementdetail_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_settlementdetail" Name="resetxtmst_settlementdetail" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_settlementdetail" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_settlementdetail" Name="gsearchxtmst_settlementdetail" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_settlementdetailLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_settlementdetail" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

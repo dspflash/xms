@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_loadorder" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xtmst_loadorder_id" Text="create" ToolTip="ttp_creatextmst_loadorder" Name="insertxtmst_loadorder" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_loadorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehiclerealtimeid[vehiclerealtimeid],xsiteid[xsiteid],loadcityid[cityid],loadaddress,memo</Data>
+<DataEx>loadcode,status,createby,createdate,updateby,updatedate,loadorderid,carrierid;@odn,601,'%{user_id}',now(),'%{user_id}',now(),uuid(),'%{orgguid}'</DataEx>
+<queryFormat>SET @seq=0;SELECT SUBSTR(LoadCode,-5)+0 INTO @seq FROM tms.xtmst_loadorder WHERE DATE(CreateDate)=CURDATE() ORDER BY LoadCode DESC LIMIT 0,1;SELECT generate_orderNo(Code_Prefix, DT_MODE, @seq,'','') INTO @odn FROM tms.xms_doc_code WHERE docType='loadorder';insert into %{table} %{data};</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_loadorder[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_loadorderLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_loadorder_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_loadorder" Name="modifyxtmst_loadorder" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_loadorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehiclerealtimeid[vehiclerealtimeid],xsiteid[xsiteid],loadcityid[cityid],loadaddress,memo</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>xtmst_loadorder_id='%{xtmst_loadorder_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_loadorder[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_loadorderLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_loadorder_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_loadorder" Name="resetxtmst_loadorder" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_loadorder" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_loadorder" Name="gsearchxtmst_loadorder" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_loadorderLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_loadorder" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

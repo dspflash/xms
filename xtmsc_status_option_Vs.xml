@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITxtmsc_status_option" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_tablename" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_tablename" Size="60,20" Text="tablename" Align="Right"/>
+<TextBox Name="tablename" Size="170,20" Text="" Weight="170" ToolTip="ttp_tablename"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_typename" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_typename" Size="60,20" Text="typename" Align="Right"/>
+<TextBox Name="typename" Size="170,20" Text="" Weight="170" ToolTip="ttp_typename"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_statustype" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_statustype" Size="60,20" Text="statustype" Align="Right"/>
+<TextBox Name="statustype" Size="170,20" Text="" Weight="170" ToolTip="ttp_statustype"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_statuscode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_statuscode" Size="60,20" Text="statuscode" Align="Right"/>
+<TextBox Name="statuscode" Size="170,20" Text="" Weight="170" ToolTip="ttp_statuscode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_statusname" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_statusname" Size="60,20" Text="statusname" Align="Right"/>
+<TextBox Name="statusname" Size="170,20" Text="" Weight="170" ToolTip="ttp_statusname"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_remark" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_remark" Size="60,20" Text="remark" Align="Right"/>
+<TextBox Name="remark" Size="170,20" Text="" Weight="170" ToolTip="ttp_remark"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

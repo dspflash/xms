@@ -1,0 +1,38 @@
+﻿<Language name="xtmst_unloadorderdetail">
+<Lang name="xtmst_unloadorderdetail" value="xtmst_unloadorderdetail"/>
+<Lang name="TabEditxtmst_unloadorderdetail" value="xtmst_unloadorderdetail Edit"/>
+<Lang name="TabViewxtmst_unloadorderdetail" value="xtmst_unloadorderdetail View"/>
+<Lang name="unloadid" value=""/>
+<Lang name="ttp_unloadid" value=""/>
+<Lang name="planid" value=""/>
+<Lang name="ttp_planid" value=""/>
+<Lang name="freightid" value=""/>
+<Lang name="ttp_freightid" value=""/>
+<Lang name="memo" value=""/>
+<Lang name="ttp_memo" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="updateby" value=""/>
+<Lang name="ttp_updateby" value=""/>
+<Lang name="updatedate" value=""/>
+<Lang name="ttp_updatedate" value=""/>
+<Lang name="unloaddetailid" value=""/>
+<Lang name="ttp_unloaddetailid" value=""/>
+<Lang name="ttp_operationxtmst_unloadorderdetail" value=""/>
+<Lang name="ttp_creatextmst_unloadorderdetail" value=""/>
+<Lang name="ttp_modifyxtmst_unloadorderdetail" value=""/>
+<Lang name="ttp_resetxtmst_unloadorderdetail" value=""/>
+<Lang name="ttp_deletextmst_unloadorderdetail" value=""/>
+<Lang name="ttp_refreshxtmst_unloadorderdetail" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

@@ -1,0 +1,32 @@
+﻿<Language name="xtmsr_drivervehicle">
+<Lang name="xtmsr_drivervehicle" value="xtmsr_drivervehicle"/>
+<Lang name="TabEditxtmsr_drivervehicle" value="xtmsr_drivervehicle Edit"/>
+<Lang name="TabViewxtmsr_drivervehicle" value="xtmsr_drivervehicle View"/>
+<Lang name="vehicleid" value=""/>
+<Lang name="ttp_vehicleid" value=""/>
+<Lang name="driverid" value=""/>
+<Lang name="ttp_driverid" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="updateby" value=""/>
+<Lang name="ttp_updateby" value=""/>
+<Lang name="updatedate" value=""/>
+<Lang name="ttp_updatedate" value=""/>
+<Lang name="ttp_operationxtmsr_drivervehicle" value=""/>
+<Lang name="ttp_creatextmsr_drivervehicle" value=""/>
+<Lang name="ttp_modifyxtmsr_drivervehicle" value=""/>
+<Lang name="ttp_resetxtmsr_drivervehicle" value=""/>
+<Lang name="ttp_deletextmsr_drivervehicle" value=""/>
+<Lang name="ttp_refreshxtmsr_drivervehicle" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmsm_billingconfiguration"><Ctrls>
+<ListCtrl Heading="weightunitprice,90;volumeunitprice,90;startmileage,90;overunitprice,90;backofffee,90;returnfee,90;smallorderfee,90;status,60;createby,50;creratedate,150;updateby,50;updatedate,150;configurationid,250;xtmsm_billingconfiguration_id,55;carrierid,250;" loadedclick="0" ToolTip="ttp_xtmsm_billingconfiguration" Name="xtmsm_billingconfigurationLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>xtmsm_billingconfiguration_id</Index>
+<DbTable>tms.xtmsm_billingconfiguration</DbTable>
+<Data>weightunitprice,volumeunitprice,startmileage,overunitprice,backofffee,returnfee,smallorderfee,status,createby,creratedate,updateby,updatedate,configurationid,xtmsm_billingconfiguration_id,carrierid</Data>
+<Order>xtmsm_billingconfiguration_id</Order></DbDetails><DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>xtmsm_billingconfiguration_id='%{xtmsm_billingconfiguration_vLst[xtmsm_billingconfiguration_id]}'</Where></DbDetails><submit next="$this.xtmsm_billingconfiguration.xtmsm_billingconfigurationLst" namelist="DbDetails"/><assign name="$this.xtmsm_billingconfiguration.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_billingconfiguration</DbTable>
+<Where>xtmsm_billingconfiguration_id='%{xtmsm_billingconfiguration_vLst[xtmsm_billingconfiguration_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

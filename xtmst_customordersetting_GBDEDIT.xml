@@ -1,0 +1,60 @@
+﻿<GroupBox Name="GBDEDITxtmst_customordersetting"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_customerorderid"><Ctrls>
+<Label Align="Right" Text="customerorderid" Name="lb_customerorderid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_customerorderid" Name="customerorderid" Size="170,20">
+	<DbDetails>
+<Index>customerorderid</Index>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Data>OrderCode,CustomerOrderID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_carrycode"><Ctrls>
+<Label Align="Right" Text="carrycode" Name="lb_carrycode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrycode" Name="carrycode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_ordermileage"><Ctrls>
+<Label Align="Right" Text="ordermileage" Name="lb_ordermileage" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_ordermileage" Name="ordermileage" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_vehicletypefee"><Ctrls>
+<Label Align="Right" Text="vehicletypefee" Name="lb_vehicletypefee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehicletypefee" Name="vehicletypefee" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_backoffline"><Ctrls>
+<Label Align="Right" Text="backoffline" Name="lb_backoffline" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_backoffline" Name="backoffline" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_returnline"><Ctrls>
+<Label Align="Right" Text="returnline" Name="lb_returnline" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_returnline" Name="returnline" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_expressfee"><Ctrls>
+<Label Align="Right" Text="expressfee" Name="lb_expressfee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_expressfee" Name="expressfee" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_otherfee"><Ctrls>
+<Label Align="Right" Text="otherfee" Name="lb_otherfee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_otherfee" Name="otherfee" Size="170,20">
+	<DbDetails>
+<Index>customerorderid</Index>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Data>OrderCode,CustomerOrderID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_isexpressorder"><Ctrls>
+<CheckBox Text="isexpressorder" ToolTip="ttp_isexpressorder" Name="isexpressorder" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_issmallorder"><Ctrls>
+<CheckBox Text="issmallorder" ToolTip="ttp_issmallorder" Name="issmallorder" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmst_customordersetting_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmst_customordersetting_id" overlap="pre" Name="lb_xtmst_customordersetting_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmst_customordersetting_id" overlap="pre" Name="xtmst_customordersetting_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{xtmst_customordersetting_id}'"><SetVisible name="insertxtmst_customordersetting" Visible="0"/><SetVisible name="modifyxtmst_customordersetting" Visible="1"/><else/><SetVisible name="insertxtmst_customordersetting" Visible="1"/><SetVisible name="modifyxtmst_customordersetting" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_carrierid" Visible="false"><Ctrls>
+<Label Align="Right" Text="carrierid" overlap="pre" Name="lb_carrierid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrierid" overlap="pre" Name="carrierid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

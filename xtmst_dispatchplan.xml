@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><WndTap Text="xtmst_dispatchplan" Name="xtmst_dispatchplan" Ver="2">
+<var name="refreshAfterEdit" expr="1"/>
+<var name="dataRequired" expr="vehicleid[vehicleid],freightid[freightid],fromcityid[cityid],fromaddress,tocityid[cityid],toaddress,vehiclerealtimeid[vehiclerealtimeid]"/>
+<var name="dataRequireless" expr=""/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_dispatchplan.xml"/>
+<Ctrls>
+<GroupBox Text="xtmst_dispatchplan" Name="GBxtmst_dispatchplan" id="xtmst_dispatchplan" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_GBDEDIT.xml"></xi:include><BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_GBOPE.xml"></xi:include>
+<TAB/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_GBOPV.xml"></xi:include>
+<BR/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_GBDV.xml"></xi:include></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

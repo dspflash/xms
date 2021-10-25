@@ -1,0 +1,40 @@
+﻿<Language name="xtmst_complain">
+<Lang name="xtmst_complain" value="理赔"/>
+<Lang name="TabEditxtmst_complain" value="xtmst_complain Edit"/>
+<Lang name="TabViewxtmst_complain" value="xtmst_complain View"/>
+<Lang name="customerorderid" value="客户单"/>
+<Lang name="ttp_customerorderid" value=""/>
+<Lang name="complaincode" value="理赔单"/>
+<Lang name="ttp_complaincode" value=""/>
+<Lang name="complainprice" value="理赔金额"/>
+<Lang name="ttp_complainprice" value=""/>
+<Lang name="complainmemo" value="理赔备注"/>
+<Lang name="ttp_complainmemo" value=""/>
+<Lang name="status" value=""/>
+<Lang name="ttp_status" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="updateby" value=""/>
+<Lang name="ttp_updateby" value=""/>
+<Lang name="updatedate" value=""/>
+<Lang name="ttp_updatedate" value=""/>
+<Lang name="complainid" value=""/>
+<Lang name="ttp_complainid" value=""/>
+<Lang name="ttp_operationxtmst_complain" value=""/>
+<Lang name="ttp_creatextmst_complain" value=""/>
+<Lang name="ttp_modifyxtmst_complain" value=""/>
+<Lang name="ttp_resetxtmst_complain" value=""/>
+<Lang name="ttp_deletextmst_complain" value=""/>
+<Lang name="ttp_refreshxtmst_complain" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

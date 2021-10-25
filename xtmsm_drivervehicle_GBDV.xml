@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmsr_drivervehicle"><Ctrls>
+<ListCtrl Heading="vehicleid,250;driverid,250;createby,50;createdate,150;updateby,50;updatedate,150;" loadedclick="0" ToolTip="ttp_xtmsr_drivervehicle" Name="xtmsr_drivervehicleLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmsr_drivervehicle x left join tms.xtmsm_vehicle x0 on x.vehicleid=x0.vehicleid left join tms.xtmsm_driver x1 on x.driverid=x1.driverid</DbTable>
+<Index>driverid</Index>
+<Data>x0.Platenumber vehicleid,x1.DriverName driverid,x.createby,x.createdate,x.updateby,x.updatedate</Data>
+<Order>vehicleid,driverid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>driverid='%{xtmsr_drivervehicle_vLst[driverid]}'</Where></DbDetails><submit next="$this.xtmsr_drivervehicle.xtmsr_drivervehicleLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsr_drivervehicle</DbTable>
+<Where>driverid='%{xtmsr_drivervehicle_vLst[driverid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

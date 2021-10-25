@@ -1,0 +1,14 @@
+﻿<GroupBox Name="GBDEDITxms_role" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_role_name_cn" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_role_name_cn" Size="60,20" Text="role_name_cn" Align="Right"/>
+<TextBox Name="role_name_cn" Size="170,20" Text="" Weight="170" ToolTip="ttp_role_name_cn"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_role_name_eng" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_role_name_eng" Size="60,20" Text="role_name_eng" Align="Right"/>
+<TextBox Name="role_name_eng" Size="170,20" Text="" Weight="170" ToolTip="ttp_role_name_eng"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_role_layout" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_role_layout" Size="60,20" Text="role_layout" Align="Right"/>
+<TextBox Name="role_layout" Size="170,20" Text="" Weight="170" ToolTip="ttp_role_layout"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

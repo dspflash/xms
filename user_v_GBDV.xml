@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVuser_v"><Ctrls>
+<ListCtrl Heading="username,100;role_name_cn,100;carriername,250;org_guid,250;xms_user_id,60;role_id,20;" loadedclick="0" ToolTip="ttp_user_v" Name="user_vLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>tms.user_v</DbTable>
+
+<Data>username,role_name_cn,carriername,org_guid,xms_user_id,role_id</Data>
+</DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>%{primary}='%{user_v_vLst[%{primary}]}'</Where></DbDetails><submit next="$this.user_v.user_vLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.user_v</DbTable>
+<Where>%{primary}='%{user_v_vLst[%{primary}]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

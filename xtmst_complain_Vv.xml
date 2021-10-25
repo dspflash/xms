@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVxtmst_complain" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmst_complain_vLst" ToolTip="ttp_xtmst_complain_v" Size="700,450" OnLoad="init" Heading="freightid,250;complaincode,400;complainprice,90;complainmemo,640;status,25;createby,50;createdate,150;updateby,50;updatedate,150;complainid,250;xtmst_complain_id,100;carrierid,250;" loadedclick="0">
+	<DbDetails >
+<Index>xtmst_complain_id</Index>
+<DbTable>tms.xtmst_complain x left join tms.xtmst_freight x0 on x.freightid=x0.freightid left join tms.xtmsc_status_option x1 on x.status=x1.statuscode</DbTable>
+<Data>x0.FreightCode freightid,x.complaincode,x.complainprice,x.complainmemo,x1.StatusName status,x.createby,x.createdate,x.updateby,x.updatedate,x.complainid,x.xtmst_complain_id,x.carrierid</Data>
+<Order>xtmst_complain_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>xtmst_complain_id='%{xtmst_complain_vLst[xtmst_complain_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_complain.xtmst_complainLst"/><assign name="$this.xtmst_complain.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_complain</DbTable>
+<Where>xtmst_complain_id='%{xtmst_complain_vLst[xtmst_complain_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_xtmst_complain" expr="js(%{xtmst_complain_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xtmst_complain" expr="js(%{xtmst_complain_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

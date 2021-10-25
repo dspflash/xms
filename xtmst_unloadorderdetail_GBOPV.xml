@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_unloadorderdetail" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmst_unloadorderdetail" Name="deletextmst_unloadorderdetail" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmst_unloadorderdetail</DbTable>
+<Where>unloaddetailid='%{xtmst_unloadorderdetailLst[unloaddetailid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmst_unloadorderdetail" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmst_unloadorderdetail" Name="searchxtmst_unloadorderdetail" Size="50,20">
+			  <OnClick><submit next="xtmst_unloadorderdetailLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmst_unloadorderdetailLst" OnClick="(xtmst_unloadorderdetailLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmst_unloadorderdetailLst" OnClick="(xtmst_unloadorderdetailLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmst_unloadorderdetailLst" OnClick="(xtmst_unloadorderdetailLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

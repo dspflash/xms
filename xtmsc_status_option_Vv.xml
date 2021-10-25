@@ -1,0 +1,13 @@
+﻿<GroupBox Name="GBDVxtmsc_status_option" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmsc_status_option_vLst" ToolTip="ttp_xtmsc_status_option_v" Size="700,450" OnLoad="init" Heading="tablename,100;typename,100;statustype,50;statuscode,25;statusname,100;remark,500;idx,25;" loadedclick="0">
+	<DbDetails >
+<Index>idx</Index>
+<DbTable>tms.xtmsc_status_option x</DbTable>
+<Data>x.tablename,x.typename,x.statustype,x.statuscode,x.statusname,x.remark,x.idx</Data>
+<Order>idx</Order></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsc_status_option_ops.xml"/>
+<OnChanged>
+<assign name="pgcur_xtmsc_status_option" expr="js(%{xtmsc_status_option_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xtmsc_status_option" expr="js(%{xtmsc_status_option_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

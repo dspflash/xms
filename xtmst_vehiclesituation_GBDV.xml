@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmst_vehiclesituation"><Ctrls>
+<ListCtrl Heading="vehicleid,250;vehiclerealtimeid,250;operatetype,25;freightid,120;xsiteid,250;cityid,50;address,500;createby,50;createdate,150;vehiclesituationid,250;xtmst_vehiclesituation_id,100;" loadedclick="0" ToolTip="ttp_xtmst_vehiclesituation" Name="xtmst_vehiclesituationLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>xtmst_vehiclesituation_id</Index>
+<DbTable>tms.xtmst_vehiclesituation x left join tms.xtmsm_vehicle x0 on x.vehicleid=x0.vehicleid left join tms.xtmst_vehiclerealtime x1 on x.vehiclerealtimeid=x1.vehiclerealtimeid left join tms.xtmsc_type_option x2 on x.operatetype=x2.typecode left join tms.xtmst_freight x3 on x.freightid=x3.freightid left join tms.xtmsm_xsite x4 on x.xsiteid=x4.xsiteid left join tms.xtmsm_master_city x5 on x.cityid=x5.cityid</DbTable>
+<Data>x0.Platenumber vehicleid,x1.VehicleRealTimeCode vehiclerealtimeid,x2.TypeName operatetype,x3.FreightCode freightid,x4.XSiteName xsiteid,x5.CityAllName cityid,x.address,x.createby,x.createdate,x.vehiclesituationid,x.xtmst_vehiclesituation_id</Data>
+<Order>xtmst_vehiclesituation_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where x1.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails><DbDetails><queryFormat>select %{data} from %{dbtable} where x1.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>xtmst_vehiclesituation_id='%{xtmst_vehiclesituation_vLst[xtmst_vehiclesituation_id]}'</Where></DbDetails><submit next="$this.xtmst_vehiclesituation.xtmst_vehiclesituationLst" namelist="DbDetails"/><assign name="$this.xtmst_vehiclesituation.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_vehiclesituation</DbTable>
+<Where>xtmst_vehiclesituation_id='%{xtmst_vehiclesituation_vLst[xtmst_vehiclesituation_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

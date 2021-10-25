@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_dispatchplan" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmst_dispatchplan" Name="deletextmst_dispatchplan" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmst_dispatchplan</DbTable>
+<Where>xtmst_dispatchplan_id='%{xtmst_dispatchplanLst[xtmst_dispatchplan_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmst_dispatchplan" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmst_dispatchplan" Name="searchxtmst_dispatchplan" Size="50,20">
+			  <OnClick><submit next="xtmst_dispatchplanLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmst_dispatchplanLst" OnClick="(xtmst_dispatchplanLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmst_dispatchplanLst" OnClick="(xtmst_dispatchplanLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmst_dispatchplanLst" OnClick="(xtmst_dispatchplanLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

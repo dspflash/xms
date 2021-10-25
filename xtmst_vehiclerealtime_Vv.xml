@@ -1,0 +1,14 @@
+﻿<GroupBox Name="GBDVxtmst_vehiclerealtime" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmst_vehiclerealtime_vLst" ToolTip="ttp_xtmst_vehiclerealtime_v" Size="700,450" OnLoad="init" Heading="vehiclerealtimecode,250;deliverymode,120;consignmentmode,120;operateineid,120;fromcityid,50;tocityid,50;fromxsiteid,250;toxsiteid,250;fromaddress,640;toaddress,640;vehicleid,250;driverid,250;lorrydriver,250;status,50;freightnum,50;totalweight,90;totalvolumn,90;remainweight,90;remainvolumn,90;carrierid,250;vehiclerealtimeid,250;createby,50;createdate,150;updateby,50;updatedate,150;depotnum,20;startdatetime,150;startdatetimeactual,150;terminatedatetime,150;terminatedatetimeactual,150;"    colsDisplay="18" loadedclick="0">
+	<DbDetails >
+<Index>vehiclerealtimeid</Index>
+<DbTable>tms.xtmst_vehiclerealtime x left join tms.xtmsc_type_option x0 on x.deliverymode=x0.typecode left join tms.xtmsc_type_option x1 on x.consignmentmode=x1.typecode left join tms.xtmsm_operateline x2 on x.operateineid=x2.operateineid left join tms.xtmsm_master_city x3 on x.fromcityid=x3.cityid left join tms.xtmsm_master_city x4 on x.tocityid=x4.cityid left join tms.xtmsm_xsite x5 on x.fromxsiteid=x5.xsiteid left join tms.xtmsm_xsite x6 on x.toxsiteid=x6.xsiteid left join tms.xtmsm_vehicle x7 on x.vehicleid=x7.vehicleid left join tms.xtmsm_driver x8 on x.driverid=x8.driverid left join tms.xtmsm_driver x9 on x.lorrydriver=x9.driverid left join tms.xtmsc_status_option x10 on x.status=x10.statuscode</DbTable>
+<Data>x.vehiclerealtimecode,x0.TypeName deliverymode,x1.TypeName consignmentmode,x2.operateline_name operateineid,x3.CityAllName fromcityid,x4.CityAllName tocityid,x5.XSiteName fromxsiteid,x6.XSiteName toxsiteid,x.fromaddress,x.toaddress,x7.Platenumber vehicleid,x8.DriverName driverid,x9.DriverName lorrydriver,x10.StatusName status,x.freightnum,x.totalweight,x.totalvolumn,x.remainweight,x.remainvolumn,x.carrierid,x.vehiclerealtimeid,x.createby,x.createdate,x.updateby,x.updatedate,x.depotnum,x.startdatetime,x.startdatetimeactual,x.terminatedatetime,x.terminatedatetimeactual</Data>
+<Order>vehiclerealtimeid</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclerealtime_ops.xml"/>
+<OnChanged>
+<assign name="pgcur_xtmst_vehiclerealtime" expr="js(%{xtmst_vehiclerealtime_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xtmst_vehiclerealtime" expr="js(%{xtmst_vehiclerealtime_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

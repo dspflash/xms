@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_customorder" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xtmst_customorder_id" Text="create" ToolTip="ttp_creatextmst_customorder" Name="insertxtmst_customorder" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_customorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>deliverymode[typecode],consignmentmode[typecode],planshipmentdate,plantodate,timeliness,memberid[memberid],synccode,consignee,tocityid[cityid],consigneeaddress,consigneemobilephone,shipper,fromcityid[cityid],shipperaddress,shippermobilephone,consigneephone,estvolumn,estweight,isdangerous,custommemo,issealbox,isexpressorder,linkorderid[customerorderid],materialtype</Data>
+<DataEx>ordercode,status,ordersource,settlementstatus,ordertype,customerorderid,createby,createdate,updateby,updatedate,carrierid;@odn,911,911,800,1,uuid(),'%{user_id}',now(),'%{user_id}',now(),'%{orgguid}'</DataEx>
+<queryFormat>SET @seq=0;SELECT SUBSTR(OrderCode,-5)+0 INTO @seq FROM tms.xtmst_customorder WHERE DATE(CreateDate)=CURDATE() ORDER BY OrderCode DESC LIMIT 0,1;SELECT generate_orderNo(Code_Prefix, DT_MODE, @seq,'','') INTO @odn FROM tms.xms_doc_code WHERE docType='customorder';insert into %{table} %{data};</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_customorder[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_customorderLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_customorder_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_customorder" Name="modifyxtmst_customorder" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_customorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>deliverymode[typecode],consignmentmode[typecode],planshipmentdate,plantodate,timeliness,memberid[memberid],synccode,consignee,tocityid[cityid],consigneeaddress,consigneemobilephone,shipper,fromcityid[cityid],shipperaddress,shippermobilephone,consigneephone,estvolumn,estweight,isdangerous,custommemo,issealbox,isexpressorder,linkorderid[customerorderid],materialtype</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>xtmst_customorder_id='%{xtmst_customorder_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_customorder[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_customorderLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_customorder_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_customorder" Name="resetxtmst_customorder" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_customorder" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_customorder" Name="gsearchxtmst_customorder" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_customorderLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_customorder" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

@@ -1,0 +1,38 @@
+﻿<Language name="module_class">
+<Lang name="module_class" value="module_class"/>
+<Lang name="TabEditmodule_class" value="module_class Edit"/>
+<Lang name="TabViewmodule_class" value="module_class View"/>
+<Lang name="name" value=""/>
+<Lang name="ttp_name" value=""/>
+<Lang name="module_code" value=""/>
+<Lang name="ttp_module_code" value=""/>
+<Lang name="description" value=""/>
+<Lang name="ttp_description" value=""/>
+<Lang name="status" value=""/>
+<Lang name="ttp_status" value=""/>
+<Lang name="created_by" value=""/>
+<Lang name="ttp_created_by" value=""/>
+<Lang name="creation_date" value=""/>
+<Lang name="ttp_creation_date" value=""/>
+<Lang name="last_update_by" value=""/>
+<Lang name="ttp_last_update_by" value=""/>
+<Lang name="last_update_date" value=""/>
+<Lang name="ttp_last_update_date" value=""/>
+<Lang name="module_class_id" value=""/>
+<Lang name="ttp_module_class_id" value=""/>
+<Lang name="ttp_operationmodule_class" value=""/>
+<Lang name="ttp_createmodule_class" value=""/>
+<Lang name="ttp_modifymodule_class" value=""/>
+<Lang name="ttp_resetmodule_class" value=""/>
+<Lang name="ttp_deletemodule_class" value=""/>
+<Lang name="ttp_refreshmodule_class" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

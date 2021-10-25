@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDEDITxtmst_pickuporder" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="BasicInfo" Text="BasicInfo" feature="tab"><Ctrls>
+<GroupBox Name="GB_pickupordercode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_pickupordercode" Size="60,20" Text="pickupordercode" Align="Right"/>
+<TextBox Name="pickupordercode" Size="170,20" Text="" Weight="170" ToolTip="ttp_pickupordercode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_customername" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_customername" Size="60,20" Text="customername" Align="Right"/>
+<TextBox Name="customername" Size="150,20" Text="" Weight="150" ToolTip="ttp_customername"></TextBox>
+<MagicCtrl Name="pickcustomername" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.ar_customerPick.frmwndctrl" expr="CustomerId"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="ShipperInfo" Text="ShipperInfo" feature="tab"><Ctrls>
+<GroupBox Name="GB_shipper" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_shipper" Size="60,20" Text="shipper" Align="Right"/>
+<TextBox Name="shipper" Size="170,20" Text="" Weight="170" ToolTip="ttp_shipper"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

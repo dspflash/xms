@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmsm_operateline" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmsm_operateline" Name="deletextmsm_operateline" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmsm_operateline</DbTable>
+<Where>operateline_id='%{xtmsm_operatelineLst[operateline_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmsm_operateline" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmsm_operateline" Name="searchxtmsm_operateline" Size="50,20">
+			  <OnClick><submit next="xtmsm_operatelineLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmsm_operatelineLst" OnClick="(xtmsm_operatelineLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmsm_operatelineLst" OnClick="(xtmsm_operatelineLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmsm_operatelineLst" OnClick="(xtmsm_operatelineLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

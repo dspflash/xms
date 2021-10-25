@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxms_role" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletexms_role" Name="deletexms_role" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xms_role</DbTable>
+<Where>role_id='%{xms_roleLst[role_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxms_role" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxms_role" Name="searchxms_role" Size="50,20">
+			  <OnClick><submit next="xms_roleLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxms_roleLst" OnClick="(xms_roleLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExms_roleLst" OnClick="(xms_roleLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxms_roleLst" OnClick="(xms_roleLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

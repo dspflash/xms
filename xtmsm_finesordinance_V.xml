@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmsm_finesordinance_v" Text="xtmsm_finesordinance">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_finesordinance_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><finesinstruction format="(x.finesinstruction like '%%{opvalue}%')"/><finemoney format="(x.finemoney like '%%{opvalue}%')"/><usestatus format="x.usestatus is %{opvalue}"/><memo format="(x.memo like '%%{opvalue}%')"/><finesordinanceid format="(x.finesordinanceid like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_finesordinance.xml"/>
+<Ctrls><GroupBox  Name="GBxtmsm_finesordinance" id="xtmsm_finesordinance" Text="xtmsm_finesordinance" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_finesordinance_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmsm_finesordinance" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmsm_finesordinance.GBDEDITxtmsm_finesordinance" function="reset"/><assign name="$this.xtmsm_finesordinance.frmwndctrl" expr="%{$this.xtmsm_finesordinance_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmsm_finesordinance" Name="resetxtmsm_finesordinance" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmsm_finesordinance" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_finesordinance" Name="gsearchxtmsm_finesordinance" Size="50,20">	<OnClick>	
+<search next="xtmsm_finesordinance_vLst" listed="0" prefixwhere="0" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_finesordinance" namelist="search" function="search"/>	
+<search next="records_xtmsm_finesordinance" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_finesordinance" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_finesordinance_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_finesordinance_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_finesordinance_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

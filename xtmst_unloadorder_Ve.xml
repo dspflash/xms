@@ -1,0 +1,16 @@
+﻿<WndTap Name="xtmst_unloadorder" Text="xtmst_unloadorder" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr="vehiclerealtimeid[vehiclerealtimeid],carrierid[carrierid]"/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xtmst_unloadorder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_unloadorderdetail.xml"/>
+<Ctrls>
+<GroupBox  Name="GBxtmst_unloadorder" id="xtmst_unloadorder" Text="xtmst_unloadorder" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_unloadorder_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_unloadorder_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_unloadorder_Vh.xml"/>
+<BR/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_unloadorderdetail_Vv.xml"/>
+</Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertxtmst_unloadorder" Visible="1"/><SetVisible name="modifyxtmst_unloadorder" Visible="0"/></OnActivate>
+</WndTap>

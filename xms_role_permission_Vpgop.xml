@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxms_role_permission" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialxms_role_permission" Size="50,20">
+<OnClick><submit next="xms_role_permission_vLst" function="initial"/><submit next="records_xms_role_permission" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPxms_role_permission_vLst" Size="50,20">
+<OnClick><submit next="xms_role_permission_vLst" function="GetPage(first)"/><submit next="records_xms_role_permission"/></OnClick></Button>
+<Button Text="prepage" Name="PRExms_role_permission_vLst" Size="50,20">
+<OnClick><submit next="xms_role_permission_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPxms_role_permission_vLst" Size="50,20">
+<OnClick><submit next="xms_role_permission_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

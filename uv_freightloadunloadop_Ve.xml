@@ -1,0 +1,13 @@
+﻿<WndTap Name="uv_freightloadunloadop" Text="uv_freightloadunloadop" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr=""/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\uv_freightloadunloadop.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBuv_freightloadunloadop" id="uv_freightloadunloadop" Text="uv_freightloadunloadop" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="uv_freightloadunloadop_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="uv_freightloadunloadop_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="uv_freightloadunloadop_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertuv_freightloadunloadop" Visible="1"/><SetVisible name="modifyuv_freightloadunloadop" Visible="0"/></OnActivate>
+</WndTap>

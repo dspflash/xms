@@ -1,0 +1,13 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="View"><DbDetails><Where>customerorderid='%{uv_customorder_vLst[customerorderid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_customorder_print.xtmst_customorderLst"/></op>
+<!--op text="carrier"><DbDetails><Where>customerorderid='%{uv_customorder_vLst[customerorderid]}' and (status=101 or (carrierid is null or carrierid=''))</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_customorder_carrier.customerorderid"/></op-->
+<op text="OrderMine" needconfirm="1"><DbDetails><DbTable>tms.xtmst_customorder</DbTable>
+<Where>customerorderid='%{uv_customorder_vLst[customerorderid]}' and (status=101 or (carrierid is null or carrierid=''))</Where>
+<Data>carrierid='%{orgguid}',STATUS=101,OrderStatus=901,updateby='%{user_id}',updatedate=now()</Data>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+<op text="customordersetting"><submit next="$this.xtmst_customordersetting.GBDEDITxtmst_customordersetting" function="reset"/><DbDetails><Where>customerorderid='%{uv_customorder_vLst[customerorderid]}' and carrierid='%{orgguid}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_customordersetting.xtmst_customordersettingLst"/><submit namelist="DbDetails" next="$this.xtmst_customordersetting.CustomerOrderID"/></op>
+<op text="freight"><submit next="xtmst_freight_v.xtmst_freight.GBDEDITxtmst_freight" function="reset"/><DbDetails><Where>customerorderid='%{uv_customorder_vLst[customerorderid]}' and carrierid='%{orgguid}' and customerorderid not in (select CustomerOrderID from tms.xtmst_freight where customerorderid='%{uv_customorder_vLst[customerorderid]}' and status!=208)</Where></DbDetails><submit namelist="DbDetails" next="xtmst_freight_v.xtmst_freight.customerorderid"/></op>
+<op text="Complain"><submit next="$this.xtmst_complain.GBDEDITxtmst_complain" function="reset"/><DbDetails><Where>customerorderid='%{uv_customorder_vLst[customerorderid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_complain.xtmst_complainLst"/><submit namelist="DbDetails" next="$this.xtmst_complain.CustomerOrderID"/></op>
+<op text="Fineorder"><submit next="$this.xtmst_fineorder.GBDEDITxtmst_fineorder" function="reset"/><DbDetails><Where>customerorderid='%{uv_customorder_vLst[customerorderid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_fineorder.xtmst_fineorderLst"/><submit namelist="DbDetails" next="$this.xtmst_fineorder.CustomerOrderID"/></op>
+</operator>

@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmsm_finesordinance"><Ctrls>
+<ListCtrl Heading="finesinstruction,640;finemoney,90;usestatus,60;memo,640;finesordinanceid,50;" loadedclick="0" ToolTip="ttp_xtmsm_finesordinance" Name="xtmsm_finesordinanceLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>finesordinanceid</Index>
+<DbTable>tms.xtmsm_finesordinance</DbTable>
+<Data>finesinstruction,finemoney,usestatus,memo,finesordinanceid</Data>
+<Order>finesordinanceid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>finesordinanceid='%{xtmsm_finesordinance_vLst[finesordinanceid]}'</Where></DbDetails><submit next="$this.xtmsm_finesordinance.xtmsm_finesordinanceLst" namelist="DbDetails"/><assign name="$this.xtmsm_finesordinance.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_finesordinance</DbTable>
+<Where>finesordinanceid='%{xtmsm_finesordinance_vLst[finesordinanceid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

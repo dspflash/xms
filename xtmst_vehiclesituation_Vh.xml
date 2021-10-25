@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_vehiclesituation" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_vehiclesituationLst" ToolTip="ttp_xtmst_vehiclesituation" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_vehiclesituation_id</Index>
+<DbTable>tms.xtmst_vehiclesituation</DbTable>
+<Data>vehicleid,vehiclerealtimeid,operatetype,freightid,xsiteid,cityid,address,createby,createdate,vehiclesituationid,xtmst_vehiclesituation_id</Data>
+<Order>xtmst_vehiclesituation_id</Order></DbDetails>
+<OnClick><assign name="vehicleid[vehicleid]" expr="%{xtmst_vehiclesituationLst[vehicleid]}" function="SetSel"/><assign name="vehiclerealtimeid[vehiclerealtimeid]" expr="%{xtmst_vehiclesituationLst[vehiclerealtimeid]}" function="SetSel"/><assign name="operatetype[typecode]" expr="%{xtmst_vehiclesituationLst[operatetype]}" function="SetSel"/><assign name="freightid[freightid]" expr="%{xtmst_vehiclesituationLst[freightid]}" function="SetSel"/><assign name="xsiteid[xsiteid]" expr="%{xtmst_vehiclesituationLst[xsiteid]}" function="SetSel"/><assign name="cityid[cityid]" expr="%{xtmst_vehiclesituationLst[cityid]}" function="SetSel"/>
+<if cond="%{xtmst_vehiclesituation_id}"><SetVisible name="insertxtmst_vehiclesituation" Visible="0"/><SetVisible name="modifyxtmst_vehiclesituation" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

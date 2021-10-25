@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmst_freight_detail"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmst_freight_detail" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_freight_detail_id</Index>
+<DbTable>tms.xtmst_freight_detail x left join tms.xtmsc_type_option x0 on x.packagetype=x0.typecode left join tms.xtmsc_type_option x1 on x.transfeesettlementsmode=x1.typecode</DbTable>
+<Data>count(*) records</Data>
+<Order>xtmst_freight_detail_id</Order><Queryformat>select %{data} from (select x.xtmst_freight_detail_id from %{dbtable} %{where} GROUP BY x.xtmst_freight_detail_id  ORDER BY x.xtmst_freight_detail_id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmst_freight_detail" expr="js(Math.ceil(%{records_xtmst_freight_detail}/%{xtmst_freight_detail_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmst_freight_detail" expr="js('1~'+Math.ceil(%{records_xtmst_freight_detail}/%{xtmst_freight_detail_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmst_freight_detail" Size="60,20"><OnSelEndOK><submit next="xtmst_freight_detail_vLst" function="GetPage(%{pgscb_xtmst_freight_detail}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmst_freight_detail" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmst_freight_detail" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmst_freight_detail_vLst" Size="50,20"><OnClick><submit next="xtmst_freight_detail_vLst" function="GetPage(%{pgcur_xtmst_freight_detail}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

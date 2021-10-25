@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><WndTap Text="myinfo" Name="myinfo" Ver="2">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="user_modify_pass.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="city_pick.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrier_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xms_user.xml"/>
+<Ctrls>
+<GroupBox Text="myinfo" Name="GBhr_employee_v" id="hr_employee_v" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="user_v_GBDEDIT.xml"></xi:include>
+<BR AutoHeight="1"/>
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPDVitem"><Ctrls>
+<TAB/><Button Text="modifyPass" ToolTip="ttp_modifyPass" Name="modify_Pass" Size="100,20"><OnClick><submit next="$this.xms_user.GBDEDITxms_user" function="reset"/></OnClick></Button><TAB/>
+<Button Text="AdminCarrier" ToolTip="ttp_Admin" Name="AdminCarrier" Size="100,20">	<OnClick><submit next="$this.xtmsm_carrier.GBDEDITxtmsm_carrier" function="reset"/><DbDetails><Where>carrierid='%{orgguid}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_carrier.xtmsm_carrierLst"/><DbDetails><Where>cityId=(select cityid from tms.xtmsm_carrier where carrierid='%{orgguid}')</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_carrier.cityid"/></OnClick>	</Button><TAB/>	
+</Ctrls></GroupBox>
+<ListCtrl onload="init" Name="hr_employee_vLst" Size="70,20" visible="0">
+	<DbDetails fcsm="1">
+<DbTable>tms.user_v</DbTable>
+<Data>username,role_name_cn,carriername,org_guid,xms_user_id,role_id</Data>
+</DbDetails><DbDetails><Where>xms_user_id='%{user_id}'</Where></DbDetails><operator firstpage="1" nextpage="1" refresh="1" prepage="1"><op/></operator>
+</ListCtrl>
+</Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged/>
+	<OnActivate><submit next="hr_employee_vLst"/></OnActivate>
+	</WndTap>

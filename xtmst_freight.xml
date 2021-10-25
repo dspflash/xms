@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><WndTap Text="xtmst_freight" Name="xtmst_freight" Ver="2">
+<var name="refreshAfterEdit" expr="1"/>
+<var name="dataRequired" expr="pickuporderid[pickuporderid],deliverymode[typecode],consignmentmode[typecode],deliverymethod[typecode],shipper,fromcityid[cityid],fromxsiteid[xsiteid],shipperphone,shipperaddress,consignee,tocityid[cityid],consigneephone,consigneeaddress,carrierid"/>
+<var name="dataRequireless" expr=""/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_freight.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_freight_detail.xml"/>
+<Ctrls>
+<GroupBox Text="xtmst_freight" Name="GBxtmst_freight" id="xtmst_freight" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_GBDEDIT.xml"></xi:include><BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_GBOPE.xml"></xi:include>
+<TAB/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_GBOPV.xml"></xi:include>
+<BR/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_GBDV.xml"></xi:include></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

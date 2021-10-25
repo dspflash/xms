@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmsm_carrier" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialxtmsm_carrier" Size="50,20">
+<OnClick><submit next="xtmsm_carrier_vLst" function="initial"/><submit next="records_xtmsm_carrier" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPxtmsm_carrier_vLst" Size="50,20">
+<OnClick><submit next="xtmsm_carrier_vLst" function="GetPage(first)"/><submit next="records_xtmsm_carrier"/></OnClick></Button>
+<Button Text="prepage" Name="PRExtmsm_carrier_vLst" Size="50,20">
+<OnClick><submit next="xtmsm_carrier_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPxtmsm_carrier_vLst" Size="50,20">
+<OnClick><submit next="xtmsm_carrier_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

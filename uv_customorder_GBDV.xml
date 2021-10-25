@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVuv_customorder"><Ctrls>
+<ListCtrl Heading="ordercode,250;ordersourcename,20;ordersource,50;synccode,250;settlementstatusname,20;settlementamount,90;settlementdate,150;settleuser,100;memberid,50;membername,250;memberno,100;shipper,640;fromcityid,50;fromcityname,250;shipperaddress,640;shippermobilephone,250;consignee,640;tocityid,50;tocityname,250;consigneeaddress,640;consigneemobilephone,250;totalvolume,90;totalweight,90;isdangerous,60;timeliness,50;orderstatus,50;planshipmentdate,105;plantodate,105;deliverymode,50;deliveryname,250;consignmentmode,50;consignmentname,250;status,25;statusname,250;createby,100;createdate,105;updateby,100;updatedate,150;issealbox,60;fromxsiteid,250;fromxsitename,640;toxsiteid,250;toxsitename,640;carriername,250;iscomplain,20;settlementstatus,25;complainstatus,20;complainid,250;materialtypename,20;customerorderid,250;orderstatusname,50;" loadedclick="0" ToolTip="ttp_uv_customorder" Name="uv_customorderLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>tms.uv_customorder</DbTable>
+
+<Data>ordercode,ordersourcename,ordersource,synccode,settlementstatusname,settlementamount,settlementdate,settleuser,memberid,membername,memberno,shipper,fromcityid,fromcityname,shipperaddress,shippermobilephone,consignee,tocityid,tocityname,consigneeaddress,consigneemobilephone,totalvolume,totalweight,isdangerous,timeliness,orderstatus,planshipmentdate,plantodate,deliverymode,deliveryname,consignmentmode,consignmentname,status,statusname,createby,createdate,updateby,updatedate,issealbox,fromxsiteid,fromxsitename,toxsiteid,toxsitename,carriername,iscomplain,settlementstatus,complainstatus,complainid,materialtypename,customerorderid,orderstatusname</Data>
+</DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="uv_customorder_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

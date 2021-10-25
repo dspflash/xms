@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDEDITxtmsm_finesordinance"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_finesinstruction"><Ctrls>
+<Label Align="Right" Text="finesinstruction" Name="lb_finesinstruction" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_finesinstruction" Name="finesinstruction" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_finemoney"><Ctrls>
+<Label Align="Right" Text="finemoney" Name="lb_finemoney" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_finemoney" Name="finemoney" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_usestatus"><Ctrls>
+<CheckBox Text="usestatus" ToolTip="ttp_usestatus" Name="usestatus" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_memo"><Ctrls>
+<Label Align="Right" Text="memo" Name="lb_memo" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_memo" Name="memo" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_finesordinanceid" Visible="false"><Ctrls>
+<Label Align="Right" Text="finesordinanceid" overlap="pre" Name="lb_finesordinanceid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_finesordinanceid" overlap="pre" Name="finesordinanceid" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{finesordinanceid}'"><SetVisible name="insertxtmsm_finesordinance" Visible="0"/><SetVisible name="modifyxtmsm_finesordinance" Visible="1"/><else/><SetVisible name="insertxtmsm_finesordinance" Visible="1"/><SetVisible name="modifyxtmsm_finesordinance" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

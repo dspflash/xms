@@ -1,0 +1,30 @@
+﻿<Language name="xtmsm_master_expresscity">
+<Lang name="xtmsm_master_expresscity" value="xtmsm_master_expresscity"/>
+<Lang name="TabEditxtmsm_master_expresscity" value="xtmsm_master_expresscity Edit"/>
+<Lang name="TabViewxtmsm_master_expresscity" value="xtmsm_master_expresscity View"/>
+<Lang name="province" value=""/>
+<Lang name="ttp_province" value=""/>
+<Lang name="city" value=""/>
+<Lang name="ttp_city" value=""/>
+<Lang name="county" value=""/>
+<Lang name="ttp_county" value=""/>
+<Lang name="citycode" value=""/>
+<Lang name="ttp_citycode" value=""/>
+<Lang name="cityid" value=""/>
+<Lang name="ttp_cityid" value=""/>
+<Lang name="ttp_operationxtmsm_master_expresscity" value=""/>
+<Lang name="ttp_creatextmsm_master_expresscity" value=""/>
+<Lang name="ttp_modifyxtmsm_master_expresscity" value=""/>
+<Lang name="ttp_resetxtmsm_master_expresscity" value=""/>
+<Lang name="ttp_deletextmsm_master_expresscity" value=""/>
+<Lang name="ttp_refreshxtmsm_master_expresscity" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

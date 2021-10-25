@@ -1,0 +1,24 @@
+﻿<GroupBox Name="GBDEDITxtmsm_master_city"><Ctrls>
+<GroupBox Name="GB_city" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_city" Size="60,20" Text="city" Align="Right"/>
+<TextBox Name="city" Size="170,20" Text="" Weight="170" ToolTip="ttp_city"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_parentcityid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_parentcityid" Size="60,20" Text="parentcityid" Align="Right"/>
+<TextBox Name="parentcityid" Size="170,20" Text="" Weight="170" ToolTip="ttp_parentcityid">
+</TextBox>
+</Ctrls></GroupBox>
+<!--BR AutoHeight="1"/><GroupBox Name="GB_cityallname" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_cityallname" Size="60,20" Text="cityallname" Align="Right" readonly="true"/>
+<TextBox Name="cityallname" Size="170,20" Text="" Weight="170" ToolTip="ttp_cityallname" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_phone" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_phone" Size="60,20" Text="phone" Align="Right"/>
+<TextBox Name="phone" Size="150,20" Text="" Weight="150" ToolTip="ttp_phone"></TextBox>
+<MagicCtrl Name="dialphone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{phone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_postno" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_postno" Size="60,20" Text="postno" Align="Right"/>
+<TextBox Name="postno" Size="170,20" Text="" Weight="170" ToolTip="ttp_postno"></TextBox>
+</Ctrls></GroupBox-->
+</Ctrls></GroupBox>

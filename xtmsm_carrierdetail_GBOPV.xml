@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmsm_carrierdetail" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmsm_carrierdetail" Name="deletextmsm_carrierdetail" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmsm_carrierdetail</DbTable>
+<Where>id='%{xtmsm_carrierdetailLst[id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmsm_carrierdetail" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmsm_carrierdetail" Name="searchxtmsm_carrierdetail" Size="50,20">
+			  <OnClick><submit next="xtmsm_carrierdetailLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmsm_carrierdetailLst" OnClick="(xtmsm_carrierdetailLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmsm_carrierdetailLst" OnClick="(xtmsm_carrierdetailLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmsm_carrierdetailLst" OnClick="(xtmsm_carrierdetailLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

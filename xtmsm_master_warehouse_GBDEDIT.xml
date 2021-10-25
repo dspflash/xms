@@ -1,0 +1,135 @@
+﻿<GroupBox Name="GBDEDITxtmsm_master_warehouse"><Ctrls>
+<GroupBox feature="tab" Text="Basic" Name="Basic"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_warehousename"><Ctrls>
+<Label Align="Right" Text="warehousename" Name="lb_warehousename" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_warehousename" Name="warehousename" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_simplewarehousename"><Ctrls>
+<Label Align="Right" Text="simplewarehousename" Name="lb_simplewarehousename" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_simplewarehousename" Name="simplewarehousename" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_warehousecode"><Ctrls>
+<Label Align="Right" Text="warehousecode" Name="lb_warehousecode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_warehousecode" Name="warehousecode" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_memberid"><Ctrls>
+<Label Align="Right" Text="memberid" Name="lb_memberid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_memberid" Name="memberid" Size="170,20">
+	<DbDetails>
+<Index>memberid</Index>
+<DbTable>tms.xms_member</DbTable>
+<Data>MemberName,MemberID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_manager"><Ctrls>
+<Label Align="Right" Text="manager" Name="lb_manager" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_manager" Name="manager" Size="170,20">
+	<DbDetails>
+<Index>xms_user_id</Index>
+<DbTable>tms.xms_user</DbTable>
+<Data>username,xms_user_id</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_phone"><Ctrls>
+<Label Align="Right" Text="phone" Name="lb_phone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_phone" Name="phone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialphone" OnClick="nis3ucs:%{phone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_fax"><Ctrls>
+<Label Align="Right" Text="fax" Name="lb_fax" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_fax" Name="fax" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_mobilephone"><Ctrls>
+<Label Align="Right" Text="mobilephone" Name="lb_mobilephone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_mobilephone" Name="mobilephone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialmobilephone" OnClick="nis3ucs:%{mobilephone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_address"><Ctrls>
+<Label Align="Right" Text="address" Name="lb_address" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_address" Name="address" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_postno"><Ctrls>
+<Label Align="Right" Text="postno" Name="lb_postno" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_postno" Name="postno" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_memo"><Ctrls>
+<Label Align="Right" Text="memo" Name="lb_memo" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_memo" Name="memo" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_status"><Ctrls>
+<Label Align="Right" Text="status" Name="lb_status" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_status" Items="A|N" Name="status" Size="170,100"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="Ext" Name="Ext"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_posclear"><Ctrls>
+<Label Align="Right" Text="posclear" Name="lb_posclear" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_posclear" Items="Y|N" Name="posclear" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_confingid"><Ctrls>
+<Label Align="Right" Text="confingid" Name="lb_confingid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_confingid" Name="confingid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_cityid"><Ctrls>
+<Label Align="Right" Text="cityid" Name="lb_cityid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_cityid" Name="cityid" Size="170,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_operationcenter"><Ctrls>
+<Label Align="Right" Text="operationcenter" Name="lb_operationcenter" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_operationcenter" Name="operationcenter" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_companyid"><Ctrls>
+<Label Align="Right" Text="companyid" Name="lb_companyid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_companyid" Name="companyid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_isinsidenet"><Ctrls>
+<CheckBox Text="isinsidenet" ToolTip="ttp_isinsidenet" Name="isinsidenet" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_ciqflag"><Ctrls>
+<CheckBox Text="ciqflag" ToolTip="ttp_ciqflag" Name="ciqflag" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_warehousetype"><Ctrls>
+<Label Align="Right" Text="warehousetype" Name="lb_warehousetype" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_warehousetype" Items=" |自营|加盟|合作" Name="warehousetype" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_sqldbconnectionid"><Ctrls>
+<Label Align="Right" Text="sqldbconnectionid" Name="lb_sqldbconnectionid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_sqldbconnectionid" Name="sqldbconnectionid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_webservice"><Ctrls>
+<Label Align="Right" Text="webservice" Name="lb_webservice" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_webservice" Name="webservice" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_autoid" Visible="false"><Ctrls>
+<Label Align="Right" Text="autoid" overlap="pre" Name="lb_autoid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_autoid" overlap="pre" Name="autoid" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{autoid}'"><SetVisible name="insertxtmsm_master_warehouse" Visible="0"/><SetVisible name="modifyxtmsm_master_warehouse" Visible="1"/><else/><SetVisible name="insertxtmsm_master_warehouse" Visible="1"/><SetVisible name="modifyxtmsm_master_warehouse" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updateby" Visible="false"><Ctrls>
+<Label Align="Right" Text="updateby" overlap="pre" Name="lb_updateby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_updateby" overlap="pre" Name="updateby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updatedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="updatedate" overlap="pre" Name="lb_updatedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_updatedate" overlap="pre" Name="updatedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_warehousearea"><Ctrls>
+<Label Align="Right" Text="warehousearea" Name="lb_warehousearea" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_warehousearea" Name="warehousearea" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

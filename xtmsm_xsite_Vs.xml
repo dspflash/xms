@@ -1,0 +1,22 @@
+﻿<GroupBox Name="GBDEDITxtmsm_xsite" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_xsitename" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_xsitename" Size="60,20" Text="xsitename" Align="Right"/>
+<TextBox Name="xsitename" Size="170,20" Text="" Weight="170" ToolTip="ttp_xsitename"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_cityid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_cityid" Size="60,20" Text="cityid" Align="Right"/>
+<TextBox Name="cityid" Size="150,20" Text="" Weight="150" ToolTip="ttp_cityid">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+<MagicCtrl Name="pickcityid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.citypick.frmwndctrl" expr="CityId"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox Name="GB_isenable" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="isenable" Size="230,20" Text="isenable" ToolTip="ttp_isenable"  checked="true"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isneedpreorder" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="isneedpreorder" Size="230,20" Text="isneedpreorder" ToolTip="ttp_isneedpreorder"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

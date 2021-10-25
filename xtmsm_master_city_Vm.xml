@@ -1,0 +1,21 @@
+﻿<WndTap Name="xtmsm_master_city_v" Text="xtmsm_master_city">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_master_city_Ve.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="city_Pick.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><levercode format="(x.levercode like '%%{opvalue}%')"/><city format="(x.city like '%%{opvalue}%')"/><parentcityid format="x.parentcityid='%{opvalue}'"/><cityallname format="(x.cityallname like '%%{opvalue}%')"/><phone format="(x.phone like '%%{opvalue}%')"/><postno format="(x.postno like '%%{opvalue}%')"/><chinaspell format="(x.chinaspell like '%%{opvalue}%')"/><chinaspellall format="(x.chinaspellall like '%%{opvalue}%')"/><pinyin format="(x.pinyin like '%%{opvalue}%')"/><citycode format="(x.citycode like '%%{opvalue}%')"/><cityid format="(x.cityid like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_master_city.xml"/>
+<Ctrls><GroupBox  Name="GBxtmsm_master_city" id="xtmsm_master_city" Text="xtmsm_master_city" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_master_city_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmsm_master_city" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmsm_master_city.GBDEDITxtmsm_master_city" function="reset"/><assign name="$this.xtmsm_master_city.frmwndctrl" expr="%{$this.xtmsm_master_city_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmsm_master_city" Name="resetxtmsm_master_city" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmsm_master_city" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_master_city" Name="gsearchxtmsm_master_city" Size="50,20">	<OnClick>	
+<search next="xtmsm_master_city_vLst" listed="0" prefixwhere="1" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_master_city" namelist="search" function="search"/>	
+<search next="records_xtmsm_master_city" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_master_city" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_master_city_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_master_city_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_master_city_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

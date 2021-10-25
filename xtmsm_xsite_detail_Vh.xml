@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsm_xsite_detail" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsm_xsite_detailLst" ToolTip="ttp_xtmsm_xsite_detail" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmsm_xsite_detail_id</Index>
+<DbTable>tms.xtmsm_xsite_detail</DbTable>
+<Data>city_id,remark,active,created_by,creation_date,last_update_by,last_update_date,xtmsm_xsite_detail_id,xtmsm_xsite_id</Data>
+<Order>xtmsm_xsite_detail_id</Order></DbDetails>
+<OnClick><assign name="city_id[cityid]" expr="%{xtmsm_xsite_detailLst[city_id]}" function="SetSel"/>
+<if cond="%{xtmsm_xsite_detail_id}"><SetVisible name="insertxtmsm_xsite_detail" Visible="0"/><SetVisible name="modifyxtmsm_xsite_detail" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

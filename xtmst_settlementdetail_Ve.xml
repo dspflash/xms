@@ -1,0 +1,13 @@
+﻿<WndTap Name="xtmst_settlementdetail" Text="xtmst_settlementdetail" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr=""/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xtmst_settlementdetail.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBxtmst_settlementdetail" id="xtmst_settlementdetail" Text="xtmst_settlementdetail" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_settlementdetail_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_settlementdetail_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_settlementdetail_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertxtmst_settlementdetail" Visible="1"/><SetVisible name="modifyxtmst_settlementdetail" Visible="0"/></OnActivate>
+</WndTap>

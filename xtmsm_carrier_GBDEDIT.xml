@@ -1,0 +1,147 @@
+﻿<GroupBox Name="GBDEDITxtmsm_carrier"><Ctrls>
+<GroupBox feature="tab" Text="basic" Name="basic"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_carriername"><Ctrls>
+<Label Align="Right" Text="carriername" Name="lb_carriername" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carriername" Name="carriername" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_shortname"><Ctrls>
+<Label Align="Right" Text="shortname" Name="lb_shortname" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_shortname" Name="shortname" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_carriertype"><Ctrls>
+<Label Align="Right" Text="carriertype" onload="init" Name="lb_carriertype" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_carriertype" onload="init" Name="carriertype" Size="170,100">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>ColumnName='CarrierType'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_vehiclesmodel"><Ctrls>
+<Label Align="Right" Text="vehiclesmodel" Name="lb_vehiclesmodel" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehiclesmodel" Name="vehiclesmodel" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_operateroute"><Ctrls>
+<Label Align="Right" Text="operateroute" Name="lb_operateroute" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_operateroute" Name="operateroute" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_status"><Ctrls>
+<CheckBox Text="status" ToolTip="ttp_status" Name="status" Size="230,20" checked="true"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="RegisterInfo" Name="RegisterInfo"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_artificialperson"><Ctrls>
+<Label Align="Right" Text="artificialperson" Name="lb_artificialperson" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_artificialperson" Name="artificialperson" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_businesscardno"><Ctrls>
+<Label Align="Right" Text="businesscardno" Name="lb_businesscardno" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_businesscardno" Name="businesscardno" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_cityid"><Ctrls>
+<Label Align="Right" Text="cityid" Name="lb_cityid" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_cityid" Name="cityid" Size="150,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+<MagicCtrl Name="pickcityid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$parent.citypick.frmwndctrl" expr="xtmsm_carrier.CityId"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_registeredaddress"><Ctrls>
+<Label Align="Right" Text="registeredaddress" Name="lb_registeredaddress" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_registeredaddress" Name="registeredaddress" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="Contact" Name="Contact"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_contactor"><Ctrls>
+<Label Align="Right" Text="contactor" Name="lb_contactor" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_contactor" Name="contactor" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_fixphone"><Ctrls>
+<Label Align="Right" Text="fixphone" Name="lb_fixphone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_fixphone" Name="fixphone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialfixphone" OnClick="nis3ucs:%{fixphone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_mobilephone"><Ctrls>
+<Label Align="Right" Text="mobilephone" Name="lb_mobilephone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_mobilephone" Name="mobilephone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialmobilephone" OnClick="nis3ucs:%{mobilephone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_email"><Ctrls>
+<Label Align="Right" Text="email" Name="lb_email" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_email" Name="email" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_contactfax"><Ctrls>
+<Label Align="Right" Text="contactfax" Name="lb_contactfax" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_contactfax" Name="contactfax" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_url"><Ctrls>
+<Label Align="Right" Text="url" Name="lb_url" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_url" Name="url" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="BankInfo" Name="BankInfo"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_openingbank"><Ctrls>
+<Label Align="Right" Text="openingbank" Name="lb_openingbank" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_openingbank" Name="openingbank" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_bankaccount"><Ctrls>
+<Label Align="Right" Text="bankaccount" Name="lb_bankaccount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_bankaccount" Name="bankaccount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_credit"><Ctrls>
+<Label Align="Right" Text="credit" Name="lb_credit" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_credit" Name="credit" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_deposit"><Ctrls>
+<Label Align="Right" Text="deposit" Name="lb_deposit" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_deposit" Name="deposit" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_isdeposit"><Ctrls>
+<CheckBox Text="isdeposit" ToolTip="ttp_isdeposit" Name="isdeposit" Size="230,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="AddrInfo" Name="AddrInfo"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_address"><Ctrls>
+<Label Align="Right" Text="address" Name="lb_address" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_address" Name="address" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_post"><Ctrls>
+<Label Align="Right" Text="post" Name="lb_post" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_post" Name="post" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_factoryaddress"><Ctrls>
+<Label Align="Right" Text="factoryaddress" Name="lb_factoryaddress" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_factoryaddress" Name="factoryaddress" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_warehouseaddress"><Ctrls>
+<Label Align="Right" Text="warehouseaddress" Name="lb_warehouseaddress" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_warehouseaddress" Name="warehouseaddress" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_carrierid" Visible="false"><Ctrls>
+<Label Align="Right" Text="carrierid" overlap="pre" Name="lb_carrierid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrierid" overlap="pre" Name="carrierid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updateby" Visible="false"><Ctrls>
+<Label Align="Right" Text="updateby" overlap="pre" Name="lb_updateby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_updateby" overlap="pre" Name="updateby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updatedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="updatedate" overlap="pre" Name="lb_updatedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_updatedate" overlap="pre" Name="updatedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmsm_carrier_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmsm_carrier_id" overlap="pre" Name="lb_xtmsm_carrier_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmsm_carrier_id" overlap="pre" Name="xtmsm_carrier_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{xtmsm_carrier_id}'"><SetVisible name="insertxtmsm_carrier" Visible="0"/><SetVisible name="modifyxtmsm_carrier" Visible="1"/><else/><SetVisible name="insertxtmsm_carrier" Visible="1"/><SetVisible name="modifyxtmsm_carrier" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

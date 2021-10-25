@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmsm_fee_item_v" Text="xtmsm_fee_item">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_fee_item_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><feecode format="(x.feecode like '%%{opvalue}%')"/><feename format="(x.feename like '%%{opvalue}%')"/><debit format="x.debit is %{opvalue}"/><active format="x.active is %{opvalue}"/><id format="(x.id like '%%{opvalue}%')"/><create_by format="(x.create_by like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_fee_item.xml"/>
+<Ctrls><GroupBox  Name="GBxtmsm_fee_item" id="xtmsm_fee_item" Text="xtmsm_fee_item" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_fee_item_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmsm_fee_item" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmsm_fee_item.GBDEDITxtmsm_fee_item" function="reset"/><assign name="$this.xtmsm_fee_item.frmwndctrl" expr="%{$this.xtmsm_fee_item_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmsm_fee_item" Name="resetxtmsm_fee_item" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmsm_fee_item" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_fee_item" Name="gsearchxtmsm_fee_item" Size="50,20">	<OnClick>	
+<search next="xtmsm_fee_item_vLst" listed="0" prefixwhere="0" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_fee_item" namelist="search" function="search"/>	
+<search next="records_xtmsm_fee_item" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_fee_item" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_fee_item_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_fee_item_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_fee_item_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

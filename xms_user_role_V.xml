@@ -1,0 +1,20 @@
+﻿<WndTap Name="xms_user_role_v" Text="xms_user_role">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_role_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><xms_user_id format="x.xms_user_id='%{opvalue}'"/><role_code format="x.role_code='%{opvalue}'"/><created_by format="(x.created_by like '%%{opvalue}%')"/><creation_date format="(x.creation_date between '%{creation_date[datetime]}' and '%{creation_date[datetime2]}')"/><last_update_by format="(x.last_update_by like '%%{opvalue}%')"/><last_update_date format="(x.last_update_date between '%{last_update_date[datetime]}' and '%{last_update_date[datetime2]}')"/><xms_user_role_id format="(x.xms_user_role_id like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xms_user_role.xml"/>
+<Ctrls><GroupBox  Name="GBxms_user_role" id="xms_user_role" Text="xms_user_role" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_role_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxms_user_role" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xms_user_role.GBDEDITxms_user_role" function="reset"/><assign name="$this.xms_user_role.frmwndctrl" expr="%{$this.xms_user_role_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxms_user_role" Name="resetxms_user_role" Size="50,20">	<OnClick>	<submit next="GBDEDITxms_user_role" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxms_user_role" Name="gsearchxms_user_role" Size="50,20">	<OnClick>	
+<search next="xms_user_role_vLst" listed="0" prefixwhere="0" prefixand="1" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxms_user_role" namelist="search" function="search"/>	
+<search next="records_xms_user_role" listed="0" prefixwhere="0" prefixand="1"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxms_user_role" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_role_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_role_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_role_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

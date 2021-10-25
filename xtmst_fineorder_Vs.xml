@@ -1,0 +1,55 @@
+﻿<GroupBox Name="GBDEDITxtmst_fineorder" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_freightid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_freightid" Size="60,20" Text="freightid" Align="Right"/>
+<TextBox Name="freightid" Size="170,20" Text="" Weight="170" ToolTip="ttp_freightid">
+	<DbDetails>
+<Index>freightid</Index>
+<DbTable>tms.xtmst_freight</DbTable>
+<Data>FreightCode,FreightID</Data>
+<Where></Where>
+<queryFormat>SELECT v.CarrierID,v.VehicleID,v.DriverID,f.FreightID   FROM xtmst_vehiclerealtime v JOIN xtmst_dispatchplan d ON d.VehicleRealTimeID=v.VehicleRealTimeID JOIN xtmst_freight f ON d.FreightID=f.FreightID WHERE %{WHERE}</queryFormat></DbDetails><OnEnChange><submit next="DriverID"/></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_finenumber" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_finenumber" Size="60,20" Text="finenumber" Align="Right"/>
+<TextBox Name="finenumber" Size="170,20" Text="" Weight="170" ToolTip="ttp_finenumber"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_driverid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_driverid" Size="60,20" Text="driverid" Align="Right"/>
+<TextBox Name="driverid" Size="170,20" Text="" Weight="170" ToolTip="ttp_driverid">
+	<DbDetails>
+<Index>driverid</Index>
+<DbTable>tms.xtmsm_driver</DbTable>
+<Data>DriverName,DriverID</Data>
+<Where>DriverID='%{FreightID[DriverID]}'</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_finedate" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_finedate" Size="60,20" Text="finedate" Align="Right"/>
+<DateTime Name="finedate" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170"  Text2="1 day" ToolTip="ttp_finedate"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_finesordinanceid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_finesordinanceid" Size="60,20" Text="finesordinanceid" Align="Right"  onload="init"/>
+<ComboBox Name="finesordinanceid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_finesordinanceid"  onload="init">
+	<DbDetails fcsm="true">
+<Index>finesordinanceid</Index>
+<DbTable>tms.xtmsm_finesordinance</DbTable>
+<Data>Finesinstruction,FineMoney,FinesOrdinanceID</Data>
+<Where>UseStatus</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_finemoney" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_finemoney" Size="60,20" Text="finemoney" Align="Right"/>
+<TextBox Name="finemoney" Size="170,20" Text="" Weight="170" ToolTip="ttp_finemoney"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_address" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_address" Size="60,20" Text="address" Align="Right"/>
+<TextBox Name="address" Size="170,20" Text="" Weight="170" ToolTip="ttp_address"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_memo" Multiline="0" cols="xs12 sm12 md6 lg4"><Ctrls>
+<Label Name="lb_memo" Size="60,50" Text="memo" Align="Right"/>
+<TextBox Name="memo" Size="630,50" Text="" Weight="630" ToolTip="ttp_memo"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_dealwithed" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="dealwithed" Size="230,20" Text="dealwithed" ToolTip="ttp_dealwithed"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

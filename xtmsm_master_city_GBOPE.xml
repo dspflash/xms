@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmsm_master_city" Size="100,100"><Ctrls>
+<Button sqlpkinsert="cityid" Text="create" ToolTip="ttp_creatextmsm_master_city" Name="insertxtmsm_master_city" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>levercode,city,parentcityid[cityid],cityallname,phone,postno,chinaspell,chinaspellall,pinyin,citycode</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmsm_master_city[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_master_cityLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_master_city_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmsm_master_city" Name="modifyxtmsm_master_city" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>levercode,city,parentcityid[cityid],cityallname,phone,postno,chinaspell,chinaspellall,pinyin,citycode</Data>
+<DataEx/>
+<Where>cityid='%{cityid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmsm_master_city[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_master_cityLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_master_city_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmsm_master_city" Name="resetxtmsm_master_city" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmsm_master_city" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_master_city" Name="gsearchxtmsm_master_city" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmsm_master_cityLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmsm_master_city" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

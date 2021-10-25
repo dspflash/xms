@@ -1,0 +1,43 @@
+﻿<GroupBox Name="GBDEDITxtmsm_xsite_detail"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_city_id"><Ctrls>
+<Label Align="Right" Text="city_id" Name="lb_city_id" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_city_id" Name="city_id" Size="150,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,ChinaSpell,CityID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+<MagicCtrl Name="pickcity_id" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$parent.citypick.frmwndctrl" expr="xtmsm_xsite_detail.City_Id"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_active"><Ctrls>
+<CheckBox Text="active" ToolTip="ttp_active" Name="active" Size="230,20" checked="true"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_created_by" Visible="false"><Ctrls>
+<Label Align="Right" Text="created_by" overlap="pre" Name="lb_created_by" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_created_by" overlap="pre" Name="created_by" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_creation_date" Visible="false"><Ctrls>
+<Label Align="Right" Text="creation_date" overlap="pre" Name="lb_creation_date" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_creation_date" overlap="pre" Name="creation_date" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_last_update_by" Visible="false"><Ctrls>
+<Label Align="Right" Text="last_update_by" overlap="pre" Name="lb_last_update_by" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_last_update_by" overlap="pre" Name="last_update_by" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_last_update_date" Visible="false"><Ctrls>
+<Label Align="Right" Text="last_update_date" overlap="pre" Name="lb_last_update_date" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_last_update_date" overlap="pre" Name="last_update_date" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmsm_xsite_detail_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmsm_xsite_detail_id" overlap="pre" Name="lb_xtmsm_xsite_detail_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmsm_xsite_detail_id" overlap="pre" Name="xtmsm_xsite_detail_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{xtmsm_xsite_detail_id}'"><SetVisible name="insertxtmsm_xsite_detail" Visible="0"/><SetVisible name="modifyxtmsm_xsite_detail" Visible="1"/><else/><SetVisible name="insertxtmsm_xsite_detail" Visible="1"/><SetVisible name="modifyxtmsm_xsite_detail" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmsm_xsite_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmsm_xsite_id" overlap="pre" Name="lb_xtmsm_xsite_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmsm_xsite_id" overlap="pre" Name="xtmsm_xsite_id" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

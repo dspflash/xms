@@ -1,0 +1,66 @@
+﻿<GroupBox Name="GBDEDITxtmst_vehiclesituation" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_vehicleid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vehicleid" Size="60,20" Text="vehicleid" Align="Right"/>
+<TextBox Name="vehicleid" Size="170,20" Text="" Weight="170" ToolTip="ttp_vehicleid">
+	<DbDetails>
+<Index>vehicleid</Index>
+<DbTable>tms.xtmsm_vehicle</DbTable>
+<Data>Platenumber,VehicleID</Data>
+<Where>VehicleID='%{VehicleRealTimeID[VehicleID]}'</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_vehiclerealtimeid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vehiclerealtimeid" Size="60,20" Text="vehiclerealtimeid" Align="Right"/>
+<TextBox Name="vehiclerealtimeid" Size="170,20" Text="" Weight="170" ToolTip="ttp_vehiclerealtimeid">
+	<DbDetails>
+<Index>vehiclerealtimeid</Index>
+<DbTable>tms.xtmst_vehiclerealtime</DbTable>
+<Data>VehicleRealTimeCode,VehicleID,FromCityID,ToCityID,FromAddress,ToAddress,VehicleRealTimeID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails><OnEnChange><submit next="VehicleID"/></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_operatetype" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_operatetype" Size="60,20" Text="operatetype" Align="Right"/>
+<TextBox Name="operatetype" Size="170,20" Text="" Weight="170" ToolTip="ttp_operatetype">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=130</Where>
+<queryFormat></queryFormat></DbDetails><OnSelEndOk><if cond="%{FreightID[FreightID]}"><submit next="XSiteID"/><submit next="CityID"/><if cond="%{OperateType[TypeCode]}==1301"><assign name="Address" expr="%{FreightID[FromAddress]}"/><else/><assign name="Address" expr="%{FreightID[ToAddress]}"/></if></if></OnSelEndOk></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_freightid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_freightid" Size="60,20" Text="freightid" Align="Right"/>
+<ComboBox Name="freightid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_freightid">
+	<DbDetails>
+<Index>freightid</Index>
+<DbTable>tms.xtmst_freight</DbTable>
+<Data>FreightCode,FreightID</Data>
+<Where>f.VehicleRealTimeID='%{VehicleRealTimeID[VehicleRealTimeID]}'</Where>
+<queryFormat>SELECT FreightCode,dp.FromCityID,dp.ToCityID,FromAddress,ToAddress,dp.FromXSiteID,dp.ToXSiteID,f.FreightID    FROM tms.xtmst_dispatchplan dp JOIN tms.xtmst_freight f ON dp.FreightID=f.FreightID WHERE %{where}</queryFormat></DbDetails><OnSelEndOk><submit next="XSiteID"/><submit next="CityID"/><if cond="%{OperateType[TypeCode]}==1301"><assign name="Address" expr="%{FreightID[FromAddress]}"/><else/><assign name="Address" expr="%{FreightID[ToAddress]}"/></if></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_xsiteid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_xsiteid" Size="60,20" Text="xsiteid" Align="Right"/>
+<TextBox Name="xsiteid" Size="170,20" Text="" Weight="170" ToolTip="ttp_xsiteid">
+	<DbDetails>
+<Index>xsiteid</Index>
+<DbTable>tms.xtmsm_xsite</DbTable>
+<Data>XSiteName,Address,XSiteID</Data>
+<Where>XSiteID=if('%{OperateType[TypeCode]}'=1301,'%{FreightID[FromXSiteID]}','%{FreightID[ToXSiteID]}')</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_cityid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_cityid" Size="60,20" Text="cityid" Align="Right"/>
+<TextBox Name="cityid" Size="170,20" Text="" Weight="170" ToolTip="ttp_cityid">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where>CityID=if('%{OperateType[TypeCode]}'=1301,'%{FreightID[FromCityID]}','%{FreightID[ToCityID]}')</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_address" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_address" Size="60,20" Text="address" Align="Right"/>
+<TextBox Name="address" Size="170,20" Text="" Weight="170" ToolTip="ttp_address"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

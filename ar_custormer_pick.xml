@@ -1,0 +1,33 @@
+<WndTap Text="ar_customerPick" Name="ar_customerPick" Ver="2" popup="1">
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\ar_customer.xml"/>
+	<Ctrls>
+	<GroupBox Text="ar_customer" Name="GBar_customer" id="ar_customer" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ar_customer_vs.xml"/>
+<BR autoHeight="1"/>
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPDVitem"><Ctrls>
+<Button Text="gsearch" ToolTip="ttp_gsearchitem" Name="gsearchitem" Size="50,20" visible="true">
+	<OnClick>
+	<search next="ar_customer_vLst" listed="0" prefixand="1" inputed="1"><customer_number format="customer_number like '%%{opvalue}%'"/><customer_name format="customer_name like '%%{opvalue}%'"/></search><submit next="GBDEDITar_customer" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetitem" Name="resetitem" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITar_customer" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>
+<BR autoHeight="1"/>
+<ListCtrl Name="ar_customer_vLst" ToolTip="ttp_ar_customer" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>tms.ar_customer a left join tms.xtmsc_type_option x on a.customer_credit_class=x.typecode</DbTable>
+<Index>ar_customer_id</Index>
+<Data>a.customer_number,a.customer_name,a.alt_name,x.TypeName customer_credit_class,a.tax_reg_no,a.status,a.created_by,a.creation_date,a.last_update_by,a.last_update_date,a.ar_customer_id,a.org_id,a.org_guid</Data>
+<Order>ar_customer_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where org_guid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+	<OnClick><if cond="%{ar_customer_vLst[ar_customer_id]}"><DbDetails><Where>ar_customer_id='%{ar_customer_vLst[ar_customer_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.%{frmwndctrl}"/><assign name="$parent.%{frmwndctrl}[selectedindex]" function="SetSel" expr="0"/><submit function="onok"/></if></OnClick>
+	</ListCtrl>
+	</Ctrls></GroupBox>
+	</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

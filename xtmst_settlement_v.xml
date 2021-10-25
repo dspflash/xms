@@ -1,0 +1,28 @@
+<WndTap Text="Order_Settlement" Name="Order_Settlement" Ver="2" popup="1">
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_settlementdetail.xml"/>
+	<Ctrls>
+	<GroupBox Text="Order_Settlement" Name="GBLoadOrder_Settlement" id="Order_Settlement" Size="100,100"><Ctrls>
+<ListCtrl Name="Order_SettlementLst" ToolTip="ttp_xtmsm_carrier" Size="700,420" loadedclick="0">
+	<DbDetails >
+<DbTable>tms.xtmsT_CustomOrder o 
+JOIN tms.xtmsT_CustomOrderSetting os ON o.CustomerOrderID=os.CustomerOrderID 
+JOIN tms.xtmsM_BillingConfiguration bc ON o.CarrierID=bc.CarrierID
+JOIN tms.uv_orderbillinfo ob ON o.CustomerOrderID = ob.CustomerOrderID
+LEFT JOIN tms.xtmsT_Complain oc ON o.CustomerOrderID = oc.CustomerOrderID</DbTable>
+<Index>CustomerOrderID</Index>
+<Data>o.OrderCode
+,IFNULL(VolumeUnitPrice, 0)* IFNULL(TotalVolume, 0)+ IFNULL(WeightUnitPrice, 0)* IFNULL(TotalWeight, 0) AbnormalFee
+,(CASE WHEN os.IsExpressOrder THEN ExpressFee ELSE 0 END) AS ExpressFee
+,(CASE WHEN os.IsSmallOrder THEN SmallOrderFee ELSE 0 END) AS SmallOrderFee
+,ComplainPrice ComplainFee
+,OtherFee OtherFee  
+,VehicleTypeFee
+,o.CustomerOrderID</Data>
+<Order>CustomerOrderID</Order></DbDetails>
+	<OnClick><if cond="%{Order_SettlementLst[CustomerOrderID]}"><DbDetails><Where>CustomerOrderID='%{Order_SettlementLst[CustomerOrderID]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.%{frmwndctrl}"/><assign name="$parent.%{frmwndctrl}[selectedindex]" function="SetSel" expr="0"/><submit function="onok"/></if></OnClick>
+	</ListCtrl>
+	</Ctrls></GroupBox>
+	</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

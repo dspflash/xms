@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxms_role_permission"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xms_role_permission" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>role_permission_id</Index>
+<DbTable>tms.xms_role_permission x left join tms.xms_role x0 on x.role_id=x0.role_id left join tms.module_class m on x.class=m.name</DbTable>
+<Data>count(*) records</Data>
+<Order>role_permission_id</Order><Queryformat>select %{data} from (select x.role_permission_id from %{dbtable} %{where} GROUP BY x.role_permission_id  ORDER BY x.role_permission_id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xms_role_permission" expr="js(Math.ceil(%{records_xms_role_permission}/%{xms_role_permission_vLst[countsperpage]}))"/>
+<assign name="pgscb_xms_role_permission" expr="js('1~'+Math.ceil(%{records_xms_role_permission}/%{xms_role_permission_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xms_role_permission" Size="60,20"><OnSelEndOK><submit next="xms_role_permission_vLst" function="GetPage(%{pgscb_xms_role_permission}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xms_role_permission" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xms_role_permission" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagexms_role_permission_vLst" Size="50,20"><OnClick><submit next="xms_role_permission_vLst" function="GetPage(%{pgcur_xms_role_permission}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

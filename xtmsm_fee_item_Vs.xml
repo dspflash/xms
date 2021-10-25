@@ -1,0 +1,16 @@
+﻿<GroupBox Name="GBDEDITxtmsm_fee_item" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_feecode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_feecode" Size="60,20" Text="feecode" Align="Right"/>
+<TextBox Name="feecode" Size="170,20" Text="" Weight="170" ToolTip="ttp_feecode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_feename" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_feename" Size="60,20" Text="feename" Align="Right"/>
+<TextBox Name="feename" Size="170,20" Text="" Weight="170" ToolTip="ttp_feename"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_debit" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="debit" Size="230,20" Text="debit" ToolTip="ttp_debit"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_active" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="active" Size="230,20" Text="active" ToolTip="ttp_active"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

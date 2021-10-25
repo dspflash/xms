@@ -1,0 +1,52 @@
+﻿<GroupBox Name="GBDEDITxtmst_customorderdetail" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_customerorderid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_customerorderid" Size="60,20" Text="customerorderid" Align="Right"/>
+<TextBox Name="customerorderid" Size="170,20" Text="" Weight="170" ToolTip="ttp_customerorderid">
+	<DbDetails>
+<Index>customerorderid</Index>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Data>OrderCode,CustomerOrderID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_commodityname" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_commodityname" Size="60,20" Text="commodityname" Align="Right"/>
+<TextBox Name="commodityname" Size="170,20" Text="" Weight="170" ToolTip="ttp_commodityname"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_transfeesettlementsmode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_transfeesettlementsmode" Size="60,20" Text="transfeesettlementsmode" Align="Right"/>
+<ComboBox Name="transfeesettlementsmode" Size="170,100" Text="" Weight="170" Items=" |Volumn|Weight" ToolTip="ttp_transfeesettlementsmode"></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_amount" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_amount" Size="60,20" Text="amount" Align="Right"/>
+<TextBox Name="amount" Size="170,20" Text="" Weight="170" ToolTip="ttp_amount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_volume" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_volume" Size="60,20" Text="volume" Align="Right"/>
+<TextBox Name="volume" Size="170,20" Text="" Weight="170" ToolTip="ttp_volume"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_weight" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_weight" Size="60,20" Text="weight" Align="Right"/>
+<TextBox Name="weight" Size="170,20" Text="" Weight="170" ToolTip="ttp_weight"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_length" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_length" Size="60,20" Text="length" Align="Right"/>
+<TextBox Name="length" Size="170,20" Text="" Weight="170" ToolTip="ttp_length"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_width" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_width" Size="60,20" Text="width" Align="Right"/>
+<TextBox Name="width" Size="170,20" Text="" Weight="170" ToolTip="ttp_width"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_height" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_height" Size="60,20" Text="height" Align="Right"/>
+<TextBox Name="height" Size="170,20" Text="" Weight="170" ToolTip="ttp_height"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_commoditycode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_commoditycode" Size="60,20" Text="commoditycode" Align="Right"/>
+<TextBox Name="commoditycode" Size="170,20" Text="" Weight="170" ToolTip="ttp_commoditycode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_productbatch" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_productbatch" Size="60,20" Text="productbatch" Align="Right"/>
+<TextBox Name="productbatch" Size="170,20" Text="" Weight="170" ToolTip="ttp_productbatch"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

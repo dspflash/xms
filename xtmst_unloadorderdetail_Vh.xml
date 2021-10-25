@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_unloadorderdetail" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_unloadorderdetailLst" ToolTip="ttp_xtmst_unloadorderdetail" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>unloaddetailid</Index>
+<DbTable>tms.xtmst_unloadorderdetail</DbTable>
+<Data>freightid,planid,memo,createby,createdate,updateby,updatedate,unloaddetailid,unloadorderid,xtmst_unloadorder_id</Data>
+<Order>unloaddetailid</Order></DbDetails>
+<OnClick><assign name="freightid[freightid]" expr="%{xtmst_unloadorderdetailLst[freightid]}" function="SetSel"/><assign name="planid[planid]" expr="%{xtmst_unloadorderdetailLst[planid]}" function="SetSel"/>
+<if cond="%{unloaddetailid}"><SetVisible name="insertxtmst_unloadorderdetail" Visible="0"/><SetVisible name="modifyxtmst_unloadorderdetail" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

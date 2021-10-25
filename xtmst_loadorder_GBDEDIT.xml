@@ -1,0 +1,96 @@
+﻿<GroupBox Name="GBDEDITxtmst_loadorder"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_loadcode"><Ctrls>
+<Label Align="Right" Text="loadcode" Name="lb_loadcode" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_loadcode" Name="loadcode" readonly="true" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_vehiclerealtimeid"><Ctrls>
+<Label Align="Right" Text="vehiclerealtimeid" Name="lb_vehiclerealtimeid" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehiclerealtimeid" Name="vehiclerealtimeid" readonly="true" Size="170,20">
+	<DbDetails>
+<Index>vehiclerealtimeid</Index>
+<DbTable>tms.xtmst_vehiclerealtime</DbTable>
+<Data>VehicleRealTimeCode,v.CarrierID,FromCityID,FromAddress,VehicleRealTimeID</Data>
+<Where/>
+<queryFormat>SELECT Platenumber,dp.FromCityID,dp.FromAddress,dp.FromXSiteID,VehicleRealTimeCode,v.CarrierID,dp.VehicleRealTimeID  FROM tms.xtmst_dispatchplan dp  JOIN  tms.xtmst_vehiclerealtime vrt ON dp.VehicleRealTimeID=vrt.VehicleRealTimeID JOIN tms.xtmsm_vehicle v ON v.VehicleID=vrt.VehicleID WHERE %{where}</queryFormat></DbDetails><OnEnChange><submit next="CarrierID"/><submit next="XSiteID"/><submit next="LoadCityID"/><assign name="LoadAddress" expr="%{VehicleRealTimeID[FromAddress]}"/></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_status" Visible="false"><Ctrls>
+<Label Align="Right" Text="status" overlap="pre" Name="lb_status" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_status" overlap="pre" Name="status" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<Index>statuscode</Index>
+<DbTable>tms.xtmsc_status_option</DbTable>
+<Data>StatusName,StatusCode</Data>
+<Where>StatusType=60</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_xsiteid"><Ctrls>
+<Label Align="Right" Text="xsiteid" Name="lb_xsiteid" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xsiteid" Name="xsiteid" readonly="true" Size="170,20">
+	<DbDetails>
+<Index>xsiteid</Index>
+<DbTable>tms.xtmsm_xsite</DbTable>
+<Data>XSiteName,XSiteID</Data>
+<Where>XSiteID='%{VehicleRealTimeID[FromXSiteID]}'</Where>
+<queryFormat/></DbDetails><OnSelEndOk><submit next="UnLoadCityID"/></OnSelEndOk></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_loadcityid"><Ctrls>
+<Label Align="Right" Text="loadcityid" Name="lb_loadcityid" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_loadcityid" Name="loadcityid" readonly="true" Size="170,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where>CityID='%{VehicleRealTimeID[FromCityID]}'</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_loadaddress"><Ctrls>
+<Label Align="Right" Text="loadaddress" Name="lb_loadaddress" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_loadaddress" Name="loadaddress" readonly="true" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_memo"><Ctrls>
+<Label Align="Right" Text="memo" Name="lb_memo" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_memo" Name="memo" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_checkby" Visible="false"><Ctrls>
+<Label Align="Right" Text="checkby" overlap="pre" Name="lb_checkby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_checkby" overlap="pre" Name="checkby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_checkdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="checkdate" overlap="pre" Name="lb_checkdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_checkdate" overlap="pre" Name="checkdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updateby" Visible="false"><Ctrls>
+<Label Align="Right" Text="updateby" overlap="pre" Name="lb_updateby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_updateby" overlap="pre" Name="updateby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updatedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="updatedate" overlap="pre" Name="lb_updatedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_updatedate" overlap="pre" Name="updatedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_loadorderid" Visible="false"><Ctrls>
+<Label Align="Right" Text="loadorderid" overlap="pre" Name="lb_loadorderid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_loadorderid" overlap="pre" Name="loadorderid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmst_loadorder_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmst_loadorder_id" overlap="pre" Name="lb_xtmst_loadorder_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmst_loadorder_id" overlap="pre" Name="xtmst_loadorder_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{xtmst_loadorder_id}'"><SetVisible name="insertxtmst_loadorder" Visible="0"/><SetVisible name="modifyxtmst_loadorder" Visible="1"/><else/><SetVisible name="insertxtmst_loadorder" Visible="1"/><SetVisible name="modifyxtmst_loadorder" Visible="0"/></if><DbDetails><Where>LoadOrderID=(select LoadOrderID from xtmst_loadorder where  xtmst_loadorder_id='%{xtmst_loadorder_id}')</Where></DbDetails><submit next="xtmst_loadorderdetail_vLst" namelist="DbDetails"/></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_carrierid" Visible="false"><Ctrls>
+<Label Align="Right" Text="carrierid" overlap="pre" Name="lb_carrierid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrierid" overlap="pre" Name="carrierid" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<Index>carrierid</Index>
+<DbTable>tms.xtmsm_carrier</DbTable>
+<Data>CarrierName,CarrierID</Data>
+<Where>CarrierID='%{VehicleRealTimeID[CarrierID]}'</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

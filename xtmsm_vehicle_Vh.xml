@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsm_vehicle" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsm_vehicleLst" ToolTip="ttp_xtmsm_vehicle" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmsm_vehicle_id</Index>
+<DbTable>tms.xtmsm_vehicle</DbTable>
+<Data>platenumber,nature,vehicletype,driver,lorrydriver,vehiclebrand,status,purchasedate,registrationdate,scrapdate,inspectiondate,insurancedate,insurancecompany,roadtransportpermit,drivinglicenceno,containersize,volume,weight,length,width,height,vehiclecolor,fueltype,type,enginenumber,owner,vinno,producer,image,memo,usestatus,vehicleid,createby,createdate,updateby,updatedate,xtmsm_vehicle_id,carrierid</Data>
+<Order>xtmsm_vehicle_id</Order></DbDetails>
+<OnClick><assign name="nature[typecode]" expr="%{xtmsm_vehicleLst[nature]}" function="SetSel"/><assign name="vehicletype[typecode]" expr="%{xtmsm_vehicleLst[vehicletype]}" function="SetSel"/><assign name="driver[driverid]" expr="%{xtmsm_vehicleLst[driver]}" function="SetSel"/><assign name="lorrydriver[driverid]" expr="%{xtmsm_vehicleLst[lorrydriver]}" function="SetSel"/><assign name="fueltype[typecode]" expr="%{xtmsm_vehicleLst[fueltype]}" function="SetSel"/><assign name="usestatus[statuscode]" expr="%{xtmsm_vehicleLst[usestatus]}" function="SetSel"/>
+<if cond="%{xtmsm_vehicle_id}"><SetVisible name="insertxtmsm_vehicle" Visible="0"/><SetVisible name="modifyxtmsm_vehicle" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

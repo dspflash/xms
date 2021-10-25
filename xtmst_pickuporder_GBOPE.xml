@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_pickuporder" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xtmst_pickuporder_id" Text="create" ToolTip="ttp_creatextmst_pickuporder" Name="insertxtmst_pickuporder" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_pickuporder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>customername,pickupdaterequest,delivereddateexpected,deliverymode[typecode],deliverymethod[typecode],shipper,shipperphone,shippermobilephone,fromcityid[cityid],shipperaddress,consignee,consigneephone,consigneemobilephone,tocityid[cityid],consigneeaddress,commodityname,weight,volume,commodityamount,packagetype[typecode],length,width,height,freightfee,collectionpayment,paidamount,remark,commodityid,customerid[ar_customer_id]</Data>
+<DataEx>pickupordercode,orderstatus,createby,createdate,updateby,updatedate,carrierid,pickuporderid;@odn,200,'%{user_id}',now(),'%{user_id}',now(),'%{orgguid}',uuid()</DataEx>
+<queryFormat>SET @seq=0;SELECT SUBSTR(PickupOrderCode,-5)+0 INTO @seq FROM tms.xtmst_pickuporder WHERE DATE(CreateDate)=CURDATE() ORDER BY PickupOrderCode DESC LIMIT 0,1;SELECT generate_orderNo(Code_Prefix, DT_MODE, @seq,'','') INTO @odn FROM tms.xms_doc_code WHERE docType='PickupOrder';insert into %{table} %{data};</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_pickuporder[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_pickuporderLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_pickuporder_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_pickuporder" Name="modifyxtmst_pickuporder" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_pickuporder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>customername,pickupdaterequest,delivereddateexpected,deliverymode[typecode],deliverymethod[typecode],shipper,shipperphone,shippermobilephone,fromcityid[cityid],shipperaddress,consignee,consigneephone,consigneemobilephone,tocityid[cityid],consigneeaddress,commodityname,weight,volume,commodityamount,packagetype[typecode],length,width,height,freightfee,collectionpayment,paidamount,remark,commodityid,customerid[ar_customer_id]</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>xtmst_pickuporder_id='%{xtmst_pickuporder_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_pickuporder[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_pickuporderLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_pickuporder_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_pickuporder" Name="resetxtmst_pickuporder" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_pickuporder" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_pickuporder" Name="gsearchxtmst_pickuporder" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_pickuporderLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_pickuporder" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

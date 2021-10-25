@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmsc_type_option" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmsc_type_option" Name="deletextmsc_type_option" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Where>idx='%{xtmsc_type_optionLst[idx]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmsc_type_option" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmsc_type_option" Name="searchxtmsc_type_option" Size="50,20">
+			  <OnClick><submit next="xtmsc_type_optionLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmsc_type_optionLst" OnClick="(xtmsc_type_optionLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmsc_type_optionLst" OnClick="(xtmsc_type_optionLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmsc_type_optionLst" OnClick="(xtmsc_type_optionLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

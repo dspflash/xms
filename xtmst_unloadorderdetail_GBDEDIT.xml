@@ -1,0 +1,54 @@
+﻿<GroupBox Name="GBDEDITxtmst_unloadorderdetail"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_freightid"><Ctrls>
+<Label Align="Right" Text="freightid" Name="lb_freightid" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_freightid" Name="freightid" Size="150,20">
+	<DbDetails fcsm="true">
+<Index>freightid</Index>
+<DbTable>tms.xtmst_freight</DbTable>
+<Data>FreightCode,PlanID,unLoadOrderID,xtmst_unloadorder_id,FreightID</Data>
+<Where/>
+<queryFormat>select %{data} from uv_unLoadOrderFreight where %{where}</queryFormat></DbDetails><OnEnChange><submit next="PlanID"/></OnEnChange></TextBox>
+<MagicCtrl Name="pickfreightid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$parent.xtmst_unloadorder_freight.frmwndctrl" expr="xtmst_unloadorderdetail.freightid"/><DbDetails><Where>xtmst_unloadorder_id='%{xtmst_unloadorder_id}' and !IsChecked</Where></DbDetails><submit next="$parent.xtmst_unloadorder_freight.uv_unLoadOrderFreightLst" namelist="DbDetails"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_planid"><Ctrls>
+<Label Align="Right" Text="planid" Name="lb_planid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_planid" Name="planid" Size="170,20">
+	<DbDetails>
+<Index>planid</Index>
+<DbTable>tms.xtmst_dispatchplan</DbTable>
+<Data>PlanCode,PlanID</Data>
+<Where>PlanID='%{FreightID[PlanID]}'</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_memo"><Ctrls>
+<Label Align="Right" Text="memo" Name="lb_memo" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_memo" Name="memo" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updateby" Visible="false"><Ctrls>
+<Label Align="Right" Text="updateby" overlap="pre" Name="lb_updateby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_updateby" overlap="pre" Name="updateby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updatedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="updatedate" overlap="pre" Name="lb_updatedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_updatedate" overlap="pre" Name="updatedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_unloaddetailid" Visible="false"><Ctrls>
+<Label Align="Right" Text="unloaddetailid" overlap="pre" Name="lb_unloaddetailid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_unloaddetailid" overlap="pre" Name="unloaddetailid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_unloadorderid" Visible="false"><Ctrls>
+<Label Align="Right" Text="unloadorderid" overlap="pre" Name="lb_unloadorderid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_unloadorderid" overlap="pre" Name="unloadorderid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmst_unloadorder_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmst_unloadorder_id" overlap="pre" Name="lb_xtmst_unloadorder_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmst_unloadorder_id" overlap="pre" Name="xtmst_unloadorder_id" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

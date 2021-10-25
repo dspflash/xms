@@ -1,0 +1,52 @@
+﻿<GroupBox Name="GBDEDITxtmst_customordersetting" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_customerorderid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_customerorderid" Size="60,20" Text="customerorderid" Align="Right"/>
+<TextBox Name="customerorderid" Size="170,20" Text="" Weight="170" ToolTip="ttp_customerorderid">
+	<DbDetails>
+<Index>customerorderid</Index>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Data>OrderCode,CustomerOrderID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_carrycode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_carrycode" Size="60,20" Text="carrycode" Align="Right"/>
+<TextBox Name="carrycode" Size="170,20" Text="" Weight="170" ToolTip="ttp_carrycode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_ordermileage" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_ordermileage" Size="60,20" Text="ordermileage" Align="Right"/>
+<TextBox Name="ordermileage" Size="170,20" Text="" Weight="170" ToolTip="ttp_ordermileage"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_vehicletypefee" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vehicletypefee" Size="60,20" Text="vehicletypefee" Align="Right"/>
+<TextBox Name="vehicletypefee" Size="170,20" Text="" Weight="170" ToolTip="ttp_vehicletypefee"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_backoffline" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_backoffline" Size="60,20" Text="backoffline" Align="Right"/>
+<TextBox Name="backoffline" Size="170,20" Text="" Weight="170" ToolTip="ttp_backoffline"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_returnline" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_returnline" Size="60,20" Text="returnline" Align="Right"/>
+<TextBox Name="returnline" Size="170,20" Text="" Weight="170" ToolTip="ttp_returnline"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_expressfee" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_expressfee" Size="60,20" Text="expressfee" Align="Right"/>
+<TextBox Name="expressfee" Size="170,20" Text="" Weight="170" ToolTip="ttp_expressfee"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_otherfee" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_otherfee" Size="60,20" Text="otherfee" Align="Right"/>
+<TextBox Name="otherfee" Size="170,20" Text="" Weight="170" ToolTip="ttp_otherfee">
+	<DbDetails>
+<Index>customerorderid</Index>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Data>OrderCode,CustomerOrderID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isexpressorder" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="isexpressorder" Size="230,20" Text="isexpressorder" ToolTip="ttp_isexpressorder"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_issmallorder" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="issmallorder" Size="230,20" Text="issmallorder" ToolTip="ttp_issmallorder"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

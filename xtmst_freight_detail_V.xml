@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmst_freight_detail_v" Text="xtmst_freight_detail">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_detail_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><commodityname format="(x.commodityname like '%%{opvalue}%')"/><commoditycode format="(x.commoditycode like '%%{opvalue}%')"/><amount format="(x.amount like '%%{opvalue}%')"/><length format="(x.length like '%%{opvalue}%')"/><width format="(x.width like '%%{opvalue}%')"/><height format="(x.height like '%%{opvalue}%')"/><weight format="(x.weight like '%%{opvalue}%')"/><volume format="(x.volume like '%%{opvalue}%')"/><packagetype format="x.packagetype='%{opvalue}'"/><transfeesettlementsmode format="x.transfeesettlementsmode='%{opvalue}'"/><unitfreightfee format="(x.unitfreightfee like '%%{opvalue}%')"/><totalfreightfee format="(x.totalfreightfee like '%%{opvalue}%')"/><commodityprice format="(x.commodityprice like '%%{opvalue}%')"/><remark format="(x.remark like '%%{opvalue}%')"/><xtmst_freight_detail_id format="(x.xtmst_freight_detail_id like '%%{opvalue}%')"/><commodityid format="(x.commodityid like '%%{opvalue}%')"/><freightdetailid format="(x.freightdetailid like '%%{opvalue}%')"/><freightid format="(x.freightid like '%%{opvalue}%')"/><xtmst_freight_id format="(x.xtmst_freight_id like '%%{opvalue}%')"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><updateby format="(x.updateby like '%%{opvalue}%')"/><updatedate format="(x.updatedate between '%{updatedate[datetime]}' and '%{updatedate[datetime2]}')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_freight_detail.xml"/>
+<Ctrls><GroupBox  Name="GBxtmst_freight_detail" id="xtmst_freight_detail" Text="xtmst_freight_detail" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_detail_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmst_freight_detail" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmst_freight_detail.GBDEDITxtmst_freight_detail" function="reset"/><assign name="$this.xtmst_freight_detail.frmwndctrl" expr="%{$this.xtmst_freight_detail_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmst_freight_detail" Name="resetxtmst_freight_detail" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmst_freight_detail" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_freight_detail" Name="gsearchxtmst_freight_detail" Size="50,20">	<OnClick>	
+<search next="xtmst_freight_detail_vLst" listed="0" prefixwhere="1" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_freight_detail" namelist="search" function="search"/>	
+<search next="records_xtmst_freight_detail" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_freight_detail" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_detail_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_detail_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_detail_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

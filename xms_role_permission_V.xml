@@ -1,0 +1,20 @@
+﻿<WndTap Name="xms_role_permission_v" Text="xms_role_permission">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_role_permission_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><role_id format="x.role_id='%{opvalue}'"/><class format="x.class='%{opvalue}'"/><created_by format="(x.created_by like '%%{opvalue}%')"/><creation_date format="(x.creation_date between '%{creation_date[datetime]}' and '%{creation_date[datetime2]}')"/><last_update_by format="(x.last_update_by like '%%{opvalue}%')"/><last_update_date format="(x.last_update_date between '%{last_update_date[datetime]}' and '%{last_update_date[datetime2]}')"/><role_permission_id format="(x.role_permission_id like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xms_role_permission.xml"/>
+<Ctrls><GroupBox  Name="GBxms_role_permission" id="xms_role_permission" Text="xms_role_permission" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_role_permission_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxms_role_permission" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xms_role_permission.GBDEDITxms_role_permission" function="reset"/><assign name="$this.xms_role_permission.frmwndctrl" expr="%{$this.xms_role_permission_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxms_role_permission" Name="resetxms_role_permission" Size="50,20">	<OnClick>	<submit next="GBDEDITxms_role_permission" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxms_role_permission" Name="gsearchxms_role_permission" Size="50,20">	<OnClick>	
+<search next="xms_role_permission_vLst" listed="0" prefixwhere="0" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxms_role_permission" namelist="search" function="search"/>	
+<search next="records_xms_role_permission" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxms_role_permission" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_role_permission_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_role_permission_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_role_permission_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

@@ -1,0 +1,13 @@
+﻿<WndTap Name="xms_user" Text="xms_user" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr="username,password,phone,email"/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xms_user.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBxms_user" id="xms_user" Text="xms_user" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertxms_user" Visible="1"/><SetVisible name="modifyxms_user" Visible="0"/></OnActivate>
+</WndTap>

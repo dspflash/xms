@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_loadorder" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmst_loadorder" Name="deletextmst_loadorder" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmst_loadorder</DbTable>
+<Where>xtmst_loadorder_id='%{xtmst_loadorderLst[xtmst_loadorder_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmst_loadorder" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmst_loadorder" Name="searchxtmst_loadorder" Size="50,20">
+			  <OnClick><submit next="xtmst_loadorderLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmst_loadorderLst" OnClick="(xtmst_loadorderLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmst_loadorderLst" OnClick="(xtmst_loadorderLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmst_loadorderLst" OnClick="(xtmst_loadorderLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

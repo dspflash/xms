@@ -1,0 +1,20 @@
+﻿<GroupBox Name="GBDVuv_freightloadunloadop" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="uv_freightloadunloadop_vLst" ToolTip="ttp_uv_freightloadunloadop_v" Size="700,450" OnLoad="init" Heading="freightcode,250;platenumber,50;drivername,250;fromcity,250;fromaddress,640;fromxsite,640;tocity,250;toaddress,640;toxsite,640;operatetype,250;vehiclerealtimecode,250;plancode,250;fromcityid,50;fromxsiteid,250;tocityid,50;toxsiteid,250;freightid,250;vehiclerealtimeid,250;planid,250;freightstatus,100;opordercode,250;opstatus,100;opdate,95;memo,640;operatetypecode,30;pickupordercode,250;opstatuscode,55;oporderid,250;freightstatuscode,25;pickuporderid,250;carrierid,250;" loadedclick="0">
+	<DbDetails >
+
+<DbTable>tms.uv_freightloadunloadop u</DbTable>
+<Data>u.freightcode,u.platenumber,u.drivername,u.fromcity,u.fromaddress,u.fromxsite,u.tocity,u.toaddress,u.toxsite,u.operatetype,u.vehiclerealtimecode,u.plancode,u.fromcityid,u.fromxsiteid,u.tocityid,u.toxsiteid,u.freightid,u.vehiclerealtimeid,u.planid,u.freightstatus,u.opordercode,u.opstatus,u.opdate,u.memo,u.operatetypecode,u.pickupordercode,u.opstatuscode,u.oporderid,u.freightstatuscode,u.pickuporderid,u.carrierid</Data>
+</DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>%{primary}='%{uv_freightloadunloadop_vLst[%{primary}]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.uv_freightloadunloadop.uv_freightloadunloadopLst"/><assign name="$this.uv_freightloadunloadop.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.uv_freightloadunloadop</DbTable>
+<Where>%{primary}='%{uv_freightloadunloadop_vLst[%{primary}]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_uv_freightloadunloadop" expr="js(%{uv_freightloadunloadop_vLst[currentpage]}+1)"/>
+<assign name="pgscb_uv_freightloadunloadop" expr="js(%{uv_freightloadunloadop_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

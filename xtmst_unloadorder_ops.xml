@@ -1,0 +1,23 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="UnloadFreight"><assign name="$this.xtmst_unloadorderdetail.xtmst_unloadorder_id" expr="%{xtmst_unloadorder_vLst[xtmst_unloadorder_id]}"/><assign name="$this.xtmst_unloadorderdetail.unLoadOrderID" expr="%{xtmst_unloadorder_vLst[unLoadOrderID]}"/></op>
+<op text="modify"><DbDetails><Where>xtmst_unloadorder_id='%{xtmst_unloadorder_vLst[xtmst_unloadorder_id]}' and status!=603</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_unloadorder.xtmst_unloadorderLst"/></op>
+<op text="complete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_unloadorder</DbTable>
+<Where>uld.xtmst_unloadorder_id='%{xtmst_unloadorder_vLst[xtmst_unloadorder_id]}'</Where>
+<queryFormat>UPDATE tms.xtmst_unloadorder uld 
+JOIN tms.xtmst_unloadorderdetail uldd ON uld.unLoadOrderID=uldd.unLoadOrderID
+JOIN tms.xtmst_dispatchplan dp ON uld.VehicleRealTimeID=dp.VehicleRealTimeID AND dp.FreightID=uldd.FreightID
+JOIN tms.xtmst_freight f ON f.FreightID=dp.FreightID
+left JOIN tms.xtmst_pickuporder pk ON f.PickupOrderID=pk.PickupOrderID  
+JOIN tms.xtmst_vehiclesituation vs ON vs.VehicleRealTimeID=uld.VehicleRealTimeID AND vs.CityID=uld.unLoadCityID AND vs.Address=uld.unLoadAddress
+SET uld.Status=603,dp.Status=303,f.STATUS=if(f.ConsignmentMode=1001,if(f.DeliveryMethod=1211,if(f.ToXSiteID=dp.ToXSiteID,208,210),if(f.DeliveryMethod=1212,if(f.ConsigneeAddress=dp.ToAddress,214,if(f.ToXSiteID=dp.ToXSiteID,209,210)),214)),if(f.ConsignmentMode=1002,205,214)),pk.orderSTATUS=IF(f.FreightType=1200,104,107)  WHERE %{WHERE};
+set @vrtid=null;select VehicleRealTimeID into @vrtid from %{table} uld where %{where};
+</queryFormat></DbDetails>UPDATE tms.xtmst_vehiclerealtime vrt JOIN tms.xtmst_freight f ON vrt.VehicleRealTimeID=f.VehicleRealTimeID AND f.status in (206,207) SET vrt.Status=404 WHERE vrt.VehicleRealTimeID=@vrtid and (SELECT COUNT(0) FROM tms.xtmst_freight WHERE VehicleRealTimeID=@vrtid AND STATUS not in (206,207))=0;
+,vrt.Status=404
+<submit namelist="DbDetails"/><submit/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_unloadorder uld left JOIN tms.xtmst_unloadorderdetail uldd ON uld.unLoadOrderID=uldd.unLoadOrderID</DbTable>
+<Where>uld.xtmst_unloadorder_id='%{xtmst_unloadorder_vLst[xtmst_unloadorder_id]}' and STATUS!=603</Where>
+<queryFormat>delete uld,uldd from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

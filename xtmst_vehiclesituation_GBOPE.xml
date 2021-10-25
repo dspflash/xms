@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_vehiclesituation" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xtmst_vehiclesituation_id" Text="create" ToolTip="ttp_creatextmst_vehiclesituation" Name="insertxtmst_vehiclesituation" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_vehiclesituation</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehicleid[vehicleid],vehiclerealtimeid[vehiclerealtimeid],operatetype[typecode],freightid[freightid],xsiteid[xsiteid],cityid[cityid],address</Data>
+<DataEx>createby,createdate,vehiclesituationid;'%{user_id}',now(),uuid()</DataEx>
+<queryFormat>INSERT ignore INTO tms.xtmst_vehiclesituation (vehicleid,vehiclerealtimeid,operatetype,freightid,xsiteid,cityid,address,createby,createdate,vehiclesituationid)  SELECT vehicleid,vehiclerealtimeid,%{OperateType[TypeCode]},freightid,'%{XSiteID[XSiteID]}','%{CityID[CityID]}','%{Address}','10438',NOW(),UUID() FROM xtmst_dispatchplan WHERE VehicleRealTimeID='%{VehicleRealTimeID[VehicleRealTimeID]}' and IF(%{OperateType[TypeCode]}=1301,FromCityID,ToCityID)='%{CityID[CityID]}' AND IF(%{OperateType[TypeCode]}=1301,FromAddress,ToAddress)='%{Address}';</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_vehiclesituation[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_vehiclesituationLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_vehiclesituation_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_vehiclesituation" Name="modifyxtmst_vehiclesituation" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_vehiclesituation</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehiclerealtimeid[vehiclerealtimeid],operatetype[typecode],xsiteid[xsiteid],cityid[cityid],address</Data>
+<DataEx/>
+<Where>xtmst_vehiclesituation_id='%{xtmst_vehiclesituation_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_vehiclesituation[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_vehiclesituationLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_vehiclesituation_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_vehiclesituation" Name="resetxtmst_vehiclesituation" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_vehiclesituation" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_vehiclesituation" Name="gsearchxtmst_vehiclesituation" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_vehiclesituationLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_vehiclesituation" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

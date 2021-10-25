@@ -1,0 +1,34 @@
+﻿<Language name="xms_user_role">
+<Lang name="xms_user_role" value="用户角色"/>
+<Lang name="TabEditxms_user_role" value="xms_user_role Edit"/>
+<Lang name="TabViewxms_user_role" value="xms_user_role View"/>
+<Lang name="xms_user_id" value="用户"/>
+<Lang name="ttp_xms_user_id" value=""/>
+<Lang name="role_code" value="角色"/>
+<Lang name="ttp_role_code" value=""/>
+<Lang name="created_by" value=""/>
+<Lang name="ttp_created_by" value=""/>
+<Lang name="creation_date" value=""/>
+<Lang name="ttp_creation_date" value=""/>
+<Lang name="last_update_by" value=""/>
+<Lang name="ttp_last_update_by" value=""/>
+<Lang name="last_update_date" value=""/>
+<Lang name="ttp_last_update_date" value=""/>
+<Lang name="xms_user_role_id" value=""/>
+<Lang name="ttp_xms_user_role_id" value=""/>
+<Lang name="ttp_operationxms_user_role" value=""/>
+<Lang name="ttp_createxms_user_role" value=""/>
+<Lang name="ttp_modifyxms_user_role" value=""/>
+<Lang name="ttp_resetxms_user_role" value=""/>
+<Lang name="ttp_deletexms_user_role" value=""/>
+<Lang name="ttp_refreshxms_user_role" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

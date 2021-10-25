@@ -1,0 +1,28 @@
+﻿<GroupBox Name="GBDEDITxtmsm_fee_item"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_feecode"><Ctrls>
+<Label Align="Right" Text="feecode" Name="lb_feecode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_feecode" Name="feecode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_feename"><Ctrls>
+<Label Align="Right" Text="feename" Name="lb_feename" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_feename" Name="feename" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_debit"><Ctrls>
+<CheckBox Text="debit" ToolTip="ttp_debit" Name="debit" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_active"><Ctrls>
+<CheckBox Text="active" ToolTip="ttp_active" Name="active" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="id" overlap="pre" Name="lb_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id" overlap="pre" Name="id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id}'"><SetVisible name="insertxtmsm_fee_item" Visible="0"/><SetVisible name="modifyxtmsm_fee_item" Visible="1"/><else/><SetVisible name="insertxtmsm_fee_item" Visible="1"/><SetVisible name="modifyxtmsm_fee_item" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_create_by" Visible="false"><Ctrls>
+<Label Align="Right" Text="create_by" overlap="pre" Name="lb_create_by" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_create_by" overlap="pre" Name="create_by" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

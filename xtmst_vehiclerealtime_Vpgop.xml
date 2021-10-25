@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_vehiclerealtime" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialxtmst_vehiclerealtime" Size="50,20">
+<OnClick><submit next="xtmst_vehiclerealtime_vLst" function="initial"/><submit next="records_xtmst_vehiclerealtime" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPxtmst_vehiclerealtime_vLst" Size="50,20">
+<OnClick><submit next="xtmst_vehiclerealtime_vLst" function="GetPage(first)"/><submit next="records_xtmst_vehiclerealtime"/></OnClick></Button>
+<Button Text="prepage" Name="PRExtmst_vehiclerealtime_vLst" Size="50,20">
+<OnClick><submit next="xtmst_vehiclerealtime_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPxtmst_vehiclerealtime_vLst" Size="50,20">
+<OnClick><submit next="xtmst_vehiclerealtime_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

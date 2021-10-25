@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_pickuporder" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_pickuporderLst" ToolTip="ttp_xtmst_pickuporder" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_pickuporder_id</Index>
+<DbTable>tms.xtmst_pickuporder</DbTable>
+<Data>pickupordercode,customername,pickupdaterequest,pickupdateactual,delivereddateexpected,deliverymode,deliverymethod,orderstatus,freightcode,shipper,shipperphone,shippermobilephone,fromcityid,shipperaddress,consignee,consigneephone,consigneemobilephone,tocityid,consigneeaddress,commodityname,weight,volume,commodityamount,packagetype,length,width,height,freightfee,collectionpayment,paidamount,remark,createby,createdate,updateby,updatedate,carrierid,xtmst_pickuporder_id,pickuporderid,commodityid,customerid</Data>
+<Order>xtmst_pickuporder_id</Order></DbDetails>
+<OnClick><assign name="deliverymode[typecode]" expr="%{xtmst_pickuporderLst[deliverymode]}" function="SetSel"/><assign name="deliverymethod[typecode]" expr="%{xtmst_pickuporderLst[deliverymethod]}" function="SetSel"/><assign name="orderstatus[statuscode]" expr="%{xtmst_pickuporderLst[orderstatus]}" function="SetSel"/><assign name="fromcityid[cityid]" expr="%{xtmst_pickuporderLst[fromcityid]}" function="SetSel"/><assign name="tocityid[cityid]" expr="%{xtmst_pickuporderLst[tocityid]}" function="SetSel"/><assign name="packagetype[typecode]" expr="%{xtmst_pickuporderLst[packagetype]}" function="SetSel"/><assign name="customerid[ar_customer_id]" expr="%{xtmst_pickuporderLst[customerid]}" function="SetSel"/>
+<if cond="%{xtmst_pickuporder_id}"><SetVisible name="insertxtmst_pickuporder" Visible="0"/><SetVisible name="modifyxtmst_pickuporder" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

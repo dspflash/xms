@@ -1,0 +1,46 @@
+﻿<WndTap Name="xms_reg_user" Text="xms_reg_user" Ver="2">
+<var name="refreshAfterEdit" expr="0"/>
+<var name="dataRequired" expr="username,password,phone,email"/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xms_user.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBxms_user" id="xms_reg_user" Text="xms_reg_user" Size="100,100"><Ctrls>
+<GroupBox Name="GBDEDITxms_user"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_username"><Ctrls>
+<Label Align="Right" Text="username" Name="lb_username" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_username" Name="username" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_password"><Ctrls>
+<Label Align="Right" Text="password" PASSWORD="true" Name="lb_password" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_password" PASSWORD="true" Name="password" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_phone"><Ctrls>
+<Label Align="Right" Text="phone" Name="lb_phone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_phone" Name="phone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialphone" OnClick="nis3ucs:%{phone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_email"><Ctrls>
+<Label Align="Right" Text="email" Name="lb_email" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_email" Name="email" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_org"><Ctrls>
+<Label Align="Right" Text="org" Name="lb_org" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_org" Name="org" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_invitation_code"><Ctrls>
+<Label Align="Right" Text="invitation_code" Name="lb_invitation_code" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_invitation_code" Name="invitation_code" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<Button sqlpkinsert="xms_user_id" Text="create" ToolTip="ttp_createxms_user" Name="insertxms_user" Size="50,20">
+	<OnClick><if cond="('%{username}'.lengh)*('%{email}'.lengh)*('%{phone}'.lengh)*('%{org}'.lengh)==0"><alert expr="所有的都不能为空！"/><else/>
+	<DbDetails mode="insert"><queryFormat>SELECT `tms`.`RegisterUser`('%{username}','%{email}','%{password}','%{phone}','%{org}','%{invitation_code}','carrier');</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/></if>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>
+</Ctrls>
+<OnChanged><if cond="%{insertxms_user[errorcode]}==0">
+<assign name="topmost" expr="relogin:%{username} %{password}"/></if>
+</OnChanged>
+</WndTap>

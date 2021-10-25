@@ -1,0 +1,10 @@
+﻿<GroupBox Name="GBDVuv_customorder" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="uv_customorder_vLst" ToolTip="ttp_uv_customorder" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>tms.uv_customorder u</DbTable>
+<Data>*</Data>
+<queryFormat>select %{data} from %{dbtable} where carrierid='%{orgguid}' or carrierid is null or carrierid='' %{where} limit %{StartRow},%{PgSize}</queryFormat>
+</DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="uv_customorder_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

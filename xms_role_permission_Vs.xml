@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITxms_role_permission" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_role_id" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_role_id" Size="60,20" Text="role_id" Align="Right" onload="init" selectedIndex="0"/>
+<ComboBox Name="role_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_role_id" onload="init" selectedIndex="0">
+	<DbDetails>
+<Index>role_id</Index>
+<DbTable>tms.xms_role</DbTable>
+<Data>role_name_cn,role_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_class" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_class" Size="60,20" Text="class" Align="Right" onload="init"/>
+<ComboBox Name="class" Size="170,100" Text="" Weight="170"  ToolTip="ttp_class" onload="init">
+	<DbDetails>
+<Index>name</Index>
+<DbTable>tms.module_class</DbTable>
+<Data>description,name</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_role_permission_id" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_role_permission_id" Size="60,20" Text="role_permission_id" Align="Right"/>
+<TextBox Name="role_permission_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_role_permission_id"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

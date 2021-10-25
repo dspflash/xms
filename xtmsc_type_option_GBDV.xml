@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmsc_type_option"><Ctrls>
+<ListCtrl Heading="tablename,400;columnname,400;typeclass,20;typecode,25;typename,250;memo,640;idx,25;" loadedclick="0" ToolTip="ttp_xtmsc_type_option" Name="xtmsc_type_optionLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>idx</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>tablename,columnname,typeclass,typecode,typename,memo,idx</Data>
+<Order>idx</Order></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsc_type_option_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

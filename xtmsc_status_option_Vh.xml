@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsc_status_option" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsc_status_optionLst" ToolTip="ttp_xtmsc_status_option" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>idx</Index>
+<DbTable>tms.xtmsc_status_option</DbTable>
+<Data>tablename,typename,statustype,statuscode,statusname,remark,idx</Data>
+<Order>idx</Order></DbDetails>
+<OnClick>
+<if cond="%{idx}"><SetVisible name="insertxtmsc_status_option" Visible="0"/><SetVisible name="modifyxtmsc_status_option" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,63 @@
+﻿<WndTap Name="xtmst_customorder_carrier" Text="xtmst_customorder_carrier" Ver="2">
+<var name="refreshAfterEdit" expr="0"/>
+<var name="dataRequired" expr="customerorderid,carrierid"/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xtmst_customorder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBxtmst_customorder" id="xtmst_customorder" Text="xtmst_customorder" Size="100,100"><Ctrls>
+<GroupBox Name="GBDEDITxtmst_dispatchplan"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_customerorderid"><Ctrls>
+<Label Align="Right" Text="customerorderid" Name="lb_customerorderid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_customerorderid" Name="customerorderid" Size="170,20">
+	<DbDetails>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Index>customerorderid</Index>
+<Data>OrderCode,CustomerOrderID</Data>
+<Where/>
+</DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_carrierid"><Ctrls>
+<Label Align="Right" Text="carrierid" Name="lb_carrierid" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_carrierid" Name="carrierid" Size="150,20">
+	<DbDetails>
+<DbTable>tms.xtmsm_carrier</DbTable>
+<Index>carrierid</Index>
+<Data>CarrierName,CarrierID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+<MagicCtrl Name="pickcarrierid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$parent.CarrierPick.frmwndctrl" expr="xtmst_customorder_carrier.carrierid"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updateby" Visible="false"><Ctrls>
+<Label Align="Right" Text="updateby" overlap="pre" Name="lb_updateby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_updateby" overlap="pre" Name="updateby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updatedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="updatedate" overlap="pre" Name="lb_updatedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_updatedate" overlap="pre" Name="updatedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/>
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPExtmst_customorder" Size="100,100"><Ctrls>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_customorder" Name="modifyxtmst_customorder" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_customorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>carrierid[CarrierID]</Data>
+<DataEx>STATUS,OrderStatus,updateby,updatedate;101,901,'%{user_id}',now()</DataEx>
+<Where>customerorderid='%{customerorderid[customerorderid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="xtmst_customorderLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls>
+</WndTap>

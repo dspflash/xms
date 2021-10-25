@@ -1,0 +1,50 @@
+﻿<Language name="xtmsm_driver">
+<Lang name="xtmsm_driver" value="驾驶员"/>
+<Lang name="TabEditxtmsm_driver" value="xtmsm_driver Edit"/>
+<Lang name="TabViewxtmsm_driver" value="xtmsm_driver View"/>
+<Lang name="carrierid" value=""/>
+<Lang name="ttp_carrierid" value=""/>
+<Lang name="drivername" value="姓名"/>
+<Lang name="ttp_drivername" value=""/>
+<Lang name="nature" value="性质"/>
+<Lang name="ttp_nature" value=""/>
+<Lang name="phone1" value="手机号1"/>
+<Lang name="ttp_phone1" value=""/>
+<Lang name="phone2" value="手机号2"/>
+<Lang name="ttp_phone2" value=""/>
+<Lang name="idnumber" value="身份证号"/>
+<Lang name="ttp_idnumber" value=""/>
+<Lang name="emergencycontactor" value="紧急联系人"/>
+<Lang name="ttp_emergencycontactor" value=""/>
+<Lang name="emergencyphone" value="紧急联系电话"/>
+<Lang name="ttp_emergencyphone" value=""/>
+<Lang name="drivercode" value="驾驶证号"/>
+<Lang name="ttp_drivercode" value=""/>
+<Lang name="sex" value="性别"/>
+<Lang name="ttp_sex" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="updateby" value=""/>
+<Lang name="ttp_updateby" value=""/>
+<Lang name="updatedate" value=""/>
+<Lang name="ttp_updatedate" value=""/>
+<Lang name="driverid" value=""/>
+<Lang name="ttp_driverid" value=""/>
+<Lang name="ttp_operationxtmsm_driver" value=""/>
+<Lang name="ttp_creatextmsm_driver" value=""/>
+<Lang name="ttp_modifyxtmsm_driver" value=""/>
+<Lang name="ttp_resetxtmsm_driver" value=""/>
+<Lang name="ttp_deletextmsm_driver" value=""/>
+<Lang name="ttp_refreshxtmsm_driver" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

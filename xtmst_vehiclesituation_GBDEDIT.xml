@@ -1,0 +1,82 @@
+﻿<GroupBox Name="GBDEDITxtmst_vehiclesituation"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_vehicleid"><Ctrls>
+<Label Align="Right" Text="vehicleid" Name="lb_vehicleid" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehicleid" Name="vehicleid" readonly="true" Size="170,20">
+	<DbDetails>
+<Index>vehicleid</Index>
+<DbTable>tms.xtmsm_vehicle</DbTable>
+<Data>Platenumber,VehicleID</Data>
+<Where>VehicleID='%{VehicleRealTimeID[VehicleID]}'</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_vehiclerealtimeid"><Ctrls>
+<Label Align="Right" Text="vehiclerealtimeid" Name="lb_vehiclerealtimeid" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehiclerealtimeid" Name="vehiclerealtimeid" readonly="true" Size="170,20">
+	<DbDetails>
+<Index>vehiclerealtimeid</Index>
+<DbTable>tms.xtmst_vehiclerealtime</DbTable>
+<Data>VehicleRealTimeCode,VehicleID,FromCityID,ToCityID,FromAddress,ToAddress,VehicleRealTimeID</Data>
+<Where/>
+<queryFormat/></DbDetails><OnEnChange><submit next="VehicleID"/></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_operatetype"><Ctrls>
+<Label Align="Right" Text="operatetype" Name="lb_operatetype" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_operatetype" Name="operatetype" readonly="true" Size="170,20">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=130</Where>
+<queryFormat/></DbDetails><OnSelEndOk><if cond="%{FreightID[FreightID]}"><submit next="XSiteID"/><submit next="CityID"/><if cond="%{OperateType[TypeCode]}==1301"><assign name="Address" expr="%{FreightID[FromAddress]}"/><else/><assign name="Address" expr="%{FreightID[ToAddress]}"/></if></if></OnSelEndOk></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_freightid"><Ctrls>
+<Label Align="Right" Text="freightid" Name="lb_freightid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_freightid" Name="freightid" Size="170,100">
+	<DbDetails>
+<Index>freightid</Index>
+<DbTable>tms.xtmst_freight</DbTable>
+<Data>FreightCode,FreightID</Data>
+<Where>f.VehicleRealTimeID='%{VehicleRealTimeID[VehicleRealTimeID]}'</Where>
+<queryFormat>SELECT FreightCode,dp.FromCityID,dp.ToCityID,FromAddress,ToAddress,dp.FromXSiteID,dp.ToXSiteID,f.FreightID    FROM tms.xtmst_dispatchplan dp JOIN tms.xtmst_freight f ON dp.FreightID=f.FreightID WHERE %{where}</queryFormat></DbDetails><OnSelEndOk><submit next="XSiteID"/><submit next="CityID"/><if cond="%{OperateType[TypeCode]}==1301"><assign name="Address" expr="%{FreightID[FromAddress]}"/><else/><assign name="Address" expr="%{FreightID[ToAddress]}"/></if></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_xsiteid"><Ctrls>
+<Label Align="Right" Text="xsiteid" Name="lb_xsiteid" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xsiteid" Name="xsiteid" readonly="true" Size="170,20">
+	<DbDetails>
+<Index>xsiteid</Index>
+<DbTable>tms.xtmsm_xsite</DbTable>
+<Data>XSiteName,Address,XSiteID</Data>
+<Where>XSiteID=if('%{OperateType[TypeCode]}'=1301,'%{FreightID[FromXSiteID]}','%{FreightID[ToXSiteID]}')</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_cityid"><Ctrls>
+<Label Align="Right" Text="cityid" Name="lb_cityid" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_cityid" Name="cityid" readonly="true" Size="170,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where>CityID=if('%{OperateType[TypeCode]}'=1301,'%{FreightID[FromCityID]}','%{FreightID[ToCityID]}')</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_address"><Ctrls>
+<Label Align="Right" Text="address" Name="lb_address" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_address" Name="address" readonly="true" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_vehiclesituationid" Visible="false"><Ctrls>
+<Label Align="Right" Text="vehiclesituationid" overlap="pre" Name="lb_vehiclesituationid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehiclesituationid" overlap="pre" Name="vehiclesituationid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmst_vehiclesituation_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmst_vehiclesituation_id" overlap="pre" Name="lb_xtmst_vehiclesituation_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmst_vehiclesituation_id" overlap="pre" Name="xtmst_vehiclesituation_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{xtmst_vehiclesituation_id}'"><SetVisible name="insertxtmst_vehiclesituation" Visible="0"/><SetVisible name="modifyxtmst_vehiclesituation" Visible="1"/><else/><SetVisible name="insertxtmst_vehiclesituation" Visible="1"/><SetVisible name="modifyxtmst_vehiclesituation" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

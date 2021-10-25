@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVuv_freightloadunloadop" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialuv_freightloadunloadop" Size="50,20">
+<OnClick><submit next="uv_freightloadunloadop_vLst" function="initial"/><submit next="records_uv_freightloadunloadop" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPuv_freightloadunloadop_vLst" Size="50,20">
+<OnClick><submit next="uv_freightloadunloadop_vLst" function="GetPage(first)"/><submit next="records_uv_freightloadunloadop"/></OnClick></Button>
+<Button Text="prepage" Name="PREuv_freightloadunloadop_vLst" Size="50,20">
+<OnClick><submit next="uv_freightloadunloadop_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPuv_freightloadunloadop_vLst" Size="50,20">
+<OnClick><submit next="uv_freightloadunloadop_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

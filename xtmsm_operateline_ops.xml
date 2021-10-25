@@ -1,0 +1,9 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>operateline_id='%{xtmsm_operateline_vLst[operateline_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_operateline.xtmsm_operatelineLst"/><DbDetails><Where>cityId=(select cityid_end from tms.xtmsm_operateline where operateline_id='%{xtmsm_operateline_vLst[operateline_id]}')</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_operateline.cityid_end"/><DbDetails><Where>cityId=(select cityid_start from tms.xtmsm_operateline where operateline_id='%{xtmsm_operateline_vLst[operateline_id]}')</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_operateline.cityid_start"/></op>
+<op text="operateline_detail"><assign name="$this.xtmsm_operateline_detail_v.operateline_id" expr="%{xtmsm_operateline_vLst[operateline_id]}"/><submit namelist="DbDetails" next="$this.xtmsm_operateline_detail_v.xtmsm_operateline_detail_vLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>xtmsm_operateline_detail_v
+<DbTable>tms.xtmsm_operateline</DbTable>
+<Where>operateline_id='%{xtmsm_operateline_vLst[operateline_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

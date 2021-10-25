@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmst_vehiclerealtime"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmst_vehiclerealtime" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>vehiclerealtimeid</Index>
+<DbTable>tms.xtmst_vehiclerealtime x left join tms.xtmsc_type_option x0 on x.deliverymode=x0.typecode left join tms.xtmsc_type_option x1 on x.consignmentmode=x1.typecode left join tms.xtmsm_operateline x2 on x.operateineid=x2.operateineid left join tms.xtmsm_master_city x3 on x.fromcityid=x3.cityid left join tms.xtmsm_master_city x4 on x.tocityid=x4.cityid left join tms.xtmsm_xsite x5 on x.fromxsiteid=x5.xsiteid left join tms.xtmsm_xsite x6 on x.toxsiteid=x6.xsiteid left join tms.xtmsm_vehicle x7 on x.vehicleid=x7.vehicleid left join tms.xtmsm_driver x8 on x.driverid=x8.driverid left join tms.xtmsm_driver x9 on x.lorrydriver=x9.driverid left join tms.xtmsc_status_option x10 on x.status=x10.statuscode</DbTable>
+<Data>count(*) records</Data>
+<Order>vehiclerealtimeid</Order><Queryformat>select %{data} from (select x.vehiclerealtimeid from %{dbtable} where x.carrierid='%{orgguid}' %{where} GROUP BY x.vehiclerealtimeid  ORDER BY x.vehiclerealtimeid) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmst_vehiclerealtime" expr="js(Math.ceil(%{records_xtmst_vehiclerealtime}/%{xtmst_vehiclerealtime_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmst_vehiclerealtime" expr="js('1~'+Math.ceil(%{records_xtmst_vehiclerealtime}/%{xtmst_vehiclerealtime_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmst_vehiclerealtime" Size="60,20"><OnSelEndOK><submit next="xtmst_vehiclerealtime_vLst" function="GetPage(%{pgscb_xtmst_vehiclerealtime}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmst_vehiclerealtime" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmst_vehiclerealtime" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmst_vehiclerealtime_vLst" Size="50,20"><OnClick><submit next="xtmst_vehiclerealtime_vLst" function="GetPage(%{pgcur_xtmst_vehiclerealtime}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

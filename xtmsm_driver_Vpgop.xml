@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmsm_driver" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialxtmsm_driver" Size="50,20">
+<OnClick><submit next="xtmsm_driver_vLst" function="initial"/><submit next="records_xtmsm_driver" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPxtmsm_driver_vLst" Size="50,20">
+<OnClick><submit next="xtmsm_driver_vLst" function="GetPage(first)"/><submit next="records_xtmsm_driver"/></OnClick></Button>
+<Button Text="prepage" Name="PRExtmsm_driver_vLst" Size="50,20">
+<OnClick><submit next="xtmsm_driver_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPxtmsm_driver_vLst" Size="50,20">
+<OnClick><submit next="xtmsm_driver_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

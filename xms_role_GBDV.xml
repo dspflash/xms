@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxms_role"><Ctrls>
+<ListCtrl Heading="role_name_cn,100;role_name_eng,250;role_layout,500;org_guid,250;created_by,60;creation_date,150;last_update_by,60;last_update_date,150;role_id,20;role_level,20;" loadedclick="0" ToolTip="ttp_xms_role" Name="xms_roleLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>role_id</Index>
+<DbTable>tms.xms_role</DbTable>
+<Data>role_name_cn,role_name_eng,role_layout,org_guid,created_by,creation_date,last_update_by,last_update_date,role_id,role_level</Data>
+<Order>role_id</Order></DbDetails><DbDetails><queryFormat>select %{data} from %{dbtable} where role_level and (org_guid='%{orgguid}' or org_guid='') %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_role_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

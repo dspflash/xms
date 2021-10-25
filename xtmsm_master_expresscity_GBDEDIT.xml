@@ -1,0 +1,40 @@
+﻿<GroupBox Name="GBDEDITxtmsm_master_expresscity"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_province"><Ctrls>
+<Label Align="Right" Text="province" onload="init" Name="lb_province" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_province" onload="init" Name="province" Size="170,100">
+	<DbDetails>
+<Index>province</Index>
+<DbTable>tms.xtmsm_master_expresscity</DbTable>
+<Data>Province</Data>
+<Where/>
+<queryFormat>SELECT DISTINCT Province, GROUP_CONCAT(CityID) cities FROM tms.xtmsm_master_expresscity GROUP BY Province</queryFormat></DbDetails><OnSelEndOk><submit next="City"/></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_city"><Ctrls>
+<Label Align="Right" Text="city" Name="lb_city" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_city" Name="city" Size="170,100">
+	<DbDetails>
+<Index>city</Index>
+<DbTable>tms.xtmsm_master_expresscity</DbTable>
+<Data>City</Data>
+<Where/>
+<queryFormat>SELECT DISTINCT City, GROUP_CONCAT(CityID) Counties FROM tms.xtmsm_master_expresscity WHERE FIND_IN_SET(CityID,'%{Province[cities]}') GROUP BY City</queryFormat></DbDetails><OnSelEndOk><submit next="County"/></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_county"><Ctrls>
+<Label Align="Right" Text="county" Name="lb_county" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_county" Name="county" Size="170,100">
+	<DbDetails>
+<Index>county</Index>
+<DbTable>tms.xtmsm_master_expresscity</DbTable>
+<Data>County</Data>
+<Where/>
+<queryFormat>SELECT DISTINCT County,CityCode FROM tms.xtmsm_master_expresscity WHERE FIND_IN_SET(CityID,'%{City[Counties]}') GROUP BY County</queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_citycode" Visible="false"><Ctrls>
+<Label Align="Right" Text="citycode" overlap="pre" Name="lb_citycode" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_citycode" overlap="pre" Name="citycode" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_cityid" Visible="false"><Ctrls>
+<Label Align="Right" Text="cityid" overlap="pre" Name="lb_cityid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_cityid" overlap="pre" Name="cityid" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{cityid}'"><SetVisible name="insertxtmsm_master_expresscity" Visible="0"/><SetVisible name="modifyxtmsm_master_expresscity" Visible="1"/><else/><SetVisible name="insertxtmsm_master_expresscity" Visible="1"/><SetVisible name="modifyxtmsm_master_expresscity" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

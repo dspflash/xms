@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_customordersetting" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmst_customordersetting" Name="deletextmst_customordersetting" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmst_customordersetting</DbTable>
+<Where>xtmst_customordersetting_id='%{xtmst_customordersettingLst[xtmst_customordersetting_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmst_customordersetting" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmst_customordersetting" Name="searchxtmst_customordersetting" Size="50,20">
+			  <OnClick><submit next="xtmst_customordersettingLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmst_customordersettingLst" OnClick="(xtmst_customordersettingLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmst_customordersettingLst" OnClick="(xtmst_customordersettingLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmst_customordersettingLst" OnClick="(xtmst_customordersettingLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

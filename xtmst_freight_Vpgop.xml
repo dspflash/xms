@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_freight" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialxtmst_freight" Size="50,20">
+<OnClick><submit next="xtmst_freight_vLst" function="initial"/><submit next="records_xtmst_freight" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPxtmst_freight_vLst" Size="50,20">
+<OnClick><submit next="xtmst_freight_vLst" function="GetPage(first)"/><submit next="records_xtmst_freight"/></OnClick></Button>
+<Button Text="prepage" Name="PRExtmst_freight_vLst" Size="50,20">
+<OnClick><submit next="xtmst_freight_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPxtmst_freight_vLst" Size="50,20">
+<OnClick><submit next="xtmst_freight_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

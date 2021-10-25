@@ -1,0 +1,22 @@
+﻿<GroupBox Name="GBDEDITxms_user_role" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_xms_user_id" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_xms_user_id" Size="60,20" Text="xms_user_id" Align="Right" onload="init"/>
+<ComboBox Name="xms_user_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_xms_user_id" onload="init">
+	<DbDetails>
+<Index>xms_user_id</Index>
+<DbTable>tms.xms_user</DbTable>
+<Data>username,xms_user_id</Data>
+<Where>org_guid='%{orgguid}'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_role_code" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_role_code" Size="60,20" Text="role_code" Align="Right"  onload="init"/>
+<ComboBox Name="role_code" Size="170,100" Text="" Weight="170"  ToolTip="ttp_role_code"  onload="init">
+	<DbDetails>
+<Index>role_id</Index>
+<DbTable>tms.xms_role</DbTable>
+<Data>role_name_cn,role_id</Data>
+<Where>(org_guid='%{orgguid}' or org_guid='')</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

@@ -1,0 +1,87 @@
+﻿<GroupBox Name="GBDEDITxtmst_fineorder"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_freightid"><Ctrls>
+<Label Align="Right" Text="freightid" Name="lb_freightid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_freightid" Name="freightid" Size="170,20">
+	<DbDetails>
+<Index>freightid</Index>
+<DbTable>tms.xtmst_freight</DbTable>
+<Data>FreightCode,FreightID</Data>
+<Where/>
+<queryFormat>SELECT v.CarrierID,v.VehicleID,v.DriverID,f.FreightID   FROM xtmst_vehiclerealtime v JOIN xtmst_dispatchplan d ON d.VehicleRealTimeID=v.VehicleRealTimeID JOIN xtmst_freight f ON d.FreightID=f.FreightID WHERE %{WHERE}</queryFormat></DbDetails><OnEnChange><submit next="DriverID"/></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_finenumber"><Ctrls>
+<Label Align="Right" Text="finenumber" Name="lb_finenumber" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_finenumber" Name="finenumber" readonly="true" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_driverid"><Ctrls>
+<Label Align="Right" Text="driverid" Name="lb_driverid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_driverid" Name="driverid" Size="170,20">
+	<DbDetails>
+<Index>driverid</Index>
+<DbTable>tms.xtmsm_driver</DbTable>
+<Data>DriverName,DriverID</Data>
+<Where>DriverID='%{FreightID[DriverID]}'</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_finedate"><Ctrls>
+<Label Align="Right" Text="finedate" Name="lb_finedate" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_finedate" Name="finedate" Size="170,20" Format="yyyy-MM-dd"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_finesordinanceid"><Ctrls>
+<Label Align="Right" Text="finesordinanceid" onload="init" Name="lb_finesordinanceid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_finesordinanceid" onload="init" Name="finesordinanceid" Size="170,100">
+	<DbDetails fcsm="true">
+<Index>finesordinanceid</Index>
+<DbTable>tms.xtmsm_finesordinance</DbTable>
+<Data>Finesinstruction,FineMoney,FinesOrdinanceID</Data>
+<Where>UseStatus</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_finemoney"><Ctrls>
+<Label Align="Right" Text="finemoney" Name="lb_finemoney" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_finemoney" Name="finemoney" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_address"><Ctrls>
+<Label Align="Right" Text="address" Name="lb_address" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_address" Name="address" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm12 md6 lg4" Multiline="0" Name="GB_memo"><Ctrls>
+<Label Align="Right" Text="memo" Name="lb_memo" Size="60,50"/>
+<TextBox Weight="630" Text="" ToolTip="ttp_memo" Name="memo" Size="630,50"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_dealwithed"><Ctrls>
+<CheckBox Text="dealwithed" ToolTip="ttp_dealwithed" Name="dealwithed" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_finestatus" Visible="false"><Ctrls>
+<Label Align="Right" Text="finestatus" overlap="pre" Name="lb_finestatus" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_finestatus" overlap="pre" Name="finestatus" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<Index>statuscode</Index>
+<DbTable>tms.xtmsc_status_option</DbTable>
+<Data>StatusName,StatusCode</Data>
+<Where>StatusType = 8</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="id" overlap="pre" Name="lb_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id" overlap="pre" Name="id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id}'"><SetVisible name="insertxtmst_fineorder" Visible="0"/><SetVisible name="modifyxtmst_fineorder" Visible="1"/><else/><SetVisible name="insertxtmst_fineorder" Visible="1"/><SetVisible name="modifyxtmst_fineorder" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_carrierid" Visible="false"><Ctrls>
+<Label Align="Right" Text="carrierid" overlap="pre" Name="lb_carrierid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrierid" overlap="pre" Name="carrierid" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<Index>carrierid</Index>
+<DbTable>tms.xtmsm_carrier</DbTable>
+<Data>CarrierName,CarrierID</Data>
+<Where>CarrierID='%{FreightID[CarrierID]}'</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

@@ -1,0 +1,19 @@
+﻿<GroupBox Name="GBDVxtmsm_xsite_detail" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmsm_xsite_detail_vLst" ToolTip="ttp_xtmsm_xsite_detail_v" Size="700,450" Heading="city_id,55;remark,500;active,60;created_by,60;creation_date,150;last_update_by,60;last_update_date,150;xtmsm_xsite_detail_id,100;xtmsm_xsite_id,100;" loadedclick="0">
+	<DbDetails >
+<Index>xtmsm_xsite_detail_id</Index>
+<DbTable>tms.xtmsm_xsite_detail x left join tms.xtmsm_master_city x0 on x.city_id=x0.cityid</DbTable>
+<Data>x0.CityAllName city_id,x.remark,x.active,x.created_by,x.creation_date,x.last_update_by,x.last_update_date,x.xtmsm_xsite_detail_id,x.xtmsm_xsite_id</Data>
+<Order>xtmsm_xsite_detail_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where xtmsm_xsite_id='%{xtmsm_xsite_id}'</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="addone" mustselected="0"><if cond="!%{xtmsm_xsite_id}"><alert expr="xtmsm_xsite_id is Empty!"/><else/><submit next="$parent.xtmsm_xsite_detail.GBDEDITxtmsm_xsite_detail" function="reset"/><assign name="$parent.xtmsm_xsite_detail.xtmsm_xsite_id" expr="%{xtmsm_xsite_id}"/><assign name="$parent.xtmsm_xsite_detail.frmwndctrl" expr="%{this}"/></if></op>
+<op text="modify"><DbDetails><Where>xtmsm_xsite_detail_id='%{xtmsm_xsite_detail_vLst[xtmsm_xsite_detail_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.xtmsm_xsite_detail.xtmsm_xsite_detailLst"/><assign name="$parent.xtmsm_xsite_detail.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_xsite_detail</DbTable>
+<Where>xtmsm_xsite_detail_id='%{xtmsm_xsite_detail_vLst[xtmsm_xsite_detail_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

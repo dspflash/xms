@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxms_role_permission" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletexms_role_permission" Name="deletexms_role_permission" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xms_role_permission</DbTable>
+<Where>role_permission_id='%{xms_role_permissionLst[role_permission_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxms_role_permission" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxms_role_permission" Name="searchxms_role_permission" Size="50,20">
+			  <OnClick><submit next="xms_role_permissionLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxms_role_permissionLst" OnClick="(xms_role_permissionLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExms_role_permissionLst" OnClick="(xms_role_permissionLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxms_role_permissionLst" OnClick="(xms_role_permissionLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

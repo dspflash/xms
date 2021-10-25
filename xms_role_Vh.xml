@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxms_role" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xms_roleLst" ToolTip="ttp_xms_role" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>role_id</Index>
+<DbTable>tms.xms_role</DbTable>
+<Data>role_name_cn,role_name_eng,role_layout,org_guid,created_by,creation_date,last_update_by,last_update_date,role_id,role_level</Data>
+<Order>role_id</Order></DbDetails>
+<OnClick>
+<if cond="%{role_id}"><SetVisible name="insertxms_role" Visible="0"/><SetVisible name="modifyxms_role" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

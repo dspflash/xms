@@ -1,0 +1,22 @@
+﻿<WndTap Name="xtmst_loadorder_v" Text="xtmst_loadorder">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_Ve.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorderdetail_Ve.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_freight_v.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><loadcode format="(x.loadcode like '%%{opvalue}%')"/><vehiclerealtimeid format="x.vehiclerealtimeid='%{opvalue}'"/><status format="x.status='%{opvalue}'"/><xsiteid format="x.xsiteid='%{opvalue}'"/><loadcityid format="x.loadcityid='%{opvalue}'"/><loadaddress format="(x.loadaddress like '%%{opvalue}%')"/><memo format="(x.memo like '%%{opvalue}%')"/><checkby format="(x.checkby like '%%{opvalue}%')"/><checkdate format="(x.checkdate between '%{checkdate[datetime]}' and '%{checkdate[datetime2]}')"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><updateby format="(x.updateby like '%%{opvalue}%')"/><updatedate format="(x.updatedate between '%{updatedate[datetime]}' and '%{updatedate[datetime2]}')"/><loadorderid format="(x.loadorderid like '%%{opvalue}%')"/><xtmst_loadorder_id format="(x.xtmst_loadorder_id like '%%{opvalue}%')"/><carrierid format="x.carrierid='%{opvalue}'"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_loadorder.xml"/>
+<Ctrls><GroupBox  Name="GBxtmst_loadorder" id="xtmst_loadorder" Text="xtmst_loadorder" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmst_loadorder" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmst_loadorder.GBDEDITxtmst_loadorder" function="reset"/><assign name="$this.xtmst_loadorder.frmwndctrl" expr="%{$this.xtmst_loadorder_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmst_loadorder" Name="resetxtmst_loadorder" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmst_loadorder" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_loadorder" Name="gsearchxtmst_loadorder" Size="50,20">	<OnClick>	
+<search next="xtmst_loadorder_vLst" listed="0" prefixwhere="0" prefixand="1" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_loadorder" namelist="search" function="search"/>	
+<search next="records_xtmst_loadorder" listed="0" prefixwhere="0" prefixand="1"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_loadorder" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

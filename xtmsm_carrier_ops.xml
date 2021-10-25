@@ -1,0 +1,12 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>carrierid='%{xtmsm_carrier_vLst[carrierid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_carrier.xtmsm_carrierLst"/></op>
+<op text="detail"><DbDetails><Where>x.carrierid='%{xtmsm_carrier_vLst[carrierid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_carrierdetail_v.xtmsm_carrierdetail_vLst"/><assign name="$this.xtmsm_carrierdetail_v.carrierid" expr='%{xtmsm_carrier_vLst[carrierid]}'/></op>
+<op text="drivers"><DbDetails><Where>x.carrierid='%{xtmsm_carrier_vLst[carrierid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_driver_v.xtmsm_driver_vLst"/><assign name="$this.xtmsm_driver_v.carrierid" expr='%{xtmsm_carrier_vLst[carrierid]}'/></op>
+<op text="vehicles"><DbDetails><Where>x.carrierid='%{xtmsm_carrier_vLst[carrierid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_vehicle_v.xtmsm_vehicle_vLst"/><assign name="$this.xtmsm_vehicle_v.carrierid" expr='%{xtmsm_carrier_vLst[carrierid]}'/></op>
+<op text="billingconfiguration"><DbDetails><Where>carrierid='%{xtmsm_carrier_vLst[carrierid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_billingconfiguration.xtmsm_billingconfigurationLst"/><submit namelist="DbDetails" next="$this.xtmsm_billingconfiguration.carrierid"/><!--assign name="$this.xtmsm_billingconfiguration.carrierid" expr='%{xtmsm_carrier_vLst[carrierid]}'/--></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_carrier</DbTable>
+<Where>carrierid='%{xtmsm_carrier_vLst[carrierid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

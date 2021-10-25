@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsm_master_city" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsm_master_cityLst" ToolTip="ttp_xtmsm_master_city" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>levercode,city,parentcityid,cityallname,phone,postno,chinaspell,chinaspellall,pinyin,citycode,cityid</Data>
+<Order>cityid</Order></DbDetails>
+<OnClick><assign name="parentcityid[cityid]" expr="%{xtmsm_master_cityLst[parentcityid]}" function="SetSel"/>
+<if cond="%{cityid}"><SetVisible name="insertxtmsm_master_city" Visible="0"/><SetVisible name="modifyxtmsm_master_city" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

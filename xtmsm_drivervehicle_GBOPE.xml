@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPExtmsr_drivervehicle" Size="100,100"><Ctrls>
+<Button sqlpkinsert="driverid" Text="create" ToolTip="ttp_creatextmsr_drivervehicle" Name="insertxtmsr_drivervehicle" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmsr_drivervehicle</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehicleid[vehicleid],driverid[driverid]</Data>
+<DataEx>createby,createdate,updateby,updatedate;'%{user_id}',now(),'%{user_id}',now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="xtmsr_drivervehicleLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmsr_drivervehicle" Name="modifyxtmsr_drivervehicle" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmsr_drivervehicle</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehicleid[vehicleid],driverid[driverid]</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>vehicleid='%{vehicleid}' and driverid='%{driverid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="xtmsr_drivervehicleLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmsr_drivervehicle" Name="resetxtmsr_drivervehicle" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITxtmsr_drivervehicle" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchxtmsr_drivervehicle" Name="gsearchxtmsr_drivervehicle" Size="50,20" visible="false">
+	<OnClick>
+	<search next="xtmsr_drivervehicleLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITxtmsr_drivervehicle" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

@@ -1,0 +1,44 @@
+﻿<GroupBox Name="GBDEDITxtmst_loadorder" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_loadcode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_loadcode" Size="60,20" Text="loadcode" Align="Right"/>
+<TextBox Name="loadcode" Size="170,20" Text="" Weight="170" ToolTip="ttp_loadcode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_vehiclerealtimeid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vehiclerealtimeid" Size="60,20" Text="vehiclerealtimeid" Align="Right"/>
+<TextBox Name="vehiclerealtimeid" Size="170,20" Text="" Weight="170" ToolTip="ttp_vehiclerealtimeid">
+	<DbDetails>
+<Index>vehiclerealtimeid</Index>
+<DbTable>tms.xtmst_vehiclerealtime</DbTable>
+<Data>VehicleRealTimeCode,v.CarrierID,FromCityID,FromAddress,VehicleRealTimeID</Data>
+<Where></Where>
+<queryFormat>SELECT Platenumber,dp.FromCityID,dp.FromAddress,dp.FromXSiteID,VehicleRealTimeCode,v.CarrierID,dp.VehicleRealTimeID  FROM tms.xtmst_dispatchplan dp  JOIN  tms.xtmst_vehiclerealtime vrt ON dp.VehicleRealTimeID=vrt.VehicleRealTimeID JOIN tms.xtmsm_vehicle v ON v.VehicleID=vrt.VehicleID WHERE %{where}</queryFormat></DbDetails><OnEnChange><submit next="CarrierID"/><submit next="XSiteID"/><submit next="LoadCityID"/><assign name="LoadAddress" expr="%{VehicleRealTimeID[FromAddress]}"/></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_xsiteid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_xsiteid" Size="60,20" Text="xsiteid" Align="Right"/>
+<TextBox Name="xsiteid" Size="170,20" Text="" Weight="170" ToolTip="ttp_xsiteid">
+	<DbDetails>
+<Index>xsiteid</Index>
+<DbTable>tms.xtmsm_xsite</DbTable>
+<Data>XSiteName,XSiteID</Data>
+<Where>XSiteID='%{VehicleRealTimeID[FromXSiteID]}'</Where>
+<queryFormat></queryFormat></DbDetails><OnSelEndOk><submit next="UnLoadCityID"/></OnSelEndOk></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_loadcityid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_loadcityid" Size="60,20" Text="loadcityid" Align="Right"/>
+<TextBox Name="loadcityid" Size="170,20" Text="" Weight="170" ToolTip="ttp_loadcityid">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where>CityID='%{VehicleRealTimeID[FromCityID]}'</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_loadaddress" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_loadaddress" Size="60,20" Text="loadaddress" Align="Right"/>
+<TextBox Name="loadaddress" Size="170,20" Text="" Weight="170" ToolTip="ttp_loadaddress"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_memo" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_memo" Size="60,20" Text="memo" Align="Right"/>
+<TextBox Name="memo" Size="170,20" Text="" Weight="170" ToolTip="ttp_memo"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

@@ -1,0 +1,23 @@
+﻿<WndTap Name="xtmsm_xsite_v" Text="xtmsm_xsite">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_xsite_Ve.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="city_pick.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_xsite_detail_vm.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_xsite_detail_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><xsitename format="(x.xsitename like '%%{opvalue}%')"/><cityid format="x.cityid='%{opvalue}'"/><address format="(x.address like '%%{opvalue}%')"/><delivery_range format="x.delivery_range='%{opvalue}'"/><isenable format="x.isenable is %{opvalue}"/><isneedpreorder format="x.isneedpreorder is %{opvalue}"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><updateby format="(x.updateby like '%%{opvalue}%')"/><updatedate format="(x.updatedate between '%{updatedate[datetime]}' and '%{updatedate[datetime2]}')"/><xsiteid format="(x.xsiteid like '%%{opvalue}%')"/><xtmsm_xsite_id format="(x.xtmsm_xsite_id like '%%{opvalue}%')"/><org_guid format="(x.org_guid like '%%{opvalue}%')"/><location format="(x.location like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_xsite.xml"/>
+<Ctrls><GroupBox  Name="GBxtmsm_xsite" id="xtmsm_xsite" Text="xtmsm_xsite" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_xsite_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmsm_xsite" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmsm_xsite.GBDEDITxtmsm_xsite" function="reset"/><assign name="$this.xtmsm_xsite.frmwndctrl" expr="%{$this.xtmsm_xsite_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmsm_xsite" Name="resetxtmsm_xsite" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmsm_xsite" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_xsite" Name="gsearchxtmsm_xsite" Size="50,20">	<OnClick>	
+<search next="xtmsm_xsite_vLst" listed="0" prefixwhere="0" prefixand="1" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_xsite" namelist="search" function="search"/>	
+<search next="records_xtmsm_xsite" listed="0" prefixwhere="0" prefixand="1"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_xsite" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_xsite_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_xsite_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_xsite_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

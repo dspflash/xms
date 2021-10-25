@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVxtmsm_carrierdetail" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmsm_carrierdetail_vLst" ToolTip="ttp_xtmsm_carrierdetail_v" Size="700,450" OnLoad="init" Heading="province,120;city,120;county,120;citycode,30;createby,50;createdate,150;updateby,50;updatedate,150;id,50;carrierid,250;"  PageSize="50" loadedclick="0">
+	<DbDetails >
+<Index>id</Index>
+<DbTable>tms.xtmsm_carrierdetail x left join tms.xtmsm_carrier x0 on x.carrierid=x0.carrierid</DbTable>
+<Data>x.province,x.city,x.county,x.citycode,x.createby,x.createdate,x.updateby,x.updatedate,x.id,x0.CarrierName carrierid</Data>
+<Order>id</Order></DbDetails>
+<DbDetails><Where>(x.carrierid='%{orgguid}')</Where></DbDetails><DbDetails fcsm="1"><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>id='%{xtmsm_carrierdetail_vLst[id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_carrierdetail.xtmsm_carrierdetailLst"/><assign name="$this.xtmsm_carrierdetail.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_carrierdetail</DbTable>
+<Where>id='%{xtmsm_carrierdetail_vLst[id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_xtmsm_carrierdetail" expr="js(%{xtmsm_carrierdetail_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xtmsm_carrierdetail" expr="js(%{xtmsm_carrierdetail_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

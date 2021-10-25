@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_complain" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xtmst_complain_id" Text="create" ToolTip="ttp_creatextmst_complain" Name="insertxtmst_complain" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_complain</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>freightid[freightid],complainprice,complainmemo</Data>
+<DataEx>complaincode,status,createby,createdate,updateby,updatedate,complainid,carrierid;@odn,701,'%{user_id}',now(),'%{user_id}',now(),uuid(),'%{orgguid}'</DataEx>
+<queryFormat>SET @seq=0;SELECT SUBSTR(ComplainCode,-5)+0 INTO @seq FROM tms.xtmst_complain WHERE DATE(CreateDate)=CURDATE() ORDER BY ComplainCode DESC LIMIT 0,1;SELECT generate_orderNo(Code_Prefix, DT_MODE, @seq,'','') INTO @odn FROM tms.xms_doc_code WHERE docType='complain';insert into %{table} %{data};</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_complain[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_complainLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_complain_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_complain" Name="modifyxtmst_complain" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_complain</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>freightid[freightid],complainprice,complainmemo</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>xtmst_complain_id='%{xtmst_complain_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_complain[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_complainLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_complain_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_complain" Name="resetxtmst_complain" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_complain" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_complain" Name="gsearchxtmst_complain" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_complainLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_complain" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

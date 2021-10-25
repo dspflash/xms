@@ -1,0 +1,40 @@
+﻿<Language name="xms_doc_code">
+<Lang name="xms_doc_code" value="xms_doc_code"/>
+<Lang name="TabEditxms_doc_code" value="xms_doc_code Edit"/>
+<Lang name="TabViewxms_doc_code" value="xms_doc_code View"/>
+<Lang name="doctype" value=""/>
+<Lang name="ttp_doctype" value=""/>
+<Lang name="docname" value=""/>
+<Lang name="ttp_docname" value=""/>
+<Lang name="code_prefix" value=""/>
+<Lang name="ttp_code_prefix" value=""/>
+<Lang name="code_sample" value=""/>
+<Lang name="ttp_code_sample" value=""/>
+<Lang name="created_by" value=""/>
+<Lang name="ttp_created_by" value=""/>
+<Lang name="creation_date" value=""/>
+<Lang name="ttp_creation_date" value=""/>
+<Lang name="last_update_by" value=""/>
+<Lang name="ttp_last_update_by" value=""/>
+<Lang name="last_update_date" value=""/>
+<Lang name="ttp_last_update_date" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="code_sequence" value=""/>
+<Lang name="ttp_code_sequence" value=""/>
+<Lang name="ttp_operationxms_doc_code" value=""/>
+<Lang name="ttp_createxms_doc_code" value=""/>
+<Lang name="ttp_modifyxms_doc_code" value=""/>
+<Lang name="ttp_resetxms_doc_code" value=""/>
+<Lang name="ttp_deletexms_doc_code" value=""/>
+<Lang name="ttp_refreshxms_doc_code" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

@@ -1,0 +1,13 @@
+﻿<GroupBox Name="GBDVxtmsc_type_option" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmsc_type_option_vLst" ToolTip="ttp_xtmsc_type_option_v" Size="700,450" OnLoad="init" Heading="tablename,400;columnname,400;typeclass,20;typecode,25;typename,250;memo,640;idx,25;" loadedclick="0">
+	<DbDetails >
+<Index>idx</Index>
+<DbTable>tms.xtmsc_type_option x</DbTable>
+<Data>x.tablename,x.columnname,x.typeclass,x.typecode,x.typename,x.memo,x.idx</Data>
+<Order>idx</Order></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsc_type_option_ops.xml"/>
+<OnChanged>
+<assign name="pgcur_xtmsc_type_option" expr="js(%{xtmsc_type_option_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xtmsc_type_option" expr="js(%{xtmsc_type_option_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

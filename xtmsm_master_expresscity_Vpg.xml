@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmsm_master_expresscity"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmsm_master_expresscity" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_expresscity x</DbTable>
+<Data>count(*) records</Data>
+<Order>cityid</Order><Queryformat>select %{data} from (select x.cityid from %{dbtable} %{where} GROUP BY x.cityid  ORDER BY x.cityid) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmsm_master_expresscity" expr="js(Math.ceil(%{records_xtmsm_master_expresscity}/%{xtmsm_master_expresscity_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmsm_master_expresscity" expr="js('1~'+Math.ceil(%{records_xtmsm_master_expresscity}/%{xtmsm_master_expresscity_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmsm_master_expresscity" Size="60,20"><OnSelEndOK><submit next="xtmsm_master_expresscity_vLst" function="GetPage(%{pgscb_xtmsm_master_expresscity}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmsm_master_expresscity" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmsm_master_expresscity" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmsm_master_expresscity_vLst" Size="50,20"><OnClick><submit next="xtmsm_master_expresscity_vLst" function="GetPage(%{pgcur_xtmsm_master_expresscity}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

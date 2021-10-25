@@ -1,0 +1,11 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmst_unloadorder"><Ctrls>
+<ListCtrl Heading="unloadcode,250;vehiclerealtimeid,250;status,50;xsiteid,250;unloadcityid,50;unloadaddress,640;memo,640;checkby,50;checkdate,150;createby,50;createdate,150;updateby,50;updatedate,150;unloadorderid,250;xtmst_unloadorder_id,100;carrierid,250;" loadedclick="0" ToolTip="ttp_xtmst_unloadorder" Name="xtmst_unloadorderLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>xtmst_unloadorder_id</Index>
+<DbTable>tms.xtmst_unloadorder x left join tms.xtmst_vehiclerealtime x0 on x.vehiclerealtimeid=x0.vehiclerealtimeid left join tms.xtmsc_status_option x1 on x.status=x1.statuscode left join tms.xtmsm_xsite x2 on x.xsiteid=x2.xsiteid left join tms.xtmsm_master_city x3 on x.unloadcityid=x3.cityid left join tms.xtmsm_carrier x4 on x.carrierid=x4.carrierid</DbTable>
+<Data>x.unloadcode,x0.VehicleRealTimeCode vehiclerealtimeid,x1.StatusName status,x2.XSiteName xsiteid,x3.CityAllName unloadcityid,x.unloadaddress,x.memo,x.checkby,x.checkdate,x.createby,x.createdate,x.updateby,x.updatedate,x.unloadorderid,x.xtmst_unloadorder_id,x4.CarrierName carrierid</Data>
+<Order>xtmst_unloadorder_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails><DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_unloadorder_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

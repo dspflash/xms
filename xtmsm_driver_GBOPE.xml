@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmsm_driver" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xtmsm_driver_id" Text="create" ToolTip="ttp_creatextmsm_driver" Name="insertxtmsm_driver" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmsm_driver</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>drivername,nature[typecode],phone1,phone2,idnumber,emergencycontactor,emergencyphone,drivercode,sex[typecode]</Data>
+<DataEx>createby,createdate,updateby,updatedate,driverid,carrierid;'%{user_id}',now(),'%{user_id}',now(),uuid(),'%{orgguid}'</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmsm_driver[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_driverLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_driver_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmsm_driver" Name="modifyxtmsm_driver" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmsm_driver</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>drivername,nature[typecode],phone1,phone2,idnumber,emergencycontactor,emergencyphone,drivercode,sex[typecode]</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>xtmsm_driver_id='%{xtmsm_driver_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmsm_driver[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_driverLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_driver_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmsm_driver" Name="resetxtmsm_driver" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmsm_driver" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_driver" Name="gsearchxtmsm_driver" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmsm_driverLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmsm_driver" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

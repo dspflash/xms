@@ -1,0 +1,11 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVar_customer"><Ctrls>
+<ListCtrl Heading="customer_number,125;customer_name,300;alt_name,250;customer_credit_class,120;tax_reg_no,200;status,60;created_by,55;creation_date,150;last_update_by,55;last_update_date,150;ar_customer_id,55;org_id,55;org_guid,250;" loadedclick="0" ToolTip="ttp_ar_customer" Name="ar_customerLst" Size="700,450" colsDisplay="10">
+	<DbDetails fcsm="1">
+<Index>ar_customer_id</Index>
+<DbTable>tms.ar_customer a left join tms.xtmsc_type_option x on a.customer_credit_class=x.typecode</DbTable>
+<Data>a.customer_number,a.customer_name,a.alt_name,x.TypeName customer_credit_class,a.tax_reg_no,a.status,a.created_by,a.creation_date,a.last_update_by,a.last_update_date,a.ar_customer_id,a.org_id,a.org_guid</Data>
+<Order>ar_customer_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where org_guid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails><DbDetails><queryFormat>select %{data} from %{dbtable} where org_guid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ar_customer_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

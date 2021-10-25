@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsm_master_warehouse" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsm_master_warehouseLst" ToolTip="ttp_xtmsm_master_warehouse" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>autoid</Index>
+<DbTable>tms.xtmsm_master_warehouse</DbTable>
+<Data>warehousename,simplewarehousename,warehousecode,memberid,manager,phone,fax,mobilephone,address,postno,memo,status,posclear,confingid,cityid,operationcenter,companyid,isinsidenet,ciqflag,warehousetype,sqldbconnectionid,webservice,autoid,createby,createdate,updateby,updatedate,warehousearea</Data>
+<Order>autoid</Order></DbDetails>
+<OnClick><assign name="memberid[memberid]" expr="%{xtmsm_master_warehouseLst[memberid]}" function="SetSel"/><assign name="manager[xms_user_id]" expr="%{xtmsm_master_warehouseLst[manager]}" function="SetSel"/><assign name="cityid[cityid]" expr="%{xtmsm_master_warehouseLst[cityid]}" function="SetSel"/>
+<if cond="%{autoid}"><SetVisible name="insertxtmsm_master_warehouse" Visible="0"/><SetVisible name="modifyxtmsm_master_warehouse" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

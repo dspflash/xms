@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmsc_status_option"><Ctrls>
+<ListCtrl Heading="tablename,100;typename,100;statustype,50;statuscode,25;statusname,100;remark,500;idx,25;" loadedclick="0" ToolTip="ttp_xtmsc_status_option" Name="xtmsc_status_optionLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>idx</Index>
+<DbTable>tms.xtmsc_status_option</DbTable>
+<Data>tablename,typename,statustype,statuscode,statusname,remark,idx</Data>
+<Order>idx</Order></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsc_status_option_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVxtmsr_drivervehicle" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmsr_drivervehicle" Name="deletextmsr_drivervehicle" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmsr_drivervehicle</DbTable>
+<Where>vehicleid='%{xtmsr_drivervehicleLst[vehicleid]}' and driverid='%{xtmsr_drivervehicleLst[driverid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmsr_drivervehicle" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmsr_drivervehicle" Name="searchxtmsr_drivervehicle" Size="50,20">
+			  <OnClick><submit next="xtmsr_drivervehicleLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmsr_drivervehicleLst" OnClick="(xtmsr_drivervehicleLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmsr_drivervehicleLst" OnClick="(xtmsr_drivervehicleLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmsr_drivervehicleLst" OnClick="(xtmsr_drivervehicleLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

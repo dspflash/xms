@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_fineorder" Size="100,100"><Ctrls>
+<Button sqlpkinsert="id" Text="create" ToolTip="ttp_creatextmst_fineorder" Name="insertxtmst_fineorder" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_fineorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>freightid[freightid],driverid[driverid],finedate,finesordinanceid[finesordinanceid],finemoney,address,memo,dealwithed</Data>
+<DataEx>finenumber,createby,createdate,carrierid;@odn,'%{user_id}',now(),'%{orgguid}'</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_fineorder[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_fineorderLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_fineorder_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_fineorder" Name="modifyxtmst_fineorder" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_fineorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>freightid[freightid],driverid[driverid],finedate,finesordinanceid[finesordinanceid],finemoney,address,memo,dealwithed</Data>
+<DataEx/>
+<Where>id='%{id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_fineorder[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_fineorderLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_fineorder_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_fineorder" Name="resetxtmst_fineorder" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_fineorder" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_fineorder" Name="gsearchxtmst_fineorder" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_fineorderLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_fineorder" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

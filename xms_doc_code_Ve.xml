@@ -1,0 +1,13 @@
+﻿<WndTap Name="xms_doc_code" Text="xms_doc_code" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr=""/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xms_doc_code.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBxms_doc_code" id="xms_doc_code" Text="xms_doc_code" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_doc_code_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_doc_code_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_doc_code_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertxms_doc_code" Visible="1"/><SetVisible name="modifyxms_doc_code" Visible="0"/></OnActivate>
+</WndTap>

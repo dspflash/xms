@@ -1,0 +1,48 @@
+﻿<Language name="xtmsm_billingconfiguration">
+<Lang name="xtmsm_billingconfiguration" value="结算设置"/>
+<Lang name="TabEditxtmsm_billingconfiguration" value="xtmsm_billingconfiguration Edit"/>
+<Lang name="TabViewxtmsm_billingconfiguration" value="xtmsm_billingconfiguration View"/>
+<Lang name="carrierid" value=""/>
+<Lang name="ttp_carrierid" value=""/>
+<Lang name="weightunitprice" value="重量单价（元/kg）"/>
+<Lang name="ttp_weightunitprice" value=""/>
+<Lang name="volumeunitprice" value="体积单价（元/m3）"/>
+<Lang name="ttp_volumeunitprice" value=""/>
+<Lang name="startmileage" value="起步里程（km)"/>
+<Lang name="ttp_startmileage" value=""/>
+<Lang name="overunitprice" value="超程单价（元/km)"/>
+<Lang name="ttp_overunitprice" value=""/>
+<Lang name="backofffee" value="倒车补贴（元/km）"/>
+<Lang name="ttp_backofffee" value=""/>
+<Lang name="returnfee" value="退货费（元/km)"/>
+<Lang name="ttp_returnfee" value=""/>
+<Lang name="smallorderfee" value="小单补贴（元/单）"/>
+<Lang name="ttp_smallorderfee" value=""/>
+<Lang name="status" value=""/>
+<Lang name="ttp_status" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="creratedate" value=""/>
+<Lang name="ttp_creratedate" value=""/>
+<Lang name="updateby" value=""/>
+<Lang name="ttp_updateby" value=""/>
+<Lang name="updatedate" value=""/>
+<Lang name="ttp_updatedate" value=""/>
+<Lang name="configurationid" value=""/>
+<Lang name="ttp_configurationid" value=""/>
+<Lang name="ttp_operationxtmsm_billingconfiguration" value=""/>
+<Lang name="ttp_creatextmsm_billingconfiguration" value=""/>
+<Lang name="ttp_modifyxtmsm_billingconfiguration" value=""/>
+<Lang name="ttp_resetxtmsm_billingconfiguration" value=""/>
+<Lang name="ttp_deletextmsm_billingconfiguration" value=""/>
+<Lang name="ttp_refreshxtmsm_billingconfiguration" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

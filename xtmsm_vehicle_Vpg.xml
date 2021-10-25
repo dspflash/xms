@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmsm_vehicle"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmsm_vehicle" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>xtmsm_vehicle_id</Index>
+<DbTable>tms.xtmsm_vehicle x left join tms.xtmsc_type_option x0 on x.nature=x0.typecode left join tms.xtmsc_type_option x1 on x.vehicletype=x1.typecode left join tms.xtmsm_driver x2 on x.driver=x2.driverid left join tms.xtmsm_driver x3 on x.lorrydriver=x3.driverid left join tms.xtmsc_type_option x4 on x.fueltype=x4.typecode left join tms.xtmsc_status_option x5 on x.usestatus=x5.statuscode</DbTable>
+<Data>count(*) records</Data>
+<Order>xtmsm_vehicle_id</Order><Queryformat>select %{data} from (select x.xtmsm_vehicle_id from %{dbtable} where x.carrierid='%{orgguid}' %{where} GROUP BY x.xtmsm_vehicle_id  ORDER BY x.xtmsm_vehicle_id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmsm_vehicle" expr="js(Math.ceil(%{records_xtmsm_vehicle}/%{xtmsm_vehicle_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmsm_vehicle" expr="js('1~'+Math.ceil(%{records_xtmsm_vehicle}/%{xtmsm_vehicle_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmsm_vehicle" Size="60,20"><OnSelEndOK><submit next="xtmsm_vehicle_vLst" function="GetPage(%{pgscb_xtmsm_vehicle}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmsm_vehicle" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmsm_vehicle" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmsm_vehicle_vLst" Size="50,20"><OnClick><submit next="xtmsm_vehicle_vLst" function="GetPage(%{pgcur_xtmsm_vehicle}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

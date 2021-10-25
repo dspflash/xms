@@ -1,0 +1,158 @@
+﻿<GroupBox Name="GBDEDITxtmsm_vehicle" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="Basic" Text="Basic" feature="tab"><Ctrls>
+<GroupBox Name="GB_platenumber" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_platenumber" Size="60,20" Text="platenumber" Align="Right"/>
+<TextBox Name="platenumber" Size="170,20" Text="" Weight="170" ToolTip="ttp_platenumber"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_nature" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_nature" Size="60,20" Text="nature" Align="Right"  onload="init"/>
+<ComboBox Name="nature" Size="170,100" Text="" Weight="170"  ToolTip="ttp_nature"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>tablename='vehicle' and ColumnName='nature'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_vehicletype" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vehicletype" Size="60,20" Text="vehicletype" Align="Right"  onload="init"/>
+<ComboBox Name="vehicletype" Size="170,100" Text="" Weight="170"  ToolTip="ttp_vehicletype"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>ColumnName='VehicleType'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_driver" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_driver" Size="60,20" Text="driver" Align="Right"  onload="init"/>
+<ComboBox Name="driver" Size="170,100" Text="" Weight="170"  ToolTip="ttp_driver"  onload="init">
+	<DbDetails>
+<Index>driverid</Index>
+<DbTable>tms.xtmsm_driver</DbTable>
+<Data>DriverName,DriverID</Data>
+<Where>carrierid='%{orgguid}'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_lorrydriver" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_lorrydriver" Size="60,20" Text="lorrydriver" Align="Right"  onload="init"/>
+<ComboBox Name="lorrydriver" Size="170,100" Text="" Weight="170"  ToolTip="ttp_lorrydriver"  onload="init">
+	<DbDetails>
+<Index>driverid</Index>
+<DbTable>tms.xtmsm_driver</DbTable>
+<Data>DriverName,DriverID</Data>
+<Where>carrierid='%{orgguid}'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_vehiclebrand" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vehiclebrand" Size="60,20" Text="vehiclebrand" Align="Right"/>
+<TextBox Name="vehiclebrand" Size="170,20" Text="" Weight="170" ToolTip="ttp_vehiclebrand"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_status" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="status" Size="230,20" Text="status" ToolTip="ttp_status"  checked="true"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="Inspection" Text="Inspection" feature="tab"><Ctrls>
+<GroupBox Name="GB_purchasedate" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_purchasedate" Size="60,20" Text="purchasedate" Align="Right"/>
+<DateTime Name="purchasedate" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_purchasedate"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_registrationdate" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_registrationdate" Size="60,20" Text="registrationdate" Align="Right"/>
+<DateTime Name="registrationdate" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_registrationdate"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_scrapdate" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_scrapdate" Size="60,20" Text="scrapdate" Align="Right"/>
+<DateTime Name="scrapdate" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_scrapdate"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_inspectiondate" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_inspectiondate" Size="60,20" Text="inspectiondate" Align="Right"/>
+<DateTime Name="inspectiondate" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_inspectiondate"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_insurancedate" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_insurancedate" Size="60,20" Text="insurancedate" Align="Right"/>
+<DateTime Name="insurancedate" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_insurancedate"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_insurancecompany" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_insurancecompany" Size="60,20" Text="insurancecompany" Align="Right"/>
+<TextBox Name="insurancecompany" Size="170,20" Text="" Weight="170" ToolTip="ttp_insurancecompany"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_roadtransportpermit" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_roadtransportpermit" Size="60,20" Text="roadtransportpermit" Align="Right"/>
+<TextBox Name="roadtransportpermit" Size="170,20" Text="" Weight="170" ToolTip="ttp_roadtransportpermit"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_drivinglicenceno" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_drivinglicenceno" Size="60,20" Text="drivinglicenceno" Align="Right"/>
+<TextBox Name="drivinglicenceno" Size="170,20" Text="" Weight="170" ToolTip="ttp_drivinglicenceno"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="Info" Text="Info" feature="tab"><Ctrls>
+<GroupBox Name="GB_containersize" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_containersize" Size="60,20" Text="containersize" Align="Right"/>
+<TextBox Name="containersize" Size="170,20" Text="" Weight="170" ToolTip="ttp_containersize"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_volume" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_volume" Size="60,20" Text="volume" Align="Right"/>
+<TextBox Name="volume" Size="170,20" Text="" Weight="170" ToolTip="ttp_volume"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_weight" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_weight" Size="60,20" Text="weight" Align="Right"/>
+<TextBox Name="weight" Size="170,20" Text="" Weight="170" ToolTip="ttp_weight"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_length" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_length" Size="60,20" Text="length" Align="Right"/>
+<TextBox Name="length" Size="170,20" Text="" Weight="170" ToolTip="ttp_length"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_width" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_width" Size="60,20" Text="width" Align="Right"/>
+<TextBox Name="width" Size="170,20" Text="" Weight="170" ToolTip="ttp_width"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_height" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_height" Size="60,20" Text="height" Align="Right"/>
+<TextBox Name="height" Size="170,20" Text="" Weight="170" ToolTip="ttp_height"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_vehiclecolor" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vehiclecolor" Size="60,20" Text="vehiclecolor" Align="Right"/>
+<TextBox Name="vehiclecolor" Size="170,20" Text="" Weight="170" ToolTip="ttp_vehiclecolor"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="Ext" Text="Ext" feature="tab"><Ctrls>
+<GroupBox Name="GB_fueltype" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_fueltype" Size="60,20" Text="fueltype" Align="Right"  onload="init"/>
+<ComboBox Name="fueltype" Size="170,100" Text="" Weight="170"  ToolTip="ttp_fueltype"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=70</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_type" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_type" Size="60,20" Text="type" Align="Right"/>
+<TextBox Name="type" Size="170,20" Text="" Weight="170" ToolTip="ttp_type"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_enginenumber" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_enginenumber" Size="60,20" Text="enginenumber" Align="Right"/>
+<TextBox Name="enginenumber" Size="170,20" Text="" Weight="170" ToolTip="ttp_enginenumber"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_owner" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_owner" Size="60,20" Text="owner" Align="Right"/>
+<TextBox Name="owner" Size="170,20" Text="" Weight="170" ToolTip="ttp_owner"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_vinno" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vinno" Size="60,20" Text="vinno" Align="Right"/>
+<TextBox Name="vinno" Size="170,20" Text="" Weight="170" ToolTip="ttp_vinno"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_producer" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_producer" Size="60,20" Text="producer" Align="Right"/>
+<TextBox Name="producer" Size="170,20" Text="" Weight="170" ToolTip="ttp_producer"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_image" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_image" Size="60,20" Text="image" Align="Right"/>
+<TextBox Name="image" Size="170,20" Text="" Weight="170" ToolTip="ttp_image"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_memo" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_memo" Size="60,20" Text="memo" Align="Right"/>
+<TextBox Name="memo" Size="170,20" Text="" Weight="170" ToolTip="ttp_memo"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

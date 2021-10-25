@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_customorderdetail" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_customorderdetailLst" ToolTip="ttp_xtmst_customorderdetail" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_customorderdetail_id</Index>
+<DbTable>tms.xtmst_customorderdetail</DbTable>
+<Data>commodityname,transfeesettlementsmode,amount,volume,weight,length,width,height,stocktype,commoditycode,productbatch,customorderdetailid,commodityid,xtmst_customorderdetail_id</Data>
+<Order>xtmst_customorderdetail_id</Order></DbDetails>
+<OnClick>
+<if cond="%{xtmst_customorderdetail_id}"><SetVisible name="insertxtmst_customorderdetail" Visible="0"/><SetVisible name="modifyxtmst_customorderdetail" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

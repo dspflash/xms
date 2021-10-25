@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmsm_operateline_detail_v" Text="xtmsm_operateline_detail">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_operateline_detail_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><city_id format="x.city_id='%{opvalue}'"/><detail_type format="(x.detail_type like '%%{opvalue}%')"/><distance_to_start format="(x.distance_to_start like '%%{opvalue}%')"/><remark format="(x.remark like '%%{opvalue}%')"/><active format="x.active is %{opvalue}"/><created_by format="(x.created_by like '%%{opvalue}%')"/><creation_date format="(x.creation_date between '%{creation_date[datetime]}' and '%{creation_date[datetime2]}')"/><last_update_by format="(x.last_update_by like '%%{opvalue}%')"/><last_update_date format="(x.last_update_date between '%{last_update_date[datetime]}' and '%{last_update_date[datetime2]}')"/><operateline_id format="(x.operateline_id like '%%{opvalue}%')"/><operateline_detail_id format="(x.operateline_detail_id like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_operateline_detail.xml"/>
+<Ctrls><GroupBox  Name="GBxtmsm_operateline_detail" id="xtmsm_operateline_detail" Text="xtmsm_operateline_detail" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_operateline_detail_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmsm_operateline_detail" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmsm_operateline_detail.GBDEDITxtmsm_operateline_detail" function="reset"/><assign name="$this.xtmsm_operateline_detail.frmwndctrl" expr="%{$this.xtmsm_operateline_detail_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmsm_operateline_detail" Name="resetxtmsm_operateline_detail" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmsm_operateline_detail" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_operateline_detail" Name="gsearchxtmsm_operateline_detail" Size="50,20">	<OnClick>	
+<search next="xtmsm_operateline_detail_vLst" listed="0" prefixwhere="0" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_operateline_detail" namelist="search" function="search"/>	
+<search next="records_xtmsm_operateline_detail" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_operateline_detail" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_operateline_detail_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_operateline_detail_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_operateline_detail_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

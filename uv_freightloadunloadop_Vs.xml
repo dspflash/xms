@@ -1,0 +1,34 @@
+﻿<GroupBox Name="GBDEDITuv_freightloadunloadop" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_freightcode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_freightcode" Size="60,20" Text="freightcode" Align="Right"/>
+<TextBox Name="freightcode" Size="170,20" Text="" Weight="170" ToolTip="ttp_freightcode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_platenumber" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_platenumber" Size="60,20" Text="platenumber" Align="Right"/>
+<TextBox Name="platenumber" Size="170,20" Text="" Weight="170" ToolTip="ttp_platenumber"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_drivername" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_drivername" Size="60,20" Text="drivername" Align="Right"/>
+<TextBox Name="drivername" Size="170,20" Text="" Weight="170" ToolTip="ttp_drivername"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_fromcity" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_fromcity" Size="60,20" Text="fromcity" Align="Right"/>
+<TextBox Name="fromcity" Size="170,20" Text="" Weight="170" ToolTip="ttp_fromcity"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_fromxsite" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_fromxsite" Size="60,20" Text="fromxsite" Align="Right"/>
+<TextBox Name="fromxsite" Size="170,20" Text="" Weight="170" ToolTip="ttp_fromxsite"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_tocity" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_tocity" Size="60,20" Text="tocity" Align="Right"/>
+<TextBox Name="tocity" Size="170,20" Text="" Weight="170" ToolTip="ttp_tocity"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_toxsite" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_toxsite" Size="60,20" Text="toxsite" Align="Right"/>
+<TextBox Name="toxsite" Size="170,20" Text="" Weight="170" ToolTip="ttp_toxsite"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_freightstatus" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_freightstatus" Size="60,20" Text="freightstatus" Align="Right"/>
+<TextBox Name="freightstatus" Size="170,20" Text="" Weight="170" ToolTip="ttp_freightstatus"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

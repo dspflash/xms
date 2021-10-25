@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExms_user" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xms_user_id" Text="create" ToolTip="ttp_createxms_user" Name="insertxms_user" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xms_user</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>username,email,invitation_code,active</Data>
+<DataEx>password,created_by,creation_date,last_update_by,last_update_date,userguid,org_guid;md5('%{password}'),'%{user_id}',now(),'%{user_id}',now(),uuid(),'%{orgguid}'</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxms_user[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xms_userLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xms_user_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxms_user" Name="modifyxms_user" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xms_user</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>username,email,invitation_code,active</Data>
+<DataEx>last_update_by,last_update_date;'%{user_id}',now()</DataEx>
+<Where>xms_user_id='%{xms_user_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxms_user[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xms_userLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xms_user_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxms_user" Name="resetxms_user" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxms_user" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxms_user" Name="gsearchxms_user" Size="50,20" visible="false">
+<OnClick>
+<search next="xms_userLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxms_user" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

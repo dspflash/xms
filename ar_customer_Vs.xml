@@ -1,0 +1,31 @@
+﻿<GroupBox Name="GBDEDITar_customer" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_customer_number" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_customer_number" Size="60,20" Text="customer_number" Align="Right"/>
+<TextBox Name="customer_number" Size="170,20" Text="" Weight="170" ToolTip="ttp_customer_number"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_customer_name" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_customer_name" Size="60,20" Text="customer_name" Align="Right"/>
+<TextBox Name="customer_name" Size="170,20" Text="" Weight="170" ToolTip="ttp_customer_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_alt_name" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_alt_name" Size="60,20" Text="alt_name" Align="Right"/>
+<TextBox Name="alt_name" Size="170,20" Text="" Weight="170" ToolTip="ttp_alt_name"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_customer_credit_class" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_customer_credit_class" Size="60,20" Text="customer_credit_class" Align="Right" onload="init"/>
+<ComboBox Name="customer_credit_class" Size="170,100" Text="" Weight="170"  ToolTip="ttp_customer_credit_class" onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=192</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_tax_reg_no" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_tax_reg_no" Size="60,20" Text="tax_reg_no" Align="Right"/>
+<TextBox Name="tax_reg_no" Size="170,20" Text="" Weight="170" ToolTip="ttp_tax_reg_no"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_status" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="status" Size="230,20" Text="status" ToolTip="ttp_status" checked="true"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

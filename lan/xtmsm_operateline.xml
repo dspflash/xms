@@ -1,0 +1,51 @@
+﻿<Language name="xtmsm_operateline">
+<Lang name="xtmsm_operateline" value="营运线路"/>
+<Lang name="city_via" value="途经城市"/>
+<Lang name="TabEditxtmsm_operateline" value="xtmsm_operateline Edit"/>
+<Lang name="TabViewxtmsm_operateline" value="xtmsm_operateline View"/>
+<Lang name="operateline_name" value="线路名"/>
+<Lang name="ttp_operateline_name" value=""/>
+<Lang name="line_type" value="线路类型"/>
+<Lang name="ttp_line_type" value=""/>
+<Lang name="cityid_start" value="出发城市"/>
+<Lang name="ttp_cityid_start" value=""/>
+<Lang name="cityid_end" value="终到城市"/>
+<Lang name="ttp_cityid_end" value=""/>
+<Lang name="distance" value="距离"/>
+<Lang name="ttp_distance" value=""/>
+<Lang name="isprimary" value="基础线路"/>
+<Lang name="ttp_isprimary" value=""/>
+<Lang name="remark" value="备注"/>
+<Lang name="ttp_desc" value=""/>
+<Lang name="active" value=""/>
+<Lang name="ttp_active" value=""/>
+<Lang name="created_by" value=""/>
+<Lang name="ttp_created_by" value=""/>
+<Lang name="creation_date" value=""/>
+<Lang name="ttp_creation_date" value=""/>
+<Lang name="last_update_by" value=""/>
+<Lang name="ttp_last_update_by" value=""/>
+<Lang name="last_update_date" value=""/>
+<Lang name="ttp_last_update_date" value=""/>
+<Lang name="operateline_id" value=""/>
+<Lang name="ttp_operateline_id" value=""/>
+<Lang name="org_guid" value=""/>
+<Lang name="ttp_org_guid" value=""/>
+<Lang name="operateineid" value=""/>
+<Lang name="ttp_operateineid" value=""/>
+<Lang name="ttp_operationxtmsm_operateline" value=""/>
+<Lang name="ttp_creatextmsm_operateline" value=""/>
+<Lang name="ttp_modifyxtmsm_operateline" value=""/>
+<Lang name="ttp_resetxtmsm_operateline" value=""/>
+<Lang name="ttp_deletextmsm_operateline" value=""/>
+<Lang name="ttp_refreshxtmsm_operateline" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

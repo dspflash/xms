@@ -1,0 +1,44 @@
+﻿<Language name="xtmst_customordersetting">
+<Lang name="xtmst_customordersetting" value="xtmst_customordersetting"/>
+<Lang name="TabEditxtmst_customordersetting" value="xtmst_customordersetting Edit"/>
+<Lang name="TabViewxtmst_customordersetting" value="xtmst_customordersetting View"/>
+<Lang name="customerorderid" value=""/>
+<Lang name="ttp_customerorderid" value=""/>
+<Lang name="carrycode" value=""/>
+<Lang name="ttp_carrycode" value=""/>
+<Lang name="ordermileage" value=""/>
+<Lang name="ttp_ordermileage" value=""/>
+<Lang name="vehicletypefee" value=""/>
+<Lang name="ttp_vehicletypefee" value=""/>
+<Lang name="backoffline" value=""/>
+<Lang name="ttp_backoffline" value=""/>
+<Lang name="returnline" value=""/>
+<Lang name="ttp_returnline" value=""/>
+<Lang name="expressfee" value=""/>
+<Lang name="ttp_expressfee" value=""/>
+<Lang name="otherfee" value=""/>
+<Lang name="ttp_otherfee" value=""/>
+<Lang name="isexpressorder" value=""/>
+<Lang name="ttp_isexpressorder" value=""/>
+<Lang name="issmallorder" value=""/>
+<Lang name="ttp_issmallorder" value=""/>
+<Lang name="xtmst_customordersetting_id" value=""/>
+<Lang name="ttp_xtmst_customordersetting_id" value=""/>
+<Lang name="carrierid" value=""/>
+<Lang name="ttp_carrierid" value=""/>
+<Lang name="ttp_operationxtmst_customordersetting" value=""/>
+<Lang name="ttp_creatextmst_customordersetting" value=""/>
+<Lang name="ttp_modifyxtmst_customordersetting" value=""/>
+<Lang name="ttp_resetxtmst_customordersetting" value=""/>
+<Lang name="ttp_deletextmst_customordersetting" value=""/>
+<Lang name="ttp_refreshxtmst_customordersetting" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

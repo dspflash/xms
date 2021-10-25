@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_vehiclerealtime" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_vehiclerealtimeLst" ToolTip="ttp_xtmst_vehiclerealtime" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>vehiclerealtimeid</Index>
+<DbTable>tms.xtmst_vehiclerealtime</DbTable>
+<Data>vehiclerealtimecode,deliverymode,consignmentmode,operateineid,fromcityid,tocityid,fromxsiteid,toxsiteid,fromaddress,toaddress,vehicleid,driverid,lorrydriver,status,freightnum,totalweight,totalvolumn,remainweight,remainvolumn,carrierid,vehiclerealtimeid,createby,createdate,updateby,updatedate,depotnum,startdatetime,startdatetimeactual,terminatedatetime,terminatedatetimeactual</Data>
+<Order>vehiclerealtimeid</Order></DbDetails>
+<OnClick><assign name="deliverymode[typecode]" expr="%{xtmst_vehiclerealtimeLst[deliverymode]}" function="SetSel"/><assign name="consignmentmode[typecode]" expr="%{xtmst_vehiclerealtimeLst[consignmentmode]}" function="SetSel"/><assign name="operateineid[operateineid]" expr="%{xtmst_vehiclerealtimeLst[operateineid]}" function="SetSel"/><assign name="fromcityid[cityid]" expr="%{xtmst_vehiclerealtimeLst[fromcityid]}" function="SetSel"/><assign name="tocityid[cityid]" expr="%{xtmst_vehiclerealtimeLst[tocityid]}" function="SetSel"/><assign name="fromxsiteid[xsiteid]" expr="%{xtmst_vehiclerealtimeLst[fromxsiteid]}" function="SetSel"/><assign name="toxsiteid[xsiteid]" expr="%{xtmst_vehiclerealtimeLst[toxsiteid]}" function="SetSel"/><assign name="vehicleid[vehicleid]" expr="%{xtmst_vehiclerealtimeLst[vehicleid]}" function="SetSel"/><assign name="driverid[driverid]" expr="%{xtmst_vehiclerealtimeLst[driverid]}" function="SetSel"/><assign name="lorrydriver[driverid]" expr="%{xtmst_vehiclerealtimeLst[lorrydriver]}" function="SetSel"/><assign name="status[statuscode]" expr="%{xtmst_vehiclerealtimeLst[status]}" function="SetSel"/>
+<if cond="%{vehiclerealtimeid}"><SetVisible name="insertxtmst_vehiclerealtime" Visible="0"/><SetVisible name="modifyxtmst_vehiclerealtime" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

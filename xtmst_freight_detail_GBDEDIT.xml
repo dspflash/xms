@@ -1,0 +1,100 @@
+﻿<GroupBox Name="GBDEDITxtmst_freight_detail"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_commodityname"><Ctrls>
+<Label Align="Right" Text="commodityname" Name="lb_commodityname" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_commodityname" Name="commodityname" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_commoditycode"><Ctrls>
+<Label Align="Right" Text="commoditycode" Name="lb_commoditycode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_commoditycode" Name="commoditycode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_amount"><Ctrls>
+<Label Align="Right" Text="amount" Name="lb_amount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_amount" Name="amount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_length"><Ctrls>
+<Label Align="Right" Text="length" Name="lb_length" Size="60,20"/>
+<TextBox Weight="18" Text="" ToolTip="ttp_length" Name="length" Size="18,20"/>
+<TextBox Weight="76" Text="" ToolTip="ttp_width" Name="width" Size="76,20"/>
+<TextBox Weight="76" Text="" ToolTip="ttp_height" Name="height" Size="76,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_weight"><Ctrls>
+<Label Align="Right" Text="weight" Name="lb_weight" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_weight" Name="weight" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_volume"><Ctrls>
+<Label Align="Right" Text="volume" Name="lb_volume" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_volume" Name="volume" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_packagetype"><Ctrls>
+<Label Align="Right" Text="packagetype" onload="init" Name="lb_packagetype" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_packagetype" onload="init" Name="packagetype" Size="170,100">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=170</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_transfeesettlementsmode"><Ctrls>
+<Label Align="Right" Text="transfeesettlementsmode" onload="init" Name="lb_transfeesettlementsmode" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_transfeesettlementsmode" onload="init" Name="transfeesettlementsmode" Size="170,100">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>typeclass=160</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_unitfreightfee"><Ctrls>
+<Label Align="Right" Text="unitfreightfee" Name="lb_unitfreightfee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_unitfreightfee" Name="unitfreightfee" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_totalfreightfee"><Ctrls>
+<Label Align="Right" Text="totalfreightfee" Name="lb_totalfreightfee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_totalfreightfee" Name="totalfreightfee" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_commodityprice"><Ctrls>
+<Label Align="Right" Text="commodityprice" Name="lb_commodityprice" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_commodityprice" Name="commodityprice" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm12 md6 lg4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,50"/>
+<TextBox Weight="630" Text="" ToolTip="ttp_remark" Name="remark" Size="630,50"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmst_freight_detail_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmst_freight_detail_id" overlap="pre" Name="lb_xtmst_freight_detail_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmst_freight_detail_id" overlap="pre" Name="xtmst_freight_detail_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{xtmst_freight_detail_id}'"><SetVisible name="insertxtmst_freight_detail" Visible="0"/><SetVisible name="modifyxtmst_freight_detail" Visible="1"/><else/><SetVisible name="insertxtmst_freight_detail" Visible="1"/><SetVisible name="modifyxtmst_freight_detail" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_commodityid" Visible="false"><Ctrls>
+<Label Align="Right" Text="commodityid" overlap="pre" Name="lb_commodityid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_commodityid" overlap="pre" Name="commodityid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_freightdetailid" Visible="false"><Ctrls>
+<Label Align="Right" Text="freightdetailid" overlap="pre" Name="lb_freightdetailid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_freightdetailid" overlap="pre" Name="freightdetailid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_freightid" Visible="false"><Ctrls>
+<Label Align="Right" Text="freightid" overlap="pre" Name="lb_freightid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_freightid" overlap="pre" Name="freightid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmst_freight_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmst_freight_id" overlap="pre" Name="lb_xtmst_freight_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmst_freight_id" overlap="pre" Name="xtmst_freight_id" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updateby" Visible="false"><Ctrls>
+<Label Align="Right" Text="updateby" overlap="pre" Name="lb_updateby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_updateby" overlap="pre" Name="updateby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updatedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="updatedate" overlap="pre" Name="lb_updatedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_updatedate" overlap="pre" Name="updatedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

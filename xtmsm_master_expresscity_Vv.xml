@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVxtmsm_master_expresscity" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmsm_master_expresscity_vLst" ToolTip="ttp_xtmsm_master_expresscity_v" Size="700,450" OnLoad="init" Heading="province,120;city,120;county,120;citycode,20;cityid,50;" loadedclick="0">
+	<DbDetails >
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_expresscity x</DbTable>
+<Data>x.province,x.city,x.county,x.citycode,x.cityid</Data>
+<Order>cityid</Order></DbDetails>
+<DbDetails><queryFormat id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>cityid='%{xtmsm_master_expresscity_vLst[cityid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_master_expresscity.xtmsm_master_expresscityLst"/><assign name="$this.xtmsm_master_expresscity.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_master_expresscity</DbTable>
+<Where>cityid='%{xtmsm_master_expresscity_vLst[cityid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_xtmsm_master_expresscity" expr="js(%{xtmsm_master_expresscity_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xtmsm_master_expresscity" expr="js(%{xtmsm_master_expresscity_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,9 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="addone" mustselected="0"><if cond="!%{xtmst_loadorder_id}"><alert expr="xtmst_loadorder_id is Empty!"/><else/><submit next="$parent.xtmst_loadorderdetail.GBDEDITxtmst_loadorderdetail" function="reset"/><assign name="$parent.xtmst_loadorderdetail.xtmst_loadorder_id" expr="%{xtmst_loadorder_id}"/><assign name="$parent.xtmst_loadorderdetail.LoadOrderID" expr="%{LoadOrderID}"/></if></op>
+<op text="modify"><DbDetails><Where>xtmst_loadorderdetail_id='%{xtmst_loadorderdetail_vLst[xtmst_loadorderdetail_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.xtmst_loadorderdetail.xtmst_loadorderdetailLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_loadorderdetail</DbTable>
+<Where>xtmst_loadorderdetail_id='%{xtmst_loadorderdetail_vLst[xtmst_loadorderdetail_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

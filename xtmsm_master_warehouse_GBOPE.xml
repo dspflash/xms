@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmsm_master_warehouse" Size="100,100"><Ctrls>
+<Button sqlpkinsert="autoid" Text="create" ToolTip="ttp_creatextmsm_master_warehouse" Name="insertxtmsm_master_warehouse" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmsm_master_warehouse</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>warehousename,simplewarehousename,warehousecode,memberid[memberid],manager[xms_user_id],phone,fax,mobilephone,address,postno,memo,status,posclear,confingid,cityid[cityid],operationcenter,companyid,isinsidenet,ciqflag,warehousetype,sqldbconnectionid,webservice,warehousearea</Data>
+<DataEx>createby,createdate,updateby,updatedate;'%{user_id}',now(),'%{user_id}',now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmsm_master_warehouse[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_master_warehouseLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_master_warehouse_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmsm_master_warehouse" Name="modifyxtmsm_master_warehouse" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmsm_master_warehouse</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>warehousename,simplewarehousename,warehousecode,memberid[memberid],manager[xms_user_id],phone,fax,mobilephone,address,postno,memo,status,posclear,confingid,cityid[cityid],operationcenter,companyid,isinsidenet,ciqflag,warehousetype,sqldbconnectionid,webservice,warehousearea</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>autoid='%{autoid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmsm_master_warehouse[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_master_warehouseLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_master_warehouse_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmsm_master_warehouse" Name="resetxtmsm_master_warehouse" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmsm_master_warehouse" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_master_warehouse" Name="gsearchxtmsm_master_warehouse" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmsm_master_warehouseLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmsm_master_warehouse" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

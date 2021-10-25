@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmst_settlementdetail"><Ctrls>
+<ListCtrl Heading="feeid,120;confirmamount,90;freightid,250;settlementdetailid,250;createby,50;createdate,150;carrierid,250;" loadedclick="0" ToolTip="ttp_xtmst_settlementdetail" Name="xtmst_settlementdetailLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>settlementdetailid</Index>
+<DbTable>tms.xtmst_settlementdetail x left join tms.xtmsm_fee_item x0 on x.feeid=x0.id left join tms.xtmst_customorder x1 on x.freightid=x1.customerorderid</DbTable>
+<Data>x0.FeeName feeid,x.confirmamount,x1.OrderCode freightid,x.settlementdetailid,x.createby,x.createdate,x.carrierid</Data>
+<Order>settlementdetailid</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails><DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>settlementdetailid='%{xtmst_settlementdetail_vLst[settlementdetailid]}'</Where></DbDetails><submit next="$this.xtmst_settlementdetail.xtmst_settlementdetailLst" namelist="DbDetails"/><assign name="$this.xtmst_settlementdetail.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_settlementdetail</DbTable>
+<Where>settlementdetailid='%{xtmst_settlementdetail_vLst[settlementdetailid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

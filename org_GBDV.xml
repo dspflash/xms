@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVorg"><Ctrls>
+<ListCtrl Heading="org,250;description,640;type,120;parent_org_id,120;status,60;created_by,60;creation_date,150;last_update_by,60;last_update_date,150;org_id,60;org_guid,250;" loadedclick="0" ToolTip="ttp_org" Name="orgLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>org_id</Index>
+<DbTable>tms.org o left join tms.xtmsc_type_option x on o.type=x.typecode left join tms.org o0 on o.parent_org_id=o0.org_id</DbTable>
+<Data>o.org,o.description,x.TypeName type,o0.org parent_org_id,o.status,o.created_by,o.creation_date,o.last_update_by,o.last_update_date,o.org_id,o.org_guid</Data>
+<Order>org_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>org_id='%{org_vLst[org_id]}'</Where></DbDetails><submit next="$this.org.orgLst" namelist="DbDetails"/><assign name="$this.org.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.org</DbTable>
+<Where>org_id='%{org_vLst[org_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

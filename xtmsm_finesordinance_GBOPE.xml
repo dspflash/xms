@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmsm_finesordinance" Size="100,100"><Ctrls>
+<Button sqlpkinsert="finesordinanceid" Text="create" ToolTip="ttp_creatextmsm_finesordinance" Name="insertxtmsm_finesordinance" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmsm_finesordinance</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>finesinstruction,finemoney,usestatus,memo</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmsm_finesordinance[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_finesordinanceLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_finesordinance_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmsm_finesordinance" Name="modifyxtmsm_finesordinance" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmsm_finesordinance</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>finesinstruction,finemoney,usestatus,memo</Data>
+<DataEx/>
+<Where>finesordinanceid='%{finesordinanceid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmsm_finesordinance[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsm_finesordinanceLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsm_finesordinance_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmsm_finesordinance" Name="resetxtmsm_finesordinance" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmsm_finesordinance" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_finesordinance" Name="gsearchxtmsm_finesordinance" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmsm_finesordinanceLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmsm_finesordinance" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

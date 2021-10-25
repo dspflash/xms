@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_complain" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_complainLst" ToolTip="ttp_xtmst_complain" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_complain_id</Index>
+<DbTable>tms.xtmst_complain</DbTable>
+<Data>freightid,complaincode,complainprice,complainmemo,status,createby,createdate,updateby,updatedate,complainid,xtmst_complain_id,carrierid</Data>
+<Order>xtmst_complain_id</Order></DbDetails>
+<OnClick><assign name="freightid[freightid]" expr="%{xtmst_complainLst[freightid]}" function="SetSel"/><assign name="status[statuscode]" expr="%{xtmst_complainLst[status]}" function="SetSel"/>
+<if cond="%{xtmst_complain_id}"><SetVisible name="insertxtmst_complain" Visible="0"/><SetVisible name="modifyxtmst_complain" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

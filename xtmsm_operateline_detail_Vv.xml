@@ -1,0 +1,11 @@
+﻿<GroupBox Name="GBDVxtmsm_operateline_detail" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmsm_operateline_detail_vLst" ToolTip="ttp_xtmsm_operateline_detail_v" Size="700,450" Heading="city_id,55;detail_type,30;distance_to_start,55;remark,500;active,60;created_by,60;creation_date,150;last_update_by,60;last_update_date,150;operateline_id,100;operateline_detail_id,100;" loadedclick="0">
+	<DbDetails >
+<Index>operateline_detail_id</Index>
+<DbTable>tms.xtmsm_operateline_detail x left join tms.xtmsm_master_city x0 on x.city_id=x0.cityid</DbTable>
+<Data>x0.CityAllName city_id,x.detail_type,x.distance_to_start,x.remark,x.active,x.created_by,x.creation_date,x.last_update_by,x.last_update_date,x.operateline_id,x.operateline_detail_id</Data>
+<Order>operateline_detail_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where operateline_id='%{operateline_id}'</queryFormat></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_operateline_detail_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

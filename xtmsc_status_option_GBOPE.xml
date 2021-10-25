@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmsc_status_option" Size="100,100"><Ctrls>
+<Button sqlpkinsert="idx" Text="create" ToolTip="ttp_creatextmsc_status_option" Name="insertxtmsc_status_option" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmsc_status_option</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>tablename,typename,statustype,statuscode,statusname,remark</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmsc_status_option[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsc_status_optionLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsc_status_option_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmsc_status_option" Name="modifyxtmsc_status_option" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmsc_status_option</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>tablename,typename,statustype,statuscode,statusname,remark</Data>
+<DataEx/>
+<Where>idx='%{idx}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmsc_status_option[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmsc_status_optionLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmsc_status_option_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmsc_status_option" Name="resetxtmsc_status_option" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmsc_status_option" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmsc_status_option" Name="gsearchxtmsc_status_option" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmsc_status_optionLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmsc_status_option" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

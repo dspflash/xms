@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITuser_v"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_username"><Ctrls>
+<Label Align="Right" Text="username" Name="lb_username" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_username" Name="username" readonly="true" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_role_name_cn"><Ctrls>
+<Label Align="Right" Text="role_name_cn" Name="lb_role_name_cn" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_role_name_cn" Name="role_name_cn" readonly="true" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_carriername"><Ctrls>
+<Label Align="Right" Text="carriername" Name="lb_carriername" readonly="true" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carriername" Name="carriername" readonly="true" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_org_guid" Visible="false"><Ctrls>
+<Label Align="Right" Text="org_guid" overlap="pre" Name="lb_org_guid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_org_guid" overlap="pre" Name="org_guid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xms_user_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xms_user_id" overlap="pre" Name="lb_xms_user_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xms_user_id" overlap="pre" Name="xms_user_id" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_role_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="role_id" overlap="pre" Name="lb_role_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_role_id" overlap="pre" Name="role_id" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

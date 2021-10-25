@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_freight" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xtmst_freight_id" Text="create" ToolTip="ttp_creatextmst_freight" Name="insertxtmst_freight" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_freight</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>pickuporderid[pickuporderid],expectbegindatetime,expectenddatetime,deliverymode[typecode],consignmentmode[typecode],deliverymethod[typecode],shipper,fromcityid[cityid],fromxsiteid[xsiteid],shipperphone,shipperaddress,consignee,tocityid[cityid],toxsiteid[xsiteid],consigneephone,consigneeaddress,volumn,weight,amount,datelimite,isbackorder,issealbox,actualvolumn,actualweight,actualamount,customordersource,appointcode,settlementmethod[typecode],totalfreightfee,insurancefee,pickupfee,deliveryfee,otherfee</Data>
+<DataEx>freightcode,status,freightid,createby,createdate,updateby,updatedate,carrierid;if('%{FreightCode}'='',@odn,'%{FreightCode}'),200,uuid(),'%{user_id}',now(),'%{user_id}',now(),'%{orgguid}'</DataEx>
+<queryFormat>SET @seq=0;SELECT SUBSTR(FreightCode,-5)+0 INTO @seq FROM tms.xtmst_freight WHERE DATE(CreateDate)=CURDATE() ORDER BY FreightCode DESC LIMIT 0,1;SELECT generate_orderNo(Code_Prefix, DT_MODE, @seq,'','') INTO @odn FROM tms.xms_doc_code WHERE docType='freight';insert into %{table} %{data};</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_freight[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_freightLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_freight_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_freight" Name="modifyxtmst_freight" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_freight</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>expectbegindatetime,expectenddatetime,deliverymode[typecode],consignmentmode[typecode],deliverymethod[typecode],shipper,fromxsiteid[xsiteid],shipperphone,shipperaddress,consignee,toxsiteid[xsiteid],consigneephone,consigneeaddress,volumn,weight,amount,datelimite,isbackorder,issealbox,actualvolumn,actualweight,actualamount,customordersource,appointcode,settlementmethod[typecode],totalfreightfee,insurancefee,pickupfee,deliveryfee,otherfee</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>xtmst_freight_id='%{xtmst_freight_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_freight[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_freightLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_freight_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_freight" Name="resetxtmst_freight" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_freight" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_freight" Name="gsearchxtmst_freight" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_freightLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_freight" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

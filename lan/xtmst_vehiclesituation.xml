@@ -1,0 +1,40 @@
+﻿<Language name="xtmst_vehiclesituation">
+<Lang name="xtmst_vehiclesituation" value="在途跟踪"/>
+<Lang name="TabEditxtmst_vehiclesituation" value="xtmst_vehiclesituation Edit"/>
+<Lang name="TabViewxtmst_vehiclesituation" value="xtmst_vehiclesituation View"/>
+<Lang name="vehicleid" value="车辆"/>
+<Lang name="ttp_vehicleid" value=""/>
+<Lang name="vehiclerealtimeid" value="发车班次"/>
+<Lang name="ttp_vehiclerealtimeid" value=""/>
+<Lang name="operatetype" value="装卸类型"/>
+<Lang name="ttp_operatetype" value=""/>
+<Lang name="xsiteid" value="网点"/>
+<Lang name="ttp_xsiteid" value=""/>
+<Lang name="freightid" value="货单"/>
+<Lang name="ttp_freightid" value=""/>
+<Lang name="cityid" value="城市"/>
+<Lang name="ttp_cityid" value=""/>
+<Lang name="address" value="地址"/>
+<Lang name="ttp_address" value=""/>
+<Lang name="vehiclesituationod" value=""/>
+<Lang name="ttp_vehiclesituationod" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="ttp_operationxtmst_vehiclesituation" value=""/>
+<Lang name="ttp_creatextmst_vehiclesituation" value=""/>
+<Lang name="ttp_modifyxtmst_vehiclesituation" value=""/>
+<Lang name="ttp_resetxtmst_vehiclesituation" value=""/>
+<Lang name="ttp_deletextmst_vehiclesituation" value=""/>
+<Lang name="ttp_refreshxtmst_vehiclesituation" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

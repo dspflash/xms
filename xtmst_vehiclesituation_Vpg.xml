@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmst_vehiclesituation"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmst_vehiclesituation" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_vehiclesituation_id</Index>
+<DbTable>tms.xtmst_vehiclesituation x left join tms.xtmsm_vehicle x0 on x.vehicleid=x0.vehicleid left join tms.xtmst_vehiclerealtime x1 on x.vehiclerealtimeid=x1.vehiclerealtimeid left join tms.xtmsc_type_option x2 on x.operatetype=x2.typecode left join tms.xtmst_freight x3 on x.freightid=x3.freightid left join tms.xtmsm_xsite x4 on x.xsiteid=x4.xsiteid left join tms.xtmsm_master_city x5 on x.cityid=x5.cityid</DbTable>
+<Data>count(*) records</Data>
+<Order>xtmst_vehiclesituation_id</Order><Queryformat>select %{data} from (select x.xtmst_vehiclesituation_id from %{dbtable} where x1.carrierid='%{orgguid}' %{where} GROUP BY x.xtmst_vehiclesituation_id  ORDER BY x.xtmst_vehiclesituation_id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmst_vehiclesituation" expr="js(Math.ceil(%{records_xtmst_vehiclesituation}/%{xtmst_vehiclesituation_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmst_vehiclesituation" expr="js('1~'+Math.ceil(%{records_xtmst_vehiclesituation}/%{xtmst_vehiclesituation_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmst_vehiclesituation" Size="60,20"><OnSelEndOK><submit next="xtmst_vehiclesituation_vLst" function="GetPage(%{pgscb_xtmst_vehiclesituation}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmst_vehiclesituation" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmst_vehiclesituation" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmst_vehiclesituation_vLst" Size="50,20"><OnClick><submit next="xtmst_vehiclesituation_vLst" function="GetPage(%{pgcur_xtmst_vehiclesituation}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

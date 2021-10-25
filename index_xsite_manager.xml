@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><XI3uWnd keywords="x+|xPlus;三优物流，3u56,ai56" debug="0" Title="物流仓储系统" logo="http://56.3ucs.com/images/3u56.png" description="人工智能技术打造的新一代物流服务平台，人工智能ai物流">
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\general.xml"/>
+<WndTaps>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vmyinfo.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_operateline_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_driver_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_vehicle_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_billingconfiguration_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_fee_item_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_pickuporder_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_freight_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_dispatchplan_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclerealtime_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="uv_freightloadunloadop_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclesituation_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_unloadorder_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_complain_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_fineorder_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_settlementdetail_v.xml"/>
+	</WndTaps></XI3uWnd>

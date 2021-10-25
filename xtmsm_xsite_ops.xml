@@ -1,0 +1,9 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>xtmsm_xsite_id='%{xtmsm_xsite_vLst[xtmsm_xsite_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_xsite.xtmsm_xsiteLst"/><DbDetails><Where>cityId=(select cityid from tms.xtmsm_xsite where xtmsm_xsite_id='%{xtmsm_xsite_vLst[xtmsm_xsite_id]}')</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_xsite.cityid"/></op>
+<op text="xsite_detail"><assign name="$this.xtmsm_xsite_detail_v.xtmsm_xsite_id" expr="%{xtmsm_xsite_vLst[xtmsm_xsite_id]}"/><submit namelist="DbDetails" next="$this.xtmsm_xsite_detail_v.xtmsm_xsite_detail_vLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_xsite</DbTable>
+<Where>xtmsm_xsite_id='%{xtmsm_xsite_vLst[xtmsm_xsite_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

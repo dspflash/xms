@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_unloadorder" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_unloadorderLst" ToolTip="ttp_xtmst_unloadorder" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_unloadorder_id</Index>
+<DbTable>tms.xtmst_unloadorder</DbTable>
+<Data>unloadcode,vehiclerealtimeid,status,xsiteid,unloadcityid,unloadaddress,memo,checkby,checkdate,createby,createdate,updateby,updatedate,unloadorderid,xtmst_unloadorder_id,carrierid</Data>
+<Order>xtmst_unloadorder_id</Order></DbDetails>
+<OnClick><assign name="vehiclerealtimeid[vehiclerealtimeid]" expr="%{xtmst_unloadorderLst[vehiclerealtimeid]}" function="SetSel"/><assign name="status[statuscode]" expr="%{xtmst_unloadorderLst[status]}" function="SetSel"/><assign name="xsiteid[xsiteid]" expr="%{xtmst_unloadorderLst[xsiteid]}" function="SetSel"/><assign name="unloadcityid[cityid]" expr="%{xtmst_unloadorderLst[unloadcityid]}" function="SetSel"/><assign name="carrierid[carrierid]" expr="%{xtmst_unloadorderLst[carrierid]}" function="SetSel"/>
+<if cond="%{xtmst_unloadorder_id}"><SetVisible name="insertxtmst_unloadorder" Visible="0"/><SetVisible name="modifyxtmst_unloadorder" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

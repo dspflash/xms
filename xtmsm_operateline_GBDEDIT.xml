@@ -1,0 +1,74 @@
+﻿<GroupBox Name="GBDEDITxtmsm_operateline"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_operateline_name"><Ctrls>
+<Label Align="Right" Text="operateline_name" Name="lb_operateline_name" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_operateline_name" Name="operateline_name" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialoperateline_name" OnClick="nis3ucs:%{operateline_name}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_line_type"><Ctrls>
+<Label Align="Right" Text="line_type" Name="lb_line_type" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_line_type" Name="line_type" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_distance"><Ctrls>
+<Label Align="Right" Text="distance" Name="lb_distance" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_distance" Name="distance" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_cityid_start"><Ctrls>
+<Label Align="Right" Text="cityid_start" Name="lb_cityid_start" readonly="true" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_cityid_start" Name="cityid_start" readonly="true" Size="150,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,ChinaSpell,CityID</Data>
+<Where/>
+<queryFormat/></DbDetails><OnEnChange><assign name="operateline_name" expr="%{cityid_start[ChinaSpell]}-%{cityid_end[ChinaSpell]}"/></OnEnChange></TextBox>
+<MagicCtrl Name="pickcityid_start" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$parent.citypick.frmwndctrl" expr="xtmsm_operateline.CityId_start"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_cityid_end"><Ctrls>
+<Label Align="Right" Text="cityid_end" Name="lb_cityid_end" readonly="true" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_cityid_end" Name="cityid_end" readonly="true" Size="150,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,ChinaSpell,CityID</Data>
+<Where/>
+<queryFormat/></DbDetails><OnEnChange><assign name="operateline_name" expr="%{cityid_start[ChinaSpell]}-%{cityid_end[ChinaSpell]}"/></OnEnChange></TextBox>
+<MagicCtrl Name="pickcityid_end" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$parent.citypick.frmwndctrl" expr="xtmsm_operateline.CityId_end"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_isprimary"><Ctrls>
+<CheckBox Text="isprimary" ToolTip="ttp_isprimary" Name="isprimary" Size="230,20" checked="true"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_active"><Ctrls>
+<CheckBox Text="active" ToolTip="ttp_active" Name="active" Size="230,20" checked="true"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_created_by" Visible="false"><Ctrls>
+<Label Align="Right" Text="created_by" overlap="pre" Name="lb_created_by" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_created_by" overlap="pre" Name="created_by" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_creation_date" Visible="false"><Ctrls>
+<Label Align="Right" Text="creation_date" overlap="pre" Name="lb_creation_date" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_creation_date" overlap="pre" Name="creation_date" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_last_update_by" Visible="false"><Ctrls>
+<Label Align="Right" Text="last_update_by" overlap="pre" Name="lb_last_update_by" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_last_update_by" overlap="pre" Name="last_update_by" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_last_update_date" Visible="false"><Ctrls>
+<Label Align="Right" Text="last_update_date" overlap="pre" Name="lb_last_update_date" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_last_update_date" overlap="pre" Name="last_update_date" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_operateline_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="operateline_id" overlap="pre" Name="lb_operateline_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_operateline_id" overlap="pre" Name="operateline_id" readonly="true" Size="150,20" Visible="false"><OnEnChange><if cond="'%{operateline_id}'"><SetVisible name="insertxtmsm_operateline" Visible="0"/><SetVisible name="modifyxtmsm_operateline" Visible="1"/><else/><SetVisible name="insertxtmsm_operateline" Visible="1"/><SetVisible name="modifyxtmsm_operateline" Visible="0"/></if></OnEnChange></TextBox>
+<MagicCtrl ToolTip="DialToCall" Name="dialoperateline_id" OnClick="nis3ucs:%{operateline_id}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_org_guid" Visible="false"><Ctrls>
+<Label Align="Right" Text="org_guid" overlap="pre" Name="lb_org_guid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_org_guid" overlap="pre" Name="org_guid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_operateineid" Visible="false"><Ctrls>
+<Label Align="Right" Text="operateineid" overlap="pre" Name="lb_operateineid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_operateineid" overlap="pre" Name="operateineid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

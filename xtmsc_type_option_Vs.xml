@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITxtmsc_type_option" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_tablename" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_tablename" Size="60,20" Text="tablename" Align="Right"/>
+<TextBox Name="tablename" Size="170,20" Text="" Weight="170" ToolTip="ttp_tablename"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_columnname" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_columnname" Size="60,20" Text="columnname" Align="Right"/>
+<TextBox Name="columnname" Size="170,20" Text="" Weight="170" ToolTip="ttp_columnname"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_typeclass" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_typeclass" Size="60,20" Text="typeclass" Align="Right"/>
+<TextBox Name="typeclass" Size="170,20" Text="" Weight="170" ToolTip="ttp_typeclass"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_typecode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_typecode" Size="60,20" Text="typecode" Align="Right"/>
+<TextBox Name="typecode" Size="170,20" Text="" Weight="170" ToolTip="ttp_typecode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_typename" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_typename" Size="60,20" Text="typename" Align="Right"/>
+<TextBox Name="typename" Size="170,20" Text="" Weight="170" ToolTip="ttp_typename"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_memo" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_memo" Size="60,20" Text="memo" Align="Right"/>
+<TextBox Name="memo" Size="170,20" Text="" Weight="170" ToolTip="ttp_memo"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

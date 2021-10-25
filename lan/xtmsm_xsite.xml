@@ -1,0 +1,42 @@
+﻿<Language name="xtmsm_xsite">
+<Lang name="xtmsm_xsite" value="网点"/>
+<Lang name="TabEditxtmsm_xsite" value="xtmsm_xsite Edit"/>
+<Lang name="TabViewxtmsm_xsite" value="xtmsm_xsite View"/>
+<Lang name="xsitename" value="网点名称"/>
+<Lang name="ttp_xsitename" value=""/>
+<Lang name="xsitetype" value="网点类型"/>
+<Lang name="ttp_xsitetype" value=""/>
+<Lang name="cityid" value="城市"/>
+<Lang name="ttp_cityid" value=""/>
+<Lang name="address" value="地址"/>
+<Lang name="ttp_address" value=""/>
+<Lang name="isenable" value="可用"/>
+<Lang name="ttp_isenable" value=""/>
+<Lang name="isneedpreorder" value="是否需要预约单"/>
+<Lang name="ttp_isneedpreorder" value=""/>
+<Lang name="xsiteid" value=""/>
+<Lang name="ttp_xsiteid" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="updateby" value=""/>
+<Lang name="ttp_updateby" value=""/>
+<Lang name="updatedate" value=""/>
+<Lang name="ttp_updatedate" value=""/>
+<Lang name="ttp_operationxtmsm_xsite" value=""/>
+<Lang name="ttp_creatextmsm_xsite" value=""/>
+<Lang name="ttp_modifyxtmsm_xsite" value=""/>
+<Lang name="ttp_resetxtmsm_xsite" value=""/>
+<Lang name="ttp_deletextmsm_xsite" value=""/>
+<Lang name="ttp_refreshxtmsm_xsite" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

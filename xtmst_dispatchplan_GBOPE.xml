@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExtmst_dispatchplan" Size="100,100"><Ctrls>
+<Button sqlpkinsert="xtmst_dispatchplan_id" Text="create" ToolTip="ttp_creatextmst_dispatchplan" Name="insertxtmst_dispatchplan" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xtmst_dispatchplan</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehicleid[vehicleid],begintime,endtime,freightid[freightid],fromxsiteid[xsiteid],fromcityid[cityid],fromaddress,toxsiteid[xsiteid],tocityid[cityid],toaddress,deliverymode[typecode],consignmentmode[typecode],deliverymethod[typecode],memo</Data>
+<DataEx>plancode,status,serialno,planid,createby,createdate,updateby,updatedate,carrierid;@odn,301,@srlno,uuid(),'%{user_id}',now(),'%{user_id}',now(),'%{orgguid}'</DataEx>
+<queryFormat>SET @seq=0;SELECT SUBSTR(PlanCode,-5)+0 INTO @seq FROM tms.xtmst_dispatchplan WHERE DATE(CreateDate)=CURDATE() ORDER BY PlanCode DESC LIMIT 0,1;(SELECT (IFNULL(MAX(SerialNo),0)+1) into @srlno FROM xtmst_dispatchplan WHERE FreightID='%{FreightID[FreightID]}');SELECT generate_orderNo(Code_Prefix, DT_MODE, @seq,'','') INTO @odn FROM tms.xms_doc_code WHERE docType='dispatchplan';insert into %{table} %{data};</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxtmst_dispatchplan[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_dispatchplanLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_dispatchplan_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxtmst_dispatchplan" Name="modifyxtmst_dispatchplan" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xtmst_dispatchplan</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehicleid[vehicleid],fromxsiteid[xsiteid],toxsiteid[xsiteid],deliverymode[typecode],consignmentmode[typecode],deliverymethod[typecode],memo</Data>
+<DataEx>updateby,updatedate;'%{user_id}',now()</DataEx>
+<Where>xtmst_dispatchplan_id='%{xtmst_dispatchplan_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxtmst_dispatchplan[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xtmst_dispatchplanLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xtmst_dispatchplan_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxtmst_dispatchplan" Name="resetxtmst_dispatchplan" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxtmst_dispatchplan" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_dispatchplan" Name="gsearchxtmst_dispatchplan" Size="50,20" visible="false">
+<OnClick>
+<search next="xtmst_dispatchplanLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxtmst_dispatchplan" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

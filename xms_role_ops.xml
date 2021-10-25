@@ -1,0 +1,8 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>role_id='%{xms_role_vLst[role_id]}' and org_guid='%{orgguid}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xms_role.xms_roleLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xms_role</DbTable>
+<Where>role_id='%{xms_role_vLst[role_id]}' and org_guid='%{orgguid}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

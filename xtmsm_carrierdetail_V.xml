@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmsm_carrierdetail_v" Text="xtmsm_carrierdetail">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrierdetail_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><province format="x.province='%{opvalue}'"/><city format="x.city='%{opvalue}'"/><county format="x.county='%{opvalue}'"/><citycode format="(x.citycode like '%%{opvalue}%')"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><updateby format="(x.updateby like '%%{opvalue}%')"/><updatedate format="(x.updatedate between '%{updatedate[datetime]}' and '%{updatedate[datetime2]}')"/><id format="(x.id like '%%{opvalue}%')"/><carrierid format="x.carrierid='%{opvalue}'"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_carrierdetail.xml"/>
+<Ctrls><GroupBox  Name="GBxtmsm_carrierdetail" id="xtmsm_carrierdetail" Text="xtmsm_carrierdetail" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrierdetail_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmsm_carrierdetail" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmsm_carrierdetail.GBDEDITxtmsm_carrierdetail" function="reset"/><assign name="$this.xtmsm_carrierdetail.frmwndctrl" expr="%{$this.xtmsm_carrierdetail_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmsm_carrierdetail" Name="resetxtmsm_carrierdetail" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmsm_carrierdetail" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_carrierdetail" Name="gsearchxtmsm_carrierdetail" Size="50,20">	<OnClick>	
+<search next="xtmsm_carrierdetail_vLst" listed="0" prefixwhere="1" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_carrierdetail" namelist="search" function="search"/>	
+<search next="records_xtmsm_carrierdetail" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_carrierdetail" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrierdetail_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrierdetail_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrierdetail_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

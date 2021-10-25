@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsm_operateline" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsm_operatelineLst" ToolTip="ttp_xtmsm_operateline" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>operateline_id</Index>
+<DbTable>tms.xtmsm_operateline</DbTable>
+<Data>operateline_name,line_type,distance,cityid_start,cityid_end,isprimary,remark,active,created_by,creation_date,last_update_by,last_update_date,operateline_id,org_guid,operateineid</Data>
+<Order>operateline_id</Order></DbDetails>
+<OnClick><assign name="cityid_start[cityid]" expr="%{xtmsm_operatelineLst[cityid_start]}" function="SetSel"/><assign name="cityid_end[cityid]" expr="%{xtmsm_operatelineLst[cityid_end]}" function="SetSel"/>
+<if cond="%{operateline_id}"><SetVisible name="insertxtmsm_operateline" Visible="0"/><SetVisible name="modifyxtmsm_operateline" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

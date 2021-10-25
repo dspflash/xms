@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmst_vehiclesituation_v" Text="xtmst_vehiclesituation">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclesituation_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><vehicleid format="x.vehicleid='%{opvalue}'"/><vehiclerealtimeid format="x.vehiclerealtimeid='%{opvalue}'"/><operatetype format="x.operatetype='%{opvalue}'"/><freightid format="x.freightid='%{opvalue}'"/><xsiteid format="x.xsiteid='%{opvalue}'"/><cityid format="x.cityid='%{opvalue}'"/><address format="(x.address like '%%{opvalue}%')"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><vehiclesituationid format="(x.vehiclesituationid like '%%{opvalue}%')"/><xtmst_vehiclesituation_id format="(x.xtmst_vehiclesituation_id like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_vehiclesituation.xml"/>
+<Ctrls><GroupBox  Name="GBxtmst_vehiclesituation" id="xtmst_vehiclesituation" Text="xtmst_vehiclesituation" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclesituation_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmst_vehiclesituation" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmst_vehiclesituation.GBDEDITxtmst_vehiclesituation" function="reset"/><assign name="$this.xtmst_vehiclesituation.frmwndctrl" expr="%{$this.xtmst_vehiclesituation_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmst_vehiclesituation" Name="resetxtmst_vehiclesituation" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmst_vehiclesituation" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_vehiclesituation" Name="gsearchxtmst_vehiclesituation" Size="50,20">	<OnClick>	
+<search next="xtmst_vehiclesituation_vLst" listed="0" prefixwhere="0" prefixand="1" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_vehiclesituation" namelist="search" function="search"/>	
+<search next="records_xtmst_vehiclesituation" listed="0" prefixwhere="0" prefixand="1"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_vehiclesituation" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclesituation_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclesituation_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_vehiclesituation_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

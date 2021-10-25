@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEuv_customorder" Size="100,100"><Ctrls>
+<Button sqlpkinsert="" Text="create" ToolTip="ttp_createuv_customorder" Name="insertuv_customorder" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.uv_customorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>ordercode,ordersourcename,ordersource,synccode,settlementstatusname,settlementamount,settlementdate,settleuser,memberid,membername,memberno,shipper,fromcityid,fromcityname,shipperaddress,shippermobilephone,consignee,tocityid,tocityname,consigneeaddress,consigneemobilephone,totalvolume,totalweight,isdangerous,timeliness,orderstatus,planshipmentdate,plantodate,deliverymode,deliveryname,consignmentmode,consignmentname,status,statusname,createby,createdate,updateby,updatedate,issealbox,fromxsiteid,fromxsitename,toxsiteid,toxsitename,carriername,iscomplain,settlementstatus,complainstatus,complainid,materialtypename,customerorderid,orderstatusname</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="uv_customorderLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyuv_customorder" Name="modifyuv_customorder" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>tms.uv_customorder</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>ordercode,ordersourcename,ordersource,synccode,settlementstatusname,settlementamount,settlementdate,settleuser,memberid,membername,memberno,shipper,fromcityid,fromcityname,shipperaddress,shippermobilephone,consignee,tocityid,tocityname,consigneeaddress,consigneemobilephone,totalvolume,totalweight,isdangerous,timeliness,orderstatus,planshipmentdate,plantodate,deliverymode,deliveryname,consignmentmode,consignmentname,status,statusname,createby,createdate,updateby,updatedate,issealbox,fromxsiteid,fromxsitename,toxsiteid,toxsitename,carriername,iscomplain,settlementstatus,complainstatus,complainid,materialtypename,customerorderid,orderstatusname</Data>
+<DataEx/>
+<Where>ordercode='%{uv_customorderLst[ordercode]}' and ordersourcename='%{uv_customorderLst[ordersourcename]}' and ordersource='%{uv_customorderLst[ordersource]}' and synccode='%{uv_customorderLst[synccode]}' and settlementstatusname='%{uv_customorderLst[settlementstatusname]}' and settlementamount='%{uv_customorderLst[settlementamount]}' and settlementdate='%{uv_customorderLst[settlementdate]}' and settleuser='%{uv_customorderLst[settleuser]}' and memberid='%{uv_customorderLst[memberid]}' and membername='%{uv_customorderLst[membername]}' and memberno='%{uv_customorderLst[memberno]}' and shipper='%{uv_customorderLst[shipper]}' and fromcityid='%{uv_customorderLst[fromcityid]}' and fromcityname='%{uv_customorderLst[fromcityname]}' and shipperaddress='%{uv_customorderLst[shipperaddress]}' and shippermobilephone='%{uv_customorderLst[shippermobilephone]}' and consignee='%{uv_customorderLst[consignee]}' and tocityid='%{uv_customorderLst[tocityid]}' and tocityname='%{uv_customorderLst[tocityname]}' and consigneeaddress='%{uv_customorderLst[consigneeaddress]}' and consigneemobilephone='%{uv_customorderLst[consigneemobilephone]}' and totalvolume='%{uv_customorderLst[totalvolume]}' and totalweight='%{uv_customorderLst[totalweight]}' and isdangerous='%{uv_customorderLst[isdangerous]}' and timeliness='%{uv_customorderLst[timeliness]}' and orderstatus='%{uv_customorderLst[orderstatus]}' and planshipmentdate='%{uv_customorderLst[planshipmentdate]}' and plantodate='%{uv_customorderLst[plantodate]}' and deliverymode='%{uv_customorderLst[deliverymode]}' and deliveryname='%{uv_customorderLst[deliveryname]}' and consignmentmode='%{uv_customorderLst[consignmentmode]}' and consignmentname='%{uv_customorderLst[consignmentname]}' and status='%{uv_customorderLst[status]}' and statusname='%{uv_customorderLst[statusname]}' and createby='%{uv_customorderLst[createby]}' and createdate='%{uv_customorderLst[createdate]}' and updateby='%{uv_customorderLst[updateby]}' and updatedate='%{uv_customorderLst[updatedate]}' and issealbox='%{uv_customorderLst[issealbox]}' and fromxsiteid='%{uv_customorderLst[fromxsiteid]}' and fromxsitename='%{uv_customorderLst[fromxsitename]}' and toxsiteid='%{uv_customorderLst[toxsiteid]}' and toxsitename='%{uv_customorderLst[toxsitename]}' and carriername='%{uv_customorderLst[carriername]}' and iscomplain='%{uv_customorderLst[iscomplain]}' and settlementstatus='%{uv_customorderLst[settlementstatus]}' and complainstatus='%{uv_customorderLst[complainstatus]}' and complainid='%{uv_customorderLst[complainid]}' and materialtypename='%{uv_customorderLst[materialtypename]}' and customerorderid='%{uv_customorderLst[customerorderid]}' and orderstatusname='%{uv_customorderLst[orderstatusname]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="uv_customorderLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetuv_customorder" Name="resetuv_customorder" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITuv_customorder" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchuv_customorder" Name="gsearchuv_customorder" Size="50,20" visible="false">
+	<OnClick>
+	<search next="uv_customorderLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITuv_customorder" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

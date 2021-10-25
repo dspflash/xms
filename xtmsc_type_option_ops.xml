@@ -1,0 +1,9 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Data>tablename,columnname,memo,typeclass,typecode,typename,idx</Data><Where>idx='%{xtmsc_type_option_vLst[idx]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsc_type_option.xtmsc_type_optionLst"/></op>
+<op text="copy"><submit next="$this.xtmsc_type_option.GBDEDITxtmsc_type_option" function="reset"/><DbDetails><Data>tablename,columnname,memo,typeclass,typecode,typename</Data><Where>idx='%{xtmsc_type_option_vLst[idx]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsc_type_option.xtmsc_type_optionLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Where>idx='%{xtmsc_type_option_vLst[idx]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

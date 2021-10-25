@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVuv_freightloadunloadop" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteuv_freightloadunloadop" Name="deleteuv_freightloadunloadop" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.uv_freightloadunloadop</DbTable>
+<Where>freightcode='%{uv_freightloadunloadopLst[freightcode]}' and platenumber='%{uv_freightloadunloadopLst[platenumber]}' and drivername='%{uv_freightloadunloadopLst[drivername]}' and fromcity='%{uv_freightloadunloadopLst[fromcity]}' and fromaddress='%{uv_freightloadunloadopLst[fromaddress]}' and fromxsite='%{uv_freightloadunloadopLst[fromxsite]}' and tocity='%{uv_freightloadunloadopLst[tocity]}' and toaddress='%{uv_freightloadunloadopLst[toaddress]}' and toxsite='%{uv_freightloadunloadopLst[toxsite]}' and operatetype='%{uv_freightloadunloadopLst[operatetype]}' and vehiclerealtimecode='%{uv_freightloadunloadopLst[vehiclerealtimecode]}' and plancode='%{uv_freightloadunloadopLst[plancode]}' and fromcityid='%{uv_freightloadunloadopLst[fromcityid]}' and fromxsiteid='%{uv_freightloadunloadopLst[fromxsiteid]}' and tocityid='%{uv_freightloadunloadopLst[tocityid]}' and toxsiteid='%{uv_freightloadunloadopLst[toxsiteid]}' and freightid='%{uv_freightloadunloadopLst[freightid]}' and vehiclerealtimeid='%{uv_freightloadunloadopLst[vehiclerealtimeid]}' and planid='%{uv_freightloadunloadopLst[planid]}' and freightstatus='%{uv_freightloadunloadopLst[freightstatus]}' and opordercode='%{uv_freightloadunloadopLst[opordercode]}' and opstatus='%{uv_freightloadunloadopLst[opstatus]}' and opdate='%{uv_freightloadunloadopLst[opdate]}' and memo='%{uv_freightloadunloadopLst[memo]}' and operatetypecode='%{uv_freightloadunloadopLst[operatetypecode]}' and pickupordercode='%{uv_freightloadunloadopLst[pickupordercode]}' and opstatuscode='%{uv_freightloadunloadopLst[opstatuscode]}' and oporderid='%{uv_freightloadunloadopLst[oporderid]}' and freightstatuscode='%{uv_freightloadunloadopLst[freightstatuscode]}' and pickuporderid='%{uv_freightloadunloadopLst[pickuporderid]}' and carrierid='%{uv_freightloadunloadopLst[carrierid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchuv_freightloadunloadop" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshuv_freightloadunloadop" Name="searchuv_freightloadunloadop" Size="50,20">
+			  <OnClick><submit next="uv_freightloadunloadopLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPuv_freightloadunloadopLst" OnClick="(uv_freightloadunloadopLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREuv_freightloadunloadopLst" OnClick="(uv_freightloadunloadopLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPuv_freightloadunloadopLst" OnClick="(uv_freightloadunloadopLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

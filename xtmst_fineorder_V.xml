@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmst_fineorder_v" Text="xtmst_fineorder">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_fineorder_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><freightid format="x.freightid='%{opvalue}'"/><finenumber format="(x.finenumber like '%%{opvalue}%')"/><driverid format="x.driverid='%{opvalue}'"/><finedate format="(x.finedate between '%{finedate[datetime]}' and '%{finedate[datetime2]}')"/><finesordinanceid format="x.finesordinanceid='%{opvalue}'"/><finemoney format="(x.finemoney like '%%{opvalue}%')"/><address format="(x.address like '%%{opvalue}%')"/><memo format="(x.memo like '%%{opvalue}%')"/><dealwithed format="x.dealwithed is %{opvalue}"/><finestatus format="x.finestatus='%{opvalue}'"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><id format="(x.id like '%%{opvalue}%')"/><carrierid format="x.carrierid='%{opvalue}'"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_fineorder.xml"/>
+<Ctrls><GroupBox  Name="GBxtmst_fineorder" id="xtmst_fineorder" Text="xtmst_fineorder" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_fineorder_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmst_fineorder" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmst_fineorder.GBDEDITxtmst_fineorder" function="reset"/><assign name="$this.xtmst_fineorder.frmwndctrl" expr="%{$this.xtmst_fineorder_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmst_fineorder" Name="resetxtmst_fineorder" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmst_fineorder" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_fineorder" Name="gsearchxtmst_fineorder" Size="50,20">	<OnClick>	
+<search next="xtmst_fineorder_vLst" listed="0" prefixwhere="0" prefixand="1" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_fineorder" namelist="search" function="search"/>	
+<search next="records_xtmst_fineorder" listed="0" prefixwhere="0" prefixand="1"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_fineorder" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_fineorder_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_fineorder_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_fineorder_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPEar_customer" Size="100,100"><Ctrls>
+<Button sqlpkinsert="ar_customer_id" Text="create" ToolTip="ttp_createar_customer" Name="insertar_customer" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.ar_customer</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>customer_number,customer_name,alt_name,customer_credit_class[typecode],tax_reg_no,status</Data>
+<DataEx>created_by,creation_date,last_update_by,last_update_date,org_id,org_guid;'%{user_id}',now(),'%{user_id}',now(),'%{orgid}','%{orgguid}'</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertar_customer[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="ar_customerLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.ar_customer_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyar_customer" Name="modifyar_customer" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.ar_customer</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>customer_number,customer_name,alt_name,customer_credit_class[typecode],tax_reg_no,status</Data>
+<DataEx>last_update_by,last_update_date;'%{user_id}',now()</DataEx>
+<Where>ar_customer_id='%{ar_customer_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyar_customer[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="ar_customerLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.ar_customer_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetar_customer" Name="resetar_customer" Size="50,20">
+<OnClick>
+<submit next="GBDEDITar_customer" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchar_customer" Name="gsearchar_customer" Size="50,20" visible="false">
+<OnClick>
+<search next="ar_customerLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITar_customer" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

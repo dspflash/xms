@@ -1,0 +1,33 @@
+<WndTap Text="XSitePick" Name="XSitePick" Ver="2" popup="1">
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_xsite.xml"/>
+	<Ctrls>
+	<GroupBox Text="xtmsm_xsite" Name="GBxtmsm_xsite" id="xtmsm_xsite" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_xsite_vs.xml"/>
+<BR autoHeight="1"/>
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPDVitem"><Ctrls>
+<Button Text="gsearch" ToolTip="ttp_gsearchitem" Name="gsearchitem" Size="50,20" visible="true">
+	<OnClick>
+	<search next="xtmsm_xsite_vLst" listed="0" prefixand="1" inputed="1"><shortname format="shortname like '%%{opvalue}%'"/><XSitename format="XSitename like '%%{opvalue}%'"/></search><submit next="GBDEDITxtmsm_xsite" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetitem" Name="resetitem" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITxtmsm_xsite" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>
+<BR autoHeight="1"/>
+<ListCtrl Name="xtmsm_xsite_vLst" ToolTip="ttp_xtmsm_xsite" Size="700,420" OnLoad="init" Heading="xsitename,640;xsitetype,120;cityid,50;address,640;isenable,60;isneedpreorder,50;xsiteid,250;createby,50;createdate,150;updateby,50;updatedate,150;" loadedclick="0">
+	<DbDetails >
+<DbTable>tms.xtmsm_xsite x left join tms.xtmsc_type_option x0 on x.xsitetype=x0.typecode left join tms.xtmsm_master_city x1 on x.cityid=x1.cityid</DbTable>
+<Index>xsiteid</Index>
+<Data>x.xsitename,x0.TypeName xsitetype,x1.CityAllName cityid,x.address,x.isenable,x.isneedpreorder,x.xsiteid,x.createby,x.createdate,x.updateby,x.updatedate</Data>
+<Order>xsiteid</Order>
+<queryFormat>select %{data} from %{dbtable} where org_guid='%{orgguid}' AND IF('%{CityID[CityID]}'='',1,x.CityID='%{CityID[CityID]}' OR IF(x.delivery_range IN (1504,1505), x1.ParentCityID=(SELECT ParentCityID FROM xtmsm_master_city WHERE CityID='%{CityID[CityID]}'),'')) limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+	<OnClick><if cond="%{xtmsm_xsite_vLst[xsiteid]}"><DbDetails><Where>xsiteid='%{xtmsm_xsite_vLst[xsiteid]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.%{frmwndctrl}"/><assign name="$parent.%{frmwndctrl}[selectedindex]" function="SetSel" expr="0"/><submit function="onok"/></if></OnClick>
+	</ListCtrl>
+	</Ctrls></GroupBox>
+	</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

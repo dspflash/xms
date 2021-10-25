@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_settlementdetail" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialxtmst_settlementdetail" Size="50,20">
+<OnClick><submit next="xtmst_settlementdetail_vLst" function="initial"/><submit next="records_xtmst_settlementdetail" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPxtmst_settlementdetail_vLst" Size="50,20">
+<OnClick><submit next="xtmst_settlementdetail_vLst" function="GetPage(first)"/><submit next="records_xtmst_settlementdetail"/></OnClick></Button>
+<Button Text="prepage" Name="PRExtmst_settlementdetail_vLst" Size="50,20">
+<OnClick><submit next="xtmst_settlementdetail_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPxtmst_settlementdetail_vLst" Size="50,20">
+<OnClick><submit next="xtmst_settlementdetail_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

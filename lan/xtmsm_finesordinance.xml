@@ -1,0 +1,30 @@
+﻿<Language name="xtmsm_finesordinance">
+<Lang name="xtmsm_finesordinance" value="xtmsm_finesordinance"/>
+<Lang name="TabEditxtmsm_finesordinance" value="xtmsm_finesordinance Edit"/>
+<Lang name="TabViewxtmsm_finesordinance" value="xtmsm_finesordinance View"/>
+<Lang name="finesinstruction" value=""/>
+<Lang name="ttp_finesinstruction" value=""/>
+<Lang name="finemoney" value=""/>
+<Lang name="ttp_finemoney" value=""/>
+<Lang name="usestatus" value=""/>
+<Lang name="ttp_usestatus" value=""/>
+<Lang name="memo" value=""/>
+<Lang name="ttp_memo" value=""/>
+<Lang name="finesordinanceid" value=""/>
+<Lang name="ttp_finesordinanceid" value=""/>
+<Lang name="ttp_operationxtmsm_finesordinance" value=""/>
+<Lang name="ttp_creatextmsm_finesordinance" value=""/>
+<Lang name="ttp_modifyxtmsm_finesordinance" value=""/>
+<Lang name="ttp_resetxtmsm_finesordinance" value=""/>
+<Lang name="ttp_deletextmsm_finesordinance" value=""/>
+<Lang name="ttp_refreshxtmsm_finesordinance" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

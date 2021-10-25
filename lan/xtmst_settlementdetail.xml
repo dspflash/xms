@@ -1,0 +1,32 @@
+﻿<Language name="xtmst_settlementdetail">
+<Lang name="xtmst_settlementdetail" value="结算"/>
+<Lang name="TabEditxtmst_settlementdetail" value="xtmst_settlementdetail Edit"/>
+<Lang name="TabViewxtmst_settlementdetail" value="xtmst_settlementdetail View"/>
+<Lang name="customorderid" value="客户单"/>
+<Lang name="ttp_customorderid" value=""/>
+<Lang name="feeid" value="费用项目"/>
+<Lang name="ttp_feeid" value=""/>
+<Lang name="confirmamount" value="确认金额"/>
+<Lang name="ttp_confirmamount" value=""/>
+<Lang name="settlementdetailid" value=""/>
+<Lang name="ttp_settlementdetailid" value=""/>
+<Lang name="createby" value=""/>
+<Lang name="ttp_createby" value=""/>
+<Lang name="createdate" value=""/>
+<Lang name="ttp_createdate" value=""/>
+<Lang name="ttp_operationxtmst_settlementdetail" value=""/>
+<Lang name="ttp_creatextmst_settlementdetail" value=""/>
+<Lang name="ttp_modifyxtmst_settlementdetail" value=""/>
+<Lang name="ttp_resetxtmst_settlementdetail" value=""/>
+<Lang name="ttp_deletextmst_settlementdetail" value=""/>
+<Lang name="ttp_refreshxtmst_settlementdetail" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

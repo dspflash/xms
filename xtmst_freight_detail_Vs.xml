@@ -1,0 +1,64 @@
+﻿<GroupBox Name="GBDEDITxtmst_freight_detail" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_commodityname" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_commodityname" Size="60,20" Text="commodityname" Align="Right"/>
+<TextBox Name="commodityname" Size="170,20" Text="" Weight="170" ToolTip="ttp_commodityname"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_commoditycode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_commoditycode" Size="60,20" Text="commoditycode" Align="Right"/>
+<TextBox Name="commoditycode" Size="170,20" Text="" Weight="170" ToolTip="ttp_commoditycode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_amount" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_amount" Size="60,20" Text="amount" Align="Right"/>
+<TextBox Name="amount" Size="170,20" Text="" Weight="170" ToolTip="ttp_amount"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_length" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_length" Size="60,20" Text="length" Align="Right"/>
+<TextBox Name="length" Size="18,20" Text="" Weight="18" ToolTip="ttp_length"></TextBox>
+<TextBox Name="width" Size="76,20" Text="" Weight="76" ToolTip="ttp_width"></TextBox>
+<TextBox Name="height" Size="76,20" Text="" Weight="76" ToolTip="ttp_height"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_weight" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_weight" Size="60,20" Text="weight" Align="Right"/>
+<TextBox Name="weight" Size="170,20" Text="" Weight="170" ToolTip="ttp_weight"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_volume" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_volume" Size="60,20" Text="volume" Align="Right"/>
+<TextBox Name="volume" Size="170,20" Text="" Weight="170" ToolTip="ttp_volume"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_packagetype" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_packagetype" Size="60,20" Text="packagetype" Align="Right"  onload="init"/>
+<ComboBox Name="packagetype" Size="170,100" Text="" Weight="170"  ToolTip="ttp_packagetype"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=170</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_transfeesettlementsmode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_transfeesettlementsmode" Size="60,20" Text="transfeesettlementsmode" Align="Right"  onload="init"/>
+<ComboBox Name="transfeesettlementsmode" Size="170,100" Text="" Weight="170"  ToolTip="ttp_transfeesettlementsmode"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>typeclass=160</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_unitfreightfee" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_unitfreightfee" Size="60,20" Text="unitfreightfee" Align="Right"/>
+<TextBox Name="unitfreightfee" Size="170,20" Text="" Weight="170" ToolTip="ttp_unitfreightfee"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_totalfreightfee" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_totalfreightfee" Size="60,20" Text="totalfreightfee" Align="Right"/>
+<TextBox Name="totalfreightfee" Size="170,20" Text="" Weight="170" ToolTip="ttp_totalfreightfee"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_commodityprice" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_commodityprice" Size="60,20" Text="commodityprice" Align="Right"/>
+<TextBox Name="commodityprice" Size="170,20" Text="" Weight="170" ToolTip="ttp_commodityprice"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_remark" Multiline="0" cols="xs12 sm12 md6 lg4"><Ctrls>
+<Label Name="lb_remark" Size="60,50" Text="remark" Align="Right"/>
+<TextBox Name="remark" Size="630,50" Text="" Weight="630" ToolTip="ttp_remark"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

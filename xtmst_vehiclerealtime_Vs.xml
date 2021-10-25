@@ -1,0 +1,138 @@
+﻿<GroupBox Name="GBDEDITxtmst_vehiclerealtime" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_vehiclerealtimecode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vehiclerealtimecode" Size="60,20" Text="vehiclerealtimecode" Align="Right"/>
+<TextBox Name="vehiclerealtimecode" Size="170,20" Text="" Weight="170" ToolTip="ttp_vehiclerealtimecode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deliverymode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_deliverymode" Size="60,20" Text="deliverymode" Align="Right"  onload="init"/>
+<ComboBox Name="deliverymode" Size="170,100" Text="" Weight="170"  ToolTip="ttp_deliverymode"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TableName='DispatchPlan' and ColumnName='DeliveryMode'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_consignmentmode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_consignmentmode" Size="60,20" Text="consignmentmode" Align="Right"  onload="init"/>
+<ComboBox Name="consignmentmode" Size="170,100" Text="" Weight="170"  ToolTip="ttp_consignmentmode"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TableName='DispatchPlan' and ColumnName='ConsignmentMode'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_operateineid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_operateineid" Size="60,20" Text="operateineid" Align="Right"  onload="init"/>
+<ComboBox Name="operateineid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_operateineid"  onload="init">
+	<DbDetails>
+<Index>operateineid</Index>
+<DbTable>tms.xtmsm_operateline</DbTable>
+<Data>operateline_name,cityid_start,cityid_end,operateineId</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails><OnSelEndOk><submit next="FromCityID"/><submit next="ToCityID"/></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_fromcityid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_fromcityid" Size="60,20" Text="fromcityid" Align="Right"/>
+<TextBox Name="fromcityid" Size="170,20" Text="" Weight="170" ToolTip="ttp_fromcityid">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where>CityID='%{operateineId[cityid_start]}'</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_tocityid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_tocityid" Size="60,20" Text="tocityid" Align="Right"/>
+<TextBox Name="tocityid" Size="170,20" Text="" Weight="170" ToolTip="ttp_tocityid">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where>CityID='%{operateineId[cityid_end]}' </Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_fromxsiteid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_fromxsiteid" Size="60,20" Text="fromxsiteid" Align="Right"/>
+<TextBox Name="fromxsiteid" Size="150,20" Text="" Weight="150" ToolTip="ttp_fromxsiteid">
+	<DbDetails fcsm="true">
+<Index>xsiteid</Index>
+<DbTable>tms.xtmsm_xsite</DbTable>
+<Data>XSiteName,Address FromAddress,XSiteID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+<MagicCtrl Name="pickfromxsiteid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.XSitePick.frmwndctrl" expr="FromXSiteID"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox Name="GB_toxsiteid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_toxsiteid" Size="60,20" Text="toxsiteid" Align="Right"/>
+<TextBox Name="toxsiteid" Size="150,20" Text="" Weight="150" ToolTip="ttp_toxsiteid">
+	<DbDetails fcsm="true">
+<Index>xsiteid</Index>
+<DbTable>tms.xtmsm_xsite</DbTable>
+<Data>XSiteName,Address ToAddress,XSiteID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+<MagicCtrl Name="picktoxsiteid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.XSitePick.frmwndctrl" expr="ToXSiteID"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox Name="GB_fromaddress" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_fromaddress" Size="60,20" Text="fromaddress" Align="Right"/>
+<TextBox Name="fromaddress" Size="170,20" Text="" Weight="170" ToolTip="ttp_fromaddress"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_toaddress" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_toaddress" Size="60,20" Text="toaddress" Align="Right"/>
+<TextBox Name="toaddress" Size="170,20" Text="" Weight="170" ToolTip="ttp_toaddress"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_vehicleid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vehicleid" Size="60,20" Text="vehicleid" Align="Right"/>
+<TextBox Name="vehicleid" Size="150,20" Text="" Weight="150" ToolTip="ttp_vehicleid">
+	<DbDetails>
+<Index>vehicleid</Index>
+<DbTable>tms.xtmsm_vehicle</DbTable>
+<Data>Platenumber,CarrierID,Volume,Weight,Driver,LorryDriver,VehicleID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails><OnEnChange><submit next="DriverID"/><submit next="LorryDriver"/><assign name="TotalVolume" expr="%{VehicleID[Volume]}"/><assign name="TotalWeight" expr="%{VehicleID[Weight]}"/></OnEnChange></TextBox>
+<MagicCtrl Name="pickvehicleid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.VehiclePick.frmwndctrl" expr="Vehicleid"/><assign name="$this.VehiclePick.carrierid" expr="%{orgguid}"/><submit next="$this.VehiclePick.xtmsm_vehicle_vLst"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox Name="GB_driverid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_driverid" Size="60,20" Text="driverid" Align="Right"/>
+<TextBox Name="driverid" Size="170,20" Text="" Weight="170" ToolTip="ttp_driverid">
+	<DbDetails>
+<Index>driverid</Index>
+<DbTable>tms.xtmsm_driver</DbTable>
+<Data>DriverName,DriverID</Data>
+<Where>DriverID='%{VehicleID[Driver]}'</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_lorrydriver" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_lorrydriver" Size="60,20" Text="lorrydriver" Align="Right"/>
+<TextBox Name="lorrydriver" Size="170,20" Text="" Weight="170" ToolTip="ttp_lorrydriver">
+	<DbDetails>
+<Index>driverid</Index>
+<DbTable>tms.xtmsm_driver</DbTable>
+<Data>DriverName,DriverID</Data>
+<Where>DriverID='%{VehicleID[LorryDriver]}'</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_totalweight" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_totalweight" Size="60,20" Text="totalweight" Align="Right"/>
+<TextBox Name="totalweight" Size="170,20" Text="" Weight="170" ToolTip="ttp_totalweight"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_totalvolumn" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_totalvolumn" Size="60,20" Text="totalvolumn" Align="Right"/>
+<TextBox Name="totalvolumn" Size="170,20" Text="" Weight="170" ToolTip="ttp_totalvolumn"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_startdatetime" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_startdatetime" Size="60,20" Text="startdatetime" Align="Right"/>
+<DateTime Name="startdatetime" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_startdatetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_startdatetimeactual" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_startdatetimeactual" Size="60,20" Text="startdatetimeactual" Align="Right"/>
+<DateTime Name="startdatetimeactual" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_startdatetimeactual"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_terminatedatetime" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_terminatedatetime" Size="60,20" Text="terminatedatetime" Align="Right"/>
+<DateTime Name="terminatedatetime" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_terminatedatetime"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_terminatedatetimeactual" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_terminatedatetimeactual" Size="60,20" Text="terminatedatetimeactual" Align="Right"/>
+<DateTime Name="terminatedatetimeactual" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_terminatedatetimeactual"></DateTime>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

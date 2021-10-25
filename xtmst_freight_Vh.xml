@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_freight" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_freightLst" ToolTip="ttp_xtmst_freight" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_freight_id</Index>
+<DbTable>tms.xtmst_freight</DbTable>
+<Data>freightcode,pickuporderid,expectbegindatetime,expectenddatetime,status,deliverymode,consignmentmode,deliverymethod,shipper,fromcityid,fromxsiteid,shipperphone,shipperaddress,consignee,tocityid,toxsiteid,consigneephone,consigneeaddress,volumn,weight,amount,datelimite,isbackorder,issealbox,actualvolumn,actualweight,actualamount,checkdate,checkby,ischeck,customordersource,actualbegindatetime,actualenddatetime,appointcode,settlementmethod,totalfreightfee,insurancefee,pickupfee,deliveryfee,otherfee,freightid,createby,createdate,updateby,updatedate,carrierid,xtmst_freight_id</Data>
+<Order>xtmst_freight_id</Order></DbDetails>
+<OnClick><assign name="pickuporderid[pickuporderid]" expr="%{xtmst_freightLst[pickuporderid]}" function="SetSel"/><assign name="status[statuscode]" expr="%{xtmst_freightLst[status]}" function="SetSel"/><assign name="deliverymode[typecode]" expr="%{xtmst_freightLst[deliverymode]}" function="SetSel"/><assign name="consignmentmode[typecode]" expr="%{xtmst_freightLst[consignmentmode]}" function="SetSel"/><assign name="deliverymethod[typecode]" expr="%{xtmst_freightLst[deliverymethod]}" function="SetSel"/><assign name="fromcityid[cityid]" expr="%{xtmst_freightLst[fromcityid]}" function="SetSel"/><assign name="fromxsiteid[xsiteid]" expr="%{xtmst_freightLst[fromxsiteid]}" function="SetSel"/><assign name="tocityid[cityid]" expr="%{xtmst_freightLst[tocityid]}" function="SetSel"/><assign name="toxsiteid[xsiteid]" expr="%{xtmst_freightLst[toxsiteid]}" function="SetSel"/><assign name="settlementmethod[typecode]" expr="%{xtmst_freightLst[settlementmethod]}" function="SetSel"/>
+<if cond="%{xtmst_freight_id}"><SetVisible name="insertxtmst_freight" Visible="0"/><SetVisible name="modifyxtmst_freight" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

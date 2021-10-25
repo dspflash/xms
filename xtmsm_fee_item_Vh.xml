@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmsm_fee_item" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmsm_fee_itemLst" ToolTip="ttp_xtmsm_fee_item" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id</Index>
+<DbTable>tms.xtmsm_fee_item</DbTable>
+<Data>feecode,feename,debit,active,id,create_by,createdate</Data>
+<Order>id</Order></DbDetails>
+<OnClick>
+<if cond="%{id}"><SetVisible name="insertxtmsm_fee_item" Visible="0"/><SetVisible name="modifyxtmsm_fee_item" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

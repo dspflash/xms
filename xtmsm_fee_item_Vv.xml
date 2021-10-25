@@ -1,0 +1,20 @@
+﻿<GroupBox Name="GBDVxtmsm_fee_item" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmsm_fee_item_vLst" ToolTip="ttp_xtmsm_fee_item_v" Size="700,450" OnLoad="init" Heading="feecode,500;feename,250;debit,60;active,60;id,50;create_by,50;createdate,150;" loadedclick="0">
+	<DbDetails >
+<Index>id</Index>
+<DbTable>tms.xtmsm_fee_item x</DbTable>
+<Data>x.feecode,x.feename,x.debit,x.active,x.id,x.create_by,x.createdate</Data>
+<Order>id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>id='%{xtmsm_fee_item_vLst[id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_fee_item.xtmsm_fee_itemLst"/><assign name="$this.xtmsm_fee_item.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_fee_item</DbTable>
+<Where>id='%{xtmsm_fee_item_vLst[id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_xtmsm_fee_item" expr="js(%{xtmsm_fee_item_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xtmsm_fee_item" expr="js(%{xtmsm_fee_item_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

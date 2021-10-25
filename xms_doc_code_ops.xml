@@ -1,0 +1,11 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Data>doctype,docname,code_prefix,dt_mode,seq_len,code_sample,created_by,creation_date,last_update_by,last_update_date,idx,code_sequence</Data>
+<Where>idx='%{xms_doc_code_vLst[idx]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xms_doc_code.xms_doc_codeLst"/></op>
+<op text="copy"><submit next="$this.xms_doc_code.GBDEDITxms_doc_code" function="reset"/><DbDetails><Data>doctype,docname,code_prefix,dt_mode,seq_len,code_sample,created_by,creation_date,last_update_by,last_update_date,code_sequence</Data>
+<Where>idx='%{xms_doc_code[idx]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xms_doc_code.xms_doc_codeLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xms_doc_code</DbTable>
+<Where>idx='%{xms_doc_code_vLst[idx]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmst_customordersetting_v" Text="xtmst_customordersetting">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_customordersetting_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><customerorderid format="x.customerorderid='%{opvalue}'"/><carrycode format="(x.carrycode like '%%{opvalue}%')"/><ordermileage format="(x.ordermileage like '%%{opvalue}%')"/><vehicletypefee format="(x.vehicletypefee like '%%{opvalue}%')"/><backoffline format="(x.backoffline like '%%{opvalue}%')"/><returnline format="(x.returnline like '%%{opvalue}%')"/><expressfee format="(x.expressfee like '%%{opvalue}%')"/><otherfee format="x.otherfee='%{opvalue}'"/><isexpressorder format="x.isexpressorder is %{opvalue}"/><issmallorder format="x.issmallorder is %{opvalue}"/><xtmst_customordersetting_id format="(x.xtmst_customordersetting_id like '%%{opvalue}%')"/><carrierid format="(x.carrierid like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_customordersetting.xml"/>
+<Ctrls><GroupBox  Name="GBxtmst_customordersetting" id="xtmst_customordersetting" Text="xtmst_customordersetting" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_customordersetting_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmst_customordersetting" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmst_customordersetting.GBDEDITxtmst_customordersetting" function="reset"/><assign name="$this.xtmst_customordersetting.frmwndctrl" expr="%{$this.xtmst_customordersetting_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmst_customordersetting" Name="resetxtmst_customordersetting" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmst_customordersetting" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmst_customordersetting" Name="gsearchxtmst_customordersetting" Size="50,20">	<OnClick>	
+<search next="xtmst_customordersetting_vLst" listed="0" prefixwhere="1" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_customordersetting" namelist="search" function="search"/>	
+<search next="records_xtmst_customordersetting" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmst_customordersetting" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_customordersetting_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_customordersetting_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_customordersetting_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

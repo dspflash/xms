@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><XI3uWnd keywords="x+|xPlus;三优物流，3u56,ai56" debug="0" Title="物流仓储系统" logo="http://56.3ucs.com/images/3u56.png" description="人工智能技术打造的新一代物流服务平台，人工智能ai物流">
+	<DbDetails>
+		<SubDriver>MySQL</SubDriver>
+		<Host>localhost</Host>
+		<database>tms</database>
+		
+		<characterset>utf8</characterset>
+		<User>i3u</User>
+		<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/db.xml" xpointer="pass"/>
+		<config>select PASSWORD,layout,org_guid orgguid,xms_user_id user_id,role_id role_id from user_v where username='%{UserName}';</config>'3u56'
+		
+		</DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\general.xml"/>			
+<WndTaps>
+<WndTap Text="三优物流" Name="xms"><Ctrls>
+<GroupBox cols="xs12 sm12 md12 lg12" Multiline="0" Name="GB_txt"><Ctrls>
+<Label Text="三优物流是什么？" line_width="600" Name="lb_code" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="三优物流是以AI人工智能为核心的新一代物流云服务平台。" line_width="600" Name="txt1" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="以“货物”为中心" line_width="600" Name="txt2" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="以“流通”为主线" line_width="600" Name="txt3" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="无缝衔接“货物”的生产、仓储、销售、运输、配送等环节" line_width="600" Name="txt4" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="紧密连接生产者、物流商、用户" line_width="600" Name="txt5" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="让供需更顺畅" line_width="600" Name="txt6" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="让流通更透明" line_width="600" Name="txt7" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="……" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="AI人工智能配载" line_width="600" Name="txt5" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="AI人工智能排线" line_width="600" Name="txt6" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="AI人工智能配送" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="AI人工智能语音交互" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="短驳提货管理、运输订单管理、运输调度管理、运输管理、到站分流管理、理赔管理、客户服务管理、财务结算管理、报表分析统计" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="跟踪零担、整车运输、第三方物流的订单处理、调度配载、运单状态、装车信息、运输状态、回单状态、车辆信息、人员信息、货物信息" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="帮助物流企业通过信息化手段根据资源情况（路线、重量、体积等）进行相应的配载，根据三方物流供应商的报价及优势等对运输订单的执行进行合理计划安排、调度派排车，对在途运输的车辆进行跟踪" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="直接配送，专线配载，三方中转（中转外包）" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="甩挂运输是指汽车列车按预定的计划，在各装卸作业点甩下并挂上指定的挂车，继续运行的一种组织方式。可使载货汽车(或牵引车)的停歇时间缩短到最低限度，从而可最大限度地利用牵引能力，提高运输效能。在同样的条件下，可比定挂运输有较高的运输效率。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="客户的需求呈现多样性、个性化、碎片化，除了对时效有要求之外，货损和逆向运输等问题提出更高要求。所以现在专线企业必须具备第三方物流的服务能力，服务品质要走向定制化，以客户需求为出发点，提供整体物流运作方案。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="近几年，在大数据、云计算、IoT等新兴技术的催促下，传统供应链已无法满足企业发展需求，企业变革、创新升级势在必行。智慧化、数字化、可视化的供应链成为行业发展主赛道！且据MHI和德勤共同发布的报告显示，80%的企业认为，数字化供应链未来5年将占据统治地位，16%的企业认为数字化供应链已经占据统治地位。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="目前专线物流有多种形式：传统物流企业(零担运输企业)的干线运输、快递企业的干线运输、物流园区的干线运输、企业自己的干线运输。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="运价	同样的货物和线路，运价低的肯定是优先选择。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="速度	几乎所有的发货企业，都会在发货时问个问题：这货啥时候能到啊?" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="安全	谁都不愿意收到的货看起来破破烂烂的，更不用提货物损坏，甚至货物“不翼而飞”。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="信息化控制成本，打响价格战》》物流行业“散、乱、差”的特点众人皆知，物流成本畸高是不争的事实，专线物流如何在压缩成本的同时打响价格战，做到客户的优先选择迫在眉睫。
+" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="抓好效率，急客户之所需》》说到速度，不禁让人想起前年某电商巨头的网络广告，一个急需剃须刀的网购者在剃须刀送到时已经变成了野人，同样，专线物流应该急客户之所需，提高专线的运输效率，不然再好的服务，客户也看不到。
+物流信息化的应用已经从单一的信息查询，到物流信息管控与车辆运输状态管控等多方面，专线物流要改变运输效率低下的经营现状，信息化技术的应用是关键，更是必然。
+传统模式下，专线物流运输时效性差的原因在于车辆调配与专线整合，中转、分拨、再中转，这过程中如果能够实现物流信息化平台的整体应用，将更多符合要求的货运车源更好的适配与整合，通过大平台的平滑过渡与事前匹配，提升专线物流车辆的利用率，提升整个专线运输的时效性，是专线物流今后发展的核心方向。
+" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="安全诚信，抚好最后的痛点》》相对于运输价格、运送效率等，货物安全应该是客户相对最后关注的问题、操作流程不规范，货物运输过程中损坏现象时有发生;对货物安全疏于防范，上当受骗事件时有发生;市场监管的不足，最终造成货物安全问题成为最后的痛点，一旦出现问题，解决环节颇为复杂。
+
+当下，专线物流企业应该加强货物抓好货物安全的出发点，在货物装车，中转、卸货过程中最好全程信息监控，给客户放心选择;提供诚信认证，加强客户信任。多数专线物流企业现今都在物流平台上进行了资质验证及诚信认证，对客户进行双重保证。而货物损失保险，丢失保险等的办理，让专线物流企业在售后服务与安全诚信方面提升了总体的核心竞争力。
+
+专线这个市场，对于熟知物流的圈内人来说，都明白其中的酸甜苦辣。不盲目追求扩张，苦练内功，提升专线物流服务能力，做出优质专线，是专线物流企业在变革的大环境中安身立命的根本。 
+" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="专线公司一般走的时间不确定，货满车走，客户的运输成本也会随之降低。专线物流的主要优点是运输成本较低，弊端则是陆运货车班次时间不能确定，通过航空运输或者转包业务以满足较急的货物需求。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="目前无论是区域专线，还是全国性的网络专线，最终运营的线路都是由各个细分的专线性线路组成。其运作模式基本是由终端门店的货源向当地的集散集结，之后去向另一个分拨中心或者集散地。个别线路会由本地集散中心直接发向目的地。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="目前专线物流存在的情形有如下几种：" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其一：夫妻店类式的专线，家人全上阵，七大姑八大姨各负责专线的两边。基本都雇佣装卸工和司机。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其二：个体户类式的专线，规模比夫妻店还要小，基本都是两个人，一方是自己的住所所在地，另一方是商贸城或者批发中心，固定地段停车，装满车就走的类型，机动灵活。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其三：省内专线类型的物流公司，基本上有一条或者几条线路类型的专线物流，覆盖一个小区域，逐步向网络化贴近。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其四：基本上属于省内网络类型的，相对的是线路比较多，路由上设置比较灵活。属于区域专线小霸王，经营稳定，团队健全，这类企业已经有了一定的规模和体量。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其五：省外专线类型的物流公司，此种类型的物流公司基本上是属于一条到两条线路的比较多，部分比较成熟的专线，已经做起了规模，同时拥有几条省外专线。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其六：网络型公司的优势是比较齐全和便捷的网络，非常适合零担物流收发货物。但是在具体运营上，我还是比较认可归集为专线物流的联合体，因为其门店到分拨、集散都是由不同的点到点线路组成，而不同的分拨都是由不同的干线运输组成。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="专线生存状况应该归属于以下几个类型：" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其一：专线为专线服务类型的。比如省内专线服务于省外专线，做省外到货的分拨。这样的专线基本都是同时服务与多条省外专线，相互合作形成临时性的专线对接，货物互倒，这种类型的专线收货范围比较大，全国各地的货源都在转运运输，和其他省外专线合作性比较强。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其二：服务于特殊产业的专线；比如服务于建材、服务于电子商贸类型的。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其三：依托于厂家客户或者大三方客户生存的专线，比如：服务于药厂、或者快消品、服装鞋帽生产批发企业等等。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其四：省内专线物流基本是往返运输，而省外专线基本是单边运输占比较大。无论单边运输还是往返运输，其集货能力基本都是不均衡的，双方强弱明显。造成这样的基本是属于物流公司的创立人的本地属性及本地经营时间较长，人脉累计形成，这种专线货源比较广泛，零担类型的以及大吨位业务和整车业务都有涉及。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其五：网络型公司运作模式基本都是终端门店集货后归集与上一级集散或者分拨中心，而这种运作模式也类式与专线运作。门店和分拨运输线路是固定不变的。而分拨或者集散会把上游分拨或者集散货源定向发运到门店所在地。故而也是专线运作模式（个人观点误拍砖---疼啊），由于网络优势，其主要是零担类型为主，整车业务为辅模式操作。 " line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="专线目前纠结的现状和困惑：" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其一：物流专线同线路运营公司数目众多，同质化竞争激烈，托运价格已经达到成本线，但同线价格战争还没有结束，在服务水平要求越来越高的情形下，价格是走向另一端----越来越低！！！！ " line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其二：物流行业发展之初，处于野蛮生存状态，其经营地址和所谓园区随意性比较大，其专线所处门店或者集散经营地址变动非常大，落后与政府发展规划，一直被动与随着当地的发展而搬迁经营地址。搬迁造成的后果是客户的丢失以及客户的重新开发或者二次开发。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其三：物流平台的参与或者搅局。随着国家层面对物流的重视以及风投资金的关注，物流平台初具规模，而平台存在的基础就是依靠众多的物流专线公司。二者的关系目前也是各种形态俱在，比如：二者联合发展或相互依托或整合被整合以及相互观望、补贴等各形态关系。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其四：专线物流公司面对的困难应主要集中在运费垫资和运营费用的压力，物流依单边为发运为主，即使是做往返，也是货量非常不均衡。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其五：快递快运和专线物流整合加速，本是单独的运作网络已经出现相互融合的趋势。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其六：专线物流公司两级分化，强者愈强，弱者愈弱的趋势明显。总体上专线物流公司信息化技术落后，使用运输管理(TMS)系统类别五花八门，相互之间都是封闭运作，操作模式上还是传统操作模式。 " line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其七：专线物流公司在管理和运营上，人才缺口非常大，急需补强管理和运营及销售短板。在发展方向和未来竞争上比较迷茫。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="在国家层面一直提倡的互联网+物流等新的平台型企业或者智慧型物流平台企业肯定是异军突起。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="助力3PL“管好钱、管住钱”——应收应付、成本与利润，赔付款、异常费一目了然，堵住结算财务漏洞，杜绝“少收多付、多付少收”" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="助力3PL获得更多生意————满足甲方招标需求，越来越多的甲方物流招标，要求3PL具备TMS，否则不能参加投标或减分" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="首先是安全机器人。众所周知，在整个物流生态中“人”是最具不确定性的一环，司机也就成为最关键的风控对象（行驶在高速路的货车司机，一天中闭眼超过3秒的时间超过26944次）。而G7安全机器人可以实时监控每一辆车，通过AI算法不断检测判断路况是否异常，车辆是否超速，司机是否打瞌睡和玩手机，一旦发现异常，司机端就会给司机报警，后台管理员也可通过语音指令提醒司机，根据G7后台统计，机器人上岗后相关事故发生率下降了75%以上。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="其次是调度机器人。物流业千古不破的底层逻辑就两个：效率最大化，成本最小化。这意味着他们无比强调精准，尤其在运输生鲜和医药等过程中，调度至关重要。相比于人类个体在调度规模上的瓶颈，机器人能从某种“上帝视角”，通过AI算法调度运力，高效匹配供需两端。
+" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="然后是财务机器人。物流属于重资产运营，成本结构复杂，人工，油耗，高速费……某个微观上的细微偏差，就可能造成宏观上的入不敷出。财务机器人能自动统计所有成本支出，每台车的每次点火，熄火，过路，加油……全部数据化，每一单任务从起点到终点，盈利亏本一键得知。
+" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="人工手写汉字的图像识别。而在这之前，顺丰雇用了8000名输单员来输入手写运单信息。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="通过大数据分析和机器学习，可实现依据历史数据对现有作业流程和库内规划的不断优化提升" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="人工智能技术能带来运输路径的优化，提高配送效率" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="人工智能还将带来服务质量的提升。”信息化手段的使用可做到作业全程可追踪、过程可控和结果可预测，将运作中许多不可控因素排除在外，确保物流运营的质量。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="——智能设备重组物流生产要素。智能硬件设备研发将使物流行业从人工分拣向自动化、智能化方向快速发展，智能感知技术、信息传输技术，机械臂、机器人、自动化分拣带、无人机等智能硬件设备将在物流运作各个环节广泛应用。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="——智能计算重构物流运作流程。尤其是智能物流云平台的建设，其将实现对供应链、实体物流的数字化、智能化、标准化和一体化综合管理。以综合物流为出发点， 应用现代人工智能技术及物流技术， 使得供应链整体各环节的信息流与实体物流同步， 产生优化的流程及协同作业，实现货物就近入仓、就近配送， 提升产业链效能。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="——形成全新的物流生态系统。在人工智能的协助下，多式联运高效运输将得到实现。通过人工智能、云计算、大数据、物联网等技术，可实现集铁路、公路、航空“三位一体”的智慧多式联运。依托铁路网络、公路网络、航空网络、水运网络及实体物流园区， 充分利用云计算、大数据、物联网、人工智能等技术，为线上线下物流运输、仓储配送、商品交易、金融服务、物流诚信等业务提供一站式、全方位服务， 形成覆盖线上线下的物流生态系统， 积极服务经济社会发展。" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+<MagicCtrl Text="" line_width="600" Name="txt8" Size="600,160" line_space="10" line_align="40"/>
+</Ctrls></GroupBox></Ctrls></WndTap>
+<WndTap Name="xbs_qa" Text="运输管理"><Ctrls>
+<GroupBox Name="GB_txt" Multiline="0" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Label Name="lb_code" Text="短驳提货管理、运输订单管理、运输调度管理、运输管理、到站分流管理、理赔管理、客户服务管理、财务结算管理、报表分析统计
+跟踪零担、整车运输、第三方物流的订单处理、调度配载、运单状态、装车信息、运输状态、回单状态、车辆信息、人员信息、货物信息
+帮助物流企业通过信息化手段根据资源情况（路线、重量、体积等）进行相应的配载，根据三方物流供应商的报价及优势等对运输订单的执行进行合理计划安排、调度派排车，对在途运输的车辆进行跟踪!" Size="500,120"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_album" Multiline="0" cols="xs12 sm12 md12 lg12"><Ctrls>
+	<MagicCtrl feature="carousel" onload="init" ToolTip="ttp_picview" Name="albumview" Size="230,20"><dfmap><map name="images" value="filename"/></dfmap>
+		<DbDetails>
+		<DbDatabase>D:\AppServ\www\i3u\files\images\xms\tms</DbDatabase> 
+		<datatype>dir</datatype> 
+		<queryFormat>select * from .</queryFormat> 
+		</DbDetails>
+	</MagicCtrl>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xms_user_register.xml"/>
+	</WndTaps>
+	</XI3uWnd>
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_fineorder" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_fineorderLst" ToolTip="ttp_xtmst_fineorder" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id</Index>
+<DbTable>tms.xtmst_fineorder</DbTable>
+<Data>freightid,finenumber,driverid,finedate,finesordinanceid,finemoney,address,memo,dealwithed,finestatus,createby,createdate,id,carrierid</Data>
+<Order>id</Order></DbDetails>
+<OnClick><assign name="freightid[freightid]" expr="%{xtmst_fineorderLst[freightid]}" function="SetSel"/><assign name="driverid[driverid]" expr="%{xtmst_fineorderLst[driverid]}" function="SetSel"/><assign name="finesordinanceid[finesordinanceid]" expr="%{xtmst_fineorderLst[finesordinanceid]}" function="SetSel"/><assign name="finestatus[statuscode]" expr="%{xtmst_fineorderLst[finestatus]}" function="SetSel"/><assign name="carrierid[carrierid]" expr="%{xtmst_fineorderLst[carrierid]}" function="SetSel"/>
+<if cond="%{id}"><SetVisible name="insertxtmst_fineorder" Visible="0"/><SetVisible name="modifyxtmst_fineorder" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

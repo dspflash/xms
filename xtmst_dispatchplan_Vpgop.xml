@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_dispatchplan" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialxtmst_dispatchplan" Size="50,20">
+<OnClick><submit next="xtmst_dispatchplan_vLst" function="initial"/><submit next="records_xtmst_dispatchplan" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPxtmst_dispatchplan_vLst" Size="50,20">
+<OnClick><submit next="xtmst_dispatchplan_vLst" function="GetPage(first)"/><submit next="records_xtmst_dispatchplan"/></OnClick></Button>
+<Button Text="prepage" Name="PRExtmst_dispatchplan_vLst" Size="50,20">
+<OnClick><submit next="xtmst_dispatchplan_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPxtmst_dispatchplan_vLst" Size="50,20">
+<OnClick><submit next="xtmst_dispatchplan_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

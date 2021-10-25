@@ -1,0 +1,32 @@
+<WndTap Text="CityPick" Name="CityPick" Ver="2" popup="1">
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_master_city.xml"/>
+	<Ctrls>
+	<GroupBox Text="xtmsm_master_city" Name="GBxtmsm_city" id="xtmsm_city" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="CityPick_vs.xml"/>
+<BR autoHeight="1"/>
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPDVitem"><Ctrls>
+<Button Text="gsearch" ToolTip="ttp_gsearchitem" Name="gsearchitem" Size="50,20" visible="true">
+	<OnClick>
+	<search next="xtmsm_master_city_vLst" listed="0" prefixand="1" inputed="1"><city format="(x.city like '%%{opvalue}%' or x.chinaspell like '%%{opvalue}%' or x.chinaspellall like '%%{opvalue}%' or x.pinyin like '%%{opvalue}%')"/><parentcityid format="!ROUND(x0.LeverCode/100000) and (x0.city like '%{opvalue}%' or x0.chinaspell like '%{opvalue}%' or x0.pinyin like '%{opvalue}%')"/></search><submit next="GBDEDITxtmsm_master_city" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetitem" Name="resetitem" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITxtmsm_master_city" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>
+<BR autoHeight="1"/>
+<ListCtrl Name="xtmsm_master_city_vLst" ToolTip="ttp_xtmsm_master_city" Size="700,420" OnLoad="init" Heading="levercode,100;city,100;parentcityid,50;cityallname,250;phone,50;postno,50;chinaspell,25;chinaspellall,200;pinyin,640;citycode,20;cityid,50;" loadedclick="0">
+	<DbDetails >
+<DbTable>tms.xtmsm_master_city x left join tms.xtmsm_master_city x0 on x.parentcityid=x0.cityid</DbTable>
+<Index>cityid</Index>
+<Data>x.levercode,x.city,x0.City parentcityid,x.cityallname,x.phone,x.postno,x.chinaspell,x.chinaspellall,x.pinyin,x.citycode,x.cityid</Data>
+<queryFormat >select %{data} from %{dbtable} where ROUND(x.LeverCode/100000) %{where} limit %{StartRow},35</queryFormat><Order>cityid</Order></DbDetails>
+	<OnClick><if cond="%{xtmsm_master_city_vLst[cityid]}"><DbDetails><Where>cityid='%{xtmsm_master_city_vLst[cityid]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.%{frmwndctrl}"/><assign name="$parent.%{frmwndctrl}[selectedindex]" function="SetSel" expr="0"/><submit function="onok"/></if></OnClick>
+	</ListCtrl>
+	</Ctrls></GroupBox>
+	</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

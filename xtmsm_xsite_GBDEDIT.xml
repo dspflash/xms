@@ -1,0 +1,68 @@
+﻿<GroupBox Name="GBDEDITxtmsm_xsite"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_xsitename"><Ctrls>
+<Label Align="Right" Text="xsitename" Name="lb_xsitename" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xsitename" Name="xsitename" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_cityid"><Ctrls>
+<Label Align="Right" Text="cityid" Name="lb_cityid" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_cityid" Name="cityid" Size="150,20">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+<MagicCtrl Name="pickcityid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$parent.citypick.frmwndctrl" expr="xtmsm_xsite.CityId"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_address"><Ctrls>
+<Label Align="Right" Text="address" Name="lb_address" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_address" Name="address" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_delivery_range"><Ctrls>
+<Label Align="Right" Text="delivery_range" onload="init" Name="lb_delivery_range" Size="60,20" selectedIndex="2"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_delivery_range" onload="init" Name="delivery_range" Size="170,100" selectedIndex="2">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>typeclass=150</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_isenable"><Ctrls>
+<CheckBox Text="isenable" ToolTip="ttp_isenable" Name="isenable" Size="230,20" checked="true"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_isneedpreorder"><Ctrls>
+<CheckBox Text="isneedpreorder" ToolTip="ttp_isneedpreorder" Name="isneedpreorder" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updateby" Visible="false"><Ctrls>
+<Label Align="Right" Text="updateby" overlap="pre" Name="lb_updateby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_updateby" overlap="pre" Name="updateby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updatedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="updatedate" overlap="pre" Name="lb_updatedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_updatedate" overlap="pre" Name="updatedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xsiteid" Visible="false"><Ctrls>
+<Label Align="Right" Text="xsiteid" overlap="pre" Name="lb_xsiteid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xsiteid" overlap="pre" Name="xsiteid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmsm_xsite_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmsm_xsite_id" overlap="pre" Name="lb_xtmsm_xsite_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmsm_xsite_id" overlap="pre" Name="xtmsm_xsite_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{xtmsm_xsite_id}'"><SetVisible name="insertxtmsm_xsite" Visible="0"/><SetVisible name="modifyxtmsm_xsite" Visible="1"/><else/><SetVisible name="insertxtmsm_xsite" Visible="1"/><SetVisible name="modifyxtmsm_xsite" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_org_guid" Visible="false"><Ctrls>
+<Label Align="Right" Text="org_guid" overlap="pre" Name="lb_org_guid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_org_guid" overlap="pre" Name="org_guid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_location"><Ctrls>
+<Label Align="Right" Text="location" Name="lb_location" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_location" Name="location" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

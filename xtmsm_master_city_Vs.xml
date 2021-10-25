@@ -1,0 +1,49 @@
+﻿<GroupBox Name="GBDEDITxtmsm_master_city" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_levercode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_levercode" Size="60,20" Text="levercode" Align="Right"/>
+<TextBox Name="levercode" Size="170,20" Text="" Weight="170" ToolTip="ttp_levercode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_city" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_city" Size="60,20" Text="city" Align="Right"/>
+<TextBox Name="city" Size="170,20" Text="" Weight="170" ToolTip="ttp_city"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_parentcityid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_parentcityid" Size="60,20" Text="parentcityid" Align="Right"/>
+<TextBox Name="parentcityid" Size="150,20" Text="" Weight="150" ToolTip="ttp_parentcityid">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>City,LeverCode,CityAllName,CityID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails><OnEnChange><if cond="%{ParentCityID[CityID]}"><assign name="LeverCode" expr="%{ParentCityId[LeverCode]}"/><assign name="CityAllName" expr="%{ParentCityId[CityAllName]}"/><else/><assign name="LeverCode" expr=""/><assign name="CityAllName" expr=""/></if></OnEnChange></TextBox>
+<MagicCtrl Name="pickparentcityid" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.cityPick.frmwndctrl" expr="ParentCityID"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_cityallname" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_cityallname" Size="60,20" Text="cityallname" Align="Right"/>
+<TextBox Name="cityallname" Size="170,20" Text="" Weight="170" ToolTip="ttp_cityallname"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_phone" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_phone" Size="60,20" Text="phone" Align="Right"/>
+<TextBox Name="phone" Size="150,20" Text="" Weight="150" ToolTip="ttp_phone"></TextBox>
+<MagicCtrl Name="dialphone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{phone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_postno" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_postno" Size="60,20" Text="postno" Align="Right"/>
+<TextBox Name="postno" Size="170,20" Text="" Weight="170" ToolTip="ttp_postno"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_chinaspell" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_chinaspell" Size="60,20" Text="chinaspell" Align="Right"/>
+<TextBox Name="chinaspell" Size="170,20" Text="" Weight="170" ToolTip="ttp_chinaspell"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_chinaspellall" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_chinaspellall" Size="60,20" Text="chinaspellall" Align="Right"/>
+<TextBox Name="chinaspellall" Size="170,20" Text="" Weight="170" ToolTip="ttp_chinaspellall"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_pinyin" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_pinyin" Size="60,20" Text="pinyin" Align="Right"/>
+<TextBox Name="pinyin" Size="170,20" Text="" Weight="170" ToolTip="ttp_pinyin"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_citycode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_citycode" Size="60,20" Text="citycode" Align="Right"/>
+<TextBox Name="citycode" Size="170,20" Text="" Weight="170" ToolTip="ttp_citycode"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

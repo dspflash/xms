@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVuv_freightloadunloadop" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="uv_freightloadunloadopLst" ToolTip="ttp_uv_freightloadunloadop" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+
+<DbTable>tms.uv_freightloadunloadop</DbTable>
+<Data>freightcode,platenumber,drivername,fromcity,fromaddress,fromxsite,tocity,toaddress,toxsite,operatetype,vehiclerealtimecode,plancode,fromcityid,fromxsiteid,tocityid,toxsiteid,freightid,vehiclerealtimeid,planid,freightstatus,opordercode,opstatus,opdate,memo,operatetypecode,pickupordercode,opstatuscode,oporderid,freightstatuscode,pickuporderid,carrierid</Data>
+</DbDetails>
+<OnClick>
+<if cond="%{}"><SetVisible name="insertuv_freightloadunloadop" Visible="0"/><SetVisible name="modifyuv_freightloadunloadop" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

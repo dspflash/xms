@@ -1,0 +1,17 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<!--op text="View"><DbDetails><Where>pickuporderid='%{xtmst_pickuporder_vLst[pickuporderid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_customorder_print.xtmst_customorderLst"/></op>
+<op text="carrier"><DbDetails><Where>pickuporderid='%{xtmst_pickuporder_vLst[pickuporderid]}' and (status=101 or (carrierid is null or carrierid=''))</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_customorder_carrier.pickuporderid"/></op-->
+<op text="OrderMine" needconfirm="1"><DbDetails><DbTable>tms.xtmst_pickuporder</DbTable>
+<Where>pickuporderid='%{xtmst_pickuporder_vLst[pickuporderid]}' and (status=101 or (carrierid is null or carrierid=''))</Where>
+<Data>carrierid='%{orgguid}',STATUS=101,OrderStatus=901,updateby='%{user_id}',updatedate=now()</Data>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+<op text="customordersetting"><submit next="$this.xtmst_customordersetting.GBDEDITxtmst_customordersetting" function="reset"/><DbDetails><Where>pickuporderid='%{xtmst_pickuporder_vLst[pickuporderid]}' and carrierid='%{orgguid}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_customordersetting.xtmst_customordersettingLst"/><submit namelist="DbDetails" next="$this.xtmst_customordersetting.pickuporderid"/><assign name="$this.xtmst_customordersetting.frmwndctrl" expr="%{this}"/></op>
+<op text="freight"><submit next="xtmst_freight_v.xtmst_freight.GBDEDITxtmst_freight" function="reset"/><DbDetails><Where>pickuporderid='%{xtmst_pickuporder_vLst[pickuporderid]}' and carrierid='%{orgguid}' and pickuporderid not in (select pickuporderid from tms.xtmst_freight where pickuporderid='%{xtmst_pickuporder_vLst[pickuporderid]}' and status!=220)</Where></DbDetails><submit namelist="DbDetails" next="xtmst_freight_v.xtmst_freight.pickuporderid"/><assign name="xtmst_freight_v.xtmst_freight.frmwndctrl" expr="%{this}"/></op>
+<op text="modify"><DbDetails><Where>xtmst_pickuporder_id='%{xtmst_pickuporder_vLst[xtmst_pickuporder_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_pickuporder.xtmst_pickuporderLst"/><DbDetails><Where>CityID=(select FromCityID from tms.xtmst_pickuporder where xtmst_pickuporder_id='%{xtmst_pickuporder_vLst[xtmst_pickuporder_id]}')</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_pickuporder.FromCityID"/><DbDetails><Where>CityID=(select ToCityID from tms.xtmst_pickuporder where xtmst_pickuporder_id='%{xtmst_pickuporder_vLst[xtmst_pickuporder_id]}')</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmst_pickuporder.ToCityID"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_pickuporder</DbTable>
+<Where>xtmst_pickuporder_id='%{xtmst_pickuporder_vLst[xtmst_pickuporder_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

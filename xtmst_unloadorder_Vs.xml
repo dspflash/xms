@@ -1,0 +1,44 @@
+﻿<GroupBox Name="GBDEDITxtmst_unloadorder" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_unloadcode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_unloadcode" Size="60,20" Text="unloadcode" Align="Right"/>
+<TextBox Name="unloadcode" Size="170,20" Text="" Weight="170" ToolTip="ttp_unloadcode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_vehiclerealtimeid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_vehiclerealtimeid" Size="60,20" Text="vehiclerealtimeid" Align="Right"/>
+<TextBox Name="vehiclerealtimeid" Size="170,20" Text="" Weight="170" ToolTip="ttp_vehiclerealtimeid">
+	<DbDetails>
+<Index>vehiclerealtimeid</Index>
+<DbTable>tms.xtmst_vehiclerealtime</DbTable>
+<Data>VehicleRealTimeCode,VehicleRealTimeID</Data>
+<Where></Where>
+<queryFormat>SELECT Platenumber,dp.ToCityID,dp.ToAddress,dp.ToXSiteID,VehicleRealTimeCode,v.CarrierID,dp.VehicleRealTimeID FROM tms.xtmst_dispatchplan dp  JOIN  tms.xtmst_vehiclerealtime vrt ON dp.VehicleRealTimeID=vrt.VehicleRealTimeID JOIN tms.xtmsm_vehicle v ON v.VehicleID=vrt.VehicleID WHERE %{where}</queryFormat></DbDetails><OnEnChange><submit next="CarrierID"/><submit next="XSiteID"/><submit next="UnLoadCityID"/><assign name="UnLoadAddress" expr="%{VehicleRealTimeID[ToAddress]}"/></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_xsiteid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_xsiteid" Size="60,20" Text="xsiteid" Align="Right"/>
+<TextBox Name="xsiteid" Size="170,20" Text="" Weight="170" ToolTip="ttp_xsiteid">
+	<DbDetails>
+<Index>xsiteid</Index>
+<DbTable>tms.xtmsm_xsite</DbTable>
+<Data>XSiteName,Address,XSiteID</Data>
+<Where>XSiteID='%{VehicleRealTimeID[ToXSiteID]}'</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_unloadcityid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_unloadcityid" Size="60,20" Text="unloadcityid" Align="Right"/>
+<TextBox Name="unloadcityid" Size="170,20" Text="" Weight="170" ToolTip="ttp_unloadcityid">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where>CityID='%{VehicleRealTimeID[ToCityID]}'</Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_unloadaddress" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_unloadaddress" Size="60,20" Text="unloadaddress" Align="Right"/>
+<TextBox Name="unloadaddress" Size="170,20" Text="" Weight="170" ToolTip="ttp_unloadaddress"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_memo" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_memo" Size="60,20" Text="memo" Align="Right"/>
+<TextBox Name="memo" Size="170,20" Text="" Weight="170" ToolTip="ttp_memo"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

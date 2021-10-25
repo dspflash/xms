@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmsm_driver_v" Text="xtmsm_driver">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_driver_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><drivername format="(x.drivername like '%%{opvalue}%')"/><nature format="x.nature='%{opvalue}'"/><phone1 format="(x.phone1 like '%%{opvalue}%')"/><phone2 format="(x.phone2 like '%%{opvalue}%')"/><idnumber format="(x.idnumber like '%%{opvalue}%')"/><emergencycontactor format="(x.emergencycontactor like '%%{opvalue}%')"/><emergencyphone format="(x.emergencyphone like '%%{opvalue}%')"/><drivercode format="(x.drivercode like '%%{opvalue}%')"/><sex format="x.sex='%{opvalue}'"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><updateby format="(x.updateby like '%%{opvalue}%')"/><updatedate format="(x.updatedate between '%{updatedate[datetime]}' and '%{updatedate[datetime2]}')"/><driverid format="(x.driverid like '%%{opvalue}%')"/><xtmsm_driver_id format="(x.xtmsm_driver_id like '%%{opvalue}%')"/><carrierid format="(x.carrierid like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_driver.xml"/>
+<Ctrls><GroupBox  Name="GBxtmsm_driver" id="xtmsm_driver" Text="xtmsm_driver" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_driver_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmsm_driver" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmsm_driver.GBDEDITxtmsm_driver" function="reset"/><assign name="$this.xtmsm_driver.frmwndctrl" expr="%{$this.xtmsm_driver_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmsm_driver" Name="resetxtmsm_driver" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmsm_driver" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_driver" Name="gsearchxtmsm_driver" Size="50,20">	<OnClick>	
+<search next="xtmsm_driver_vLst" listed="0" prefixwhere="0" prefixand="1" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_driver" namelist="search" function="search"/>	
+<search next="records_xtmsm_driver" listed="0" prefixwhere="0" prefixand="1"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_driver" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_driver_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_driver_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_driver_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

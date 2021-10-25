@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_loadorder" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_loadorderLst" ToolTip="ttp_xtmst_loadorder" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_loadorder_id</Index>
+<DbTable>tms.xtmst_loadorder</DbTable>
+<Data>loadcode,vehiclerealtimeid,status,xsiteid,loadcityid,loadaddress,memo,checkby,checkdate,createby,createdate,updateby,updatedate,loadorderid,xtmst_loadorder_id,carrierid</Data>
+<Order>xtmst_loadorder_id</Order></DbDetails>
+<OnClick><assign name="vehiclerealtimeid[vehiclerealtimeid]" expr="%{xtmst_loadorderLst[vehiclerealtimeid]}" function="SetSel"/><assign name="status[statuscode]" expr="%{xtmst_loadorderLst[status]}" function="SetSel"/><assign name="xsiteid[xsiteid]" expr="%{xtmst_loadorderLst[xsiteid]}" function="SetSel"/><assign name="loadcityid[cityid]" expr="%{xtmst_loadorderLst[loadcityid]}" function="SetSel"/><assign name="carrierid[carrierid]" expr="%{xtmst_loadorderLst[carrierid]}" function="SetSel"/>
+<if cond="%{xtmst_loadorder_id}"><SetVisible name="insertxtmst_loadorder" Visible="0"/><SetVisible name="modifyxtmst_loadorder" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

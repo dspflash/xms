@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmst_loadorderdetail"><Ctrls>
+<ListCtrl Heading="freightid,250;planid,250;memo,640;createby,50;createdate,150;updateby,50;updatedate,150;loadorderid,250;loaddetailid,250;xtmst_loadorderdetail_id,100;xtmst_loadorder_id,100;" loadedclick="0" ToolTip="ttp_xtmst_loadorderdetail" Name="xtmst_loadorderdetailLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>xtmst_loadorderdetail_id</Index>
+<DbTable>tms.xtmst_loadorderdetail x left join tms.xtmst_freight x0 on x.freightid=x0.freightid left join tms.xtmst_dispatchplan x1 on x.planid=x1.planid</DbTable>
+<Data>x0.FreightCode freightid,x1.PlanCode planid,x.memo,x.createby,x.createdate,x.updateby,x.updatedate,x.loadorderid,x.loaddetailid,x.xtmst_loadorderdetail_id,x.xtmst_loadorder_id</Data>
+<Order>xtmst_loadorderdetail_id</Order></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorderdetail_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

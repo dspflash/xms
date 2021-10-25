@@ -1,0 +1,33 @@
+<WndTap Text="VehiclePick" Name="VehiclePick" Ver="2" popup="1">
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_Vehicle.xml"/>
+	<Ctrls>
+	<GroupBox Text="xtmsm_Vehicle" Name="GBxtmsm_Vehicle" id="xtmsm_Vehicle" Size="100,100"><Ctrls>
+<!--xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_Vehicle_vs.xml"/>
+<BR autoHeight="1"/>
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPDVitem"><Ctrls>
+<Button Text="gsearch" ToolTip="ttp_gsearchitem" Name="gsearchitem" Size="50,20" visible="true">
+	<OnClick>
+	<search next="xtmsm_Vehicle_vLst" listed="0" prefixand="1" inputed="1"><shortname format="shortname like '%%{opvalue}%'"/><Vehiclename format="Vehiclename like '%%{opvalue}%'"/></search><submit next="GBDEDITxtmsm_Vehicle" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetitem" Name="resetitem" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITxtmsm_Vehicle" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>
+<BR autoHeight="1"/-->
+<ListCtrl Name="xtmsm_vehicle_vLst" ToolTip="ttp_xtmsm_vehicle" Size="700,420" loadedclick="0">
+	<DbDetails >
+<DbTable>uv_Vehicle x</DbTable>
+<Index>vehicleid</Index>
+<Data>*</Data>
+<Order>vehicleid</Order>
+<Where>carrierid='%{carrierid}'</Where></DbDetails>
+	<OnClick><if cond="%{xtmsm_Vehicle_vLst[Vehicleid]}"><DbDetails><Where>Vehicleid='%{xtmsm_Vehicle_vLst[Vehicleid]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.%{frmwndctrl}"/><assign name="$parent.%{frmwndctrl}[selectedindex]" function="SetSel" expr="0"/><submit function="onok"/></if></OnClick>
+	</ListCtrl>
+	</Ctrls></GroupBox>
+	</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

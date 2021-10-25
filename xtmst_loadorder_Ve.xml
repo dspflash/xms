@@ -1,0 +1,16 @@
+﻿<WndTap Name="xtmst_loadorder" Text="xtmst_loadorder" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr="vehiclerealtimeid[vehiclerealtimeid],loadcityid[cityid],carrierid[carrierid]"/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xtmst_loadorder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmst_loadorderdetail.xml"/>
+<Ctrls>
+<GroupBox  Name="GBxtmst_loadorder" id="xtmst_loadorder" Text="xtmst_loadorder" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorder_Vh.xml"/>
+<BR/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmst_loadorderdetail_Vv.xml"/>
+</Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertxtmst_loadorder" Visible="1"/><SetVisible name="modifyxtmst_loadorder" Visible="0"/></OnActivate>
+</WndTap>

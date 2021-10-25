@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVxtmsm_billingconfiguration" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xtmsm_billingconfiguration_vLst" ToolTip="ttp_xtmsm_billingconfiguration_v" Size="700,450" OnLoad="init" Heading="weightunitprice,90;volumeunitprice,90;startmileage,90;overunitprice,90;backofffee,90;returnfee,90;smallorderfee,90;status,60;createby,50;creratedate,150;updateby,50;updatedate,150;configurationid,250;xtmsm_billingconfiguration_id,55;carrierid,250;" loadedclick="0">
+	<DbDetails >
+<Index>xtmsm_billingconfiguration_id</Index>
+<DbTable>tms.xtmsm_billingconfiguration x</DbTable>
+<Data>x.weightunitprice,x.volumeunitprice,x.startmileage,x.overunitprice,x.backofffee,x.returnfee,x.smallorderfee,x.status,x.createby,x.creratedate,x.updateby,x.updatedate,x.configurationid,x.xtmsm_billingconfiguration_id,x.carrierid</Data>
+<Order>xtmsm_billingconfiguration_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where x.carrierid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>xtmsm_billingconfiguration_id='%{xtmsm_billingconfiguration_vLst[xtmsm_billingconfiguration_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xtmsm_billingconfiguration.xtmsm_billingconfigurationLst"/><assign name="$this.xtmsm_billingconfiguration.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmsm_billingconfiguration</DbTable>
+<Where>xtmsm_billingconfiguration_id='%{xtmsm_billingconfiguration_vLst[xtmsm_billingconfiguration_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_xtmsm_billingconfiguration" expr="js(%{xtmsm_billingconfiguration_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xtmsm_billingconfiguration" expr="js(%{xtmsm_billingconfiguration_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

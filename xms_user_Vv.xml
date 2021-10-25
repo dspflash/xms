@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVxms_user" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="xms_user_vLst" ToolTip="ttp_xms_user_v" Size="700,450" OnLoad="init" Heading="username,100;email,250;invitation_code,250;active,60;created_by,60;creation_date,150;last_update_by,60;last_update_date,150;last_visit_date,150;xms_user_id,60;userguid,250;org_guid,250;" loadedclick="0">
+	<DbDetails >
+<Index>xms_user_id</Index>
+<DbTable>tms.xms_user x</DbTable>
+<Data>x.username,x.email,x.invitation_code,x.active,x.created_by,x.creation_date,x.last_update_by,x.last_update_date,x.last_visit_date,x.xms_user_id,x.userguid,x.org_guid</Data>
+<Order>xms_user_id</Order></DbDetails>
+<DbDetails><queryFormat>select %{data} from %{dbtable} where org_guid='%{orgguid}' %{WHERE} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>xms_user_id='%{xms_user_vLst[xms_user_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.xms_user.xms_userLst"/><assign name="$this.xms_user.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xms_user</DbTable>
+<Where>xms_user_id='%{xms_user_vLst[xms_user_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_xms_user" expr="js(%{xms_user_vLst[currentpage]}+1)"/>
+<assign name="pgscb_xms_user" expr="js(%{xms_user_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

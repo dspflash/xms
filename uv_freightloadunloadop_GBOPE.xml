@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPEuv_freightloadunloadop" Size="100,100"><Ctrls>
+<Button sqlpkinsert="" Text="create" ToolTip="ttp_createuv_freightloadunloadop" Name="insertuv_freightloadunloadop" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.uv_freightloadunloadop</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>freightcode,platenumber,drivername,fromcity,fromaddress,fromxsite,tocity,toaddress,toxsite,operatetype,vehiclerealtimecode,plancode,fromcityid,fromxsiteid,tocityid,toxsiteid,freightid,vehiclerealtimeid,planid,freightstatus,opordercode,opstatus,opdate,memo,operatetypecode,pickupordercode,opstatuscode,oporderid,freightstatuscode,pickuporderid,carrierid</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertuv_freightloadunloadop[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="uv_freightloadunloadopLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.uv_freightloadunloadop_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyuv_freightloadunloadop" Name="modifyuv_freightloadunloadop" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.uv_freightloadunloadop</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>freightcode,platenumber,drivername,fromcity,fromaddress,fromxsite,tocity,toaddress,toxsite,operatetype,vehiclerealtimecode,plancode,fromcityid,fromxsiteid,tocityid,toxsiteid,freightid,vehiclerealtimeid,planid,freightstatus,opordercode,opstatus,opdate,memo,operatetypecode,pickupordercode,opstatuscode,oporderid,freightstatuscode,pickuporderid,carrierid</Data>
+<DataEx/>
+<Where>freightcode='%{uv_freightloadunloadopLst[freightcode]}' and platenumber='%{uv_freightloadunloadopLst[platenumber]}' and drivername='%{uv_freightloadunloadopLst[drivername]}' and fromcity='%{uv_freightloadunloadopLst[fromcity]}' and fromaddress='%{uv_freightloadunloadopLst[fromaddress]}' and fromxsite='%{uv_freightloadunloadopLst[fromxsite]}' and tocity='%{uv_freightloadunloadopLst[tocity]}' and toaddress='%{uv_freightloadunloadopLst[toaddress]}' and toxsite='%{uv_freightloadunloadopLst[toxsite]}' and operatetype='%{uv_freightloadunloadopLst[operatetype]}' and vehiclerealtimecode='%{uv_freightloadunloadopLst[vehiclerealtimecode]}' and plancode='%{uv_freightloadunloadopLst[plancode]}' and fromcityid='%{uv_freightloadunloadopLst[fromcityid]}' and fromxsiteid='%{uv_freightloadunloadopLst[fromxsiteid]}' and tocityid='%{uv_freightloadunloadopLst[tocityid]}' and toxsiteid='%{uv_freightloadunloadopLst[toxsiteid]}' and freightid='%{uv_freightloadunloadopLst[freightid]}' and vehiclerealtimeid='%{uv_freightloadunloadopLst[vehiclerealtimeid]}' and planid='%{uv_freightloadunloadopLst[planid]}' and freightstatus='%{uv_freightloadunloadopLst[freightstatus]}' and opordercode='%{uv_freightloadunloadopLst[opordercode]}' and opstatus='%{uv_freightloadunloadopLst[opstatus]}' and opdate='%{uv_freightloadunloadopLst[opdate]}' and memo='%{uv_freightloadunloadopLst[memo]}' and operatetypecode='%{uv_freightloadunloadopLst[operatetypecode]}' and pickupordercode='%{uv_freightloadunloadopLst[pickupordercode]}' and opstatuscode='%{uv_freightloadunloadopLst[opstatuscode]}' and oporderid='%{uv_freightloadunloadopLst[oporderid]}' and freightstatuscode='%{uv_freightloadunloadopLst[freightstatuscode]}' and pickuporderid='%{uv_freightloadunloadopLst[pickuporderid]}' and carrierid='%{uv_freightloadunloadopLst[carrierid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyuv_freightloadunloadop[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="uv_freightloadunloadopLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.uv_freightloadunloadop_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetuv_freightloadunloadop" Name="resetuv_freightloadunloadop" Size="50,20">
+<OnClick>
+<submit next="GBDEDITuv_freightloadunloadop" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchuv_freightloadunloadop" Name="gsearchuv_freightloadunloadop" Size="50,20" visible="false">
+<OnClick>
+<search next="uv_freightloadunloadopLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITuv_freightloadunloadop" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

@@ -1,0 +1,32 @@
+<WndTap Text="CarrierPick" Name="CarrierPick" Ver="2" popup="1">
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_carrier.xml"/>
+	<Ctrls>
+	<GroupBox Text="xtmsm_carrier" Name="GBxtmsm_carrier" id="xtmsm_carrier" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrier_vs.xml"/>
+<BR autoHeight="1"/>
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPDVitem"><Ctrls>
+<Button Text="gsearch" ToolTip="ttp_gsearchitem" Name="gsearchitem" Size="50,20" visible="true">
+	<OnClick>
+	<search next="xtmsm_carrier_vLst" listed="0" prefixand="1" inputed="1"><shortname format="shortname like '%%{opvalue}%'"/><carriername format="carriername like '%%{opvalue}%'"/></search><submit next="GBDEDITxtmsm_carrier" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetitem" Name="resetitem" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITxtmsm_carrier" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>
+<BR autoHeight="1"/>
+<ListCtrl Name="xtmsm_carrier_vLst" ToolTip="ttp_xtmsm_carrier" Size="700,420" OnLoad="init" Heading="carriername,250;shortname,250;carriertype,120;status,60;vehiclesmodel,250;operateroute,250;artificialperson,250;businesscardno,500;cityid,120;country,250;registeredaddress,250;contacter,250;fixphone,250;mobilephone,250;notes,250;contactfax,250;url,250;openingbank,500;bankaccount,250;credit,50;deposit,90;isdeposit,60;address,500;post,100;factoryaddress,500;warehouseaddress,500;carrierid,250;createby,50;createdate,150;updateby,50;updatedate,150;" loadedclick="0">
+	<DbDetails >
+<DbTable>tms.xtmsm_carrier x left join tms.xtmsc_type_option x0 on x.carriertype=x0.typecode left join tms.xtmsm_master_city x1 on x.cityid=x1.cityid</DbTable>
+<Index>carrierid</Index>
+<Data>x.carriername,x.shortname,x0.TypeName carriertype,x.status,x.vehiclesmodel,x.operateroute,x.artificialperson,x.businesscardno,x1.CityAllName cityid,x.country,x.registeredaddress,x.contacter,x.fixphone,x.mobilephone,x.notes,x.contactfax,x.url,x.openingbank,x.bankaccount,x.credit,x.deposit,x.isdeposit,x.address,x.post,x.factoryaddress,x.warehouseaddress,x.carrierid,x.createby,x.createdate,x.updateby,x.updatedate</Data>
+<Order>carrierid</Order></DbDetails>
+	<OnClick><if cond="%{xtmsm_carrier_vLst[carrierid]}"><DbDetails><Where>carrierid='%{xtmsm_carrier_vLst[carrierid]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.%{frmwndctrl}"/><assign name="$parent.%{frmwndctrl}[selectedindex]" function="SetSel" expr="0"/><submit function="onok"/></if></OnClick>
+	</ListCtrl>
+	</Ctrls></GroupBox>
+	</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

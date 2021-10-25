@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxtmst_customorder" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xtmst_customorderLst" ToolTip="ttp_xtmst_customorder" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xtmst_customorder_id</Index>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Data>ordercode,deliverymode,consignmentmode,orderstatus,status,planshipmentdate,plantodate,timeliness,memberid,ordersource,synccode,consignee,tocityid,consigneeaddress,consigneemobilephone,shipper,fromcityid,shipperaddress,shippermobilephone,consigneephone,estvolumn,estweight,isdangerous,custommemo,issealbox,isexpressorder,settlementamount,settlementby,settlementdate,settlementstatus,ordertype,carrycode,submitdate,iscomplain,linkorderid,isadjustorder,adjuststatus,sendstatus,isfinishout,finishoutdate,materialtype,customerorderid,createby,createdate,updateby,updatedate,carrierid,xtmst_customorder_id</Data>
+<Order>xtmst_customorder_id</Order></DbDetails>
+<OnClick><assign name="deliverymode[typecode]" expr="%{xtmst_customorderLst[deliverymode]}" function="SetSel"/><assign name="consignmentmode[typecode]" expr="%{xtmst_customorderLst[consignmentmode]}" function="SetSel"/><assign name="orderstatus[statuscode]" expr="%{xtmst_customorderLst[orderstatus]}" function="SetSel"/><assign name="status[statuscode]" expr="%{xtmst_customorderLst[status]}" function="SetSel"/><assign name="memberid[memberid]" expr="%{xtmst_customorderLst[memberid]}" function="SetSel"/><assign name="ordersource[typecode]" expr="%{xtmst_customorderLst[ordersource]}" function="SetSel"/><assign name="tocityid[cityid]" expr="%{xtmst_customorderLst[tocityid]}" function="SetSel"/><assign name="fromcityid[cityid]" expr="%{xtmst_customorderLst[fromcityid]}" function="SetSel"/><assign name="settlementby[xms_user_id]" expr="%{xtmst_customorderLst[settlementby]}" function="SetSel"/><assign name="settlementstatus[statuscode]" expr="%{xtmst_customorderLst[settlementstatus]}" function="SetSel"/><assign name="ordertype[typecode]" expr="%{xtmst_customorderLst[ordertype]}" function="SetSel"/><assign name="linkorderid[customerorderid]" expr="%{xtmst_customorderLst[linkorderid]}" function="SetSel"/>
+<if cond="%{xtmst_customorder_id}"><SetVisible name="insertxtmst_customorder" Visible="0"/><SetVisible name="modifyxtmst_customorder" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

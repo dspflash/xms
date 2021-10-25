@@ -1,0 +1,126 @@
+﻿<GroupBox Name="GBDEDITuv_freightloadunloadop"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_freightcode"><Ctrls>
+<Label Align="Right" Text="freightcode" Name="lb_freightcode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_freightcode" Name="freightcode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_platenumber"><Ctrls>
+<Label Align="Right" Text="platenumber" Name="lb_platenumber" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_platenumber" Name="platenumber" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_drivername"><Ctrls>
+<Label Align="Right" Text="drivername" Name="lb_drivername" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_drivername" Name="drivername" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_fromcity"><Ctrls>
+<Label Align="Right" Text="fromcity" Name="lb_fromcity" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_fromcity" Name="fromcity" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_fromaddress"><Ctrls>
+<Label Align="Right" Text="fromaddress" Name="lb_fromaddress" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_fromaddress" Name="fromaddress" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_fromxsite"><Ctrls>
+<Label Align="Right" Text="fromxsite" Name="lb_fromxsite" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_fromxsite" Name="fromxsite" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_tocity"><Ctrls>
+<Label Align="Right" Text="tocity" Name="lb_tocity" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_tocity" Name="tocity" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_toaddress"><Ctrls>
+<Label Align="Right" Text="toaddress" Name="lb_toaddress" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_toaddress" Name="toaddress" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_toxsite"><Ctrls>
+<Label Align="Right" Text="toxsite" Name="lb_toxsite" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_toxsite" Name="toxsite" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_operatetype"><Ctrls>
+<Label Align="Right" Text="operatetype" Name="lb_operatetype" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_operatetype" Name="operatetype" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_vehiclerealtimecode"><Ctrls>
+<Label Align="Right" Text="vehiclerealtimecode" Name="lb_vehiclerealtimecode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehiclerealtimecode" Name="vehiclerealtimecode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_plancode"><Ctrls>
+<Label Align="Right" Text="plancode" Name="lb_plancode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_plancode" Name="plancode" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_fromcityid"><Ctrls>
+<Label Align="Right" Text="fromcityid" Name="lb_fromcityid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_fromcityid" Name="fromcityid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_fromxsiteid"><Ctrls>
+<Label Align="Right" Text="fromxsiteid" Name="lb_fromxsiteid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_fromxsiteid" Name="fromxsiteid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_tocityid"><Ctrls>
+<Label Align="Right" Text="tocityid" Name="lb_tocityid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_tocityid" Name="tocityid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_toxsiteid"><Ctrls>
+<Label Align="Right" Text="toxsiteid" Name="lb_toxsiteid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_toxsiteid" Name="toxsiteid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_freightid"><Ctrls>
+<Label Align="Right" Text="freightid" Name="lb_freightid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_freightid" Name="freightid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_vehiclerealtimeid"><Ctrls>
+<Label Align="Right" Text="vehiclerealtimeid" Name="lb_vehiclerealtimeid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehiclerealtimeid" Name="vehiclerealtimeid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_planid"><Ctrls>
+<Label Align="Right" Text="planid" Name="lb_planid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_planid" Name="planid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_freightstatus"><Ctrls>
+<Label Align="Right" Text="freightstatus" Name="lb_freightstatus" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_freightstatus" Name="freightstatus" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_opordercode"><Ctrls>
+<Label Align="Right" Text="opordercode" Name="lb_opordercode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_opordercode" Name="opordercode" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_opstatus"><Ctrls>
+<Label Align="Right" Text="opstatus" Name="lb_opstatus" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_opstatus" Name="opstatus" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_opdate"><Ctrls>
+<Label Align="Right" Text="opdate" Name="lb_opdate" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_opdate" Name="opdate" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_memo"><Ctrls>
+<Label Align="Right" Text="memo" Name="lb_memo" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_memo" Name="memo" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_operatetypecode"><Ctrls>
+<Label Align="Right" Text="operatetypecode" Name="lb_operatetypecode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_operatetypecode" Name="operatetypecode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_pickupordercode"><Ctrls>
+<Label Align="Right" Text="pickupordercode" Name="lb_pickupordercode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_pickupordercode" Name="pickupordercode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_opstatuscode"><Ctrls>
+<Label Align="Right" Text="opstatuscode" Name="lb_opstatuscode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_opstatuscode" Name="opstatuscode" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_oporderid"><Ctrls>
+<Label Align="Right" Text="oporderid" Name="lb_oporderid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_oporderid" Name="oporderid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_freightstatuscode"><Ctrls>
+<Label Align="Right" Text="freightstatuscode" Name="lb_freightstatuscode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_freightstatuscode" Name="freightstatuscode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_pickuporderid"><Ctrls>
+<Label Align="Right" Text="pickuporderid" Name="lb_pickuporderid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_pickuporderid" Name="pickuporderid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_carrierid"><Ctrls>
+<Label Align="Right" Text="carrierid" Name="lb_carrierid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrierid" Name="carrierid" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

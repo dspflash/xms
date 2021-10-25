@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPExms_role" Size="100,100"><Ctrls>
+<Button sqlpkinsert="role_id" Text="create" ToolTip="ttp_createxms_role" Name="insertxms_role" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>tms.xms_role</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>role_name_cn,role_name_eng,role_layout</Data>
+<DataEx>org_guid,created_by,creation_date,last_update_by,last_update_date,role_level;'%{orgguid}','%{user_id}',now(),'%{user_id}',now(),4</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertxms_role[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xms_roleLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xms_role_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyxms_role" Name="modifyxms_role" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>tms.xms_role</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>role_name_cn,role_name_eng,role_layout</Data>
+<DataEx>org_guid,last_update_by,last_update_date,role_level;'%{orgguid}','%{user_id}',now(),4</DataEx>
+<Where>role_id='%{role_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyxms_role[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="xms_roleLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.xms_role_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetxms_role" Name="resetxms_role" Size="50,20">
+<OnClick>
+<submit next="GBDEDITxms_role" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchxms_role" Name="gsearchxms_role" Size="50,20" visible="false">
+<OnClick>
+<search next="xms_roleLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITxms_role" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

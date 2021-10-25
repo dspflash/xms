@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmst_fineorder" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmst_fineorder" Name="deletextmst_fineorder" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmst_fineorder</DbTable>
+<Where>id='%{xtmst_fineorderLst[id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmst_fineorder" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmst_fineorder" Name="searchxtmst_fineorder" Size="50,20">
+			  <OnClick><submit next="xtmst_fineorderLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmst_fineorderLst" OnClick="(xtmst_fineorderLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmst_fineorderLst" OnClick="(xtmst_fineorderLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmst_fineorderLst" OnClick="(xtmst_fineorderLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

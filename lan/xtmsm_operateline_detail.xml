@@ -1,0 +1,42 @@
+﻿<Language name="xtmsm_operateline_detail">
+<Lang name="xtmsm_operateline_detail" value="途经城市"/>
+<Lang name="TabEditxtmsm_operateline_detail" value="xtmsm_operateline_detail Edit"/>
+<Lang name="TabViewxtmsm_operateline_detail" value="xtmsm_operateline_detail View"/>
+<Lang name="city_id" value="途经城市"/>
+<Lang name="ttp_city_id" value=""/>
+<Lang name="detail_type" value="类型"/>
+<Lang name="ttp_detail_type" value=""/>
+<Lang name="distance_to_start" value="里程[起点]"/>
+<Lang name="ttp_distance_to_start" value=""/>
+<Lang name="remark" value="备注"/>
+<Lang name="ttp_desc" value=""/>
+<Lang name="active" value=""/>
+<Lang name="ttp_active" value=""/>
+<Lang name="created_by" value=""/>
+<Lang name="ttp_created_by" value=""/>
+<Lang name="creation_date" value=""/>
+<Lang name="ttp_creation_date" value=""/>
+<Lang name="last_update_by" value=""/>
+<Lang name="ttp_last_update_by" value=""/>
+<Lang name="last_update_date" value=""/>
+<Lang name="ttp_last_update_date" value=""/>
+<Lang name="operateline_id" value=""/>
+<Lang name="ttp_operateline_id" value=""/>
+<Lang name="operateline_detail_id" value=""/>
+<Lang name="ttp_operateline_detail_id" value=""/>
+<Lang name="ttp_operationxtmsm_operateline_detail" value=""/>
+<Lang name="ttp_creatextmsm_operateline_detail" value=""/>
+<Lang name="ttp_modifyxtmsm_operateline_detail" value=""/>
+<Lang name="ttp_resetxtmsm_operateline_detail" value=""/>
+<Lang name="ttp_deletextmsm_operateline_detail" value=""/>
+<Lang name="ttp_refreshxtmsm_operateline_detail" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

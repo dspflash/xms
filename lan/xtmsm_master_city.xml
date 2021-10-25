@@ -1,0 +1,42 @@
+﻿<Language name="xtmsm_master_city">
+<Lang name="xtmsm_master_city" value="城市"/>
+<Lang name="TabEditxtmsm_master_city" value="xtmsm_master_city Edit"/>
+<Lang name="TabViewxtmsm_master_city" value="xtmsm_master_city View"/>
+<Lang name="levercode" value=""/>
+<Lang name="ttp_levercode" value=""/>
+<Lang name="city" value="城市"/>
+<Lang name="ttp_city" value=""/>
+<Lang name="parentcityid" value="上级城市"/>
+<Lang name="ttp_parentcityid" value=""/>
+<Lang name="cityallname" value="城市全称"/>
+<Lang name="ttp_cityallname" value=""/>
+<Lang name="phone" value="区号"/>
+<Lang name="ttp_phone" value=""/>
+<Lang name="postno" value="邮编"/>
+<Lang name="ttp_postno" value=""/>
+<Lang name="chinaspell" value="简码"/>
+<Lang name="ttp_chinaspell" value=""/>
+<Lang name="chinaspellall" value="简码(全称)"/>
+<Lang name="ttp_chinaspellall" value=""/>
+<Lang name="pinyin" value="拼音"/>
+<Lang name="ttp_pinyin" value=""/>
+<Lang name="citycode" value=""/>
+<Lang name="ttp_citycode" value=""/>
+<Lang name="cityid" value=""/>
+<Lang name="ttp_cityid" value=""/>
+<Lang name="ttp_operationxtmsm_master_city" value=""/>
+<Lang name="ttp_creatextmsm_master_city" value=""/>
+<Lang name="ttp_modifyxtmsm_master_city" value=""/>
+<Lang name="ttp_resetxtmsm_master_city" value=""/>
+<Lang name="ttp_deletextmsm_master_city" value=""/>
+<Lang name="ttp_refreshxtmsm_master_city" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

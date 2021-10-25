@@ -1,0 +1,34 @@
+﻿<Language name="xtmsc_type_option">
+<Lang name="xtmsc_type_option" value="xtmsc_type_option"/>
+<Lang name="TabEditxtmsc_type_option" value="xtmsc_type_option Edit"/>
+<Lang name="TabViewxtmsc_type_option" value="xtmsc_type_option View"/>
+<Lang name="tablename" value=""/>
+<Lang name="ttp_tablename" value=""/>
+<Lang name="columnname" value=""/>
+<Lang name="ttp_columnname" value=""/>
+<Lang name="memo" value=""/>
+<Lang name="ttp_memo" value=""/>
+<Lang name="typeclass" value=""/>
+<Lang name="ttp_typeclass" value="1~64 for table,0~9 for Column"/>
+<Lang name="typecode" value=""/>
+<Lang name="ttp_typecode" value=""/>
+<Lang name="typename" value=""/>
+<Lang name="ttp_typename" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationxtmsc_type_option" value=""/>
+<Lang name="ttp_creatextmsc_type_option" value=""/>
+<Lang name="ttp_modifyxtmsc_type_option" value=""/>
+<Lang name="ttp_resetxtmsc_type_option" value=""/>
+<Lang name="ttp_deletextmsc_type_option" value=""/>
+<Lang name="ttp_refreshxtmsc_type_option" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

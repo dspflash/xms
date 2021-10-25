@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVxtmsm_billingconfiguration" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletextmsm_billingconfiguration" Name="deletextmsm_billingconfiguration" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>tms.xtmsm_billingconfiguration</DbTable>
+<Where>xtmsm_billingconfiguration_id='%{xtmsm_billingconfigurationLst[xtmsm_billingconfiguration_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchxtmsm_billingconfiguration" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshxtmsm_billingconfiguration" Name="searchxtmsm_billingconfiguration" Size="50,20">
+			  <OnClick><submit next="xtmsm_billingconfigurationLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPxtmsm_billingconfigurationLst" OnClick="(xtmsm_billingconfigurationLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRExtmsm_billingconfigurationLst" OnClick="(xtmsm_billingconfigurationLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPxtmsm_billingconfigurationLst" OnClick="(xtmsm_billingconfigurationLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

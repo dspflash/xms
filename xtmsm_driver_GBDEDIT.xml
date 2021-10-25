@@ -1,0 +1,81 @@
+﻿<GroupBox Name="GBDEDITxtmsm_driver"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_drivername"><Ctrls>
+<Label Align="Right" Text="drivername" Name="lb_drivername" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_drivername" Name="drivername" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_nature"><Ctrls>
+<Label Align="Right" Text="nature" onload="init" Name="lb_nature" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_nature" onload="init" Name="nature" Size="170,100">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>tablename='Driver' and ColumnName='nature'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_phone1"><Ctrls>
+<Label Align="Right" Text="phone1" Name="lb_phone1" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_phone1" Name="phone1" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialphone1" OnClick="nis3ucs:%{phone1}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_phone2"><Ctrls>
+<Label Align="Right" Text="phone2" Name="lb_phone2" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_phone2" Name="phone2" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialphone2" OnClick="nis3ucs:%{phone2}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_idnumber"><Ctrls>
+<Label Align="Right" Text="idnumber" Name="lb_idnumber" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_idnumber" Name="idnumber" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_emergencycontactor"><Ctrls>
+<Label Align="Right" Text="emergencycontactor" Name="lb_emergencycontactor" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_emergencycontactor" Name="emergencycontactor" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_emergencyphone"><Ctrls>
+<Label Align="Right" Text="emergencyphone" Name="lb_emergencyphone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_emergencyphone" Name="emergencyphone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialemergencyphone" OnClick="nis3ucs:%{emergencyphone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_drivercode"><Ctrls>
+<Label Align="Right" Text="drivercode" Name="lb_drivercode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_drivercode" Name="drivercode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_sex"><Ctrls>
+<Label Align="Right" Text="sex" onload="init" Name="lb_sex" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_sex" onload="init" Name="sex" Size="170,100">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TypeClass=140</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createby" Visible="false"><Ctrls>
+<Label Align="Right" Text="createby" overlap="pre" Name="lb_createby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_createby" overlap="pre" Name="createby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_createdate" Visible="false"><Ctrls>
+<Label Align="Right" Text="createdate" overlap="pre" Name="lb_createdate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_createdate" overlap="pre" Name="createdate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updateby" Visible="false"><Ctrls>
+<Label Align="Right" Text="updateby" overlap="pre" Name="lb_updateby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_updateby" overlap="pre" Name="updateby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_updatedate" Visible="false"><Ctrls>
+<Label Align="Right" Text="updatedate" overlap="pre" Name="lb_updatedate" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_updatedate" overlap="pre" Name="updatedate" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_driverid" Visible="false"><Ctrls>
+<Label Align="Right" Text="driverid" overlap="pre" Name="lb_driverid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_driverid" overlap="pre" Name="driverid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_xtmsm_driver_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="xtmsm_driver_id" overlap="pre" Name="lb_xtmsm_driver_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_xtmsm_driver_id" overlap="pre" Name="xtmsm_driver_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{xtmsm_driver_id}'"><SetVisible name="insertxtmsm_driver" Visible="0"/><SetVisible name="modifyxtmsm_driver" Visible="1"/><else/><SetVisible name="insertxtmsm_driver" Visible="1"/><SetVisible name="modifyxtmsm_driver" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_carrierid" Visible="false"><Ctrls>
+<Label Align="Right" Text="carrierid" overlap="pre" Name="lb_carrierid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_carrierid" overlap="pre" Name="carrierid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

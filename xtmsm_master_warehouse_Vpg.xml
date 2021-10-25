@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGxtmsm_master_warehouse"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_xtmsm_master_warehouse" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>autoid</Index>
+<DbTable>tms.xtmsm_master_warehouse x left join tms.xms_member x0 on x.memberid=x0.memberid left join tms.xms_user x1 on x.manager=x1.xms_user_id left join tms.xtmsm_master_city x2 on x.cityid=x2.cityid</DbTable>
+<Data>count(*) records</Data>
+<Order>autoid</Order><Queryformat>select %{data} from (select x.autoid from %{dbtable} %{where} GROUP BY x.autoid  ORDER BY x.autoid) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_xtmsm_master_warehouse" expr="js(Math.ceil(%{records_xtmsm_master_warehouse}/%{xtmsm_master_warehouse_vLst[countsperpage]}))"/>
+<assign name="pgscb_xtmsm_master_warehouse" expr="js('1~'+Math.ceil(%{records_xtmsm_master_warehouse}/%{xtmsm_master_warehouse_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_xtmsm_master_warehouse" Size="60,20"><OnSelEndOK><submit next="xtmsm_master_warehouse_vLst" function="GetPage(%{pgscb_xtmsm_master_warehouse}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_xtmsm_master_warehouse" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_xtmsm_master_warehouse" Size="30,20"/>
+<Button Text="go2Page" Name="go2pagextmsm_master_warehouse_vLst" Size="50,20"><OnClick><submit next="xtmsm_master_warehouse_vLst" function="GetPage(%{pgcur_xtmsm_master_warehouse}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

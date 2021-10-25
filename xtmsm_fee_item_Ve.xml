@@ -1,0 +1,13 @@
+﻿<WndTap Name="xtmsm_fee_item" Text="xtmsm_fee_item" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr=""/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\xtmsm_fee_item.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBxtmsm_fee_item" id="xtmsm_fee_item" Text="xtmsm_fee_item" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_fee_item_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_fee_item_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_fee_item_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertxtmsm_fee_item" Visible="1"/><SetVisible name="modifyxtmsm_fee_item" Visible="0"/></OnActivate>
+</WndTap>

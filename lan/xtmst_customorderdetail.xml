@@ -1,0 +1,48 @@
+﻿<Language name="xtmst_customorderdetail">
+<Lang name="xtmst_customorderdetail" value="xtmst_customorderdetail"/>
+<Lang name="TabEditxtmst_customorderdetail" value="xtmst_customorderdetail Edit"/>
+<Lang name="TabViewxtmst_customorderdetail" value="xtmst_customorderdetail View"/>
+<Lang name="customerorderid" value=""/>
+<Lang name="ttp_customerorderid" value=""/>
+<Lang name="transfeesettlementsmode" value=""/>
+<Lang name="ttp_transfeesettlementsmode" value=""/>
+<Lang name="productbatch" value=""/>
+<Lang name="ttp_productbatch" value=""/>
+<Lang name="commodityname" value=""/>
+<Lang name="ttp_commodityname" value=""/>
+<Lang name="commoditycode" value=""/>
+<Lang name="ttp_commoditycode" value=""/>
+<Lang name="amount" value=""/>
+<Lang name="ttp_amount" value=""/>
+<Lang name="length" value=""/>
+<Lang name="ttp_length" value=""/>
+<Lang name="width" value=""/>
+<Lang name="ttp_width" value=""/>
+<Lang name="height" value=""/>
+<Lang name="ttp_height" value=""/>
+<Lang name="volume" value=""/>
+<Lang name="ttp_volume" value=""/>
+<Lang name="weight" value=""/>
+<Lang name="ttp_weight" value=""/>
+<Lang name="stocktype" value=""/>
+<Lang name="ttp_stocktype" value=""/>
+<Lang name="customorderdetailid" value=""/>
+<Lang name="ttp_customorderdetailid" value=""/>
+<Lang name="commodityid" value=""/>
+<Lang name="ttp_commodityid" value=""/>
+<Lang name="ttp_operationxtmst_customorderdetail" value=""/>
+<Lang name="ttp_creatextmst_customorderdetail" value=""/>
+<Lang name="ttp_modifyxtmst_customorderdetail" value=""/>
+<Lang name="ttp_resetxtmst_customorderdetail" value=""/>
+<Lang name="ttp_deletextmst_customorderdetail" value=""/>
+<Lang name="ttp_refreshxtmst_customorderdetail" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

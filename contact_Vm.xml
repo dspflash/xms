@@ -1,0 +1,12 @@
+﻿<WndTap Name="contact_v" Text="contact">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="contact_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\contact.xml"/>
+<Ctrls><GroupBox  Name="GBcontact" id="contact" Text="contact" Size="100,100"><Ctrls>
+<GroupBox  Name="GBOPVcontact" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.contact.GBDEDITcontact" function="reset"/><assign name="$this.contact.reftbltp" expr="%{reftbltp}" function="setsel"/><assign name="$this.contact.refid" expr="%{refid}"/></OnClick>	</Button><TAB/>	
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="contact_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

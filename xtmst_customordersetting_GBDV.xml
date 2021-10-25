@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVxtmst_customordersetting"><Ctrls>
+<ListCtrl Heading="customerorderid,250;carrycode,400;ordermileage,90;vehicletypefee,90;backoffline,90;returnline,90;expressfee,90;otherfee,90;isexpressorder,60;issmallorder,60;xtmst_customordersetting_id,100;carrierid,250;" loadedclick="0" ToolTip="ttp_xtmst_customordersetting" Name="xtmst_customordersettingLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>xtmst_customordersetting_id</Index>
+<DbTable>tms.xtmst_customordersetting x left join tms.xtmst_customorder x0 on x.customerorderid=x0.customerorderid left join tms.xtmst_customorder x1 on x.otherfee=x1.customerorderid</DbTable>
+<Data>x0.OrderCode customerorderid,x.carrycode,x.ordermileage,x.vehicletypefee,x.backoffline,x.returnline,x.expressfee,x1.OrderCode otherfee,x.isexpressorder,x.issmallorder,x.xtmst_customordersetting_id,x.carrierid</Data>
+<Order>xtmst_customordersetting_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>xtmst_customordersetting_id='%{xtmst_customordersetting_vLst[xtmst_customordersetting_id]}'</Where></DbDetails><submit next="$this.xtmst_customordersetting.xtmst_customordersettingLst" namelist="DbDetails"/><assign name="$this.xtmst_customordersetting.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.xtmst_customordersetting</DbTable>
+<Where>xtmst_customordersetting_id='%{xtmst_customordersetting_vLst[xtmst_customordersetting_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

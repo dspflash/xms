@@ -1,0 +1,36 @@
+﻿<Language name="xms_role_permission">
+<Lang name="xms_role_permission" value="xms_role_permission"/>
+<Lang name="TabEditxms_role_permission" value="xms_role_permission Edit"/>
+<Lang name="TabViewxms_role_permission" value="xms_role_permission View"/>
+<Lang name="role_id" value=""/>
+<Lang name="ttp_role_id" value=""/>
+<Lang name="class" value=""/>
+<Lang name="ttp_class" value=""/>
+<Lang name="permision" value=""/>
+<Lang name="ttp_permision" value=""/>
+<Lang name="created_by" value=""/>
+<Lang name="ttp_created_by" value=""/>
+<Lang name="creation_date" value=""/>
+<Lang name="ttp_creation_date" value=""/>
+<Lang name="last_update_by" value=""/>
+<Lang name="ttp_last_update_by" value=""/>
+<Lang name="last_update_date" value=""/>
+<Lang name="ttp_last_update_date" value=""/>
+<Lang name="role_permission_id" value=""/>
+<Lang name="ttp_role_permission_id" value=""/>
+<Lang name="ttp_operationxms_role_permission" value=""/>
+<Lang name="ttp_createxms_role_permission" value=""/>
+<Lang name="ttp_modifyxms_role_permission" value=""/>
+<Lang name="ttp_resetxms_role_permission" value=""/>
+<Lang name="ttp_deletexms_role_permission" value=""/>
+<Lang name="ttp_refreshxms_role_permission" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

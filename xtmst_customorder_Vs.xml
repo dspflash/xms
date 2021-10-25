@@ -1,0 +1,144 @@
+﻿<GroupBox Name="GBDEDITxtmst_customorder" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="Basic" Text="Basic" feature="tab"><Ctrls>
+<GroupBox Name="GB_ordercode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_ordercode" Size="60,20" Text="ordercode" Align="Right"/>
+<TextBox Name="ordercode" Size="170,20" Text="" Weight="170" ToolTip="ttp_ordercode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deliverymode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_deliverymode" Size="60,20" Text="deliverymode" Align="Right"  onload="init"/>
+<ComboBox Name="deliverymode" Size="170,100" Text="" Weight="170"  ToolTip="ttp_deliverymode"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TableName = 'DispatchPlan' AND ColumnName = 'DeliveryMode'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_consignmentmode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_consignmentmode" Size="60,20" Text="consignmentmode" Align="Right"  onload="init"/>
+<ComboBox Name="consignmentmode" Size="170,100" Text="" Weight="170"  ToolTip="ttp_consignmentmode"  onload="init">
+	<DbDetails>
+<Index>typecode</Index>
+<DbTable>tms.xtmsc_type_option</DbTable>
+<Data>TypeName,TypeCode</Data>
+<Where>TableName = 'DispatchPlan' AND ColumnName = 'ConsignmentMode'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_planshipmentdate" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_planshipmentdate" Size="60,20" Text="planshipmentdate" Align="Right"/>
+<DateTime Name="planshipmentdate" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_planshipmentdate"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_plantodate" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_plantodate" Size="60,20" Text="plantodate" Align="Right"/>
+<DateTime Name="plantodate" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_plantodate"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_timeliness" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_timeliness" Size="60,20" Text="timeliness" Align="Right"/>
+<TextBox Name="timeliness" Size="170,20" Text="" Weight="170" ToolTip="ttp_timeliness"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_memberid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_memberid" Size="60,20" Text="memberid" Align="Right"/>
+<TextBox Name="memberid" Size="170,20" Text="" Weight="170" ToolTip="ttp_memberid">
+	<DbDetails>
+<Index>memberid</Index>
+<DbTable>tms.xms_member</DbTable>
+<Data>MemberName,MemberID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_synccode" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_synccode" Size="60,20" Text="synccode" Align="Right"/>
+<TextBox Name="synccode" Size="170,20" Text="" Weight="170" ToolTip="ttp_synccode"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="ConsShipInfo" Text="ConsShipInfo" feature="tab"><Ctrls>
+<GroupBox Name="GB_consignee" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_consignee" Size="60,20" Text="consignee" Align="Right"/>
+<TextBox Name="consignee" Size="170,20" Text="" Weight="170" ToolTip="ttp_consignee"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_tocityid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_tocityid" Size="60,20" Text="tocityid" Align="Right"/>
+<TextBox Name="tocityid" Size="170,20" Text="" Weight="170" ToolTip="ttp_tocityid">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_consigneeaddress" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_consigneeaddress" Size="60,20" Text="consigneeaddress" Align="Right"/>
+<TextBox Name="consigneeaddress" Size="170,20" Text="" Weight="170" ToolTip="ttp_consigneeaddress"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_consigneemobilephone" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_consigneemobilephone" Size="60,20" Text="consigneemobilephone" Align="Right"/>
+<TextBox Name="consigneemobilephone" Size="150,20" Text="" Weight="150" ToolTip="ttp_consigneemobilephone"></TextBox>
+<MagicCtrl Name="dialconsigneemobilephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{consigneemobilephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_shipper" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_shipper" Size="60,20" Text="shipper" Align="Right"/>
+<TextBox Name="shipper" Size="170,20" Text="" Weight="170" ToolTip="ttp_shipper"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_fromcityid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_fromcityid" Size="60,20" Text="fromcityid" Align="Right"/>
+<TextBox Name="fromcityid" Size="170,20" Text="" Weight="170" ToolTip="ttp_fromcityid">
+	<DbDetails>
+<Index>cityid</Index>
+<DbTable>tms.xtmsm_master_city</DbTable>
+<Data>CityAllName,CityID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_shipperaddress" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_shipperaddress" Size="60,20" Text="shipperaddress" Align="Right"/>
+<TextBox Name="shipperaddress" Size="170,20" Text="" Weight="170" ToolTip="ttp_shipperaddress"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_shippermobilephone" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_shippermobilephone" Size="60,20" Text="shippermobilephone" Align="Right"/>
+<TextBox Name="shippermobilephone" Size="150,20" Text="" Weight="150" ToolTip="ttp_shippermobilephone"></TextBox>
+<MagicCtrl Name="dialshippermobilephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{shippermobilephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_consigneephone" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_consigneephone" Size="60,20" Text="consigneephone" Align="Right"/>
+<TextBox Name="consigneephone" Size="150,20" Text="" Weight="150" ToolTip="ttp_consigneephone"></TextBox>
+<MagicCtrl Name="dialconsigneephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{consigneephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="FreightInfo" Text="FreightInfo" feature="tab"><Ctrls>
+<GroupBox Name="GB_estvolumn" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_estvolumn" Size="60,20" Text="estvolumn" Align="Right"/>
+<TextBox Name="estvolumn" Size="170,20" Text="" Weight="170" ToolTip="ttp_estvolumn"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_estweight" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_estweight" Size="60,20" Text="estweight" Align="Right"/>
+<TextBox Name="estweight" Size="170,20" Text="" Weight="170" ToolTip="ttp_estweight"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdangerous" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="isdangerous" Size="230,20" Text="isdangerous" ToolTip="ttp_isdangerous"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_custommemo" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_custommemo" Size="60,20" Text="custommemo" Align="Right"/>
+<TextBox Name="custommemo" Size="170,20" Text="" Weight="170" ToolTip="ttp_custommemo"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_issealbox" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<CheckBox Name="issealbox" Size="230,20" Text="issealbox" ToolTip="ttp_issealbox"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isexpressorder" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_isexpressorder" Size="60,20" Text="isexpressorder" Align="Right"/>
+<TextBox Name="isexpressorder" Size="170,20" Text="" Weight="170" ToolTip="ttp_isexpressorder"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_linkorderid" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_linkorderid" Size="60,20" Text="linkorderid" Align="Right"/>
+<TextBox Name="linkorderid" Size="170,20" Text="" Weight="170" ToolTip="ttp_linkorderid">
+	<DbDetails>
+<Index>customerorderid</Index>
+<DbTable>tms.xtmst_customorder</DbTable>
+<Data>OrderCode,CustomerOrderID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_materialtype" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_materialtype" Size="60,20" Text="materialtype" Align="Right"/>
+<TextBox Name="materialtype" Size="170,20" Text="" Weight="170" ToolTip="ttp_materialtype"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

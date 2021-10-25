@@ -1,0 +1,20 @@
+﻿<WndTap Name="xtmsm_carrier_v" Text="xtmsm_carrier">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrier_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><carriername format="(x.carriername like '%%{opvalue}%')"/><shortname format="(x.shortname like '%%{opvalue}%')"/><carriertype format="x.carriertype='%{opvalue}'"/><vehiclesmodel format="(x.vehiclesmodel like '%%{opvalue}%')"/><operateroute format="(x.operateroute like '%%{opvalue}%')"/><status format="x.status is %{opvalue}"/><artificialperson format="(x.artificialperson like '%%{opvalue}%')"/><businesscardno format="(x.businesscardno like '%%{opvalue}%')"/><cityid format="x.cityid='%{opvalue}'"/><registeredaddress format="(x.registeredaddress like '%%{opvalue}%')"/><contactor format="(x.contactor like '%%{opvalue}%')"/><fixphone format="(x.fixphone like '%%{opvalue}%')"/><mobilephone format="(x.mobilephone like '%%{opvalue}%')"/><email format="(x.email like '%%{opvalue}%')"/><contactfax format="(x.contactfax like '%%{opvalue}%')"/><url format="(x.url like '%%{opvalue}%')"/><openingbank format="(x.openingbank like '%%{opvalue}%')"/><bankaccount format="(x.bankaccount like '%%{opvalue}%')"/><credit format="(x.credit like '%%{opvalue}%')"/><deposit format="(x.deposit like '%%{opvalue}%')"/><isdeposit format="x.isdeposit is %{opvalue}"/><address format="(x.address like '%%{opvalue}%')"/><post format="(x.post like '%%{opvalue}%')"/><factoryaddress format="(x.factoryaddress like '%%{opvalue}%')"/><warehouseaddress format="(x.warehouseaddress like '%%{opvalue}%')"/><carrierid format="(x.carrierid like '%%{opvalue}%')"/><createby format="(x.createby like '%%{opvalue}%')"/><createdate format="(x.createdate between '%{createdate[datetime]}' and '%{createdate[datetime2]}')"/><updateby format="(x.updateby like '%%{opvalue}%')"/><updatedate format="(x.updatedate between '%{updatedate[datetime]}' and '%{updatedate[datetime2]}')"/><xtmsm_carrier_id format="(x.xtmsm_carrier_id like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\xtmsm_carrier.xml"/>
+<Ctrls><GroupBox  Name="GBxtmsm_carrier" id="xtmsm_carrier" Text="xtmsm_carrier" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrier_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVxtmsm_carrier" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.xtmsm_carrier.GBDEDITxtmsm_carrier" function="reset"/><assign name="$this.xtmsm_carrier.frmwndctrl" expr="%{$this.xtmsm_carrier_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetxtmsm_carrier" Name="resetxtmsm_carrier" Size="50,20">	<OnClick>	<submit next="GBDEDITxtmsm_carrier" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchxtmsm_carrier" Name="gsearchxtmsm_carrier" Size="50,20">	<OnClick>	
+<search next="xtmsm_carrier_vLst" listed="0" prefixwhere="1" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_carrier" namelist="search" function="search"/>	
+<search next="records_xtmsm_carrier" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITxtmsm_carrier" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrier_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrier_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xtmsm_carrier_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

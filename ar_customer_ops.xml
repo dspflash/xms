@@ -1,0 +1,14 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>ar_customer_id='%{ar_customer_vLst[ar_customer_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.ar_customer.ar_customerLst"/></op>
+<op text="address"><assign name="$this.address_V.reftbltp" expr="customer"/>
+<assign name="$this.address_V.refid" expr="%{ar_customer_vLst[ar_customer_id]}"/>
+	<submit next="$this.address_V.address_vlst"/></op>
+<op text="contact"><assign name="$this.contact_V.reftbltp" expr="customer"/>
+<assign name="$this.contact_V.refid" expr="%{ar_customer_vLst[ar_customer_id]}"/>
+	<submit next="$this.contact_V.contact_vlst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>tms.ar_customer</DbTable>
+<Where>ar_customer_id='%{ar_customer_vLst[ar_customer_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

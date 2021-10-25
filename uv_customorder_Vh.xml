@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVuv_customorder" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="uv_customorderLst" ToolTip="ttp_uv_customorder" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>tms.uv_customorder</DbTable>
+
+<Data>ordercode,ordersourcename,ordersource,synccode,settlementstatusname,settlementamount,settlementdate,settleuser,memberid,membername,memberno,shipper,fromcityid,fromcityname,shipperaddress,shippermobilephone,consignee,tocityid,tocityname,consigneeaddress,consigneemobilephone,totalvolume,totalweight,isdangerous,timeliness,orderstatus,planshipmentdate,plantodate,deliverymode,deliveryname,consignmentmode,consignmentname,status,statusname,createby,createdate,updateby,updatedate,issealbox,fromxsiteid,fromxsitename,toxsiteid,toxsitename,carriername,iscomplain,settlementstatus,complainstatus,complainid,materialtypename,customerorderid,orderstatusname</Data>
+</DbDetails>
+<OnClick>
+<if cond="%{}"><SetVisible name="insertuv_customorder" Visible="0"/><SetVisible name="modifyuv_customorder" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

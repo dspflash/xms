@@ -1,0 +1,12 @@
+﻿<WndTap Name="address_v" Text="address">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="address_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\address.xml"/>
+<Ctrls><GroupBox  Name="GBaddress" id="address" Text="address" Size="100,100"><Ctrls>
+<GroupBox  Name="GBOPVaddress" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.address.GBDEDITaddress" function="reset"/><assign name="$this.address.reftbltp" expr="%{reftbltp}" function="setsel"/><assign name="$this.address.refid" expr="%{refid}"/></OnClick>	</Button><TAB/>	
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="address_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

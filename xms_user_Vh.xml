@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxms_user" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xms_userLst" ToolTip="ttp_xms_user" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>xms_user_id</Index>
+<DbTable>tms.xms_user</DbTable>
+<Data>username,email,invitation_code,active,created_by,creation_date,last_update_by,last_update_date,last_visit_date,xms_user_id,userguid,org_guid</Data>
+<Order>xms_user_id</Order></DbDetails>
+<OnClick>
+<if cond="%{xms_user_id}"><SetVisible name="insertxms_user" Visible="0"/><SetVisible name="modifyxms_user" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

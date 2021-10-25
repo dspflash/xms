@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVxms_role_permission" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="xms_role_permissionLst" ToolTip="ttp_xms_role_permission" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>role_permission_id</Index>
+<DbTable>tms.xms_role_permission</DbTable>
+<Data>role_id,class,created_by,creation_date,last_update_by,last_update_date,role_permission_id</Data>
+<Order>role_permission_id</Order></DbDetails>
+<OnClick><assign name="role_id[role_id]" expr="%{xms_role_permissionLst[role_id]}" function="SetSel"/><assign name="class[name]" expr="%{xms_role_permissionLst[class]}" function="SetSel"/>
+<if cond="%{role_permission_id}"><SetVisible name="insertxms_role_permission" Visible="0"/><SetVisible name="modifyxms_role_permission" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

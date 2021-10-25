@@ -1,0 +1,30 @@
+﻿<Language name="xtmsc_status_option">
+<Lang name="xtmsc_status_option" value="xtmsc_status_option"/>
+<Lang name="TabEditxtmsc_status_option" value="xtmsc_status_option Edit"/>
+<Lang name="TabViewxtmsc_status_option" value="xtmsc_status_option View"/>
+<Lang name="statustype" value=""/>
+<Lang name="ttp_statustype" value=""/>
+<Lang name="statuscode" value=""/>
+<Lang name="ttp_statuscode" value=""/>
+<Lang name="statusname" value=""/>
+<Lang name="ttp_statusname" value=""/>
+<Lang name="tablename" value=""/>
+<Lang name="ttp_tablename" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationxtmsc_status_option" value=""/>
+<Lang name="ttp_creatextmsc_status_option" value=""/>
+<Lang name="ttp_modifyxtmsc_status_option" value=""/>
+<Lang name="ttp_resetxtmsc_status_option" value=""/>
+<Lang name="ttp_deletextmsc_status_option" value=""/>
+<Lang name="ttp_refreshxtmsc_status_option" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>
