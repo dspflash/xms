@@ -18,7 +18,7 @@ XMS是开源的C/S、B/S双架构物流管理系统，。
 - 3UCS xPlus(http://3ucs.com/x/)
 - MySQL
 
-## 演示地址及截图：http://prj.3ucs.com
+## 演示地址及截图：http://56.3ucs.com
 网页登录例图
 
 ![](https://dspflash.github.io/res/vtiger/xwebcrm.png)
