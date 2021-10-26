@@ -46,7 +46,7 @@ AI人工智能语音交互
 ## 演示地址及截图：http://56.3ucs.com
 网页登录例图
 
-![](https://dspflash.github.io/res/vtiger/xwebcrm.png)
+![](https://dspflash.github.io/res/xms/web0.png)
 
 3UCS XOne客户端登录例图
 
